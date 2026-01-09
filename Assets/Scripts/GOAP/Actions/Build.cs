@@ -2,39 +2,61 @@ using UnityEngine;
 
 public class Build : GoapAction
 {
-    public string stationType; // "Water" / "Food" / "Fire"
-    public GameObject prefab;
+    [Header("Build")]
+    [Tooltip("Must be exactly: Water / Food / Fire")]
+    public string stationType;
 
-    private Transform buildSpot;
+    public Transform buildMarker;
+    public float buildOffset = 1.0f;
+    public int woodCost = 1;
 
     private void Awake()
     {
-        Preconditions.Add("HasWood", true);
-        Effects.Add("BuiltStation", true);
+        Preconditions["HasWood"] = true;
+
+        if (!string.IsNullOrEmpty(stationType))
+            Effects[$"HasStation_{stationType}"] = true;
     }
 
     public override bool CheckProceduralPrecondition(GoapAgent agent)
     {
-        if (StationManager.Instance.IsAtMax(stationType))
-            return false;
+        if (agent == null) return false;
+        if (StationManager.Instance == null) return false;
+        if (string.IsNullOrEmpty(stationType)) return false;
+        if (agent.InventoryWood < woodCost) return false;
+        if (StationManager.Instance.IsAtMax(stationType)) return false;
 
-        buildSpot = StationManager.Instance.GetFreeBuildSpot(stationType);
-        return buildSpot != null;
+        Vector3 desired = (buildMarker != null)
+            ? buildMarker.position
+            : agent.transform.position + (Vector3)(Random.insideUnitCircle.normalized * buildOffset);
+
+        desired = StationManager.Instance.Snap(desired);
+        return StationManager.Instance.CanPlaceStation(stationType, desired);
     }
 
     public override void Perform(GoapAgent agent)
     {
-        IsRunning = true;
-
-        agent.MoveTowards(buildSpot.position);
-
-        if (Vector2.Distance(agent.transform.position, buildSpot.position) < 0.3f)
+        if (agent == null || StationManager.Instance == null)
         {
-            GameObject st = GameObject.Instantiate(prefab, buildSpot.position, Quaternion.identity);
-            StationManager.Instance.RegisterStation(stationType, st);
-
-            agent.beliefs.Set("HasWood", false);
             IsRunning = false;
+            return;
         }
+
+        Vector3 desired = (buildMarker != null)
+            ? buildMarker.position
+            : agent.transform.position + (Vector3)(Random.insideUnitCircle.normalized * buildOffset);
+
+        if (!StationManager.Instance.TryBuildStation(stationType, desired, out _))
+        {
+            IsRunning = false;
+            return;
+        }
+
+        agent.InventoryWood -= woodCost;
+
+        agent.beliefs.Set("HasWood", agent.InventoryWood > 0);
+        agent.beliefs.Set($"HasStation_{stationType}", true);
+
+        IsRunning = false;
     }
 }

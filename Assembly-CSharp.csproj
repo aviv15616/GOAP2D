@@ -65,6 +65,7 @@
     <Compile Include="Assets\Scripts\Utilities\WorkerAutoTest.cs" />
     <Compile Include="Assets\Cainos\Pixel Art Top Down - Basic\Script\SpriteColorAnimation.cs" />
     <Compile Include="Assets\SetScale.cs" />
+    <Compile Include="Assets\Scripts\GOAP\Actions\IdleAction.cs" />
     <Compile Include="Assets\Scripts\GOAP\Actions\GoapTimer.cs" />
     <Compile Include="Assets\Scripts\GOAP\Core\Beliefs.cs" />
     <Compile Include="Assets\Scripts\GOAP\Actions\Move.cs" />
@@ -78,6 +79,7 @@
     <Compile Include="Assets\Scripts\GOAP\Core\GoapAgent.cs" />
     <Compile Include="Assets\Cainos\Pixel Art Top Down - Basic\Script\TopDownCharacterController.cs" />
     <Compile Include="Assets\Scripts\GOAP\Actions\Sleep.cs" />
+    <Compile Include="Assets\Scripts\GOAP\Actions\QuickWander.cs" />
     <Compile Include="Assets\Scripts\Utilities\GameObjectExtensions.cs" />
     <Compile Include="Assets\Scripts\GOAP\Core\Goals.cs" />
     <Compile Include="Assets\Scripts\Utilities\Vector3Extensions.cs" />

@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 4808904441980835421}
   - component: {fileID: 6451507120577010785}
   - component: {fileID: 5491836592650549677}
-  - component: {fileID: 3324281635735961465}
   m_Layer: 0
   m_Name: Survivor
   m_TagString: Untagged
@@ -116,17 +115,3 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &3324281635735961465
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6151490515553686408}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d4fbafc6639b3df499b415be1467221c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::WorkerAutoTest
-  animator: {fileID: 0}
-  switchTime: 2

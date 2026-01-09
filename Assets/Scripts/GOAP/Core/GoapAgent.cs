@@ -3,8 +3,12 @@ using UnityEngine;
 
 public class GoapAgent : MonoBehaviour
 {
+    public bool debug = true;
+
     public List<GoapAction> actions = new();
     public Queue<GoapAction> currentPlan = new();
+
+    // חשוב: פעם אחת בלבד!
     public AgentBeliefs beliefs = new();
 
     public AgentGoal currentGoal;
@@ -12,43 +16,57 @@ public class GoapAgent : MonoBehaviour
 
     public float moveSpeed = 2f;
     public Rigidbody2D rb;
+
     public float Stamina = 10f;
     public int InventoryWood = 0;
-
+    private float nextPlanTime = 0f;
+    public float replanCooldown = 0.5f;
 
     private GoapPlanner planner = new GoapPlanner();
-
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+        actions = new List<GoapAction>(GetComponents<GoapAction>());
 
-        foreach (var action in GetComponents<GoapAction>())
-            actions.Add(action);
+        if (debug)
+            Debug.Log($"[AGENT] {name} Awake | actions={actions.Count}");
     }
+
     private void Start()
     {
-        beliefs.Set("HasWood", false);
-        beliefs.Set("IsTired", false);
-        beliefs.Set("AtTarget", false);
-        beliefs.Set("StationBuilt", false);
+        // אל תערבב keys לא קשורים. נשאיר מינימום וניתן ל-Sensor לקבוע.
+        beliefs.SetState("HasWood", InventoryWood > 0);
+        beliefs.SetState("LowStamina", Stamina < 20);
+
+        if (debug)
+            Debug.Log($"[AGENT] {name} Start | beliefsTrue={beliefs.DumpTrueStates()}");
     }
 
-
-    private void Update()
+    void Update()
     {
-        if (currentAction != null && currentAction.IsRunning)
-            return;
-
-        if (currentPlan.Count == 0)
-            BuildPlan();
-
-        if (currentPlan.Count > 0)
+        if (currentAction == null)
         {
-            currentAction = currentPlan.Dequeue();
+            // אל תבנה תכנית כל פריים
+            if (Time.time >= nextPlanTime && (currentPlan == null || currentPlan.Count == 0))
+            {
+                BuildPlan();
+                nextPlanTime = Time.time + replanCooldown;
+            }
+
+            if (currentPlan != null && currentPlan.Count > 0)
+                currentAction = currentPlan.Dequeue();
+        }
+
+        if (currentAction != null)
+        {
             currentAction.Perform(this);
+
+            if (!currentAction.IsRunning)
+                currentAction = null;
         }
     }
+
 
     private void BuildPlan()
     {
@@ -56,11 +74,23 @@ public class GoapAgent : MonoBehaviour
         Queue<GoapAction> bestPlan = null;
 
         var providers = GetComponents<AgentGoalProvider>();
+        if (providers == null || providers.Length == 0)
+        {
+            if (debug) Debug.LogWarning($"[PLAN] {name} no GoalProviders found.");
+            return;
+        }
 
         foreach (var provider in providers)
         {
             var goal = provider.GetGoal();
+            if (goal == null) continue;
+
             var plan = planner.Plan(this, actions, beliefs, goal);
+
+            if (debug)
+            {
+                Debug.Log($"[GOAL_TRY] {name} try goal={goal.Key}={goal.DesiredValue} p={goal.Priority} -> plan={(plan == null ? "NULL" : plan.Count.ToString())}");
+            }
 
             if (plan != null)
             {
@@ -74,6 +104,13 @@ public class GoapAgent : MonoBehaviour
 
         if (bestPlan != null)
             currentPlan = bestPlan;
+
+        if (debug)
+        {
+            string goalStr = currentGoal != null ? $"{currentGoal.Key}={currentGoal.DesiredValue} (p={currentGoal.Priority})" : "NULL";
+            int planCount = (currentPlan == null) ? -1 : currentPlan.Count;
+            Debug.Log($"[PLAN_PICK] {name} goal={goalStr} planCount={planCount} beliefsTrue={beliefs.DumpTrueStates()}");
+        }
     }
 
     public void MoveTowards(Vector2 target)

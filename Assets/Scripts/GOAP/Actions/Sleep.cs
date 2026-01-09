@@ -1,42 +1,37 @@
-using GOAP.Actions;
 using UnityEngine;
 
 public class Sleep : GoapAction
 {
-    public float SleepTime = 2f;
+    public float sleepSeconds = 2f;
+    public float staminaGainPerSecond = 20f;
 
-    private readonly GoapTimer timer = new GoapTimer();
-    private bool started;
+    private float t;
 
     private void Awake()
     {
-        Preconditions.Add("isTired", true);
-        Effects.Add("rested", true);
-        Cost = 4f;
+        // כשעייפים (LowStamina true) רוצים להגיע ל-LowStamina false
+        Preconditions["LowStamina"] = true;
+        Effects["LowStamina"] = false;
     }
 
     public override void Perform(GoapAgent agent)
     {
-        if (!started)
-        {
-            timer.Start(SleepTime);
-            IsRunning = true;
-            started = true;
-        }
+        IsRunning = true;
 
-        if (timer.Done)
+        t += Time.deltaTime;
+        agent.Stamina += staminaGainPerSecond * Time.deltaTime;
+
+        if (t >= sleepSeconds)
         {
-            agent.beliefs.Set("isTired", false);
+            // אנחנו "מסיימים" את הפעולה. ה-Sensor יעדכן LowStamina לפי סטמינה.
             IsRunning = false;
-            started = false;
-            timer.Reset();
+            t = 0f;
         }
     }
 
     public override void DoReset()
     {
         base.DoReset();
-        started = false;
-        timer.Reset();
+        t = 0f;
     }
 }

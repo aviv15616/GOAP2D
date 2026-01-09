@@ -1,89 +1,80 @@
-// Assets/Scripts/GOAP/Actions/UseStation.cs
-// FIX: RequestUse if בלי גוף + מבטל switch-expression (כדי להיות תואם Unity/C# ישנים) + null safety
 using UnityEngine;
 
 public class UseStation : GoapAction
 {
+    [Header("Station")]
+    [Tooltip("Must be exactly: Water / Food / Fire")]
     public string stationType;
 
+    public float useRange = 0.6f;
+    public float useSeconds = 1.5f;
+
     private GameObject targetStation;
-    private float useTime = 2f;
-    private float timer;
+    private float t;
 
     private void Awake()
     {
-        Effects.Add("UsedStation", true);
+        if (!string.IsNullOrEmpty(stationType))
+        {
+            Preconditions[$"HasStation_{stationType}"] = true;
+            Preconditions[$"Near{stationType}"] = true;
+            Effects[$"Used_{stationType}"] = true;
+        }
     }
 
     public override bool CheckProceduralPrecondition(GoapAgent agent)
     {
-        if (!StationManager.Instance.HasStation(stationType))
-            return false;
+        if (agent == null) return false;
+        if (string.IsNullOrEmpty(stationType)) return false;
+        if (StationManager.Instance == null) return false;
 
-        targetStation = FindClosestStation();
-        return targetStation != null;
-    }
+        var nearest = StationManager.Instance.GetNearestStation(stationType, agent.transform.position);
+        if (nearest == null) return false;
 
-    private GameObject FindClosestStation()
-    {
-        var stations = StationManager.Instance.GetActiveStations(stationType);
-        if (stations == null || stations.Count == 0)
-            return null;
-
-        float best = float.MaxValue;
-        GameObject bestStation = null;
-
-        foreach (var s in stations)
-        {
-            if (s == null) continue;
-
-            float d = Vector2.Distance(s.transform.position, transform.position);
-            if (d < best)
-            {
-                best = d;
-                bestStation = s;
-            }
-        }
-
-        return bestStation;
+        targetStation = nearest.gameObject;
+        return true;
     }
 
     public override void Perform(GoapAgent agent)
     {
-        if (targetStation == null)
+        if (agent == null || targetStation == null || StationManager.Instance == null)
         {
             IsRunning = false;
             return;
         }
 
-        // אם תפוס/לא ניתן להשתמש — תצא (לא מתחילים פעולה)
+        float d = Vector2.Distance(agent.transform.position, targetStation.transform.position);
+        if (d > useRange)
+        {
+            IsRunning = true;
+            agent.MoveTowards(targetStation.transform.position);
+            return;
+        }
+
         if (!StationManager.Instance.RequestUse(targetStation))
         {
-            IsRunning = false;
+            IsRunning = false; // busy -> replan
             return;
         }
 
         IsRunning = true;
 
-        // Move to station
-        agent.MoveTowards(targetStation.transform.position);
-
-        if (Vector2.Distance(agent.transform.position, targetStation.transform.position) < 0.3f)
+        t += Time.deltaTime;
+        if (t >= useSeconds)
         {
-            timer += Time.deltaTime;
-            if (timer >= useTime)
-            {
-                StationManager.Instance.ReleaseUse(targetStation);
-                IsRunning = false;
-                timer = 0f;
-            }
+            StationManager.Instance.ReleaseUse(targetStation);
+            IsRunning = false;
+            t = 0f;
         }
     }
 
     public override void DoReset()
     {
         base.DoReset();
-        timer = 0f;
+        if (StationManager.Instance != null && targetStation != null)
+            StationManager.Instance.ReleaseUse(targetStation);
+
         targetStation = null;
+        t = 0f;
     }
 }
