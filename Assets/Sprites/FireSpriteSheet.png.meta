@@ -1,0 +1,1328 @@
+fileFormatVersion: 2
+guid: d4ce048b3bdc8db4cbe7a737d0d454f5
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -3058800371278199185
+    second: A-16-bit-pixel-art-campfire-spritesheet-for-a-side-256px-36_0
+  - first:
+      213: 2396088540447320645
+    second: A-16-bit-pixel-art-campfire-spritesheet-for-a-side-256px-36_1
+  - first:
+      213: 4518326057606236312
+    second: A-16-bit-pixel-art-campfire-spritesheet-for-a-side-256px-36_2
+  - first:
+      213: -1559783262979675315
+    second: A-16-bit-pixel-art-campfire-spritesheet-for-a-side-256px-36_3
+  - first:
+      213: 8053483819626645305
+    second: A-16-bit-pixel-art-campfire-spritesheet-for-a-side-256px-36_4
+  - first:
+      213: 4801221049049581073
+    second: A-16-bit-pixel-art-campfire-spritesheet-for-a-side-256px-36_5
+  - first:
+      213: 1887358775491763842
+    second: A-16-bit-pixel-art-campfire-spritesheet-for-a-side-256px-36_6
+  - first:
+      213: 3633848610844493327
+    second: A-16-bit-pixel-art-campfire-spritesheet-for-a-side-256px-36_7
+  - first:
+      213: 6396950519842978176
+    second: A-16-bit-pixel-art-campfire-spritesheet-for-a-side-256px-36_8
+  - first:
+      213: -1536458055169350918
+    second: A-16-bit-pixel-art-campfire-spritesheet-for-a-side-256px-36_9
+  - first:
+      213: -807454537040918450
+    second: A-16-bit-pixel-art-campfire-spritesheet-for-a-side-256px-36_10
+  - first:
+      213: -6557427414602926830
+    second: A-16-bit-pixel-art-campfire-spritesheet-for-a-side-256px-36_11
+  - first:
+      213: -3223695077577705018
+    second: A-16-bit-pixel-art-campfire-spritesheet-for-a-side-256px-36_12
+  - first:
+      213: -1257175415274827442
+    second: A-16-bit-pixel-art-campfire-spritesheet-for-a-side-256px-36_13
+  - first:
+      213: -5171886543185781597
+    second: A-16-bit-pixel-art-campfire-spritesheet-for-a-side-256px-36_14
+  - first:
+      213: -678692842067352846
+    second: A-16-bit-pixel-art-campfire-spritesheet-for-a-side-256px-36_15
+  - first:
+      213: 2358996316138367339
+    second: A-16-bit-pixel-art-campfire-spritesheet-for-a-side-256px-36_16
+  - first:
+      213: -1137288618794870268
+    second: A-16-bit-pixel-art-campfire-spritesheet-for-a-side-256px-36_17
+  - first:
+      213: 4620334582070939446
+    second: A-16-bit-pixel-art-campfire-spritesheet-for-a-side-256px-36_18
+  - first:
+      213: -3005357826162274144
+    second: A-16-bit-pixel-art-campfire-spritesheet-for-a-side-256px-36_19
+  - first:
+      213: 5400897215524900829
+    second: A-16-bit-pixel-art-campfire-spritesheet-for-a-side-256px-36_20
+  - first:
+      213: -2494579377342551159
+    second: A-16-bit-pixel-art-campfire-spritesheet-for-a-side-256px-36_21
+  - first:
+      213: -672585150820256420
+    second: A-16-bit-pixel-art-campfire-spritesheet-for-a-side-256px-36_22
+  - first:
+      213: -760055852657247662
+    second: A-16-bit-pixel-art-campfire-spritesheet-for-a-side-256px-36_23
+  - first:
+      213: -5596949519858239299
+    second: A-16-bit-pixel-art-campfire-spritesheet-for-a-side-256px-36_24
+  - first:
+      213: 7290947472925988348
+    second: A-16-bit-pixel-art-campfire-spritesheet-for-a-side-256px-36_25
+  - first:
+      213: 253888959913756557
+    second: A-16-bit-pixel-art-campfire-spritesheet-for-a-side-256px-36_26
+  - first:
+      213: -5301299388861175859
+    second: A-16-bit-pixel-art-campfire-spritesheet-for-a-side-256px-36_27
+  - first:
+      213: 5473164103655949972
+    second: A-16-bit-pixel-art-campfire-spritesheet-for-a-side-256px-36_28
+  - first:
+      213: -7573697003358265194
+    second: A-16-bit-pixel-art-campfire-spritesheet-for-a-side-256px-36_29
+  - first:
+      213: 3367980104372415065
+    second: A-16-bit-pixel-art-campfire-spritesheet-for-a-side-256px-36_30
+  - first:
+      213: 4788158375098447577
+    second: A-16-bit-pixel-art-campfire-spritesheet-for-a-side-256px-36_31
+  - first:
+      213: 4107744714299453474
+    second: A-16-bit-pixel-art-campfire-spritesheet-for-a-side-256px-36_32
+  - first:
+      213: -5247936101334728901
+    second: A-16-bit-pixel-art-campfire-spritesheet-for-a-side-256px-36_33
+  - first:
+      213: -7820429662299180451
+    second: A-16-bit-pixel-art-campfire-spritesheet-for-a-side-256px-36_34
+  - first:
+      213: 2661924969498565336
+    second: A-16-bit-pixel-art-campfire-spritesheet-for-a-side-256px-36_35
+  - first:
+      213: -7798091937046801626
+    second: A-16-bit-pixel-art-campfire-spritesheet-for-a-side-256px-36_36
+  - first:
+      213: -8091248288296819128
+    second: A-16-bit-pixel-art-campfire-spritesheet-for-a-side-256px-36_37
+  - first:
+      213: 2458097844935850445
+    second: A-16-bit-pixel-art-campfire-spritesheet-for-a-side-256px-36_38
+  - first:
+      213: 1650514291641023444
+    second: A-16-bit-pixel-art-campfire-spritesheet-for-a-side-256px-36_39
+  - first:
+      213: 2342632807616916950
+    second: A-16-bit-pixel-art-campfire-spritesheet-for-a-side-256px-36_40
+  - first:
+      213: 8805826704999007758
+    second: A-16-bit-pixel-art-campfire-spritesheet-for-a-side-256px-36_41
+  - first:
+      213: -8027401007019939508
+    second: A-16-bit-pixel-art-campfire-spritesheet-for-a-side-256px-36_42
+  - first:
+      213: -2519826872266309018
+    second: A-16-bit-pixel-art-campfire-spritesheet-for-a-side-256px-36_43
+  - first:
+      213: -2693093177121402863
+    second: A-16-bit-pixel-art-campfire-spritesheet-for-a-side-256px-36_44
+  - first:
+      213: -7513086852444767592
+    second: A-16-bit-pixel-art-campfire-spritesheet-for-a-side-256px-36_45
+  - first:
+      213: 4148525087948577108
+    second: A-16-bit-pixel-art-campfire-spritesheet-for-a-side-256px-36_46
+  - first:
+      213: -7628353726501083953
+    second: A-16-bit-pixel-art-campfire-spritesheet-for-a-side-256px-36_47
+  - first:
+      213: -1544039743340149666
+    second: A-16-bit-pixel-art-campfire-spritesheet-for-a-side-256px-36_48
+  - first:
+      213: 8859868541493123620
+    second: A-16-bit-pixel-art-campfire-spritesheet-for-a-side-256px-36_49
+  - first:
+      213: -2252164670596049203
+    second: A-16-bit-pixel-art-campfire-spritesheet-for-a-side-256px-36_50
+  - first:
+      213: 3087353204146042882
+    second: A-16-bit-pixel-art-campfire-spritesheet-for-a-side-256px-36_51
+  - first:
+      213: 3252606210813979634
+    second: A-16-bit-pixel-art-campfire-spritesheet-for-a-side-256px-36_52
+  - first:
+      213: 344107905574048459
+    second: A-16-bit-pixel-art-campfire-spritesheet-for-a-side-256px-36_53
+  - first:
+      213: -719095101778001972
+    second: A-16-bit-pixel-art-campfire-spritesheet-for-a-side-256px-36_54
+  - first:
+      213: -4665912548643405945
+    second: A-16-bit-pixel-art-campfire-spritesheet-for-a-side-256px-36_55
+  - first:
+      213: 8166717952800314946
+    second: A-16-bit-pixel-art-campfire-spritesheet-for-a-side-256px-36_56
+  - first:
+      213: 8954309828758500809
+    second: A-16-bit-pixel-art-campfire-spritesheet-for-a-side-256px-36_57
+  - first:
+      213: -2471266408384129764
+    second: A-16-bit-pixel-art-campfire-spritesheet-for-a-side-256px-36_58
+  - first:
+      213: 4023570967854219817
+    second: A-16-bit-pixel-art-campfire-spritesheet-for-a-side-256px-36_59
+  - first:
+      213: -1346258453381315404
+    second: A-16-bit-pixel-art-campfire-spritesheet-for-a-side-256px-36_60
+  - first:
+      213: -4390065192039284584
+    second: A-16-bit-pixel-art-campfire-spritesheet-for-a-side-256px-36_61
+  - first:
+      213: 2502776397252922344
+    second: A-16-bit-pixel-art-campfire-spritesheet-for-a-side-256px-36_62
+  - first:
+      213: -5988840542865402052
+    second: A-16-bit-pixel-art-campfire-spritesheet-for-a-side-256px-36_63
+  - first:
+      213: -3484010510880452943
+    second: A-16-bit-pixel-art-campfire-spritesheet-for-a-side-256px-36_64
+  - first:
+      213: -7879721931221477554
+    second: A-16-bit-pixel-art-campfire-spritesheet-for-a-side-256px-36_65
+  - first:
+      213: -8779511400727413205
+    second: A-16-bit-pixel-art-campfire-spritesheet-for-a-side-256px-36_66
+  - first:
+      213: 9009190848082852389
+    second: A-16-bit-pixel-art-campfire-spritesheet-for-a-side-256px-36_67
+  - first:
+      213: -9189916342004486868
+    second: A-16-bit-pixel-art-campfire-spritesheet-for-a-side-256px-36_68
+  - first:
+      213: -3456284016109926431
+    second: A-16-bit-pixel-art-campfire-spritesheet-for-a-side-256px-36_69
+  - first:
+      213: 3893631057933012878
+    second: A-16-bit-pixel-art-campfire-spritesheet-for-a-side-256px-36_70
+  - first:
+      213: 2787447317139361360
+    second: A-16-bit-pixel-art-campfire-spritesheet-for-a-side-256px-36_71
+  - first:
+      213: -3606430068345390240
+    second: A-16-bit-pixel-art-campfire-spritesheet-for-a-side-256px-36_72
+  - first:
+      213: 746044428799335276
+    second: A-16-bit-pixel-art-campfire-spritesheet-for-a-side-256px-36_73
+  - first:
+      213: 8297268690155923249
+    second: A-16-bit-pixel-art-campfire-spritesheet-for-a-side-256px-36_74
+  - first:
+      213: -1838114275052721443
+    second: A-16-bit-pixel-art-campfire-spritesheet-for-a-side-256px-36_75
+  - first:
+      213: 4749139079465888246
+    second: A-16-bit-pixel-art-campfire-spritesheet-for-a-side-256px-36_76
+  - first:
+      213: -2041194287116640409
+    second: A-16-bit-pixel-art-campfire-spritesheet-for-a-side-256px-36_77
+  - first:
+      213: -1991321591056372798
+    second: A-16-bit-pixel-art-campfire-spritesheet-for-a-side-256px-36_78
+  - first:
+      213: 133258235842053518
+    second: A-16-bit-pixel-art-campfire-spritesheet-for-a-side-256px-36_79
+  - first:
+      213: 1690966445124189714
+    second: A-16-bit-pixel-art-campfire-spritesheet-for-a-side-256px-36_80
+  - first:
+      213: -4115809600196115617
+    second: A-16-bit-pixel-art-campfire-spritesheet-for-a-side-256px-36_81
+  - first:
+      213: 7440509807707243836
+    second: A-16-bit-pixel-art-campfire-spritesheet-for-a-side-256px-36_82
+  - first:
+      213: 4610392914990176207
+    second: A-16-bit-pixel-art-campfire-spritesheet-for-a-side-256px-36_83
+  - first:
+      213: -418751696850695044
+    second: A-16-bit-pixel-art-campfire-spritesheet-for-a-side-256px-36_84
+  - first:
+      213: -5393045365263035677
+    second: A-16-bit-pixel-art-campfire-spritesheet-for-a-side-256px-36_85
+  - first:
+      213: -8139102641874485028
+    second: A-16-bit-pixel-art-campfire-spritesheet-for-a-side-256px-36_86
+  - first:
+      213: -8364656019339683956
+    second: A-16-bit-pixel-art-campfire-spritesheet-for-a-side-256px-36_87
+  - first:
+      213: 2553240496099145334
+    second: A-16-bit-pixel-art-campfire-spritesheet-for-a-side-256px-36_88
+  - first:
+      213: -614389969020843731
+    second: A-16-bit-pixel-art-campfire-spritesheet-for-a-side-256px-36_89
+  - first:
+      213: 4535271200046373864
+    second: A-16-bit-pixel-art-campfire-spritesheet-for-a-side-256px-36_90
+  - first:
+      213: -3396710807018143821
+    second: A-16-bit-pixel-art-campfire-spritesheet-for-a-side-256px-36_91
+  - first:
+      213: 5070887156438709553
+    second: A-16-bit-pixel-art-campfire-spritesheet-for-a-side-256px-36_92
+  - first:
+      213: -7680354585120537274
+    second: A-16-bit-pixel-art-campfire-spritesheet-for-a-side-256px-36_93
+  - first:
+      213: -3553262939810318577
+    second: A-16-bit-pixel-art-campfire-spritesheet-for-a-side-256px-36_94
+  - first:
+      213: 6175678891338733950
+    second: A-16-bit-pixel-art-campfire-spritesheet-for-a-side-256px-36_95
+  - first:
+      213: -1967207501690181417
+    second: A-16-bit-pixel-art-campfire-spritesheet-for-a-side-256px-36_96
+  - first:
+      213: -8389512379288221783
+    second: A-16-bit-pixel-art-campfire-spritesheet-for-a-side-256px-36_97
+  - first:
+      213: 8266800256002318934
+    second: A-16-bit-pixel-art-campfire-spritesheet-for-a-side-256px-36_98
+  - first:
+      213: -1590389391925663064
+    second: A-16-bit-pixel-art-campfire-spritesheet-for-a-side-256px-36_99
+  - first:
+      213: 4999957048451784829
+    second: A-16-bit-pixel-art-campfire-spritesheet-for-a-side-256px-36_100
+  - first:
+      213: 3762682089666599840
+    second: A-16-bit-pixel-art-campfire-spritesheet-for-a-side-256px-36_101
+  - first:
+      213: -6763040530398091743
+    second: A-16-bit-pixel-art-campfire-spritesheet-for-a-side-256px-36_102
+  - first:
+      213: 8004087741484105732
+    second: A-16-bit-pixel-art-campfire-spritesheet-for-a-side-256px-36_103
+  - first:
+      213: 4693526411246136466
+    second: A-16-bit-pixel-art-campfire-spritesheet-for-a-side-256px-36_104
+  - first:
+      213: -1041778027017058317
+    second: A-16-bit-pixel-art-campfire-spritesheet-for-a-side-256px-36_105
+  - first:
+      213: 7842319833686981349
+    second: A-16-bit-pixel-art-campfire-spritesheet-for-a-side-256px-36_106
+  - first:
+      213: -6962214500323839138
+    second: A-16-bit-pixel-art-campfire-spritesheet-for-a-side-256px-36_107
+  - first:
+      213: -7428945107670911982
+    second: A-16-bit-pixel-art-campfire-spritesheet-for-a-side-256px-36_108
+  - first:
+      213: -6676398271420583572
+    second: A-16-bit-pixel-art-campfire-spritesheet-for-a-side-256px-36_109
+  - first:
+      213: 3200713319272374798
+    second: A-16-bit-pixel-art-campfire-spritesheet-for-a-side-256px-36_110
+  - first:
+      213: -6821828049177937143
+    second: A-16-bit-pixel-art-campfire-spritesheet-for-a-side-256px-36_111
+  - first:
+      213: 4668949809622065713
+    second: A-16-bit-pixel-art-campfire-spritesheet-for-a-side-256px-36_112
+  - first:
+      213: 6990512294642932313
+    second: A-16-bit-pixel-art-campfire-spritesheet-for-a-side-256px-36_113
+  - first:
+      213: -6867695636259344767
+    second: A-16-bit-pixel-art-campfire-spritesheet-for-a-side-256px-36_114
+  - first:
+      213: -6099716559741397657
+    second: A-16-bit-pixel-art-campfire-spritesheet-for-a-side-256px-36_115
+  - first:
+      213: 5492854600992028943
+    second: A-16-bit-pixel-art-campfire-spritesheet-for-a-side-256px-36_116
+  - first:
+      213: 3666531791002963347
+    second: A-16-bit-pixel-art-campfire-spritesheet-for-a-side-256px-36_117
+  - first:
+      213: 6315065882572965224
+    second: A-16-bit-pixel-art-campfire-spritesheet-for-a-side-256px-36_118
+  - first:
+      213: -6360105016546326618
+    second: A-16-bit-pixel-art-campfire-spritesheet-for-a-side-256px-36_119
+  - first:
+      213: -5836790216852820072
+    second: A-16-bit-pixel-art-campfire-spritesheet-for-a-side-256px-36_120
+  - first:
+      213: 3796204882925792408
+    second: A-16-bit-pixel-art-campfire-spritesheet-for-a-side-256px-36_121
+  - first:
+      213: 4251099747166514201
+    second: A-16-bit-pixel-art-campfire-spritesheet-for-a-side-256px-36_122
+  - first:
+      213: -5902445813346655317
+    second: A-16-bit-pixel-art-campfire-spritesheet-for-a-side-256px-36_123
+  - first:
+      213: -4081663467611212079
+    second: A-16-bit-pixel-art-campfire-spritesheet-for-a-side-256px-36_124
+  - first:
+      213: -257589711643794222
+    second: A-16-bit-pixel-art-campfire-spritesheet-for-a-side-256px-36_125
+  - first:
+      213: 1987691341413468159
+    second: A-16-bit-pixel-art-campfire-spritesheet-for-a-side-256px-36_126
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: A-16-bit-pixel-art-campfire-spritesheet-for-a-side-256px-36_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1795
+        width: 264
+        height: 359
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f66412fb445fc85d0800000000000000
+      internalID: -3058800371278199185
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-16-bit-pixel-art-campfire-spritesheet-for-a-side-256px-36_1
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 1795
+        width: 264
+        height: 359
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 54a2fbf15dd904120800000000000000
+      internalID: 2396088540447320645
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-16-bit-pixel-art-campfire-spritesheet-for-a-side-256px-36_2
+      rect:
+        serializedVersion: 2
+        x: 528
+        y: 1795
+        width: 264
+        height: 359
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 898c20b3c9154be30800000000000000
+      internalID: 4518326057606236312
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-16-bit-pixel-art-campfire-spritesheet-for-a-side-256px-36_3
+      rect:
+        serializedVersion: 2
+        x: 792
+        y: 1795
+        width: 264
+        height: 359
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d4b2f7be2698a5ae0800000000000000
+      internalID: -1559783262979675315
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-16-bit-pixel-art-campfire-spritesheet-for-a-side-256px-36_4
+      rect:
+        serializedVersion: 2
+        x: 1056
+        y: 1795
+        width: 264
+        height: 359
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 937c3316dd8b3cf60800000000000000
+      internalID: 8053483819626645305
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-16-bit-pixel-art-campfire-spritesheet-for-a-side-256px-36_5
+      rect:
+        serializedVersion: 2
+        x: 1320
+        y: 1795
+        width: 264
+        height: 359
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1168abc2b1d51a240800000000000000
+      internalID: 4801221049049581073
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-16-bit-pixel-art-campfire-spritesheet-for-a-side-256px-36_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1436
+        width: 264
+        height: 359
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 28e17e08ece313a10800000000000000
+      internalID: 1887358775491763842
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-16-bit-pixel-art-campfire-spritesheet-for-a-side-256px-36_7
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 1436
+        width: 264
+        height: 359
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f06cee00f060e6230800000000000000
+      internalID: 3633848610844493327
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-16-bit-pixel-art-campfire-spritesheet-for-a-side-256px-36_8
+      rect:
+        serializedVersion: 2
+        x: 528
+        y: 1436
+        width: 264
+        height: 359
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 089bdf4fa9886c850800000000000000
+      internalID: 6396950519842978176
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-16-bit-pixel-art-campfire-spritesheet-for-a-side-256px-36_9
+      rect:
+        serializedVersion: 2
+        x: 792
+        y: 1436
+        width: 264
+        height: 359
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: af2e7511a876daae0800000000000000
+      internalID: -1536458055169350918
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-16-bit-pixel-art-campfire-spritesheet-for-a-side-256px-36_10
+      rect:
+        serializedVersion: 2
+        x: 1056
+        y: 1436
+        width: 264
+        height: 359
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e48066b60685bc4f0800000000000000
+      internalID: -807454537040918450
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-16-bit-pixel-art-campfire-spritesheet-for-a-side-256px-36_11
+      rect:
+        serializedVersion: 2
+        x: 1320
+        y: 1436
+        width: 264
+        height: 359
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2153f2852865ff4a0800000000000000
+      internalID: -6557427414602926830
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-16-bit-pixel-art-campfire-spritesheet-for-a-side-256px-36_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1077
+        width: 264
+        height: 359
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6c93ec428622343d0800000000000000
+      internalID: -3223695077577705018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-16-bit-pixel-art-campfire-spritesheet-for-a-side-256px-36_13
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 1077
+        width: 264
+        height: 359
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e419030ee9d9d8ee0800000000000000
+      internalID: -1257175415274827442
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-16-bit-pixel-art-campfire-spritesheet-for-a-side-256px-36_14
+      rect:
+        serializedVersion: 2
+        x: 528
+        y: 1077
+        width: 264
+        height: 359
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3acd9ce3794c938b0800000000000000
+      internalID: -5171886543185781597
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-16-bit-pixel-art-campfire-spritesheet-for-a-side-256px-36_15
+      rect:
+        serializedVersion: 2
+        x: 792
+        y: 1077
+        width: 264
+        height: 359
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2f2a9fcb47cc496f0800000000000000
+      internalID: -678692842067352846
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-16-bit-pixel-art-campfire-spritesheet-for-a-side-256px-36_16
+      rect:
+        serializedVersion: 2
+        x: 1056
+        y: 1077
+        width: 264
+        height: 359
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b69e1e9a6a6dcb020800000000000000
+      internalID: 2358996316138367339
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-16-bit-pixel-art-campfire-spritesheet-for-a-side-256px-36_17
+      rect:
+        serializedVersion: 2
+        x: 1320
+        y: 1077
+        width: 264
+        height: 359
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 40a13add60a8730f0800000000000000
+      internalID: -1137288618794870268
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-16-bit-pixel-art-campfire-spritesheet-for-a-side-256px-36_18
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 718
+        width: 264
+        height: 359
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 63f8ac3a2d9be1040800000000000000
+      internalID: 4620334582070939446
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-16-bit-pixel-art-campfire-spritesheet-for-a-side-256px-36_19
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 718
+        width: 264
+        height: 359
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0a058aceaf2da46d0800000000000000
+      internalID: -3005357826162274144
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-16-bit-pixel-art-campfire-spritesheet-for-a-side-256px-36_20
+      rect:
+        serializedVersion: 2
+        x: 528
+        y: 718
+        width: 264
+        height: 359
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ddf02cff667d3fa40800000000000000
+      internalID: 5400897215524900829
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-16-bit-pixel-art-campfire-spritesheet-for-a-side-256px-36_21
+      rect:
+        serializedVersion: 2
+        x: 792
+        y: 718
+        width: 264
+        height: 359
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 98b6b7de549716dd0800000000000000
+      internalID: -2494579377342551159
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-16-bit-pixel-art-campfire-spritesheet-for-a-side-256px-36_22
+      rect:
+        serializedVersion: 2
+        x: 1056
+        y: 718
+        width: 264
+        height: 359
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c55f72c6e5f7aa6f0800000000000000
+      internalID: -672585150820256420
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-16-bit-pixel-art-campfire-spritesheet-for-a-side-256px-36_23
+      rect:
+        serializedVersion: 2
+        x: 1320
+        y: 718
+        width: 264
+        height: 359
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 25a78ec9a3db375f0800000000000000
+      internalID: -760055852657247662
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-16-bit-pixel-art-campfire-spritesheet-for-a-side-256px-36_24
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 359
+        width: 264
+        height: 359
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: db87e0bc014a352b0800000000000000
+      internalID: -5596949519858239299
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-16-bit-pixel-art-campfire-spritesheet-for-a-side-256px-36_25
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 359
+        width: 264
+        height: 359
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cf519c7f816ae2560800000000000000
+      internalID: 7290947472925988348
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-16-bit-pixel-art-campfire-spritesheet-for-a-side-256px-36_26
+      rect:
+        serializedVersion: 2
+        x: 528
+        y: 359
+        width: 264
+        height: 359
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d878d04f9aef58300800000000000000
+      internalID: 253888959913756557
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-16-bit-pixel-art-campfire-spritesheet-for-a-side-256px-36_27
+      rect:
+        serializedVersion: 2
+        x: 792
+        y: 359
+        width: 264
+        height: 359
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dc72fe61b400e66b0800000000000000
+      internalID: -5301299388861175859
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-16-bit-pixel-art-campfire-spritesheet-for-a-side-256px-36_28
+      rect:
+        serializedVersion: 2
+        x: 1056
+        y: 359
+        width: 264
+        height: 359
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 49605d311c594fb40800000000000000
+      internalID: 5473164103655949972
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-16-bit-pixel-art-campfire-spritesheet-for-a-side-256px-36_29
+      rect:
+        serializedVersion: 2
+        x: 1320
+        y: 359
+        width: 264
+        height: 359
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 690e36ed3b2d4e690800000000000000
+      internalID: -7573697003358265194
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-16-bit-pixel-art-campfire-spritesheet-for-a-side-256px-36_30
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 264
+        height: 359
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 95a63b38f087dbe20800000000000000
+      internalID: 3367980104372415065
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-16-bit-pixel-art-campfire-spritesheet-for-a-side-256px-36_31
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 0
+        width: 264
+        height: 359
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9d6fd046ca4f27240800000000000000
+      internalID: 4788158375098447577
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-16-bit-pixel-art-campfire-spritesheet-for-a-side-256px-36_32
+      rect:
+        serializedVersion: 2
+        x: 528
+        y: 0
+        width: 264
+        height: 359
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 220becbcd04a10930800000000000000
+      internalID: 4107744714299453474
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-16-bit-pixel-art-campfire-spritesheet-for-a-side-256px-36_33
+      rect:
+        serializedVersion: 2
+        x: 792
+        y: 0
+        width: 264
+        height: 359
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b3fbefbabe59b27b0800000000000000
+      internalID: -5247936101334728901
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-16-bit-pixel-art-campfire-spritesheet-for-a-side-256px-36_34
+      rect:
+        serializedVersion: 2
+        x: 1056
+        y: 0
+        width: 264
+        height: 359
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d52bab318a0487390800000000000000
+      internalID: -7820429662299180451
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-16-bit-pixel-art-campfire-spritesheet-for-a-side-256px-36_35
+      rect:
+        serializedVersion: 2
+        x: 1320
+        y: 0
+        width: 264
+        height: 359
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8da54b108ae01f420800000000000000
+      internalID: 2661924969498565336
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: dbe76d001e72f2b43b9dc13369f0dd99
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":264.0,"y":359.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      A-16-bit-pixel-art-campfire-spritesheet-for-a-side-256px-36_0: -3058800371278199185
+      A-16-bit-pixel-art-campfire-spritesheet-for-a-side-256px-36_1: 2396088540447320645
+      A-16-bit-pixel-art-campfire-spritesheet-for-a-side-256px-36_10: -807454537040918450
+      A-16-bit-pixel-art-campfire-spritesheet-for-a-side-256px-36_11: -6557427414602926830
+      A-16-bit-pixel-art-campfire-spritesheet-for-a-side-256px-36_12: -3223695077577705018
+      A-16-bit-pixel-art-campfire-spritesheet-for-a-side-256px-36_13: -1257175415274827442
+      A-16-bit-pixel-art-campfire-spritesheet-for-a-side-256px-36_14: -5171886543185781597
+      A-16-bit-pixel-art-campfire-spritesheet-for-a-side-256px-36_15: -678692842067352846
+      A-16-bit-pixel-art-campfire-spritesheet-for-a-side-256px-36_16: 2358996316138367339
+      A-16-bit-pixel-art-campfire-spritesheet-for-a-side-256px-36_17: -1137288618794870268
+      A-16-bit-pixel-art-campfire-spritesheet-for-a-side-256px-36_18: 4620334582070939446
+      A-16-bit-pixel-art-campfire-spritesheet-for-a-side-256px-36_19: -3005357826162274144
+      A-16-bit-pixel-art-campfire-spritesheet-for-a-side-256px-36_2: 4518326057606236312
+      A-16-bit-pixel-art-campfire-spritesheet-for-a-side-256px-36_20: 5400897215524900829
+      A-16-bit-pixel-art-campfire-spritesheet-for-a-side-256px-36_21: -2494579377342551159
+      A-16-bit-pixel-art-campfire-spritesheet-for-a-side-256px-36_22: -672585150820256420
+      A-16-bit-pixel-art-campfire-spritesheet-for-a-side-256px-36_23: -760055852657247662
+      A-16-bit-pixel-art-campfire-spritesheet-for-a-side-256px-36_24: -5596949519858239299
+      A-16-bit-pixel-art-campfire-spritesheet-for-a-side-256px-36_25: 7290947472925988348
+      A-16-bit-pixel-art-campfire-spritesheet-for-a-side-256px-36_26: 253888959913756557
+      A-16-bit-pixel-art-campfire-spritesheet-for-a-side-256px-36_27: -5301299388861175859
+      A-16-bit-pixel-art-campfire-spritesheet-for-a-side-256px-36_28: 5473164103655949972
+      A-16-bit-pixel-art-campfire-spritesheet-for-a-side-256px-36_29: -7573697003358265194
+      A-16-bit-pixel-art-campfire-spritesheet-for-a-side-256px-36_3: -1559783262979675315
+      A-16-bit-pixel-art-campfire-spritesheet-for-a-side-256px-36_30: 3367980104372415065
+      A-16-bit-pixel-art-campfire-spritesheet-for-a-side-256px-36_31: 4788158375098447577
+      A-16-bit-pixel-art-campfire-spritesheet-for-a-side-256px-36_32: 4107744714299453474
+      A-16-bit-pixel-art-campfire-spritesheet-for-a-side-256px-36_33: -5247936101334728901
+      A-16-bit-pixel-art-campfire-spritesheet-for-a-side-256px-36_34: -7820429662299180451
+      A-16-bit-pixel-art-campfire-spritesheet-for-a-side-256px-36_35: 2661924969498565336
+      A-16-bit-pixel-art-campfire-spritesheet-for-a-side-256px-36_4: 8053483819626645305
+      A-16-bit-pixel-art-campfire-spritesheet-for-a-side-256px-36_5: 4801221049049581073
+      A-16-bit-pixel-art-campfire-spritesheet-for-a-side-256px-36_6: 1887358775491763842
+      A-16-bit-pixel-art-campfire-spritesheet-for-a-side-256px-36_7: 3633848610844493327
+      A-16-bit-pixel-art-campfire-spritesheet-for-a-side-256px-36_8: 6396950519842978176
+      A-16-bit-pixel-art-campfire-spritesheet-for-a-side-256px-36_9: -1536458055169350918
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

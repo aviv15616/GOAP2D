@@ -1,0 +1,533 @@
+fileFormatVersion: 2
+guid: 081c92833564c59418d8069bb28faeb8
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 7590882863199611293
+    second: A-16-bit-pixel-art-sprite-of-a-rugged-survivor-in--256px-16 (1)_0
+  - first:
+      213: -6006367603370552798
+    second: A-16-bit-pixel-art-sprite-of-a-rugged-survivor-in--256px-16 (1)_1
+  - first:
+      213: 751422555620759977
+    second: A-16-bit-pixel-art-sprite-of-a-rugged-survivor-in--256px-16 (1)_2
+  - first:
+      213: 4955674269630671120
+    second: A-16-bit-pixel-art-sprite-of-a-rugged-survivor-in--256px-16 (1)_3
+  - first:
+      213: 3468707271296676803
+    second: A-16-bit-pixel-art-sprite-of-a-rugged-survivor-in--256px-16 (1)_4
+  - first:
+      213: -5430262841734765881
+    second: A-16-bit-pixel-art-sprite-of-a-rugged-survivor-in--256px-16 (1)_5
+  - first:
+      213: -755112620783305560
+    second: A-16-bit-pixel-art-sprite-of-a-rugged-survivor-in--256px-16 (1)_6
+  - first:
+      213: -539268925654428992
+    second: A-16-bit-pixel-art-sprite-of-a-rugged-survivor-in--256px-16 (1)_7
+  - first:
+      213: -526321225185433023
+    second: A-16-bit-pixel-art-sprite-of-a-rugged-survivor-in--256px-16 (1)_8
+  - first:
+      213: -2997514068379082516
+    second: A-16-bit-pixel-art-sprite-of-a-rugged-survivor-in--256px-16 (1)_9
+  - first:
+      213: 3414321095066564749
+    second: A-16-bit-pixel-art-sprite-of-a-rugged-survivor-in--256px-16 (1)_10
+  - first:
+      213: -854659627829114890
+    second: A-16-bit-pixel-art-sprite-of-a-rugged-survivor-in--256px-16 (1)_11
+  - first:
+      213: 6686836406073727182
+    second: A-16-bit-pixel-art-sprite-of-a-rugged-survivor-in--256px-16 (1)_12
+  - first:
+      213: 25323970546379132
+    second: A-16-bit-pixel-art-sprite-of-a-rugged-survivor-in--256px-16 (1)_13
+  - first:
+      213: -6293061831009546627
+    second: A-16-bit-pixel-art-sprite-of-a-rugged-survivor-in--256px-16 (1)_14
+  - first:
+      213: 5959597429306952719
+    second: A-16-bit-pixel-art-sprite-of-a-rugged-survivor-in--256px-16 (1)_15
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 66
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: A-16-bit-pixel-art-sprite-of-a-rugged-survivor-in--256px-16 (1)_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 786
+        width: 165
+        height: 255
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d99ec90febb385960800000000000000
+      internalID: 7590882863199611293
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-16-bit-pixel-art-sprite-of-a-rugged-survivor-in--256px-16 (1)_1
+      rect:
+        serializedVersion: 2
+        x: 188
+        y: 788
+        width: 145
+        height: 258
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2221fa2ec7815aca0800000000000000
+      internalID: -6006367603370552798
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-16-bit-pixel-art-sprite-of-a-rugged-survivor-in--256px-16 (1)_2
+      rect:
+        serializedVersion: 2
+        x: 387
+        y: 788
+        width: 110
+        height: 258
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9a9ddf745d69d6a00800000000000000
+      internalID: 751422555620759977
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-16-bit-pixel-art-sprite-of-a-rugged-survivor-in--256px-16 (1)_3
+      rect:
+        serializedVersion: 2
+        x: 549
+        y: 788
+        width: 123
+        height: 253
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 01921efed7716c440800000000000000
+      internalID: 4955674269630671120
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-16-bit-pixel-art-sprite-of-a-rugged-survivor-in--256px-16 (1)_4
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 525
+        width: 151
+        height: 258
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3c3f37f92e2532030800000000000000
+      internalID: 3468707271296676803
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-16-bit-pixel-art-sprite-of-a-rugged-survivor-in--256px-16 (1)_5
+      rect:
+        serializedVersion: 2
+        x: 211
+        y: 525
+        width: 108
+        height: 257
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7c2656957b4d3a4b0800000000000000
+      internalID: -5430262841734765881
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-16-bit-pixel-art-sprite-of-a-rugged-survivor-in--256px-16 (1)_6
+      rect:
+        serializedVersion: 2
+        x: 372
+        y: 526
+        width: 124
+        height: 254
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8acfbc8721d4585f0800000000000000
+      internalID: -755112620783305560
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-16-bit-pixel-art-sprite-of-a-rugged-survivor-in--256px-16 (1)_7
+      rect:
+        serializedVersion: 2
+        x: 547
+        y: 525
+        width: 132
+        height: 260
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0c216ffe4c12488f0800000000000000
+      internalID: -539268925654428992
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-16-bit-pixel-art-sprite-of-a-rugged-survivor-in--256px-16 (1)_8
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 263
+        width: 108
+        height: 258
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 14ae21f52a122b8f0800000000000000
+      internalID: -526321225185433023
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-16-bit-pixel-art-sprite-of-a-rugged-survivor-in--256px-16 (1)_9
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 264
+        width: 124
+        height: 255
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ce0670916d0b666d0800000000000000
+      internalID: -2997514068379082516
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-16-bit-pixel-art-sprite-of-a-rugged-survivor-in--256px-16 (1)_10
+      rect:
+        serializedVersion: 2
+        x: 376
+        y: 264
+        width: 126
+        height: 259
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d88b09432fa126f20800000000000000
+      internalID: 3414321095066564749
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-16-bit-pixel-art-sprite-of-a-rugged-survivor-in--256px-16 (1)_11
+      rect:
+        serializedVersion: 2
+        x: 530
+        y: 262
+        width: 161
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6f7c06fb893a324f0800000000000000
+      internalID: -854659627829114890
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-16-bit-pixel-art-sprite-of-a-rugged-survivor-in--256px-16 (1)_12
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 2
+        width: 124
+        height: 254
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ec89c2f684a6ccc50800000000000000
+      internalID: 6686836406073727182
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-16-bit-pixel-art-sprite-of-a-rugged-survivor-in--256px-16 (1)_13
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 1
+        width: 131
+        height: 260
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c7928bc5408f95000800000000000000
+      internalID: 25323970546379132
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-16-bit-pixel-art-sprite-of-a-rugged-survivor-in--256px-16 (1)_14
+      rect:
+        serializedVersion: 2
+        x: 353
+        y: 0
+        width: 163
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d7e4b155b9d8aa8a0800000000000000
+      internalID: -6293061831009546627
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-16-bit-pixel-art-sprite-of-a-rugged-survivor-in--256px-16 (1)_15
+      rect:
+        serializedVersion: 2
+        x: 550
+        y: 3
+        width: 129
+        height: 258
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f0c0c22694eb4b250800000000000000
+      internalID: 5959597429306952719
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      A-16-bit-pixel-art-sprite-of-a-rugged-survivor-in--256px-16 (1)_0: 7590882863199611293
+      A-16-bit-pixel-art-sprite-of-a-rugged-survivor-in--256px-16 (1)_1: -6006367603370552798
+      A-16-bit-pixel-art-sprite-of-a-rugged-survivor-in--256px-16 (1)_10: 3414321095066564749
+      A-16-bit-pixel-art-sprite-of-a-rugged-survivor-in--256px-16 (1)_11: -854659627829114890
+      A-16-bit-pixel-art-sprite-of-a-rugged-survivor-in--256px-16 (1)_12: 6686836406073727182
+      A-16-bit-pixel-art-sprite-of-a-rugged-survivor-in--256px-16 (1)_13: 25323970546379132
+      A-16-bit-pixel-art-sprite-of-a-rugged-survivor-in--256px-16 (1)_14: -6293061831009546627
+      A-16-bit-pixel-art-sprite-of-a-rugged-survivor-in--256px-16 (1)_15: 5959597429306952719
+      A-16-bit-pixel-art-sprite-of-a-rugged-survivor-in--256px-16 (1)_2: 751422555620759977
+      A-16-bit-pixel-art-sprite-of-a-rugged-survivor-in--256px-16 (1)_3: 4955674269630671120
+      A-16-bit-pixel-art-sprite-of-a-rugged-survivor-in--256px-16 (1)_4: 3468707271296676803
+      A-16-bit-pixel-art-sprite-of-a-rugged-survivor-in--256px-16 (1)_5: -5430262841734765881
+      A-16-bit-pixel-art-sprite-of-a-rugged-survivor-in--256px-16 (1)_6: -755112620783305560
+      A-16-bit-pixel-art-sprite-of-a-rugged-survivor-in--256px-16 (1)_7: -539268925654428992
+      A-16-bit-pixel-art-sprite-of-a-rugged-survivor-in--256px-16 (1)_8: -526321225185433023
+      A-16-bit-pixel-art-sprite-of-a-rugged-survivor-in--256px-16 (1)_9: -2997514068379082516
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

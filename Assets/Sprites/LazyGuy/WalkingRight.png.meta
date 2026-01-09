@@ -1,0 +1,1053 @@
+fileFormatVersion: 2
+guid: 5defc2d9893cf9941be5ad61df90205c
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 7521800475021105423
+    second: A-16-bit-pixel-art-game-sprite-of-a-lazy-man-in-a--256px-36 (1)_0
+  - first:
+      213: 1645514341055873079
+    second: A-16-bit-pixel-art-game-sprite-of-a-lazy-man-in-a--256px-36 (1)_1
+  - first:
+      213: 2251983215694181118
+    second: A-16-bit-pixel-art-game-sprite-of-a-lazy-man-in-a--256px-36 (1)_2
+  - first:
+      213: -379311923707649918
+    second: A-16-bit-pixel-art-game-sprite-of-a-lazy-man-in-a--256px-36 (1)_3
+  - first:
+      213: -8067814965285007410
+    second: A-16-bit-pixel-art-game-sprite-of-a-lazy-man-in-a--256px-36 (1)_4
+  - first:
+      213: 6593422278921393185
+    second: A-16-bit-pixel-art-game-sprite-of-a-lazy-man-in-a--256px-36 (1)_5
+  - first:
+      213: -1480549067075735259
+    second: A-16-bit-pixel-art-game-sprite-of-a-lazy-man-in-a--256px-36 (1)_6
+  - first:
+      213: 1591547504667715364
+    second: A-16-bit-pixel-art-game-sprite-of-a-lazy-man-in-a--256px-36 (1)_7
+  - first:
+      213: 2663194385237024696
+    second: A-16-bit-pixel-art-game-sprite-of-a-lazy-man-in-a--256px-36 (1)_8
+  - first:
+      213: -4134900042048510841
+    second: A-16-bit-pixel-art-game-sprite-of-a-lazy-man-in-a--256px-36 (1)_9
+  - first:
+      213: 832716038039557962
+    second: A-16-bit-pixel-art-game-sprite-of-a-lazy-man-in-a--256px-36 (1)_10
+  - first:
+      213: 5438703712647243182
+    second: A-16-bit-pixel-art-game-sprite-of-a-lazy-man-in-a--256px-36 (1)_11
+  - first:
+      213: 8901071138628035690
+    second: A-16-bit-pixel-art-game-sprite-of-a-lazy-man-in-a--256px-36 (1)_12
+  - first:
+      213: 4923158454408347476
+    second: A-16-bit-pixel-art-game-sprite-of-a-lazy-man-in-a--256px-36 (1)_13
+  - first:
+      213: -5853154555639225060
+    second: A-16-bit-pixel-art-game-sprite-of-a-lazy-man-in-a--256px-36 (1)_14
+  - first:
+      213: -4515548635977748158
+    second: A-16-bit-pixel-art-game-sprite-of-a-lazy-man-in-a--256px-36 (1)_15
+  - first:
+      213: -3843918949458907961
+    second: A-16-bit-pixel-art-game-sprite-of-a-lazy-man-in-a--256px-36 (1)_16
+  - first:
+      213: -4567427243498442051
+    second: A-16-bit-pixel-art-game-sprite-of-a-lazy-man-in-a--256px-36 (1)_17
+  - first:
+      213: 430652685337484823
+    second: A-16-bit-pixel-art-game-sprite-of-a-lazy-man-in-a--256px-36 (1)_18
+  - first:
+      213: -7195456225427359013
+    second: A-16-bit-pixel-art-game-sprite-of-a-lazy-man-in-a--256px-36 (1)_19
+  - first:
+      213: -4770248616805139456
+    second: A-16-bit-pixel-art-game-sprite-of-a-lazy-man-in-a--256px-36 (1)_20
+  - first:
+      213: -5929760765907826911
+    second: A-16-bit-pixel-art-game-sprite-of-a-lazy-man-in-a--256px-36 (1)_21
+  - first:
+      213: -9096549769939081349
+    second: A-16-bit-pixel-art-game-sprite-of-a-lazy-man-in-a--256px-36 (1)_22
+  - first:
+      213: -3391367678250905165
+    second: A-16-bit-pixel-art-game-sprite-of-a-lazy-man-in-a--256px-36 (1)_23
+  - first:
+      213: -450163230110259536
+    second: A-16-bit-pixel-art-game-sprite-of-a-lazy-man-in-a--256px-36 (1)_24
+  - first:
+      213: -8139449028874910808
+    second: A-16-bit-pixel-art-game-sprite-of-a-lazy-man-in-a--256px-36 (1)_25
+  - first:
+      213: -1149756816298566237
+    second: A-16-bit-pixel-art-game-sprite-of-a-lazy-man-in-a--256px-36 (1)_26
+  - first:
+      213: -2724548126367904897
+    second: A-16-bit-pixel-art-game-sprite-of-a-lazy-man-in-a--256px-36 (1)_27
+  - first:
+      213: 7994908276263086486
+    second: A-16-bit-pixel-art-game-sprite-of-a-lazy-man-in-a--256px-36 (1)_28
+  - first:
+      213: 814272292361108104
+    second: A-16-bit-pixel-art-game-sprite-of-a-lazy-man-in-a--256px-36 (1)_29
+  - first:
+      213: -7806262314885791832
+    second: A-16-bit-pixel-art-game-sprite-of-a-lazy-man-in-a--256px-36 (1)_30
+  - first:
+      213: 8181038709778591708
+    second: A-16-bit-pixel-art-game-sprite-of-a-lazy-man-in-a--256px-36 (1)_31
+  - first:
+      213: -3701707519444228656
+    second: A-16-bit-pixel-art-game-sprite-of-a-lazy-man-in-a--256px-36 (1)_32
+  - first:
+      213: -3932537869430267483
+    second: A-16-bit-pixel-art-game-sprite-of-a-lazy-man-in-a--256px-36 (1)_33
+  - first:
+      213: -4191860023787756909
+    second: A-16-bit-pixel-art-game-sprite-of-a-lazy-man-in-a--256px-36 (1)_34
+  - first:
+      213: 1745253963295862085
+    second: A-16-bit-pixel-art-game-sprite-of-a-lazy-man-in-a--256px-36 (1)_35
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: A-16-bit-pixel-art-game-sprite-of-a-lazy-man-in-a--256px-36 (1)_0
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 1439
+        width: 153
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f095ff80eadc26860800000000000000
+      internalID: 7521800475021105423
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-16-bit-pixel-art-game-sprite-of-a-lazy-man-in-a--256px-36 (1)_1
+      rect:
+        serializedVersion: 2
+        x: 252
+        y: 1439
+        width: 156
+        height: 254
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 730427b239a06d610800000000000000
+      internalID: 1645514341055873079
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-16-bit-pixel-art-game-sprite-of-a-lazy-man-in-a--256px-36 (1)_2
+      rect:
+        serializedVersion: 2
+        x: 456
+        y: 1439
+        width: 157
+        height: 254
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ef2f79b9dc6a04f10800000000000000
+      internalID: 2251983215694181118
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-16-bit-pixel-art-game-sprite-of-a-lazy-man-in-a--256px-36 (1)_3
+      rect:
+        serializedVersion: 2
+        x: 661
+        y: 1440
+        width: 156
+        height: 254
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 280e558a0d96cbaf0800000000000000
+      internalID: -379311923707649918
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-16-bit-pixel-art-game-sprite-of-a-lazy-man-in-a--256px-36 (1)_4
+      rect:
+        serializedVersion: 2
+        x: 866
+        y: 1441
+        width: 155
+        height: 255
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ecf4b90c80d590090800000000000000
+      internalID: -8067814965285007410
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-16-bit-pixel-art-game-sprite-of-a-lazy-man-in-a--256px-36 (1)_5
+      rect:
+        serializedVersion: 2
+        x: 1071
+        y: 1441
+        width: 154
+        height: 255
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 124914511aa808b50800000000000000
+      internalID: 6593422278921393185
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-16-bit-pixel-art-game-sprite-of-a-lazy-man-in-a--256px-36 (1)_6
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 1154
+        width: 132
+        height: 257
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5213a60c778047be0800000000000000
+      internalID: -1480549067075735259
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-16-bit-pixel-art-game-sprite-of-a-lazy-man-in-a--256px-36 (1)_7
+      rect:
+        serializedVersion: 2
+        x: 262
+        y: 1154
+        width: 148
+        height: 258
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 427e0eae500561610800000000000000
+      internalID: 1591547504667715364
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-16-bit-pixel-art-game-sprite-of-a-lazy-man-in-a--256px-36 (1)_8
+      rect:
+        serializedVersion: 2
+        x: 466
+        y: 1154
+        width: 149
+        height: 258
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8bf1ed3ee2195f420800000000000000
+      internalID: 2663194385237024696
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-16-bit-pixel-art-game-sprite-of-a-lazy-man-in-a--256px-36 (1)_9
+      rect:
+        serializedVersion: 2
+        x: 671
+        y: 1154
+        width: 149
+        height: 258
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 78463f3c152ed96c0800000000000000
+      internalID: -4134900042048510841
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-16-bit-pixel-art-game-sprite-of-a-lazy-man-in-a--256px-36 (1)_10
+      rect:
+        serializedVersion: 2
+        x: 874
+        y: 1153
+        width: 151
+        height: 259
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a475e1e13d66e8b00800000000000000
+      internalID: 832716038039557962
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-16-bit-pixel-art-game-sprite-of-a-lazy-man-in-a--256px-36 (1)_11
+      rect:
+        serializedVersion: 2
+        x: 1077
+        y: 1154
+        width: 152
+        height: 257
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ea5efee06382a7b40800000000000000
+      internalID: 5438703712647243182
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-16-bit-pixel-art-game-sprite-of-a-lazy-man-in-a--256px-36 (1)_12
+      rect:
+        serializedVersion: 2
+        x: 59
+        y: 869
+        width: 115
+        height: 269
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a64e76a6a05f68b70800000000000000
+      internalID: 8901071138628035690
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-16-bit-pixel-art-game-sprite-of-a-lazy-man-in-a--256px-36 (1)_13
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 869
+        width: 116
+        height: 268
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 45f78ffb782925440800000000000000
+      internalID: 4923158454408347476
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-16-bit-pixel-art-game-sprite-of-a-lazy-man-in-a--256px-36 (1)_14
+      rect:
+        serializedVersion: 2
+        x: 469
+        y: 869
+        width: 119
+        height: 267
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c152aa761fa65cea0800000000000000
+      internalID: -5853154555639225060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-16-bit-pixel-art-game-sprite-of-a-lazy-man-in-a--256px-36 (1)_15
+      rect:
+        serializedVersion: 2
+        x: 675
+        y: 869
+        width: 119
+        height: 265
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 241fb82a07c8551c0800000000000000
+      internalID: -4515548635977748158
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-16-bit-pixel-art-game-sprite-of-a-lazy-man-in-a--256px-36 (1)_16
+      rect:
+        serializedVersion: 2
+        x: 880
+        y: 869
+        width: 121
+        height: 264
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7cceb18d418a7aac0800000000000000
+      internalID: -3843918949458907961
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-16-bit-pixel-art-game-sprite-of-a-lazy-man-in-a--256px-36 (1)_17
+      rect:
+        serializedVersion: 2
+        x: 1085
+        y: 869
+        width: 125
+        height: 261
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: db275dd0f1d3d90c0800000000000000
+      internalID: -4567427243498442051
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-16-bit-pixel-art-game-sprite-of-a-lazy-man-in-a--256px-36 (1)_18
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 584
+        width: 116
+        height: 270
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 71edb1be55cf9f500800000000000000
+      internalID: 430652685337484823
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-16-bit-pixel-art-game-sprite-of-a-lazy-man-in-a--256px-36 (1)_19
+      rect:
+        serializedVersion: 2
+        x: 263
+        y: 584
+        width: 116
+        height: 270
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bda7786afaa942c90800000000000000
+      internalID: -7195456225427359013
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-16-bit-pixel-art-game-sprite-of-a-lazy-man-in-a--256px-36 (1)_20
+      rect:
+        serializedVersion: 2
+        x: 468
+        y: 584
+        width: 116
+        height: 270
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 00cf709282caccdb0800000000000000
+      internalID: -4770248616805139456
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-16-bit-pixel-art-game-sprite-of-a-lazy-man-in-a--256px-36 (1)_21
+      rect:
+        serializedVersion: 2
+        x: 673
+        y: 584
+        width: 116
+        height: 270
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1270409200245bda0800000000000000
+      internalID: -5929760765907826911
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-16-bit-pixel-art-game-sprite-of-a-lazy-man-in-a--256px-36 (1)_22
+      rect:
+        serializedVersion: 2
+        x: 878
+        y: 584
+        width: 116
+        height: 270
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b77ae190e2092c180800000000000000
+      internalID: -9096549769939081349
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-16-bit-pixel-art-game-sprite-of-a-lazy-man-in-a--256px-36 (1)_23
+      rect:
+        serializedVersion: 2
+        x: 1084
+        y: 584
+        width: 115
+        height: 270
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3b11d1b90117fe0d0800000000000000
+      internalID: -3391367678250905165
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-16-bit-pixel-art-game-sprite-of-a-lazy-man-in-a--256px-36 (1)_24
+      rect:
+        serializedVersion: 2
+        x: 59
+        y: 299
+        width: 115
+        height: 268
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0b6e5526de2b0c9f0800000000000000
+      internalID: -450163230110259536
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-16-bit-pixel-art-game-sprite-of-a-lazy-man-in-a--256px-36 (1)_25
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 299
+        width: 115
+        height: 268
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8a3438e9b3eda0f80800000000000000
+      internalID: -8139449028874910808
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-16-bit-pixel-art-game-sprite-of-a-lazy-man-in-a--256px-36 (1)_26
+      rect:
+        serializedVersion: 2
+        x: 469
+        y: 299
+        width: 115
+        height: 268
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3ad907a644e3b00f0800000000000000
+      internalID: -1149756816298566237
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-16-bit-pixel-art-game-sprite-of-a-lazy-man-in-a--256px-36 (1)_27
+      rect:
+        serializedVersion: 2
+        x: 673
+        y: 299
+        width: 116
+        height: 269
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f7b82621ae5703ad0800000000000000
+      internalID: -2724548126367904897
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-16-bit-pixel-art-game-sprite-of-a-lazy-man-in-a--256px-36 (1)_28
+      rect:
+        serializedVersion: 2
+        x: 878
+        y: 299
+        width: 116
+        height: 268
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 699ed7ae7be93fe60800000000000000
+      internalID: 7994908276263086486
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-16-bit-pixel-art-game-sprite-of-a-lazy-man-in-a--256px-36 (1)_29
+      rect:
+        serializedVersion: 2
+        x: 1083
+        y: 299
+        width: 116
+        height: 269
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 88a70a0f550ec4b00800000000000000
+      internalID: 814272292361108104
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-16-bit-pixel-art-game-sprite-of-a-lazy-man-in-a--256px-36 (1)_30
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 14
+        width: 126
+        height: 258
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8afb6b1b8c59aa390800000000000000
+      internalID: -7806262314885791832
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-16-bit-pixel-art-game-sprite-of-a-lazy-man-in-a--256px-36 (1)_31
+      rect:
+        serializedVersion: 2
+        x: 265
+        y: 14
+        width: 121
+        height: 263
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cdfa21e8c53e88170800000000000000
+      internalID: 8181038709778591708
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-16-bit-pixel-art-game-sprite-of-a-lazy-man-in-a--256px-36 (1)_32
+      rect:
+        serializedVersion: 2
+        x: 470
+        y: 14
+        width: 119
+        height: 265
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0d56221af94e0acc0800000000000000
+      internalID: -3701707519444228656
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-16-bit-pixel-art-game-sprite-of-a-lazy-man-in-a--256px-36 (1)_33
+      rect:
+        serializedVersion: 2
+        x: 675
+        y: 14
+        width: 117
+        height: 268
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5a166daa4a1dc69c0800000000000000
+      internalID: -3932537869430267483
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-16-bit-pixel-art-game-sprite-of-a-lazy-man-in-a--256px-36 (1)_34
+      rect:
+        serializedVersion: 2
+        x: 880
+        y: 14
+        width: 117
+        height: 268
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 39268fd848583d5c0800000000000000
+      internalID: -4191860023787756909
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-16-bit-pixel-art-game-sprite-of-a-lazy-man-in-a--256px-36 (1)_35
+      rect:
+        serializedVersion: 2
+        x: 1084
+        y: 14
+        width: 117
+        height: 268
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 54da71d9b33683810800000000000000
+      internalID: 1745253963295862085
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      A-16-bit-pixel-art-game-sprite-of-a-lazy-man-in-a--256px-36 (1)_0: 7521800475021105423
+      A-16-bit-pixel-art-game-sprite-of-a-lazy-man-in-a--256px-36 (1)_1: 1645514341055873079
+      A-16-bit-pixel-art-game-sprite-of-a-lazy-man-in-a--256px-36 (1)_10: 832716038039557962
+      A-16-bit-pixel-art-game-sprite-of-a-lazy-man-in-a--256px-36 (1)_11: 5438703712647243182
+      A-16-bit-pixel-art-game-sprite-of-a-lazy-man-in-a--256px-36 (1)_12: 8901071138628035690
+      A-16-bit-pixel-art-game-sprite-of-a-lazy-man-in-a--256px-36 (1)_13: 4923158454408347476
+      A-16-bit-pixel-art-game-sprite-of-a-lazy-man-in-a--256px-36 (1)_14: -5853154555639225060
+      A-16-bit-pixel-art-game-sprite-of-a-lazy-man-in-a--256px-36 (1)_15: -4515548635977748158
+      A-16-bit-pixel-art-game-sprite-of-a-lazy-man-in-a--256px-36 (1)_16: -3843918949458907961
+      A-16-bit-pixel-art-game-sprite-of-a-lazy-man-in-a--256px-36 (1)_17: -4567427243498442051
+      A-16-bit-pixel-art-game-sprite-of-a-lazy-man-in-a--256px-36 (1)_18: 430652685337484823
+      A-16-bit-pixel-art-game-sprite-of-a-lazy-man-in-a--256px-36 (1)_19: -7195456225427359013
+      A-16-bit-pixel-art-game-sprite-of-a-lazy-man-in-a--256px-36 (1)_2: 2251983215694181118
+      A-16-bit-pixel-art-game-sprite-of-a-lazy-man-in-a--256px-36 (1)_20: -4770248616805139456
+      A-16-bit-pixel-art-game-sprite-of-a-lazy-man-in-a--256px-36 (1)_21: -5929760765907826911
+      A-16-bit-pixel-art-game-sprite-of-a-lazy-man-in-a--256px-36 (1)_22: -9096549769939081349
+      A-16-bit-pixel-art-game-sprite-of-a-lazy-man-in-a--256px-36 (1)_23: -3391367678250905165
+      A-16-bit-pixel-art-game-sprite-of-a-lazy-man-in-a--256px-36 (1)_24: -450163230110259536
+      A-16-bit-pixel-art-game-sprite-of-a-lazy-man-in-a--256px-36 (1)_25: -8139449028874910808
+      A-16-bit-pixel-art-game-sprite-of-a-lazy-man-in-a--256px-36 (1)_26: -1149756816298566237
+      A-16-bit-pixel-art-game-sprite-of-a-lazy-man-in-a--256px-36 (1)_27: -2724548126367904897
+      A-16-bit-pixel-art-game-sprite-of-a-lazy-man-in-a--256px-36 (1)_28: 7994908276263086486
+      A-16-bit-pixel-art-game-sprite-of-a-lazy-man-in-a--256px-36 (1)_29: 814272292361108104
+      A-16-bit-pixel-art-game-sprite-of-a-lazy-man-in-a--256px-36 (1)_3: -379311923707649918
+      A-16-bit-pixel-art-game-sprite-of-a-lazy-man-in-a--256px-36 (1)_30: -7806262314885791832
+      A-16-bit-pixel-art-game-sprite-of-a-lazy-man-in-a--256px-36 (1)_31: 8181038709778591708
+      A-16-bit-pixel-art-game-sprite-of-a-lazy-man-in-a--256px-36 (1)_32: -3701707519444228656
+      A-16-bit-pixel-art-game-sprite-of-a-lazy-man-in-a--256px-36 (1)_33: -3932537869430267483
+      A-16-bit-pixel-art-game-sprite-of-a-lazy-man-in-a--256px-36 (1)_34: -4191860023787756909
+      A-16-bit-pixel-art-game-sprite-of-a-lazy-man-in-a--256px-36 (1)_35: 1745253963295862085
+      A-16-bit-pixel-art-game-sprite-of-a-lazy-man-in-a--256px-36 (1)_4: -8067814965285007410
+      A-16-bit-pixel-art-game-sprite-of-a-lazy-man-in-a--256px-36 (1)_5: 6593422278921393185
+      A-16-bit-pixel-art-game-sprite-of-a-lazy-man-in-a--256px-36 (1)_6: -1480549067075735259
+      A-16-bit-pixel-art-game-sprite-of-a-lazy-man-in-a--256px-36 (1)_7: 1591547504667715364
+      A-16-bit-pixel-art-game-sprite-of-a-lazy-man-in-a--256px-36 (1)_8: 2663194385237024696
+      A-16-bit-pixel-art-game-sprite-of-a-lazy-man-in-a--256px-36 (1)_9: -4134900042048510841
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

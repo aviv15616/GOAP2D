@@ -1,0 +1,1055 @@
+fileFormatVersion: 2
+guid: 1333f4ec6fae64345914dad7e9a1b5d2
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -4696414464543273270
+    second: A-16-bit-pixel-art-bed-sprite-viewed-from-an-isome-256px-36_0
+  - first:
+      213: -350817884293512736
+    second: A-16-bit-pixel-art-bed-sprite-viewed-from-an-isome-256px-36_1
+  - first:
+      213: 9013959932210817709
+    second: A-16-bit-pixel-art-bed-sprite-viewed-from-an-isome-256px-36_2
+  - first:
+      213: 8178007342936210423
+    second: A-16-bit-pixel-art-bed-sprite-viewed-from-an-isome-256px-36_3
+  - first:
+      213: -700771060297524266
+    second: A-16-bit-pixel-art-bed-sprite-viewed-from-an-isome-256px-36_4
+  - first:
+      213: -9161125426834311269
+    second: A-16-bit-pixel-art-bed-sprite-viewed-from-an-isome-256px-36_5
+  - first:
+      213: -1428528986438701622
+    second: A-16-bit-pixel-art-bed-sprite-viewed-from-an-isome-256px-36_6
+  - first:
+      213: -4346341720044476529
+    second: A-16-bit-pixel-art-bed-sprite-viewed-from-an-isome-256px-36_7
+  - first:
+      213: -3694335400381785363
+    second: A-16-bit-pixel-art-bed-sprite-viewed-from-an-isome-256px-36_8
+  - first:
+      213: 6411522133763244725
+    second: A-16-bit-pixel-art-bed-sprite-viewed-from-an-isome-256px-36_9
+  - first:
+      213: -3563033578157855919
+    second: A-16-bit-pixel-art-bed-sprite-viewed-from-an-isome-256px-36_10
+  - first:
+      213: 2896246581032336584
+    second: A-16-bit-pixel-art-bed-sprite-viewed-from-an-isome-256px-36_11
+  - first:
+      213: -7115596780886606192
+    second: A-16-bit-pixel-art-bed-sprite-viewed-from-an-isome-256px-36_12
+  - first:
+      213: 8776182481217246664
+    second: A-16-bit-pixel-art-bed-sprite-viewed-from-an-isome-256px-36_13
+  - first:
+      213: 8590369176834584460
+    second: A-16-bit-pixel-art-bed-sprite-viewed-from-an-isome-256px-36_14
+  - first:
+      213: 7877452065970133443
+    second: A-16-bit-pixel-art-bed-sprite-viewed-from-an-isome-256px-36_15
+  - first:
+      213: -8596898389273636169
+    second: A-16-bit-pixel-art-bed-sprite-viewed-from-an-isome-256px-36_16
+  - first:
+      213: -2157954313855167567
+    second: A-16-bit-pixel-art-bed-sprite-viewed-from-an-isome-256px-36_17
+  - first:
+      213: 6172121019524641315
+    second: A-16-bit-pixel-art-bed-sprite-viewed-from-an-isome-256px-36_18
+  - first:
+      213: 8985790008953188110
+    second: A-16-bit-pixel-art-bed-sprite-viewed-from-an-isome-256px-36_19
+  - first:
+      213: -1666907046822000
+    second: A-16-bit-pixel-art-bed-sprite-viewed-from-an-isome-256px-36_20
+  - first:
+      213: 5780146490716352900
+    second: A-16-bit-pixel-art-bed-sprite-viewed-from-an-isome-256px-36_21
+  - first:
+      213: 6088265283525906818
+    second: A-16-bit-pixel-art-bed-sprite-viewed-from-an-isome-256px-36_22
+  - first:
+      213: 2793947250971986096
+    second: A-16-bit-pixel-art-bed-sprite-viewed-from-an-isome-256px-36_23
+  - first:
+      213: 8535098488920443541
+    second: A-16-bit-pixel-art-bed-sprite-viewed-from-an-isome-256px-36_24
+  - first:
+      213: 7188079065598101460
+    second: A-16-bit-pixel-art-bed-sprite-viewed-from-an-isome-256px-36_25
+  - first:
+      213: -5953818591546926893
+    second: A-16-bit-pixel-art-bed-sprite-viewed-from-an-isome-256px-36_26
+  - first:
+      213: 2056452788839141950
+    second: A-16-bit-pixel-art-bed-sprite-viewed-from-an-isome-256px-36_27
+  - first:
+      213: -7645013233689190913
+    second: A-16-bit-pixel-art-bed-sprite-viewed-from-an-isome-256px-36_28
+  - first:
+      213: 1747658930810837211
+    second: A-16-bit-pixel-art-bed-sprite-viewed-from-an-isome-256px-36_29
+  - first:
+      213: -6054955716432567032
+    second: A-16-bit-pixel-art-bed-sprite-viewed-from-an-isome-256px-36_30
+  - first:
+      213: -1217747220291181660
+    second: A-16-bit-pixel-art-bed-sprite-viewed-from-an-isome-256px-36_31
+  - first:
+      213: -3997749666221310071
+    second: A-16-bit-pixel-art-bed-sprite-viewed-from-an-isome-256px-36_32
+  - first:
+      213: 2314547393166665524
+    second: A-16-bit-pixel-art-bed-sprite-viewed-from-an-isome-256px-36_33
+  - first:
+      213: -8303193422728815165
+    second: A-16-bit-pixel-art-bed-sprite-viewed-from-an-isome-256px-36_34
+  - first:
+      213: -2698693626887902420
+    second: A-16-bit-pixel-art-bed-sprite-viewed-from-an-isome-256px-36_35
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: A-16-bit-pixel-art-bed-sprite-viewed-from-an-isome-256px-36_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1141
+        width: 258
+        height: 227
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ace44ea5debf2deb0800000000000000
+      internalID: -4696414464543273270
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-16-bit-pixel-art-bed-sprite-viewed-from-an-isome-256px-36_1
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 1141
+        width: 258
+        height: 227
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0e1c4d13ef4a12bf0800000000000000
+      internalID: -350817884293512736
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-16-bit-pixel-art-bed-sprite-viewed-from-an-isome-256px-36_2
+      rect:
+        serializedVersion: 2
+        x: 516
+        y: 1141
+        width: 258
+        height: 227
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: daaa703ecc4081d70800000000000000
+      internalID: 9013959932210817709
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-16-bit-pixel-art-bed-sprite-viewed-from-an-isome-256px-36_3
+      rect:
+        serializedVersion: 2
+        x: 774
+        y: 1141
+        width: 258
+        height: 227
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7fbbf36795e1e7170800000000000000
+      internalID: 8178007342936210423
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-16-bit-pixel-art-bed-sprite-viewed-from-an-isome-256px-36_4
+      rect:
+        serializedVersion: 2
+        x: 1032
+        y: 1141
+        width: 258
+        height: 227
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6db971afe6c5646f0800000000000000
+      internalID: -700771060297524266
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-16-bit-pixel-art-bed-sprite-viewed-from-an-isome-256px-36_5
+      rect:
+        serializedVersion: 2
+        x: 1290
+        y: 1141
+        width: 258
+        height: 226
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b97fdb646f42dd080800000000000000
+      internalID: -9161125426834311269
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-16-bit-pixel-art-bed-sprite-viewed-from-an-isome-256px-36_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 913
+        width: 258
+        height: 227
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: acde8fb9478dc2ce0800000000000000
+      internalID: -1428528986438701622
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-16-bit-pixel-art-bed-sprite-viewed-from-an-isome-256px-36_7
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 913
+        width: 258
+        height: 227
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f87e948cb31bea3c0800000000000000
+      internalID: -4346341720044476529
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-16-bit-pixel-art-bed-sprite-viewed-from-an-isome-256px-36_8
+      rect:
+        serializedVersion: 2
+        x: 516
+        y: 913
+        width: 258
+        height: 227
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dead71bd6851bbcc0800000000000000
+      internalID: -3694335400381785363
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-16-bit-pixel-art-bed-sprite-viewed-from-an-isome-256px-36_9
+      rect:
+        serializedVersion: 2
+        x: 774
+        y: 913
+        width: 258
+        height: 226
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5b24384396d4af850800000000000000
+      internalID: 6411522133763244725
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-16-bit-pixel-art-bed-sprite-viewed-from-an-isome-256px-36_10
+      rect:
+        serializedVersion: 2
+        x: 1032
+        y: 913
+        width: 258
+        height: 227
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 15bac13a6df8d8ec0800000000000000
+      internalID: -3563033578157855919
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-16-bit-pixel-art-bed-sprite-viewed-from-an-isome-256px-36_11
+      rect:
+        serializedVersion: 2
+        x: 1290
+        y: 913
+        width: 258
+        height: 226
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8cc3f54abe8813820800000000000000
+      internalID: 2896246581032336584
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-16-bit-pixel-art-bed-sprite-viewed-from-an-isome-256px-36_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 685
+        width: 258
+        height: 227
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 09e37568d62504d90800000000000000
+      internalID: -7115596780886606192
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-16-bit-pixel-art-bed-sprite-viewed-from-an-isome-256px-36_13
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 685
+        width: 258
+        height: 226
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8c5d5fce7734bc970800000000000000
+      internalID: 8776182481217246664
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-16-bit-pixel-art-bed-sprite-viewed-from-an-isome-256px-36_14
+      rect:
+        serializedVersion: 2
+        x: 516
+        y: 685
+        width: 258
+        height: 227
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c8fa0baa04f173770800000000000000
+      internalID: 8590369176834584460
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-16-bit-pixel-art-bed-sprite-viewed-from-an-isome-256px-36_15
+      rect:
+        serializedVersion: 2
+        x: 774
+        y: 685
+        width: 258
+        height: 226
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3c9115fdae4525d60800000000000000
+      internalID: 7877452065970133443
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-16-bit-pixel-art-bed-sprite-viewed-from-an-isome-256px-36_16
+      rect:
+        serializedVersion: 2
+        x: 1032
+        y: 685
+        width: 258
+        height: 227
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7b29739967ea1b880800000000000000
+      internalID: -8596898389273636169
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-16-bit-pixel-art-bed-sprite-viewed-from-an-isome-256px-36_17
+      rect:
+        serializedVersion: 2
+        x: 1290
+        y: 685
+        width: 258
+        height: 226
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1b314212cf76d02e0800000000000000
+      internalID: -2157954313855167567
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-16-bit-pixel-art-bed-sprite-viewed-from-an-isome-256px-36_18
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 457
+        width: 258
+        height: 227
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 322fc7fad57c7a550800000000000000
+      internalID: 6172121019524641315
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-16-bit-pixel-art-bed-sprite-viewed-from-an-isome-256px-36_19
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 457
+        width: 258
+        height: 226
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e0fa8e58760f3bc70800000000000000
+      internalID: 8985790008953188110
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-16-bit-pixel-art-bed-sprite-viewed-from-an-isome-256px-36_20
+      rect:
+        serializedVersion: 2
+        x: 516
+        y: 457
+        width: 258
+        height: 227
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 09fb995f4f31afff0800000000000000
+      internalID: -1666907046822000
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-16-bit-pixel-art-bed-sprite-viewed-from-an-isome-256px-36_21
+      rect:
+        serializedVersion: 2
+        x: 774
+        y: 457
+        width: 258
+        height: 226
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4817ed8db94373050800000000000000
+      internalID: 5780146490716352900
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-16-bit-pixel-art-bed-sprite-viewed-from-an-isome-256px-36_22
+      rect:
+        serializedVersion: 2
+        x: 1032
+        y: 457
+        width: 258
+        height: 227
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 28197e2b40ddd7450800000000000000
+      internalID: 6088265283525906818
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-16-bit-pixel-art-bed-sprite-viewed-from-an-isome-256px-36_23
+      rect:
+        serializedVersion: 2
+        x: 1290
+        y: 457
+        width: 258
+        height: 227
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0b84d57c83816c620800000000000000
+      internalID: 2793947250971986096
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-16-bit-pixel-art-bed-sprite-viewed-from-an-isome-256px-36_24
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 229
+        width: 258
+        height: 227
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 59a8313dad2c27670800000000000000
+      internalID: 8535098488920443541
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-16-bit-pixel-art-bed-sprite-viewed-from-an-isome-256px-36_25
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 229
+        width: 258
+        height: 226
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4d7856a73df21c360800000000000000
+      internalID: 7188079065598101460
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-16-bit-pixel-art-bed-sprite-viewed-from-an-isome-256px-36_26
+      rect:
+        serializedVersion: 2
+        x: 516
+        y: 229
+        width: 258
+        height: 227
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3d89ab12989cf5da0800000000000000
+      internalID: -5953818591546926893
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-16-bit-pixel-art-bed-sprite-viewed-from-an-isome-256px-36_27
+      rect:
+        serializedVersion: 2
+        x: 774
+        y: 229
+        width: 258
+        height: 226
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e325e187aecf98c10800000000000000
+      internalID: 2056452788839141950
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-16-bit-pixel-art-bed-sprite-viewed-from-an-isome-256px-36_28
+      rect:
+        serializedVersion: 2
+        x: 1032
+        y: 229
+        width: 258
+        height: 227
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ffd9bce08f477e590800000000000000
+      internalID: -7645013233689190913
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-16-bit-pixel-art-bed-sprite-viewed-from-an-isome-256px-36_29
+      rect:
+        serializedVersion: 2
+        x: 1290
+        y: 229
+        width: 258
+        height: 226
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bd8d48fb98ee04810800000000000000
+      internalID: 1747658930810837211
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-16-bit-pixel-art-bed-sprite-viewed-from-an-isome-256px-36_30
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1
+        width: 258
+        height: 227
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 805e05f3bd978fba0800000000000000
+      internalID: -6054955716432567032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-16-bit-pixel-art-bed-sprite-viewed-from-an-isome-256px-36_31
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 1
+        width: 258
+        height: 226
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4a32354ea51b91fe0800000000000000
+      internalID: -1217747220291181660
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-16-bit-pixel-art-bed-sprite-viewed-from-an-isome-256px-36_32
+      rect:
+        serializedVersion: 2
+        x: 516
+        y: 1
+        width: 258
+        height: 227
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 98f31fb0cd32588c0800000000000000
+      internalID: -3997749666221310071
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-16-bit-pixel-art-bed-sprite-viewed-from-an-isome-256px-36_33
+      rect:
+        serializedVersion: 2
+        x: 774
+        y: 1
+        width: 258
+        height: 226
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4376181579cee1020800000000000000
+      internalID: 2314547393166665524
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-16-bit-pixel-art-bed-sprite-viewed-from-an-isome-256px-36_34
+      rect:
+        serializedVersion: 2
+        x: 1032
+        y: 1
+        width: 258
+        height: 227
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3cd93e0039125cc80800000000000000
+      internalID: -8303193422728815165
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-16-bit-pixel-art-bed-sprite-viewed-from-an-isome-256px-36_35
+      rect:
+        serializedVersion: 2
+        x: 1290
+        y: 1
+        width: 258
+        height: 226
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c2b6cb3d1705c8ad0800000000000000
+      internalID: -2698693626887902420
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      A-16-bit-pixel-art-bed-sprite-viewed-from-an-isome-256px-36_0: -4696414464543273270
+      A-16-bit-pixel-art-bed-sprite-viewed-from-an-isome-256px-36_1: -350817884293512736
+      A-16-bit-pixel-art-bed-sprite-viewed-from-an-isome-256px-36_10: -3563033578157855919
+      A-16-bit-pixel-art-bed-sprite-viewed-from-an-isome-256px-36_11: 2896246581032336584
+      A-16-bit-pixel-art-bed-sprite-viewed-from-an-isome-256px-36_12: -7115596780886606192
+      A-16-bit-pixel-art-bed-sprite-viewed-from-an-isome-256px-36_13: 8776182481217246664
+      A-16-bit-pixel-art-bed-sprite-viewed-from-an-isome-256px-36_14: 8590369176834584460
+      A-16-bit-pixel-art-bed-sprite-viewed-from-an-isome-256px-36_15: 7877452065970133443
+      A-16-bit-pixel-art-bed-sprite-viewed-from-an-isome-256px-36_16: -8596898389273636169
+      A-16-bit-pixel-art-bed-sprite-viewed-from-an-isome-256px-36_17: -2157954313855167567
+      A-16-bit-pixel-art-bed-sprite-viewed-from-an-isome-256px-36_18: 6172121019524641315
+      A-16-bit-pixel-art-bed-sprite-viewed-from-an-isome-256px-36_19: 8985790008953188110
+      A-16-bit-pixel-art-bed-sprite-viewed-from-an-isome-256px-36_2: 9013959932210817709
+      A-16-bit-pixel-art-bed-sprite-viewed-from-an-isome-256px-36_20: -1666907046822000
+      A-16-bit-pixel-art-bed-sprite-viewed-from-an-isome-256px-36_21: 5780146490716352900
+      A-16-bit-pixel-art-bed-sprite-viewed-from-an-isome-256px-36_22: 6088265283525906818
+      A-16-bit-pixel-art-bed-sprite-viewed-from-an-isome-256px-36_23: 2793947250971986096
+      A-16-bit-pixel-art-bed-sprite-viewed-from-an-isome-256px-36_24: 8535098488920443541
+      A-16-bit-pixel-art-bed-sprite-viewed-from-an-isome-256px-36_25: 7188079065598101460
+      A-16-bit-pixel-art-bed-sprite-viewed-from-an-isome-256px-36_26: -5953818591546926893
+      A-16-bit-pixel-art-bed-sprite-viewed-from-an-isome-256px-36_27: 2056452788839141950
+      A-16-bit-pixel-art-bed-sprite-viewed-from-an-isome-256px-36_28: -7645013233689190913
+      A-16-bit-pixel-art-bed-sprite-viewed-from-an-isome-256px-36_29: 1747658930810837211
+      A-16-bit-pixel-art-bed-sprite-viewed-from-an-isome-256px-36_3: 8178007342936210423
+      A-16-bit-pixel-art-bed-sprite-viewed-from-an-isome-256px-36_30: -6054955716432567032
+      A-16-bit-pixel-art-bed-sprite-viewed-from-an-isome-256px-36_31: -1217747220291181660
+      A-16-bit-pixel-art-bed-sprite-viewed-from-an-isome-256px-36_32: -3997749666221310071
+      A-16-bit-pixel-art-bed-sprite-viewed-from-an-isome-256px-36_33: 2314547393166665524
+      A-16-bit-pixel-art-bed-sprite-viewed-from-an-isome-256px-36_34: -8303193422728815165
+      A-16-bit-pixel-art-bed-sprite-viewed-from-an-isome-256px-36_35: -2698693626887902420
+      A-16-bit-pixel-art-bed-sprite-viewed-from-an-isome-256px-36_4: -700771060297524266
+      A-16-bit-pixel-art-bed-sprite-viewed-from-an-isome-256px-36_5: -9161125426834311269
+      A-16-bit-pixel-art-bed-sprite-viewed-from-an-isome-256px-36_6: -1428528986438701622
+      A-16-bit-pixel-art-bed-sprite-viewed-from-an-isome-256px-36_7: -4346341720044476529
+      A-16-bit-pixel-art-bed-sprite-viewed-from-an-isome-256px-36_8: -3694335400381785363
+      A-16-bit-pixel-art-bed-sprite-viewed-from-an-isome-256px-36_9: 6411522133763244725
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

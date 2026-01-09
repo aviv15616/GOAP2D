@@ -1,0 +1,1053 @@
+fileFormatVersion: 2
+guid: bda213673adfed64d83e691fe1990650
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -6576403146652541480
+    second: A-detailed-16-bit-pixel-art-water-well-sprite-in-a-256px-36_0
+  - first:
+      213: 3634763885590214123
+    second: A-detailed-16-bit-pixel-art-water-well-sprite-in-a-256px-36_1
+  - first:
+      213: -4005143305500763645
+    second: A-detailed-16-bit-pixel-art-water-well-sprite-in-a-256px-36_2
+  - first:
+      213: 1470258134744686483
+    second: A-detailed-16-bit-pixel-art-water-well-sprite-in-a-256px-36_3
+  - first:
+      213: 5186981669787961969
+    second: A-detailed-16-bit-pixel-art-water-well-sprite-in-a-256px-36_4
+  - first:
+      213: 5172796326074326138
+    second: A-detailed-16-bit-pixel-art-water-well-sprite-in-a-256px-36_5
+  - first:
+      213: 8422360405705481039
+    second: A-detailed-16-bit-pixel-art-water-well-sprite-in-a-256px-36_6
+  - first:
+      213: -2497656838279144123
+    second: A-detailed-16-bit-pixel-art-water-well-sprite-in-a-256px-36_7
+  - first:
+      213: -6630022003947223913
+    second: A-detailed-16-bit-pixel-art-water-well-sprite-in-a-256px-36_8
+  - first:
+      213: 2896685528823306648
+    second: A-detailed-16-bit-pixel-art-water-well-sprite-in-a-256px-36_9
+  - first:
+      213: 2196847987028964456
+    second: A-detailed-16-bit-pixel-art-water-well-sprite-in-a-256px-36_10
+  - first:
+      213: 7092002141465674002
+    second: A-detailed-16-bit-pixel-art-water-well-sprite-in-a-256px-36_11
+  - first:
+      213: -239541064934378499
+    second: A-detailed-16-bit-pixel-art-water-well-sprite-in-a-256px-36_12
+  - first:
+      213: -8138345403983439724
+    second: A-detailed-16-bit-pixel-art-water-well-sprite-in-a-256px-36_13
+  - first:
+      213: 4341533123951905912
+    second: A-detailed-16-bit-pixel-art-water-well-sprite-in-a-256px-36_14
+  - first:
+      213: -7075953436960468669
+    second: A-detailed-16-bit-pixel-art-water-well-sprite-in-a-256px-36_15
+  - first:
+      213: 1029202034805838346
+    second: A-detailed-16-bit-pixel-art-water-well-sprite-in-a-256px-36_16
+  - first:
+      213: 6464626099409058760
+    second: A-detailed-16-bit-pixel-art-water-well-sprite-in-a-256px-36_17
+  - first:
+      213: 3041484198657980289
+    second: A-detailed-16-bit-pixel-art-water-well-sprite-in-a-256px-36_18
+  - first:
+      213: 8636595478720205967
+    second: A-detailed-16-bit-pixel-art-water-well-sprite-in-a-256px-36_19
+  - first:
+      213: 50138048562921353
+    second: A-detailed-16-bit-pixel-art-water-well-sprite-in-a-256px-36_20
+  - first:
+      213: -4564820854963007060
+    second: A-detailed-16-bit-pixel-art-water-well-sprite-in-a-256px-36_21
+  - first:
+      213: 4039310270570643041
+    second: A-detailed-16-bit-pixel-art-water-well-sprite-in-a-256px-36_22
+  - first:
+      213: -3462837098611168711
+    second: A-detailed-16-bit-pixel-art-water-well-sprite-in-a-256px-36_23
+  - first:
+      213: 4567085174618699410
+    second: A-detailed-16-bit-pixel-art-water-well-sprite-in-a-256px-36_24
+  - first:
+      213: -693629948636621361
+    second: A-detailed-16-bit-pixel-art-water-well-sprite-in-a-256px-36_25
+  - first:
+      213: -2033293381872128019
+    second: A-detailed-16-bit-pixel-art-water-well-sprite-in-a-256px-36_26
+  - first:
+      213: -9009375554985810663
+    second: A-detailed-16-bit-pixel-art-water-well-sprite-in-a-256px-36_27
+  - first:
+      213: 7998869258354659437
+    second: A-detailed-16-bit-pixel-art-water-well-sprite-in-a-256px-36_28
+  - first:
+      213: -3369102791090116359
+    second: A-detailed-16-bit-pixel-art-water-well-sprite-in-a-256px-36_29
+  - first:
+      213: 8534276271095632972
+    second: A-detailed-16-bit-pixel-art-water-well-sprite-in-a-256px-36_30
+  - first:
+      213: -6317609696405995946
+    second: A-detailed-16-bit-pixel-art-water-well-sprite-in-a-256px-36_31
+  - first:
+      213: -1965621378665894213
+    second: A-detailed-16-bit-pixel-art-water-well-sprite-in-a-256px-36_32
+  - first:
+      213: -3010540184627811412
+    second: A-detailed-16-bit-pixel-art-water-well-sprite-in-a-256px-36_33
+  - first:
+      213: -5683276815041119254
+    second: A-detailed-16-bit-pixel-art-water-well-sprite-in-a-256px-36_34
+  - first:
+      213: -4330163794303857297
+    second: A-detailed-16-bit-pixel-art-water-well-sprite-in-a-256px-36_35
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: A-detailed-16-bit-pixel-art-water-well-sprite-in-a-256px-36_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1295
+        width: 234
+        height: 259
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8dd93007e2cebb4a0800000000000000
+      internalID: -6576403146652541480
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-detailed-16-bit-pixel-art-water-well-sprite-in-a-256px-36_1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1036
+        width: 234
+        height: 260
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: be5f5030f76417230800000000000000
+      internalID: 3634763885590214123
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-detailed-16-bit-pixel-art-water-well-sprite-in-a-256px-36_2
+      rect:
+        serializedVersion: 2
+        x: 234
+        y: 1295
+        width: 234
+        height: 259
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 30ad711426fda68c0800000000000000
+      internalID: -4005143305500763645
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-detailed-16-bit-pixel-art-water-well-sprite-in-a-256px-36_3
+      rect:
+        serializedVersion: 2
+        x: 234
+        y: 1036
+        width: 234
+        height: 260
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 39fd599dbf7676410800000000000000
+      internalID: 1470258134744686483
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-detailed-16-bit-pixel-art-water-well-sprite-in-a-256px-36_4
+      rect:
+        serializedVersion: 2
+        x: 468
+        y: 1295
+        width: 234
+        height: 259
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 17a8c2cc85cdbf740800000000000000
+      internalID: 5186981669787961969
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-detailed-16-bit-pixel-art-water-well-sprite-in-a-256px-36_5
+      rect:
+        serializedVersion: 2
+        x: 468
+        y: 1036
+        width: 234
+        height: 260
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a7c1b171ad679c740800000000000000
+      internalID: 5172796326074326138
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-detailed-16-bit-pixel-art-water-well-sprite-in-a-256px-36_6
+      rect:
+        serializedVersion: 2
+        x: 702
+        y: 1295
+        width: 234
+        height: 259
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f4bd3685a2c32e470800000000000000
+      internalID: 8422360405705481039
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-detailed-16-bit-pixel-art-water-well-sprite-in-a-256px-36_7
+      rect:
+        serializedVersion: 2
+        x: 702
+        y: 1036
+        width: 234
+        height: 260
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 54ddb87b65a865dd0800000000000000
+      internalID: -2497656838279144123
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-detailed-16-bit-pixel-art-water-well-sprite-in-a-256px-36_8
+      rect:
+        serializedVersion: 2
+        x: 936
+        y: 1295
+        width: 234
+        height: 259
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 794c3b16d1e6df3a0800000000000000
+      internalID: -6630022003947223913
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-detailed-16-bit-pixel-art-water-well-sprite-in-a-256px-36_9
+      rect:
+        serializedVersion: 2
+        x: 936
+        y: 1036
+        width: 234
+        height: 260
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 89917832428133820800000000000000
+      internalID: 2896685528823306648
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-detailed-16-bit-pixel-art-water-well-sprite-in-a-256px-36_10
+      rect:
+        serializedVersion: 2
+        x: 1170
+        y: 1295
+        width: 234
+        height: 259
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 864b464da95cc7e10800000000000000
+      internalID: 2196847987028964456
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-detailed-16-bit-pixel-art-water-well-sprite-in-a-256px-36_11
+      rect:
+        serializedVersion: 2
+        x: 1170
+        y: 1036
+        width: 234
+        height: 260
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2110f546f5adb6260800000000000000
+      internalID: 7092002141465674002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-detailed-16-bit-pixel-art-water-well-sprite-in-a-256px-36_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 777
+        width: 234
+        height: 259
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: df3b77babaafcacf0800000000000000
+      internalID: -239541064934378499
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-detailed-16-bit-pixel-art-water-well-sprite-in-a-256px-36_13
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 518
+        width: 234
+        height: 259
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 498522059f9ce0f80800000000000000
+      internalID: -8138345403983439724
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-detailed-16-bit-pixel-art-water-well-sprite-in-a-256px-36_14
+      rect:
+        serializedVersion: 2
+        x: 234
+        y: 777
+        width: 234
+        height: 260
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 87cceb1bf59304c30800000000000000
+      internalID: 4341533123951905912
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-detailed-16-bit-pixel-art-water-well-sprite-in-a-256px-36_15
+      rect:
+        serializedVersion: 2
+        x: 234
+        y: 518
+        width: 234
+        height: 259
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 34154cec6d92dcd90800000000000000
+      internalID: -7075953436960468669
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-detailed-16-bit-pixel-art-water-well-sprite-in-a-256px-36_16
+      rect:
+        serializedVersion: 2
+        x: 468
+        y: 777
+        width: 234
+        height: 259
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a0216b63cc5784e00800000000000000
+      internalID: 1029202034805838346
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-detailed-16-bit-pixel-art-water-well-sprite-in-a-256px-36_17
+      rect:
+        serializedVersion: 2
+        x: 468
+        y: 518
+        width: 234
+        height: 259
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8cbfef4bf27f6b950800000000000000
+      internalID: 6464626099409058760
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-detailed-16-bit-pixel-art-water-well-sprite-in-a-256px-36_18
+      rect:
+        serializedVersion: 2
+        x: 702
+        y: 777
+        width: 234
+        height: 259
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 187f8f2a3c5853a20800000000000000
+      internalID: 3041484198657980289
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-detailed-16-bit-pixel-art-water-well-sprite-in-a-256px-36_19
+      rect:
+        serializedVersion: 2
+        x: 702
+        y: 518
+        width: 234
+        height: 259
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f84dcd944d95bd770800000000000000
+      internalID: 8636595478720205967
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-detailed-16-bit-pixel-art-water-well-sprite-in-a-256px-36_20
+      rect:
+        serializedVersion: 2
+        x: 936
+        y: 777
+        width: 234
+        height: 259
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 98ff25e1a4022b000800000000000000
+      internalID: 50138048562921353
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-detailed-16-bit-pixel-art-water-well-sprite-in-a-256px-36_21
+      rect:
+        serializedVersion: 2
+        x: 936
+        y: 518
+        width: 234
+        height: 259
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ca192ac2e9f76a0c0800000000000000
+      internalID: -4564820854963007060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-detailed-16-bit-pixel-art-water-well-sprite-in-a-256px-36_22
+      rect:
+        serializedVersion: 2
+        x: 1170
+        y: 777
+        width: 234
+        height: 259
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 16e33f63a438e0830800000000000000
+      internalID: 4039310270570643041
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-detailed-16-bit-pixel-art-water-well-sprite-in-a-256px-36_23
+      rect:
+        serializedVersion: 2
+        x: 1170
+        y: 518
+        width: 234
+        height: 259
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 93aac36710881ffc0800000000000000
+      internalID: -3462837098611168711
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-detailed-16-bit-pixel-art-water-well-sprite-in-a-256px-36_24
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 259
+        width: 234
+        height: 259
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 296b914d4cb816f30800000000000000
+      internalID: 4567085174618699410
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-detailed-16-bit-pixel-art-water-well-sprite-in-a-256px-36_25
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 234
+        height: 259
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fc511f99c3bbf56f0800000000000000
+      internalID: -693629948636621361
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-detailed-16-bit-pixel-art-water-well-sprite-in-a-256px-36_26
+      rect:
+        serializedVersion: 2
+        x: 234
+        y: 259
+        width: 234
+        height: 259
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: defeb59217a48c3e0800000000000000
+      internalID: -2033293381872128019
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-detailed-16-bit-pixel-art-water-well-sprite-in-a-256px-36_27
+      rect:
+        serializedVersion: 2
+        x: 234
+        y: 0
+        width: 234
+        height: 259
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 915abfc9aa448f280800000000000000
+      internalID: -9009375554985810663
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-detailed-16-bit-pixel-art-water-well-sprite-in-a-256px-36_28
+      rect:
+        serializedVersion: 2
+        x: 468
+        y: 259
+        width: 234
+        height: 259
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d60950de531b10f60800000000000000
+      internalID: 7998869258354659437
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-detailed-16-bit-pixel-art-water-well-sprite-in-a-256px-36_29
+      rect:
+        serializedVersion: 2
+        x: 468
+        y: 0
+        width: 234
+        height: 259
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9f8eb4d9cda8e31d0800000000000000
+      internalID: -3369102791090116359
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-detailed-16-bit-pixel-art-water-well-sprite-in-a-256px-36_30
+      rect:
+        serializedVersion: 2
+        x: 702
+        y: 259
+        width: 234
+        height: 259
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c4453b15d07df6670800000000000000
+      internalID: 8534276271095632972
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-detailed-16-bit-pixel-art-water-well-sprite-in-a-256px-36_31
+      rect:
+        serializedVersion: 2
+        x: 702
+        y: 0
+        width: 234
+        height: 259
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 65e382804775358a0800000000000000
+      internalID: -6317609696405995946
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-detailed-16-bit-pixel-art-water-well-sprite-in-a-256px-36_32
+      rect:
+        serializedVersion: 2
+        x: 936
+        y: 259
+        width: 234
+        height: 259
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bbea4b935c5b8b4e0800000000000000
+      internalID: -1965621378665894213
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-detailed-16-bit-pixel-art-water-well-sprite-in-a-256px-36_33
+      rect:
+        serializedVersion: 2
+        x: 936
+        y: 0
+        width: 234
+        height: 259
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cab683117a96836d0800000000000000
+      internalID: -3010540184627811412
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-detailed-16-bit-pixel-art-water-well-sprite-in-a-256px-36_34
+      rect:
+        serializedVersion: 2
+        x: 1170
+        y: 259
+        width: 234
+        height: 259
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aebb24719d1f021b0800000000000000
+      internalID: -5683276815041119254
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-detailed-16-bit-pixel-art-water-well-sprite-in-a-256px-36_35
+      rect:
+        serializedVersion: 2
+        x: 1170
+        y: 0
+        width: 234
+        height: 259
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f6dc245a8fa28e3c0800000000000000
+      internalID: -4330163794303857297
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      A-detailed-16-bit-pixel-art-water-well-sprite-in-a-256px-36_0: -6576403146652541480
+      A-detailed-16-bit-pixel-art-water-well-sprite-in-a-256px-36_1: 3634763885590214123
+      A-detailed-16-bit-pixel-art-water-well-sprite-in-a-256px-36_10: 2196847987028964456
+      A-detailed-16-bit-pixel-art-water-well-sprite-in-a-256px-36_11: 7092002141465674002
+      A-detailed-16-bit-pixel-art-water-well-sprite-in-a-256px-36_12: -239541064934378499
+      A-detailed-16-bit-pixel-art-water-well-sprite-in-a-256px-36_13: -8138345403983439724
+      A-detailed-16-bit-pixel-art-water-well-sprite-in-a-256px-36_14: 4341533123951905912
+      A-detailed-16-bit-pixel-art-water-well-sprite-in-a-256px-36_15: -7075953436960468669
+      A-detailed-16-bit-pixel-art-water-well-sprite-in-a-256px-36_16: 1029202034805838346
+      A-detailed-16-bit-pixel-art-water-well-sprite-in-a-256px-36_17: 6464626099409058760
+      A-detailed-16-bit-pixel-art-water-well-sprite-in-a-256px-36_18: 3041484198657980289
+      A-detailed-16-bit-pixel-art-water-well-sprite-in-a-256px-36_19: 8636595478720205967
+      A-detailed-16-bit-pixel-art-water-well-sprite-in-a-256px-36_2: -4005143305500763645
+      A-detailed-16-bit-pixel-art-water-well-sprite-in-a-256px-36_20: 50138048562921353
+      A-detailed-16-bit-pixel-art-water-well-sprite-in-a-256px-36_21: -4564820854963007060
+      A-detailed-16-bit-pixel-art-water-well-sprite-in-a-256px-36_22: 4039310270570643041
+      A-detailed-16-bit-pixel-art-water-well-sprite-in-a-256px-36_23: -3462837098611168711
+      A-detailed-16-bit-pixel-art-water-well-sprite-in-a-256px-36_24: 4567085174618699410
+      A-detailed-16-bit-pixel-art-water-well-sprite-in-a-256px-36_25: -693629948636621361
+      A-detailed-16-bit-pixel-art-water-well-sprite-in-a-256px-36_26: -2033293381872128019
+      A-detailed-16-bit-pixel-art-water-well-sprite-in-a-256px-36_27: -9009375554985810663
+      A-detailed-16-bit-pixel-art-water-well-sprite-in-a-256px-36_28: 7998869258354659437
+      A-detailed-16-bit-pixel-art-water-well-sprite-in-a-256px-36_29: -3369102791090116359
+      A-detailed-16-bit-pixel-art-water-well-sprite-in-a-256px-36_3: 1470258134744686483
+      A-detailed-16-bit-pixel-art-water-well-sprite-in-a-256px-36_30: 8534276271095632972
+      A-detailed-16-bit-pixel-art-water-well-sprite-in-a-256px-36_31: -6317609696405995946
+      A-detailed-16-bit-pixel-art-water-well-sprite-in-a-256px-36_32: -1965621378665894213
+      A-detailed-16-bit-pixel-art-water-well-sprite-in-a-256px-36_33: -3010540184627811412
+      A-detailed-16-bit-pixel-art-water-well-sprite-in-a-256px-36_34: -5683276815041119254
+      A-detailed-16-bit-pixel-art-water-well-sprite-in-a-256px-36_35: -4330163794303857297
+      A-detailed-16-bit-pixel-art-water-well-sprite-in-a-256px-36_4: 5186981669787961969
+      A-detailed-16-bit-pixel-art-water-well-sprite-in-a-256px-36_5: 5172796326074326138
+      A-detailed-16-bit-pixel-art-water-well-sprite-in-a-256px-36_6: 8422360405705481039
+      A-detailed-16-bit-pixel-art-water-well-sprite-in-a-256px-36_7: -2497656838279144123
+      A-detailed-16-bit-pixel-art-water-well-sprite-in-a-256px-36_8: -6630022003947223913
+      A-detailed-16-bit-pixel-art-water-well-sprite-in-a-256px-36_9: 2896685528823306648
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

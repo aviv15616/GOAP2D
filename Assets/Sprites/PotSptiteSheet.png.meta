@@ -1,0 +1,1073 @@
+fileFormatVersion: 2
+guid: 67982585ac2359940990953cb4e451b8
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 559419051966234508
+    second: A-detailed-16-bit-pixel-art-sprite-of-a-heavy-blac-256px-36_0
+  - first:
+      213: 6559387755926223262
+    second: A-detailed-16-bit-pixel-art-sprite-of-a-heavy-blac-256px-36_1
+  - first:
+      213: 7959464245039026630
+    second: A-detailed-16-bit-pixel-art-sprite-of-a-heavy-blac-256px-36_2
+  - first:
+      213: 5177264808091021389
+    second: A-detailed-16-bit-pixel-art-sprite-of-a-heavy-blac-256px-36_3
+  - first:
+      213: -152030311275084077
+    second: A-detailed-16-bit-pixel-art-sprite-of-a-heavy-blac-256px-36_4
+  - first:
+      213: -4592869890192472424
+    second: A-detailed-16-bit-pixel-art-sprite-of-a-heavy-blac-256px-36_5
+  - first:
+      213: -4121642682357244863
+    second: A-detailed-16-bit-pixel-art-sprite-of-a-heavy-blac-256px-36_6
+  - first:
+      213: 7411419288306073103
+    second: A-detailed-16-bit-pixel-art-sprite-of-a-heavy-blac-256px-36_7
+  - first:
+      213: 3644390543203537016
+    second: A-detailed-16-bit-pixel-art-sprite-of-a-heavy-blac-256px-36_8
+  - first:
+      213: 4534045431954186727
+    second: A-detailed-16-bit-pixel-art-sprite-of-a-heavy-blac-256px-36_9
+  - first:
+      213: 4595162443515636840
+    second: A-detailed-16-bit-pixel-art-sprite-of-a-heavy-blac-256px-36_10
+  - first:
+      213: -5438925706560181032
+    second: A-detailed-16-bit-pixel-art-sprite-of-a-heavy-blac-256px-36_11
+  - first:
+      213: -7775404497858920197
+    second: A-detailed-16-bit-pixel-art-sprite-of-a-heavy-blac-256px-36_12
+  - first:
+      213: -3074138787198018866
+    second: A-detailed-16-bit-pixel-art-sprite-of-a-heavy-blac-256px-36_13
+  - first:
+      213: -3307302730319634593
+    second: A-detailed-16-bit-pixel-art-sprite-of-a-heavy-blac-256px-36_14
+  - first:
+      213: 4761111538932406594
+    second: A-detailed-16-bit-pixel-art-sprite-of-a-heavy-blac-256px-36_15
+  - first:
+      213: -8719813156024098119
+    second: A-detailed-16-bit-pixel-art-sprite-of-a-heavy-blac-256px-36_16
+  - first:
+      213: 8325811122666442808
+    second: A-detailed-16-bit-pixel-art-sprite-of-a-heavy-blac-256px-36_17
+  - first:
+      213: 3784187163180603397
+    second: A-detailed-16-bit-pixel-art-sprite-of-a-heavy-blac-256px-36_18
+  - first:
+      213: 3781713702685918801
+    second: A-detailed-16-bit-pixel-art-sprite-of-a-heavy-blac-256px-36_19
+  - first:
+      213: 1134207815155021099
+    second: A-detailed-16-bit-pixel-art-sprite-of-a-heavy-blac-256px-36_20
+  - first:
+      213: 8232653065260370923
+    second: A-detailed-16-bit-pixel-art-sprite-of-a-heavy-blac-256px-36_21
+  - first:
+      213: 7783110862105096570
+    second: A-detailed-16-bit-pixel-art-sprite-of-a-heavy-blac-256px-36_22
+  - first:
+      213: -2073877068677832810
+    second: A-detailed-16-bit-pixel-art-sprite-of-a-heavy-blac-256px-36_23
+  - first:
+      213: -4277746834541880532
+    second: A-detailed-16-bit-pixel-art-sprite-of-a-heavy-blac-256px-36_24
+  - first:
+      213: -2619977154418024025
+    second: A-detailed-16-bit-pixel-art-sprite-of-a-heavy-blac-256px-36_25
+  - first:
+      213: 5768094597349919712
+    second: A-detailed-16-bit-pixel-art-sprite-of-a-heavy-blac-256px-36_26
+  - first:
+      213: -6792078760549910510
+    second: A-detailed-16-bit-pixel-art-sprite-of-a-heavy-blac-256px-36_27
+  - first:
+      213: 1317407374595665023
+    second: A-detailed-16-bit-pixel-art-sprite-of-a-heavy-blac-256px-36_28
+  - first:
+      213: 5241079290234233793
+    second: A-detailed-16-bit-pixel-art-sprite-of-a-heavy-blac-256px-36_29
+  - first:
+      213: 5286391595306705148
+    second: A-detailed-16-bit-pixel-art-sprite-of-a-heavy-blac-256px-36_30
+  - first:
+      213: 3119604989109479640
+    second: A-detailed-16-bit-pixel-art-sprite-of-a-heavy-blac-256px-36_31
+  - first:
+      213: -7921728648126128762
+    second: A-detailed-16-bit-pixel-art-sprite-of-a-heavy-blac-256px-36_32
+  - first:
+      213: -8857161462992727390
+    second: A-detailed-16-bit-pixel-art-sprite-of-a-heavy-blac-256px-36_33
+  - first:
+      213: 8778613561800764383
+    second: A-detailed-16-bit-pixel-art-sprite-of-a-heavy-blac-256px-36_34
+  - first:
+      213: 3958719504008122235
+    second: A-detailed-16-bit-pixel-art-sprite-of-a-heavy-blac-256px-36_35
+  - first:
+      213: 1943810943883909893
+    second: A-detailed-16-bit-pixel-art-sprite-of-a-heavy-blac-256px-36_36
+  - first:
+      213: 5264650981416892398
+    second: A-detailed-16-bit-pixel-art-sprite-of-a-heavy-blac-256px-36_37
+  - first:
+      213: -3904755256407611220
+    second: A-detailed-16-bit-pixel-art-sprite-of-a-heavy-blac-256px-36_38
+  - first:
+      213: 5265926864169547456
+    second: A-detailed-16-bit-pixel-art-sprite-of-a-heavy-blac-256px-36_39
+  - first:
+      213: -5017722130722295050
+    second: A-detailed-16-bit-pixel-art-sprite-of-a-heavy-blac-256px-36_40
+  - first:
+      213: 3391698563001873509
+    second: A-detailed-16-bit-pixel-art-sprite-of-a-heavy-blac-256px-36_41
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: PotSptiteSheet_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1635
+        width: 235
+        height: 327
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5763b6ee36dfcdf478c52b2da9da10b8
+      internalID: 1238138771
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PotSptiteSheet_1
+      rect:
+        serializedVersion: 2
+        x: 235
+        y: 1635
+        width: 235
+        height: 327
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ffa9865940459c14dbab6f5b65868272
+      internalID: -946563352
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PotSptiteSheet_2
+      rect:
+        serializedVersion: 2
+        x: 470
+        y: 1635
+        width: 235
+        height: 327
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 15ead295379cb0a4dbda7f437d1ee33d
+      internalID: 199229176
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PotSptiteSheet_3
+      rect:
+        serializedVersion: 2
+        x: 705
+        y: 1635
+        width: 235
+        height: 327
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d195c4b6ea62b24082b39ecab4f4740
+      internalID: -291884241
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PotSptiteSheet_4
+      rect:
+        serializedVersion: 2
+        x: 940
+        y: 1635
+        width: 235
+        height: 327
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 09e40e0d4ced76a4d91f759ba42b0b71
+      internalID: -1428728433
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PotSptiteSheet_5
+      rect:
+        serializedVersion: 2
+        x: 1175
+        y: 1635
+        width: 235
+        height: 327
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 786868cf0667d124786f31eaf137adc9
+      internalID: -883982969
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PotSptiteSheet_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1308
+        width: 235
+        height: 327
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81d2c73b26d134b45857703c70ff7edf
+      internalID: 437268908
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PotSptiteSheet_7
+      rect:
+        serializedVersion: 2
+        x: 235
+        y: 1308
+        width: 235
+        height: 327
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be6dfcd2a94bd8747bdfebc070e5784d
+      internalID: -2010970487
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PotSptiteSheet_8
+      rect:
+        serializedVersion: 2
+        x: 470
+        y: 1308
+        width: 235
+        height: 327
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e0496529b48473b4c9f46fc09255e319
+      internalID: 570508968
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PotSptiteSheet_9
+      rect:
+        serializedVersion: 2
+        x: 705
+        y: 1308
+        width: 235
+        height: 327
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 61f4857b88186a94a8cb4a33ef076055
+      internalID: -587304966
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PotSptiteSheet_10
+      rect:
+        serializedVersion: 2
+        x: 940
+        y: 1308
+        width: 235
+        height: 327
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f8d52351c4d555344b48fa2375b818c4
+      internalID: 1467534300
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PotSptiteSheet_11
+      rect:
+        serializedVersion: 2
+        x: 1175
+        y: 1308
+        width: 235
+        height: 327
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6112b094b9d014c4389b28f0a4756d12
+      internalID: -534225264
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PotSptiteSheet_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 981
+        width: 235
+        height: 327
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: abd35cdafb394614a8af58a9ee0c7cbe
+      internalID: 999340649
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PotSptiteSheet_13
+      rect:
+        serializedVersion: 2
+        x: 235
+        y: 981
+        width: 235
+        height: 327
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 45d00c0ce851f59489c3abab7c223b3f
+      internalID: -1639023659
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PotSptiteSheet_14
+      rect:
+        serializedVersion: 2
+        x: 470
+        y: 981
+        width: 235
+        height: 327
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3dfc1e5b7e5204943bba6103ba03c333
+      internalID: -2056151828
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PotSptiteSheet_15
+      rect:
+        serializedVersion: 2
+        x: 705
+        y: 981
+        width: 235
+        height: 327
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb69c2e289a231049982677a0268c9a9
+      internalID: -620009453
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PotSptiteSheet_16
+      rect:
+        serializedVersion: 2
+        x: 940
+        y: 981
+        width: 235
+        height: 327
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f488a0afb0407743a72951eccda26a9
+      internalID: -697969679
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PotSptiteSheet_17
+      rect:
+        serializedVersion: 2
+        x: 1175
+        y: 981
+        width: 235
+        height: 327
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ba550118b69e0f4f91186a5478512e1
+      internalID: 305280831
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PotSptiteSheet_18
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 654
+        width: 235
+        height: 327
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d8bffd97ce7c7a244920b95c5015b736
+      internalID: -1014223084
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PotSptiteSheet_19
+      rect:
+        serializedVersion: 2
+        x: 235
+        y: 654
+        width: 235
+        height: 327
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab5919d711e13ea48b04f3823d431b98
+      internalID: 2054445408
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PotSptiteSheet_20
+      rect:
+        serializedVersion: 2
+        x: 470
+        y: 654
+        width: 235
+        height: 327
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d2bb852ffe8c9a7419724d57e1a71800
+      internalID: -1509590035
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PotSptiteSheet_21
+      rect:
+        serializedVersion: 2
+        x: 705
+        y: 654
+        width: 235
+        height: 327
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed7f5a1a08485e6499cdc7f5d810af35
+      internalID: 104199590
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PotSptiteSheet_22
+      rect:
+        serializedVersion: 2
+        x: 940
+        y: 654
+        width: 235
+        height: 327
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c22ae55470a6cef4888f2bb3decc2123
+      internalID: 2089072358
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PotSptiteSheet_23
+      rect:
+        serializedVersion: 2
+        x: 1175
+        y: 654
+        width: 235
+        height: 327
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e44ab2caccf93194685c4809ef4e4c73
+      internalID: -657006566
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PotSptiteSheet_24
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 327
+        width: 235
+        height: 327
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad33620f17fe74f41b5c8340729492d1
+      internalID: -514997095
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PotSptiteSheet_25
+      rect:
+        serializedVersion: 2
+        x: 235
+        y: 327
+        width: 235
+        height: 327
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1471acc8aa665574bb10dd25b2281c7b
+      internalID: 951186219
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PotSptiteSheet_26
+      rect:
+        serializedVersion: 2
+        x: 470
+        y: 327
+        width: 235
+        height: 327
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 10ed340f2d5799d459d8dd5976d90734
+      internalID: -465756567
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PotSptiteSheet_27
+      rect:
+        serializedVersion: 2
+        x: 705
+        y: 327
+        width: 235
+        height: 327
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e2d1254d046d6de478aa6e2db19a99d8
+      internalID: -393877922
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PotSptiteSheet_28
+      rect:
+        serializedVersion: 2
+        x: 940
+        y: 327
+        width: 235
+        height: 327
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d70039689ea074479fa90ec34b31a0a
+      internalID: -618638406
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PotSptiteSheet_29
+      rect:
+        serializedVersion: 2
+        x: 1175
+        y: 327
+        width: 235
+        height: 327
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e1934ff14b9911b4c873e61d12d893f9
+      internalID: -1157157777
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PotSptiteSheet_30
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 235
+        height: 327
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8bb370eb2f93a5b458ed43dffc6fcca4
+      internalID: 1092619444
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PotSptiteSheet_31
+      rect:
+        serializedVersion: 2
+        x: 235
+        y: 0
+        width: 235
+        height: 327
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e5df097fe0f24524890fb57fbe9148ad
+      internalID: -2088488421
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PotSptiteSheet_32
+      rect:
+        serializedVersion: 2
+        x: 470
+        y: 0
+        width: 235
+        height: 327
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c383e89131f07cb43ba47119a01d2cca
+      internalID: -1452043990
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PotSptiteSheet_33
+      rect:
+        serializedVersion: 2
+        x: 705
+        y: 0
+        width: 235
+        height: 327
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc583eaa94d9c8840b715703441db574
+      internalID: 2003104802
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PotSptiteSheet_34
+      rect:
+        serializedVersion: 2
+        x: 940
+        y: 0
+        width: 235
+        height: 327
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aea55980a51d5cb4797d9e58d10c09e8
+      internalID: 1655242270
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PotSptiteSheet_35
+      rect:
+        serializedVersion: 2
+        x: 1175
+        y: 0
+        width: 235
+        height: 327
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a4fba0673ff5a3248ae9e4a345a66d4a
+      internalID: 1724211333
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: e84e6eac2b853d645a3307f29600da7c
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":235.0,"y":327.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      PotSptiteSheet_0: 1238138771
+      PotSptiteSheet_1: -946563352
+      PotSptiteSheet_10: 1467534300
+      PotSptiteSheet_11: -534225264
+      PotSptiteSheet_12: 999340649
+      PotSptiteSheet_13: -1639023659
+      PotSptiteSheet_14: -2056151828
+      PotSptiteSheet_15: -620009453
+      PotSptiteSheet_16: -697969679
+      PotSptiteSheet_17: 305280831
+      PotSptiteSheet_18: -1014223084
+      PotSptiteSheet_19: 2054445408
+      PotSptiteSheet_2: 199229176
+      PotSptiteSheet_20: -1509590035
+      PotSptiteSheet_21: 104199590
+      PotSptiteSheet_22: 2089072358
+      PotSptiteSheet_23: -657006566
+      PotSptiteSheet_24: -514997095
+      PotSptiteSheet_25: 951186219
+      PotSptiteSheet_26: -465756567
+      PotSptiteSheet_27: -393877922
+      PotSptiteSheet_28: -618638406
+      PotSptiteSheet_29: -1157157777
+      PotSptiteSheet_3: -291884241
+      PotSptiteSheet_30: 1092619444
+      PotSptiteSheet_31: -2088488421
+      PotSptiteSheet_32: -1452043990
+      PotSptiteSheet_33: 2003104802
+      PotSptiteSheet_34: 1655242270
+      PotSptiteSheet_35: 1724211333
+      PotSptiteSheet_4: -1428728433
+      PotSptiteSheet_5: -883982969
+      PotSptiteSheet_6: 437268908
+      PotSptiteSheet_7: -2010970487
+      PotSptiteSheet_8: 570508968
+      PotSptiteSheet_9: -587304966
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
