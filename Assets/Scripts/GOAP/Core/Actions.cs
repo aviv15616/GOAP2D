@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -8,14 +7,14 @@ public abstract class GoapAction : MonoBehaviour
     public float Cost = 1f;
 
     // Preconditions the world must satisfy before action can run
-    public Dictionary<string, bool> Preconditions = new();
+    public Dictionary<string, bool> Preconditions = new Dictionary<string, bool>();
 
     // Effects applied to the world after action succeeds
-    public Dictionary<string, bool> Effects = new();
+    public Dictionary<string, bool> Effects = new Dictionary<string, bool>();
 
     public bool IsRunning { get; protected set; }
 
-    public virtual bool CheckProceduralPrecondition(GoapAgent agent) => true;
+    public virtual bool CheckProceduralPrecondition(GoapAgent agent) { return true; }
 
     public virtual void DoReset()
     {
@@ -24,8 +23,3 @@ public abstract class GoapAction : MonoBehaviour
 
     public abstract void Perform(GoapAgent agent);
 }
-
-
-
-
-

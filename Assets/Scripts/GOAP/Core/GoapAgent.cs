@@ -12,8 +12,12 @@ public class GoapAgent : MonoBehaviour
 
     public float moveSpeed = 2f;
     public Rigidbody2D rb;
+    public float Stamina = 10f;
+    public int InventoryWood = 0;
+
 
     private GoapPlanner planner = new GoapPlanner();
+
 
     private void Awake()
     {
@@ -22,6 +26,14 @@ public class GoapAgent : MonoBehaviour
         foreach (var action in GetComponents<GoapAction>())
             actions.Add(action);
     }
+    private void Start()
+    {
+        beliefs.Set("HasWood", false);
+        beliefs.Set("IsTired", false);
+        beliefs.Set("AtTarget", false);
+        beliefs.Set("StationBuilt", false);
+    }
+
 
     private void Update()
     {

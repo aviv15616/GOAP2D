@@ -65,18 +65,31 @@
     <Compile Include="Assets\Scripts\Utilities\WorkerAutoTest.cs" />
     <Compile Include="Assets\Cainos\Pixel Art Top Down - Basic\Script\SpriteColorAnimation.cs" />
     <Compile Include="Assets\SetScale.cs" />
-    <Compile Include="Assets\Scripts\Utilities\Timer.cs" />
+    <Compile Include="Assets\Scripts\GOAP\Actions\GoapTimer.cs" />
     <Compile Include="Assets\Scripts\GOAP\Core\Beliefs.cs" />
+    <Compile Include="Assets\Scripts\GOAP\Actions\Move.cs" />
+    <Compile Include="Assets\Scripts\NPC&apos;s\GoalProviders\SurvivorGoalProvider.cs" />
     <Compile Include="Assets\Scripts\GOAP\Core\Actions.cs" />
     <Compile Include="Assets\Scripts\GOAP\Core\Strategies.cs" />
+    <Compile Include="Assets\Scripts\NPC&apos;s\LazyAgent.cs" />
+    <Compile Include="Assets\Scripts\World\StationState.cs" />
     <Compile Include="Assets\Cainos\Pixel Art Top Down - Basic\Script\CameraFollow.cs" />
+    <Compile Include="Assets\Scripts\GOAP\Actions\Build.cs" />
     <Compile Include="Assets\Scripts\GOAP\Core\GoapAgent.cs" />
     <Compile Include="Assets\Cainos\Pixel Art Top Down - Basic\Script\TopDownCharacterController.cs" />
+    <Compile Include="Assets\Scripts\GOAP\Actions\Sleep.cs" />
     <Compile Include="Assets\Scripts\Utilities\GameObjectExtensions.cs" />
     <Compile Include="Assets\Scripts\GOAP\Core\Goals.cs" />
     <Compile Include="Assets\Scripts\Utilities\Vector3Extensions.cs" />
     <Compile Include="Assets\Cainos\Pixel Art Top Down - Basic\Script\PropsAltar.cs" />
+    <Compile Include="Assets\Scripts\NPC&apos;s\GoalProviders\LazyGoalProvider.cs" />
     <Compile Include="Assets\Scripts\GOAP\Core\Sensor.cs" />
+    <Compile Include="Assets\Scripts\NPC&apos;s\SurvivorAgent.cs" />
+    <Compile Include="Assets\Scripts\GOAP\Actions\UseStation.cs" />
+    <Compile Include="Assets\Scripts\NPC&apos;s\GoalProviders\WorkerGoalProvider.cs" />
+    <Compile Include="Assets\Scripts\NPC&apos;s\WorkerAgent.cs" />
+    <Compile Include="Assets\Scripts\GOAP\Actions\CollectWood.cs" />
+    <Compile Include="Assets\Scripts\World\StationManager.cs" />
     <Compile Include="Assets\Cainos\Pixel Art Top Down - Basic\Script\StairsLayerTrigger.cs" />
   </ItemGroup>
   <ItemGroup>
