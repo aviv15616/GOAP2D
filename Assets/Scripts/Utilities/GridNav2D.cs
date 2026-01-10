@@ -102,7 +102,6 @@ public class GridNav2D : MonoBehaviour
     {
         if (boundsProvider == null)
         {
-            Debug.LogWarning("[GridNav2D] boundsProvider is not assigned.");
             return null;
         }
 
@@ -112,7 +111,6 @@ public class GridNav2D : MonoBehaviour
         int gridH = Mathf.CeilToInt(b.size.y / Mathf.Max(0.001f, cellSize));
         if (gridW * gridH > maxGridCells)
         {
-            Debug.LogWarning($"[GridNav2D] Grid too large ({gridW}x{gridH}={gridW * gridH}). Check TilemapBoundsProvider or increase cellSize.");
             return null;
         }
 

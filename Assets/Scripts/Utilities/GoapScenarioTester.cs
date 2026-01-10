@@ -57,7 +57,6 @@ public class GoapScenarioTester : MonoBehaviour
 
         if (registry == null) registry = FindFirstObjectByType<StationRegistry>();
 
-        Debug.Log("[TEST_START] STRICT GOAP Tests begin");
 
         BuiltByTag.GlobalSequence = 0;
 
@@ -84,9 +83,6 @@ public class GoapScenarioTester : MonoBehaviour
         PrepareAgent(eaterGuy, NeedType.Hunger);
         PrepareAgent(warmthGuy, NeedType.Warmth);
 
-        Debug.Log($"[SETUP] SleepGuy meters E={sleepGuy.needs.energy} H={sleepGuy.needs.hunger} W={sleepGuy.needs.warmth}");
-        Debug.Log($"[SETUP] EaterGuy meters E={eaterGuy.needs.energy} H={eaterGuy.needs.hunger} W={eaterGuy.needs.warmth}");
-        Debug.Log($"[SETUP] WarmthGuy meters E={warmthGuy.needs.energy} H={warmthGuy.needs.hunger} W={warmthGuy.needs.warmth}");
 
         // 4) enable agents AFTER setup is complete
         SetAgentsEnabled(true);
@@ -111,14 +107,12 @@ public class GoapScenarioTester : MonoBehaviour
         // restore drain
         RestoreDrain();
 
-        Debug.Log($"[TEST_SUMMARY] PASS={_pass} FAIL={_fail}");
     }
 
     // ---------- Test Steps ----------
 
     private IEnumerator StrictBuildThenUse(GoapAgent agent, NeedType need, StationType station)
     {
-        Debug.Log($"[TEST] {agent.name}: BuildThenUse {station}");
 
         float startMeter = GetNeedMeter(agent, need);
 
@@ -152,7 +146,6 @@ public class GoapScenarioTester : MonoBehaviour
 
     private IEnumerator StrictRebuildAfterDestroy(GoapAgent agent, NeedType need, StationType station)
     {
-        Debug.Log($"[TEST] {agent.name}: RebuildAfterDestroy {station}");
 
         var oldTag = FindLatestBuiltTag(agent.name, station);
         if (oldTag == null)
@@ -265,7 +258,6 @@ public class GoapScenarioTester : MonoBehaviour
             st.built = true;
         }
 
-        Debug.Log("[SETUP] Spawned Wood station for tests.");
     }
 
     private void RebuildRegistry()
@@ -387,12 +379,10 @@ public class GoapScenarioTester : MonoBehaviour
     private void Pass(string msg)
     {
         _pass++;
-        Debug.Log($"[PASS] {msg}");
     }
 
     private void Fail(string msg)
     {
         _fail++;
-        Debug.LogError($"[FAIL] {msg}");
     }
 }

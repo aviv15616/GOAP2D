@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8161528776751539091}
   - component: {fileID: 8372777793476854611}
   - component: {fileID: -7481103150592930075}
+  - component: {fileID: 334733764932878824}
   m_Layer: 7
   m_Name: Bed
   m_TagString: Bed
@@ -79,8 +80,8 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: -44025399
-  m_SortingLayer: 2
+  m_SortingLayerID: 1854734331
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Sprite: {fileID: -4696414464543273270, guid: 1333f4ec6fae64345914dad7e9a1b5d2,
@@ -110,6 +111,7 @@ MonoBehaviour:
   built: 1
   interactionPoint: {fileID: 0}
   visualsRoot: {fileID: 0}
+  boundSpot: {fileID: 0}
 --- !u!60 &-7481103150592930075
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -211,3 +213,20 @@ PolygonCollider2D:
       - {x: 0.42999998, y: -0.98499995}
       - {x: 0.52, y: -0.945}
   m_UseDelaunayMesh: 1
+--- !u!114 &334733764932878824
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4966315224133030372}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6779f04326bdcd45924f95ac41ecf2b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::YSort
+  targetCollider: {fileID: -7481103150592930075}
+  targetRenderer: {fileID: 8161528776751539091}
+  targetSortingGroup: {fileID: 0}
+  pixelsPerUnit: 100
+  orderOffset: 0

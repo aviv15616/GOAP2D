@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 4984582452843529813}
   - component: {fileID: 1674126987976475372}
   - component: {fileID: 3169021414061272025}
+  - component: {fileID: -2436221916064468198}
   m_Layer: 7
   m_Name: Fire
   m_TagString: FireStation
@@ -81,8 +82,8 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: -44025399
-  m_SortingLayer: 2
+  m_SortingLayerID: 1854734331
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Sprite: {fileID: -3058800371278199185, guid: d4ce048b3bdc8db4cbe7a737d0d454f5,
@@ -134,6 +135,7 @@ MonoBehaviour:
   built: 1
   interactionPoint: {fileID: 0}
   visualsRoot: {fileID: 0}
+  boundSpot: {fileID: 0}
 --- !u!114 &1674126987976475372
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -150,6 +152,7 @@ MonoBehaviour:
   built: 1
   interactionPoint: {fileID: 0}
   visualsRoot: {fileID: 0}
+  boundSpot: {fileID: 0}
 --- !u!60 &3169021414061272025
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -321,3 +324,20 @@ PolygonCollider2D:
       - {x: -1.0044621, y: 1.7529875}
       - {x: -1.0044621, y: 1.8055772}
   m_UseDelaunayMesh: 1
+--- !u!114 &-2436221916064468198
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6285432468247336384}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6779f04326bdcd45924f95ac41ecf2b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::YSort
+  targetCollider: {fileID: 3169021414061272025}
+  targetRenderer: {fileID: 2368973001272566125}
+  targetSortingGroup: {fileID: 0}
+  pixelsPerUnit: 100
+  orderOffset: 0

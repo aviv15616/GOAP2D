@@ -47,6 +47,17 @@ public class GoapAgent : MonoBehaviour
     private float _idleTimer;
     private bool _idleLogged;
 
+    public event System.Action<string, string> OnPlanChanged;   // (goal, action)
+    public event System.Action<string, string> OnActionChanged; // (goal, action)
+
+    public string DebugGoal { get; private set; } = "-";
+    public string DebugAction { get; private set; } = "-";
+
+    // בשביל לדעת למה היה replan
+    private bool _replanPending;
+    private string _replanReason = "";
+
+
     private void Awake()
     {
         if (needs == null) needs = GetComponent<Needs>();
@@ -77,12 +88,11 @@ public class GoapAgent : MonoBehaviour
         NeedType desiredNeed = ChooseNeed();
         if (desiredNeed == NeedType.None)
         {
-            if (_plan != null && _plan.Count > 0) ForceReplan();
+            if (_plan != null && _plan.Count > 0) ForceReplan("Idle");
 
             if (!_idleLogged)
             {
                 _idleLogged = true;
-                Debug.Log($"[IDLE] {name} | {MeterLine()}");
             }
 
             if (enableIdleWander)
@@ -98,9 +108,9 @@ public class GoapAgent : MonoBehaviour
         if (desiredNeed != _currentNeed)
         {
             _currentNeed = desiredNeed;
-            ForceReplan();
-            LogInfo("GOAL", "Need changed -> forcing replan");
+            ForceReplan($"Need changed → {_currentNeed}");
         }
+
 
         if (_plan == null || _plan.Count == 0)
         {
@@ -111,13 +121,19 @@ public class GoapAgent : MonoBehaviour
                 if (!_noPlanLogged)
                 {
                     _noPlanLogged = true;
-                    Debug.LogWarning($"[NO_PLAN] {name} | Need={_currentNeed} | {MeterLine()}");
                 }
                 return;
             }
 
             _noPlanLogged = false;
-            LogPlan("New plan created");
+            bool isReplan = _replanPending;
+            string reason = isReplan ? _replanReason : "new plan";
+
+            _replanPending = false;
+            _replanReason = "";
+
+            LogPlan(isReplan ? $"Replan ({reason})" : "New plan created");
+            NotifyPlanChanged(isReplan ? $"Replan ({reason})" : "New plan");
         }
 
         var a = _plan.Peek();
@@ -125,20 +141,23 @@ public class GoapAgent : MonoBehaviour
         if (_runningAction != a)
         {
             _runningAction = a;
-            LogInfo("ACT_START", ActionPrettyName(a));
+
+            DebugGoal = _currentNeed.ToString();
+            DebugAction = ActionPrettyName(a);
+
+            OnActionChanged?.Invoke(DebugGoal, DebugAction);
         }
+
 
         if (!a.IsStillValid(this))
         {
-            LogInfo("INVALID", ActionPrettyName(a) + " became invalid -> replan");
-            ForceReplan();
+            ForceReplan("action invalid");
             return;
         }
 
         bool done = a.Perform(this, dt);
         if (done)
         {
-            LogInfo("ACT_DONE", ActionPrettyName(a));
             _plan.Pop();
             a.ResetRuntime();
 
@@ -146,6 +165,17 @@ public class GoapAgent : MonoBehaviour
                 _runningAction = null;
         }
     }
+    private void NotifyPlanChanged(string reason)
+    {
+        DebugGoal = _currentNeed.ToString();
+
+        // הפעולה הראשונה בתכנית (מה שהולך להתבצע עכשיו)
+        var top = (_plan != null && _plan.Count > 0) ? _plan.Peek() : null;
+        DebugAction = top != null ? ActionPrettyName(top) : "None";
+
+        OnPlanChanged?.Invoke(DebugGoal, DebugAction);
+    }
+
 
     private void TickIdleWander(float dt)
     {
@@ -163,7 +193,7 @@ public class GoapAgent : MonoBehaviour
         mover.MoveTowards(_idleTarget, dt);
     }
 
-    private void ForceReplan()
+    private void ForceReplan(string reason = "replan")
     {
         if (_plan != null)
             foreach (var a in actions) a.ResetRuntime();
@@ -171,7 +201,11 @@ public class GoapAgent : MonoBehaviour
         _plan = null;
         _runningAction = null;
         _noPlanLogged = false;
+
+        _replanPending = true;
+        _replanReason = reason;
     }
+
 
     private NeedType ChooseNeed()
     {
@@ -280,11 +314,9 @@ public class GoapAgent : MonoBehaviour
 
     private void LogPlan(string reason)
     {
-        Debug.Log($"[PLAN] {name} | Need={_currentNeed} | {reason} | {MeterLine()} | Path: {PlanToString(_plan)}");
     }
 
     private void LogInfo(string tag, string msg)
     {
-        Debug.Log($"[{tag}] {name} | Need={_currentNeed} | {msg} | {MeterLine()}");
     }
 }

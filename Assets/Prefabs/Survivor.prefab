@@ -23,6 +23,9 @@ GameObject:
   - component: {fileID: 1320746079426882445}
   - component: {fileID: 3333252164145559670}
   - component: {fileID: 7280466189342232707}
+  - component: {fileID: 4137197118521658240}
+  - component: {fileID: 2393095062377762188}
+  - component: {fileID: 6481631692308000219}
   m_Layer: 8
   m_Name: Survivor
   m_TagString: Untagged
@@ -90,8 +93,8 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: -105541197
-  m_SortingLayer: 3
+  m_SortingLayerID: 1854734331
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Sprite: {fileID: -8602919253393574722, guid: b95329771a79fc347bd7b14caac232ba,
@@ -181,14 +184,14 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6151490515553686408}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDamping: 0
   m_AngularDamping: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -199,7 +202,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!114 &2910078706800401807
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -238,7 +241,7 @@ MonoBehaviour:
   needs: {fileID: 0}
   mover: {fileID: 0}
   wood: 0
-  maxWoodForPlanning: 12
+  maxWoodForPlanning: 6
   spawnZ: 0
   enableIdleWander: 1
   idleRadius: 6
@@ -257,9 +260,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   speed: 2.5
-  arriveDistance: 0.15
+  arriveDistance: 1.5
   boundsProvider: {fileID: 0}
-  boundsMargin: 0.05
+  boundsMargin: 0.5
   animator: {fileID: 0}
   moveXParam: MoveX
   moveYParam: MoveY
@@ -329,7 +332,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::BuildStationAction
   planCost: 1
   buildType: 1
-  stationPrefab: {fileID: 0}
+  stationPrefab: {fileID: 4966315224133030372, guid: f44bf28eca67d264cbc45a4694f9aab5,
+    type: 3}
   woodCost: 2
   buildTime: 1.5
   stopDistance: 0.9
@@ -347,7 +351,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::BuildStationAction
   planCost: 1
   buildType: 2
-  stationPrefab: {fileID: 0}
+  stationPrefab: {fileID: 8384428398947835353, guid: aa8bcdccaaaf23f46afbb3be62186191,
+    type: 3}
   woodCost: 2
   buildTime: 1.5
   stopDistance: 0.9
@@ -365,7 +370,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::BuildStationAction
   planCost: 1
   buildType: 3
-  stationPrefab: {fileID: 0}
+  stationPrefab: {fileID: 6285432468247336384, guid: 15cf9a4315ab85943a00c18537f0907c,
+    type: 3}
   woodCost: 2
   buildTime: 1.5
   stopDistance: 0.9
@@ -384,3 +390,51 @@ MonoBehaviour:
   planCost: 1
   woodPerChop: 1
   chopTime: 1
+--- !u!114 &4137197118521658240
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6151490515553686408}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95e350699a23cc04d9b45cb1fb481d98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::WanderAction
+  planCost: 1
+  wanderRadius: 6
+  arriveDistance: 0.2
+  waitAtPointSeconds: 0.6
+--- !u!114 &2393095062377762188
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6151490515553686408}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40662ab24babf8b408ec966757cef777, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  boundsProvider: {fileID: 0}
+  rb: {fileID: 0}
+  padding: 0.05
+--- !u!114 &6481631692308000219
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6151490515553686408}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6779f04326bdcd45924f95ac41ecf2b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::YSort
+  targetCollider: {fileID: 6958645300293423217}
+  targetRenderer: {fileID: 0}
+  targetSortingGroup: {fileID: 0}
+  pixelsPerUnit: 100
+  orderOffset: 0

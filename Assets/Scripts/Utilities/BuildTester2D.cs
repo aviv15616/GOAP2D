@@ -69,7 +69,6 @@ public class BuildTester2D : MonoBehaviour
     {
         if (!validator.TryFindValidPosition(desired, out Vector2 pos))
         {
-            Debug.Log($"Build FAIL ({type}) - too close to colliders or outside tilemap.");
             return;
         }
 
@@ -83,7 +82,6 @@ public class BuildTester2D : MonoBehaviour
 
         if (prefab == null)
         {
-            Debug.LogError($"No prefab assigned for {type}.");
             return;
         }
 
@@ -98,6 +96,5 @@ public class BuildTester2D : MonoBehaviour
             if (rb != null) rb.bodyType = RigidbodyType2D.Static;
         }
 
-        Debug.Log($"Built {type} at {spawnPos} (parent={stationsRoot.name})");
     }
 }

@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 4924827981365179651}
   - component: {fileID: 6816580048060254151}
   - component: {fileID: -2571528347637925739}
+  - component: {fileID: -5843975440598710685}
   m_Layer: 7
   m_Name: Pot
   m_TagString: FoodStation
@@ -81,8 +82,8 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: -44025399
-  m_SortingLayer: 2
+  m_SortingLayerID: 1854734331
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Sprite: {fileID: 1238138771, guid: 67982585ac2359940990953cb4e451b8, type: 3}
@@ -179,6 +180,7 @@ MonoBehaviour:
   built: 1
   interactionPoint: {fileID: 0}
   visualsRoot: {fileID: 0}
+  boundSpot: {fileID: 0}
 --- !u!60 &-2571528347637925739
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -325,3 +327,20 @@ PolygonCollider2D:
       - {x: 0.945, y: 0.074999996}
       - {x: 0.945, y: 0.085}
   m_UseDelaunayMesh: 1
+--- !u!114 &-5843975440598710685
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8384428398947835353}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6779f04326bdcd45924f95ac41ecf2b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::YSort
+  targetCollider: {fileID: 4924827981365179651}
+  targetRenderer: {fileID: 5248960758323762280}
+  targetSortingGroup: {fileID: 0}
+  pixelsPerUnit: 100
+  orderOffset: 0

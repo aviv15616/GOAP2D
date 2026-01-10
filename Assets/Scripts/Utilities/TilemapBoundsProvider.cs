@@ -47,7 +47,6 @@ public class TilemapBoundsProvider : MonoBehaviour
             new Vector3(Mathf.Max(0.1f, (worldExtX * 2f) - EPS), Mathf.Max(0.1f, (worldExtY * 2f) - EPS), 1f)
         );
 
-        Debug.Log($"[TilemapBounds] min={_worldBounds.min} max={_worldBounds.max} size={_worldBounds.size}");
     }
 
     public bool Contains(Vector2 p) =>

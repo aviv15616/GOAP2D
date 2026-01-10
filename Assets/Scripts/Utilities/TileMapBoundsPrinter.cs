@@ -11,7 +11,6 @@ public class TilemapBoundsPrinter : MonoBehaviour
         if (tilemap == null) tilemap = GetComponent<Tilemap>();
         if (tilemap == null)
         {
-            Debug.LogError("Assign a Tilemap reference.");
             return;
         }
 
@@ -23,6 +22,5 @@ public class TilemapBoundsPrinter : MonoBehaviour
         float width = Mathf.Abs(max.x - min.x);
         float height = Mathf.Abs(max.y - min.y);
 
-        Debug.Log($"Tilemap world bounds: width={width}, height={height}, min={min}, max={max}");
     }
 }

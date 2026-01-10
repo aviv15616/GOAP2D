@@ -1,30 +1,38 @@
 using UnityEngine;
 using UnityEngine.Rendering;
 
-[ExecuteAlways]
 public class YSort : MonoBehaviour
 {
-    [Tooltip("Higher value = stronger separation between Y levels.")]
+    public Collider2D targetCollider;
+    public SpriteRenderer targetRenderer;      // used if no SortingGroup
+    public SortingGroup targetSortingGroup;    // used for trees/multi-sprite stations
+
     public int pixelsPerUnit = 100;
-
-    [Tooltip("Optional offset if pivot isn't at the 'feet' point.")]
-    public float yOffset = 0f;
-
-    SortingGroup _group;
-    SpriteRenderer _sr;
+    public int orderOffset = 0;
 
     void Awake()
     {
-        _group = GetComponent<SortingGroup>();
-        _sr = GetComponent<SpriteRenderer>();
+        if (!targetCollider) targetCollider = GetComponentInChildren<Collider2D>();
+        if (!targetSortingGroup) targetSortingGroup = GetComponent<SortingGroup>();
+        if (!targetRenderer) targetRenderer = GetComponentInChildren<SpriteRenderer>();
     }
 
     void LateUpdate()
     {
-        float y = transform.position.y + yOffset;
-        int order = -(int)(y * pixelsPerUnit);
+        if (!targetCollider) return;
 
-        if (_group != null) _group.sortingOrder = order;
-        else if (_sr != null) _sr.sortingOrder = order;
+        float bottomY = targetCollider.bounds.min.y;
+
+        // lower on screen (smaller Y) => bigger sortingOrder => drawn in front
+        int order = Mathf.RoundToInt(-bottomY * pixelsPerUnit) + orderOffset;
+
+        if (targetSortingGroup)
+        {
+            targetSortingGroup.sortingOrder = order;
+        }
+        else if (targetRenderer)
+        {
+            targetRenderer.sortingOrder = order;
+        }
     }
 }
