@@ -72,16 +72,20 @@
     <Compile Include="Assets\Scripts\GOAP\Core\Beliefs.cs" />
     <Compile Include="Assets\Scripts\Utilities\TileMapBoundsPrinter.cs" />
     <Compile Include="Assets\Scripts\Utilities\TilemapBoundsProvider.cs" />
+    <Compile Include="Assets\Scripts\GOAP\Actions\WanderAction.cs" />
     <Compile Include="Assets\Scripts\GOAP\Actions\BuildStationAction.cs" />
     <Compile Include="Assets\Cainos\Pixel Art Top Down - Basic\Script\CameraFollow.cs" />
     <Compile Include="Assets\Scripts\GOAP\Core\GoapAgent.cs" />
     <Compile Include="Assets\Scripts\GOAP\Actions\Mover2D.cs" />
     <Compile Include="Assets\Cainos\Pixel Art Top Down - Basic\Script\TopDownCharacterController.cs" />
     <Compile Include="Assets\Scripts\GOAP\Core\Goals.cs" />
+    <Compile Include="Assets\Scripts\Utilities\GridNav2D.cs" />
     <Compile Include="Assets\Cainos\Pixel Art Top Down - Basic\Script\PropsAltar.cs" />
+    <Compile Include="Assets\Scripts\Utilities\GoapScenarioTester.cs" />
     <Compile Include="Assets\Scripts\Utilities\BuildValidator.cs" />
     <Compile Include="Assets\Scripts\Utilities\BuildTester2D.cs" />
     <Compile Include="Assets\Scripts\GOAP\Core\GoapAction.cs" />
+    <Compile Include="Assets\Scripts\Utilities\BuiltByTag.cs" />
     <Compile Include="Assets\Cainos\Pixel Art Top Down - Basic\Script\StairsLayerTrigger.cs" />
     <Compile Include="Assets\Scripts\GOAP\Core\Needs.cs" />
   </ItemGroup>

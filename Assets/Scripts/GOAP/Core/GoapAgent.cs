@@ -7,8 +7,9 @@ public class GoapAgent : MonoBehaviour
     public NeedType primaryNeed = NeedType.Sleep;
 
     [Header("Refs (drag from scene or auto-find)")]
-    public StationRegistry registry;      // World object has this
-    public BuildValidator buildValidator; // World object has this
+    public StationRegistry registry;
+    public BuildValidator buildValidator;
+    public GridNav2D nav;
 
     [Header("Components")]
     public Needs needs;
@@ -16,6 +17,10 @@ public class GoapAgent : MonoBehaviour
 
     [Header("Inventory")]
     public int wood = 0;
+
+    [Header("Planning Safety")]
+    [Tooltip("Caps the planner's woodCarried state-space (prevents infinite planning).")]
+    public int maxWoodForPlanning = 12;
 
     [Header("Spawn Z for new stations")]
     public float spawnZ = 0f;
@@ -27,6 +32,8 @@ public class GoapAgent : MonoBehaviour
     private Stack<GoapAction> _plan;
 
     private NeedType _currentNeed;
+    private GoapAction _runningAction;
+    private bool _noPlanLogged;
 
     private void Awake()
     {
@@ -35,45 +42,56 @@ public class GoapAgent : MonoBehaviour
 
         if (registry == null) registry = FindFirstObjectByType<StationRegistry>();
         if (buildValidator == null) buildValidator = FindFirstObjectByType<BuildValidator>();
+        if (nav == null) nav = FindFirstObjectByType<GridNav2D>();
 
-        if (actions.Count == 0)
-            GetComponents(actions); // grab all GoapAction components on this NPC
+        if (actions.Count == 0) GetComponents(actions);
+
+        _currentNeed = primaryNeed;
     }
 
     private void Update()
     {
         float dt = Time.deltaTime;
 
-        // meters drain
         needs.Tick(dt);
 
-        // choose which need to satisfy now (critical overrides)
         NeedType desiredNeed = ChooseNeed();
-
-        // if need changed (ex: became critical), replan immediately
         if (desiredNeed != _currentNeed)
         {
             _currentNeed = desiredNeed;
             ForceReplan();
+            LogInfo("GOAL", "Need changed -> forcing replan");
         }
 
-        // if no plan, plan now
         if (_plan == null || _plan.Count == 0)
         {
             BuildPlanFor(_currentNeed);
+
             if (_plan == null || _plan.Count == 0)
             {
-                // optional: idle/wander later
+                if (!_noPlanLogged)
+                {
+                    _noPlanLogged = true;
+                    Debug.LogWarning($"[NO_PLAN] {name} | Need={_currentNeed} | {MeterLine()}");
+                }
                 return;
             }
+
+            _noPlanLogged = false;
+            LogPlan("New plan created");
         }
 
-        // execute top action
         var a = _plan.Peek();
 
-        // if station disappeared etc => replan
+        if (_runningAction != a)
+        {
+            _runningAction = a;
+            LogInfo("ACT_START", ActionPrettyName(a));
+        }
+
         if (!a.IsStillValid(this))
         {
+            LogInfo("INVALID", ActionPrettyName(a) + " became invalid -> replan");
             ForceReplan();
             return;
         }
@@ -81,39 +99,44 @@ public class GoapAgent : MonoBehaviour
         bool done = a.Perform(this, dt);
         if (done)
         {
+            LogInfo("ACT_DONE", ActionPrettyName(a));
             _plan.Pop();
             a.ResetRuntime();
+
+            if (_plan == null || _plan.Count == 0)
+                _runningAction = null;
         }
     }
 
     private void ForceReplan()
     {
         if (_plan != null)
-        {
             foreach (var a in actions) a.ResetRuntime();
-        }
+
         _plan = null;
+        _runningAction = null;
+        _noPlanLogged = false;
     }
 
     private NeedType ChooseNeed()
     {
-        // critical override
+        // 1) critical override (must handle ASAP)
         if (needs.hunger <= needs.critical) return NeedType.Hunger;
         if (needs.warmth <= needs.critical) return NeedType.Warmth;
         if (needs.energy <= needs.critical) return NeedType.Sleep;
 
-        // otherwise: personality need if it's urgent
+        // 2) personality if urgent
         if (primaryNeed == NeedType.Sleep && needs.energy <= needs.urgent) return NeedType.Sleep;
         if (primaryNeed == NeedType.Hunger && needs.hunger <= needs.urgent) return NeedType.Hunger;
         if (primaryNeed == NeedType.Warmth && needs.warmth <= needs.urgent) return NeedType.Warmth;
 
-        // fallback: any urgent need
+        // 3) any urgent
         if (needs.hunger <= needs.urgent) return NeedType.Hunger;
         if (needs.warmth <= needs.urgent) return NeedType.Warmth;
         if (needs.energy <= needs.urgent) return NeedType.Sleep;
 
-        // nothing urgent
-        return primaryNeed;
+        // 4) nothing urgent -> IDLE (so they don't spam "UseStation" forever)
+        return NeedType.None;
     }
 
     private void BuildPlanFor(NeedType need)
@@ -121,30 +144,28 @@ public class GoapAgent : MonoBehaviour
         var s = MakeWorldStateSnapshot(need);
         var goal = new Goals.GoalSatisfied(need);
 
-        _plan = _planner.Plan(s, actions, goal);
+        _plan = _planner.Plan(s, actions, goal, this);
 
-        // debug
-        if (_plan == null)
-            Debug.LogWarning($"{name}: No plan for {need}");
-        else
-            Debug.Log($"{name}: Planned {_plan.Count} steps for {need}");
+        if (_plan == null || _plan.Count == 0)
+            _plan = null;
     }
 
     private WorldState MakeWorldStateSnapshot(NeedType targetNeed)
     {
-        var s = new WorldState();
+        var s = new WorldState
+        {
+            woodExists = AnyStationExists(StationType.Wood),
+            bedExists = AnyStationExists(StationType.Bed),
+            potExists = AnyStationExists(StationType.Pot),
+            fireExists = AnyStationExists(StationType.Fire),
 
-        s.woodExists = AnyStationExists(StationType.Wood);
-        s.bedExists = AnyStationExists(StationType.Bed);
-        s.potExists = AnyStationExists(StationType.Pot);
-        s.fireExists = AnyStationExists(StationType.Fire);
+            // 🔥 critical: cap planning wood state-space
+            woodCarried = Mathf.Clamp(wood, 0, Mathf.Max(0, maxWoodForPlanning)),
 
-        s.woodCarried = wood;
-
-        // IMPORTANT: only the target need starts "unsatisfied"
-        s.sleepSatisfied = targetNeed != NeedType.Sleep;
-        s.hungerSatisfied = targetNeed != NeedType.Hunger;
-        s.warmthSatisfied = targetNeed != NeedType.Warmth;
+            sleepSatisfied = targetNeed != NeedType.Sleep,
+            hungerSatisfied = targetNeed != NeedType.Hunger,
+            warmthSatisfied = targetNeed != NeedType.Warmth
+        };
 
         return s;
     }
@@ -175,13 +196,47 @@ public class GoapAgent : MonoBehaviour
             if (st.type != type) continue;
 
             float d = Vector2.Distance(me, st.InteractPos);
-            if (d < bestDist)
-            {
-                bestDist = d;
-                best = st;
-            }
+            if (d < bestDist) { bestDist = d; best = st; }
         }
-
         return best;
+    }
+
+    private string MeterLine() => $"E={needs.energy:F0} H={needs.hunger:F0} W={needs.warmth:F0} | Wood={wood}";
+
+    private static StationType NeedToStation(NeedType n) => n switch
+    {
+        NeedType.Sleep => StationType.Bed,
+        NeedType.Hunger => StationType.Pot,
+        NeedType.Warmth => StationType.Fire,
+        _ => StationType.Bed
+    };
+
+    private string ActionPrettyName(GoapAction a)
+    {
+        if (a == null) return "<null>";
+        if (a is ChopWoodAction c) return $"ChopWood(+{c.woodPerChop})";
+        if (a is BuildStationAction b) return $"Build({b.buildType}, cost={b.woodCost})";
+        if (a is UseStationAction u) return $"Use({NeedToStation(u.need)}, +{u.restoreAmount:F0})";
+        return a.GetType().Name;
+    }
+
+    private string PlanToString(Stack<GoapAction> plan)
+    {
+        if (plan == null) return "<null>";
+        if (plan.Count == 0) return "<empty>";
+
+        var parts = new List<string>(plan.Count);
+        foreach (var a in plan) parts.Add(ActionPrettyName(a));
+        return string.Join(" -> ", parts);
+    }
+
+    private void LogPlan(string reason)
+    {
+        Debug.Log($"[PLAN] {name} | Need={_currentNeed} | {reason} | {MeterLine()} | Path: {PlanToString(_plan)}");
+    }
+
+    private void LogInfo(string tag, string msg)
+    {
+        Debug.Log($"[{tag}] {name} | Need={_currentNeed} | {msg} | {MeterLine()}");
     }
 }

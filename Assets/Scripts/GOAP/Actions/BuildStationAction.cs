@@ -1,3 +1,4 @@
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 public class BuildStationAction : GoapAction
@@ -10,15 +11,21 @@ public class BuildStationAction : GoapAction
     public int woodCost = 2;
     public float buildTime = 1.5f;
 
-    private Vector3 _buildPos;
+    private Vector2 _buildWorld;
     private float _t;
+
+    private List<Vector2> _path;
+    private int _pathIndex;
 
     public override bool CanPlan(WorldState s)
     {
-        bool exists = false;
-        if (buildType == StationType.Bed) exists = s.bedExists;
-        else if (buildType == StationType.Pot) exists = s.potExists;
-        else if (buildType == StationType.Fire) exists = s.fireExists;
+        bool exists = buildType switch
+        {
+            StationType.Bed => s.bedExists,
+            StationType.Pot => s.potExists,
+            StationType.Fire => s.fireExists,
+            _ => true
+        };
 
         return !exists && s.woodCarried >= woodCost;
     }
@@ -26,10 +33,15 @@ public class BuildStationAction : GoapAction
     public override void ApplyPlanEffects(ref WorldState s)
     {
         if (buildType == StationType.Bed) s.bedExists = true;
-        else if (buildType == StationType.Pot) s.potExists = true;
-        else if (buildType == StationType.Fire) s.fireExists = true;
+        if (buildType == StationType.Pot) s.potExists = true;
+        if (buildType == StationType.Fire) s.fireExists = true;
 
         s.woodCarried -= woodCost;
+    }
+
+    public override float EstimateCost(GoapAgent agent, WorldState currentState)
+    {
+        return buildTime + 0.5f; // keep cheap
     }
 
     public override bool StartAction(GoapAgent agent)
@@ -38,12 +50,15 @@ public class BuildStationAction : GoapAction
         if (agent.buildValidator == null) return false;
 
         Vector2 desired = agent.transform.position;
-        Vector2 found;
-        if (!agent.buildValidator.TryFindValidPosition(desired, out found))
+        if (!agent.buildValidator.TryFindValidPosition(desired, out Vector2 found))
             return false;
 
-        _buildPos = new Vector3(found.x, found.y, agent.spawnZ);
+        _buildWorld = found;
         _t = 0f;
+
+        _pathIndex = 0;
+        _path = agent.nav != null ? agent.nav.FindPath(agent.transform.position, _buildWorld) : null;
+
         return true;
     }
 
@@ -55,7 +70,14 @@ public class BuildStationAction : GoapAction
             if (!StartAction(agent)) return true;
         }
 
-        if (!agent.mover.MoveTowards(_buildPos, dt)) return false;
+        if (_path != null && _path.Count > 0)
+        {
+            if (!agent.mover.FollowPath(_path, ref _pathIndex, dt)) return false;
+        }
+        else
+        {
+            if (!agent.mover.MoveTowards(_buildWorld, dt)) return false;
+        }
 
         _t += dt;
         if (_t >= buildTime)
@@ -64,17 +86,30 @@ public class BuildStationAction : GoapAction
 
             agent.wood -= woodCost;
 
-            var go = Object.Instantiate(stationPrefab, _buildPos, Quaternion.identity);
+            Vector3 spawn = new Vector3(_buildWorld.x, _buildWorld.y, agent.spawnZ);
+            var go = Object.Instantiate(stationPrefab, spawn, Quaternion.identity);
+            // after Instantiate(...)
+            var tag = go.GetComponent<BuiltByTag>();
+            if (tag == null) tag = go.AddComponent<BuiltByTag>();
+
+            tag.builderName = agent.name;
+            tag.stationType = buildType;
+            tag.sequence = ++BuiltByTag.GlobalSequence;
 
 
             var st = go.GetComponent<Station>();
-            if (st != null) st.built = true;
+            if (st != null)
+            {
+                st.type = buildType;
+                st.built = true;
+            }
 
             var rb = go.GetComponent<Rigidbody2D>();
             if (rb != null) rb.bodyType = RigidbodyType2D.Static;
 
             return true;
         }
+
         return false;
     }
 
@@ -82,5 +117,7 @@ public class BuildStationAction : GoapAction
     {
         base.ResetRuntime();
         _t = 0f;
+        _path = null;
+        _pathIndex = 0;
     }
 }

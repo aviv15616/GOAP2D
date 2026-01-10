@@ -3,7 +3,8 @@ public enum NeedType
 {
     Sleep,
     Hunger,
-    Warmth
+    Warmth,
+    None
 }
 public class Needs : MonoBehaviour
 {

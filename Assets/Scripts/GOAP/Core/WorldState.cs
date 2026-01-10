@@ -1,3 +1,5 @@
+using UnityEngine;
+
 public struct WorldState
 {
     public bool woodExists;
