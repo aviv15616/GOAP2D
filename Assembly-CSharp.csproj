@@ -61,38 +61,29 @@
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\6000.3.3f1\Editor\Data\Tools\BuildPipeline\Unity.SourceGenerators\Unity.UIToolkit.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\Utilities\StationRegistry.cs" />
     <Compile Include="Assets\Scripts\GOAP\Core\GoapPlanner.cs" />
-    <Compile Include="Assets\Scripts\Utilities\WorkerAutoTest.cs" />
+    <Compile Include="Assets\Scripts\GOAP\Core\WorldState.cs" />
+    <Compile Include="Assets\Scripts\GOAP\Actions\UseStationAction.cs" />
+    <Compile Include="Assets\Scripts\GOAP\Actions\ChopWoodAction.cs" />
     <Compile Include="Assets\Cainos\Pixel Art Top Down - Basic\Script\SpriteColorAnimation.cs" />
+    <Compile Include="Assets\Scripts\World\Station.cs" />
     <Compile Include="Assets\SetScale.cs" />
-    <Compile Include="Assets\Scripts\GOAP\Actions\IdleAction.cs" />
-    <Compile Include="Assets\Scripts\GOAP\Actions\GoapTimer.cs" />
     <Compile Include="Assets\Scripts\GOAP\Core\Beliefs.cs" />
-    <Compile Include="Assets\Scripts\GOAP\Actions\Move.cs" />
-    <Compile Include="Assets\Scripts\NPC&apos;s\GoalProviders\SurvivorGoalProvider.cs" />
-    <Compile Include="Assets\Scripts\GOAP\Core\Actions.cs" />
-    <Compile Include="Assets\Scripts\GOAP\Core\Strategies.cs" />
-    <Compile Include="Assets\Scripts\NPC&apos;s\LazyAgent.cs" />
-    <Compile Include="Assets\Scripts\World\StationState.cs" />
+    <Compile Include="Assets\Scripts\Utilities\TileMapBoundsPrinter.cs" />
+    <Compile Include="Assets\Scripts\Utilities\TilemapBoundsProvider.cs" />
+    <Compile Include="Assets\Scripts\GOAP\Actions\BuildStationAction.cs" />
     <Compile Include="Assets\Cainos\Pixel Art Top Down - Basic\Script\CameraFollow.cs" />
-    <Compile Include="Assets\Scripts\GOAP\Actions\Build.cs" />
     <Compile Include="Assets\Scripts\GOAP\Core\GoapAgent.cs" />
+    <Compile Include="Assets\Scripts\GOAP\Actions\Mover2D.cs" />
     <Compile Include="Assets\Cainos\Pixel Art Top Down - Basic\Script\TopDownCharacterController.cs" />
-    <Compile Include="Assets\Scripts\GOAP\Actions\Sleep.cs" />
-    <Compile Include="Assets\Scripts\GOAP\Actions\QuickWander.cs" />
-    <Compile Include="Assets\Scripts\Utilities\GameObjectExtensions.cs" />
     <Compile Include="Assets\Scripts\GOAP\Core\Goals.cs" />
-    <Compile Include="Assets\Scripts\Utilities\Vector3Extensions.cs" />
     <Compile Include="Assets\Cainos\Pixel Art Top Down - Basic\Script\PropsAltar.cs" />
-    <Compile Include="Assets\Scripts\NPC&apos;s\GoalProviders\LazyGoalProvider.cs" />
-    <Compile Include="Assets\Scripts\GOAP\Core\Sensor.cs" />
-    <Compile Include="Assets\Scripts\NPC&apos;s\SurvivorAgent.cs" />
-    <Compile Include="Assets\Scripts\GOAP\Actions\UseStation.cs" />
-    <Compile Include="Assets\Scripts\NPC&apos;s\GoalProviders\WorkerGoalProvider.cs" />
-    <Compile Include="Assets\Scripts\NPC&apos;s\WorkerAgent.cs" />
-    <Compile Include="Assets\Scripts\GOAP\Actions\CollectWood.cs" />
-    <Compile Include="Assets\Scripts\World\StationManager.cs" />
+    <Compile Include="Assets\Scripts\Utilities\BuildValidator.cs" />
+    <Compile Include="Assets\Scripts\Utilities\BuildTester2D.cs" />
+    <Compile Include="Assets\Scripts\GOAP\Core\GoapAction.cs" />
     <Compile Include="Assets\Cainos\Pixel Art Top Down - Basic\Script\StairsLayerTrigger.cs" />
+    <Compile Include="Assets\Scripts\GOAP\Core\Needs.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Cainos\Pixel Art Top Down - Basic\Changelog.txt" />
@@ -1204,20 +1195,20 @@
       <HintPath>Library\ScriptAssemblies\Unity.RenderPipelines.Universal.Editor.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="Unity.2D.Common.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.2D.Common.Editor.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
     <Reference Include="Unity.Timeline">
       <HintPath>Library\ScriptAssemblies\Unity.Timeline.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="PPv2URPConverters">
-      <HintPath>Library\ScriptAssemblies\PPv2URPConverters.dll</HintPath>
+    <Reference Include="Unity.2D.Common.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.2D.Common.Editor.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Unity.2D.Tooling.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.2D.Tooling.Editor.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="PPv2URPConverters">
+      <HintPath>Library\ScriptAssemblies\PPv2URPConverters.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Unity.2D.Animation.Runtime">
@@ -1284,8 +1275,8 @@
       <HintPath>Library\ScriptAssemblies\Unity.VisualScripting.Flow.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary">
-      <HintPath>Library\ScriptAssemblies\Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.dll</HintPath>
+    <Reference Include="Unity.ProBuilder.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.ProBuilder.Editor.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
@@ -1294,6 +1285,10 @@
     </Reference>
     <Reference Include="Unity.2D.Tilemap.Extras.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.2D.Tilemap.Extras.Editor.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary">
+      <HintPath>Library\ScriptAssemblies\Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Unity.2D.Tilemap.Extras">
@@ -1330,6 +1325,10 @@
     </Reference>
     <Reference Include="Unity.InputSystem.ForUI">
       <HintPath>Library\ScriptAssemblies\Unity.InputSystem.ForUI.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.ProBuilder.AddOns.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.ProBuilder.AddOns.Editor.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Unity.RenderPipelines.GPUDriven.Runtime">
@@ -1376,8 +1375,16 @@
       <HintPath>Library\ScriptAssemblies\Unity.Multiplayer.Center.Editor.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="Unity.ProBuilder.AssetIdRemapUtility">
+      <HintPath>Library\ScriptAssemblies\Unity.ProBuilder.AssetIdRemapUtility.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="Unity.RenderPipelines.Universal.Runtime">
       <HintPath>Library\ScriptAssemblies\Unity.RenderPipelines.Universal.Runtime.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.ProBuilder">
+      <HintPath>Library\ScriptAssemblies\Unity.ProBuilder.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Unity.VisualScripting.State">
@@ -1414,6 +1421,10 @@
     </Reference>
     <Reference Include="Unity.InputSystem">
       <HintPath>Library\ScriptAssemblies\Unity.InputSystem.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.Settings.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.Settings.Editor.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="UnityEditor.UI">

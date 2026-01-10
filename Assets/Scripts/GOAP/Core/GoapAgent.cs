@@ -1,128 +1,187 @@
-using System.Collections.Generic;
+ן»¿using System.Collections.Generic;
 using UnityEngine;
 
 public class GoapAgent : MonoBehaviour
 {
-    public bool debug = true;
+    [Header("Personality")]
+    public NeedType primaryNeed = NeedType.Sleep;
 
+    [Header("Refs (drag from scene or auto-find)")]
+    public StationRegistry registry;      // World object has this
+    public BuildValidator buildValidator; // World object has this
+
+    [Header("Components")]
+    public Needs needs;
+    public Mover2D mover;
+
+    [Header("Inventory")]
+    public int wood = 0;
+
+    [Header("Spawn Z for new stations")]
+    public float spawnZ = 0f;
+
+    [Header("Actions (components on this NPC)")]
     public List<GoapAction> actions = new();
-    public Queue<GoapAction> currentPlan = new();
 
-    // חשוב: פעם אחת בלבד!
-    public AgentBeliefs beliefs = new();
+    private readonly GoapPlanner _planner = new();
+    private Stack<GoapAction> _plan;
 
-    public AgentGoal currentGoal;
-    public GoapAction currentAction;
-
-    public float moveSpeed = 2f;
-    public Rigidbody2D rb;
-
-    public float Stamina = 10f;
-    public int InventoryWood = 0;
-    private float nextPlanTime = 0f;
-    public float replanCooldown = 0.5f;
-
-    private GoapPlanner planner = new GoapPlanner();
+    private NeedType _currentNeed;
 
     private void Awake()
     {
-        rb = GetComponent<Rigidbody2D>();
-        actions = new List<GoapAction>(GetComponents<GoapAction>());
+        if (needs == null) needs = GetComponent<Needs>();
+        if (mover == null) mover = GetComponent<Mover2D>();
 
-        if (debug)
-            Debug.Log($"[AGENT] {name} Awake | actions={actions.Count}");
+        if (registry == null) registry = FindFirstObjectByType<StationRegistry>();
+        if (buildValidator == null) buildValidator = FindFirstObjectByType<BuildValidator>();
+
+        if (actions.Count == 0)
+            GetComponents(actions); // grab all GoapAction components on this NPC
     }
 
-    private void Start()
+    private void Update()
     {
-        // אל תערבב keys לא קשורים. נשאיר מינימום וניתן ל-Sensor לקבוע.
-        beliefs.SetState("HasWood", InventoryWood > 0);
-        beliefs.SetState("LowStamina", Stamina < 20);
+        float dt = Time.deltaTime;
 
-        if (debug)
-            Debug.Log($"[AGENT] {name} Start | beliefsTrue={beliefs.DumpTrueStates()}");
-    }
+        // meters drain
+        needs.Tick(dt);
 
-    void Update()
-    {
-        if (currentAction == null)
+        // choose which need to satisfy now (critical overrides)
+        NeedType desiredNeed = ChooseNeed();
+
+        // if need changed (ex: became critical), replan immediately
+        if (desiredNeed != _currentNeed)
         {
-            // אל תבנה תכנית כל פריים
-            if (Time.time >= nextPlanTime && (currentPlan == null || currentPlan.Count == 0))
+            _currentNeed = desiredNeed;
+            ForceReplan();
+        }
+
+        // if no plan, plan now
+        if (_plan == null || _plan.Count == 0)
+        {
+            BuildPlanFor(_currentNeed);
+            if (_plan == null || _plan.Count == 0)
             {
-                BuildPlan();
-                nextPlanTime = Time.time + replanCooldown;
+                // optional: idle/wander later
+                return;
             }
-
-            if (currentPlan != null && currentPlan.Count > 0)
-                currentAction = currentPlan.Dequeue();
         }
 
-        if (currentAction != null)
+        // execute top action
+        var a = _plan.Peek();
+
+        // if station disappeared etc => replan
+        if (!a.IsStillValid(this))
         {
-            currentAction.Perform(this);
-
-            if (!currentAction.IsRunning)
-                currentAction = null;
-        }
-    }
-
-
-    private void BuildPlan()
-    {
-        currentGoal = null;
-        Queue<GoapAction> bestPlan = null;
-
-        var providers = GetComponents<AgentGoalProvider>();
-        if (providers == null || providers.Length == 0)
-        {
-            if (debug) Debug.LogWarning($"[PLAN] {name} no GoalProviders found.");
+            ForceReplan();
             return;
         }
 
-        foreach (var provider in providers)
+        bool done = a.Perform(this, dt);
+        if (done)
         {
-            var goal = provider.GetGoal();
-            if (goal == null) continue;
-
-            var plan = planner.Plan(this, actions, beliefs, goal);
-
-            if (debug)
-            {
-                Debug.Log($"[GOAL_TRY] {name} try goal={goal.Key}={goal.DesiredValue} p={goal.Priority} -> plan={(plan == null ? "NULL" : plan.Count.ToString())}");
-            }
-
-            if (plan != null)
-            {
-                if (currentGoal == null || goal.Priority > currentGoal.Priority)
-                {
-                    currentGoal = goal;
-                    bestPlan = plan;
-                }
-            }
-        }
-
-        if (bestPlan != null)
-            currentPlan = bestPlan;
-
-        if (debug)
-        {
-            string goalStr = currentGoal != null ? $"{currentGoal.Key}={currentGoal.DesiredValue} (p={currentGoal.Priority})" : "NULL";
-            int planCount = (currentPlan == null) ? -1 : currentPlan.Count;
-            Debug.Log($"[PLAN_PICK] {name} goal={goalStr} planCount={planCount} beliefsTrue={beliefs.DumpTrueStates()}");
+            _plan.Pop();
+            a.ResetRuntime();
         }
     }
 
-    public void MoveTowards(Vector2 target)
+    private void ForceReplan()
     {
-        if (rb != null)
+        if (_plan != null)
         {
-            Vector2 newPos = Vector2.MoveTowards(rb.position, target, moveSpeed * Time.deltaTime);
-            rb.MovePosition(newPos);
+            foreach (var a in actions) a.ResetRuntime();
         }
+        _plan = null;
+    }
+
+    private NeedType ChooseNeed()
+    {
+        // critical override
+        if (needs.hunger <= needs.critical) return NeedType.Hunger;
+        if (needs.warmth <= needs.critical) return NeedType.Warmth;
+        if (needs.energy <= needs.critical) return NeedType.Sleep;
+
+        // otherwise: personality need if it's urgent
+        if (primaryNeed == NeedType.Sleep && needs.energy <= needs.urgent) return NeedType.Sleep;
+        if (primaryNeed == NeedType.Hunger && needs.hunger <= needs.urgent) return NeedType.Hunger;
+        if (primaryNeed == NeedType.Warmth && needs.warmth <= needs.urgent) return NeedType.Warmth;
+
+        // fallback: any urgent need
+        if (needs.hunger <= needs.urgent) return NeedType.Hunger;
+        if (needs.warmth <= needs.urgent) return NeedType.Warmth;
+        if (needs.energy <= needs.urgent) return NeedType.Sleep;
+
+        // nothing urgent
+        return primaryNeed;
+    }
+
+    private void BuildPlanFor(NeedType need)
+    {
+        var s = MakeWorldStateSnapshot(need);
+        var goal = new Goals.GoalSatisfied(need);
+
+        _plan = _planner.Plan(s, actions, goal);
+
+        // debug
+        if (_plan == null)
+            Debug.LogWarning($"{name}: No plan for {need}");
         else
+            Debug.Log($"{name}: Planned {_plan.Count} steps for {need}");
+    }
+
+    private WorldState MakeWorldStateSnapshot(NeedType targetNeed)
+    {
+        var s = new WorldState();
+
+        s.woodExists = AnyStationExists(StationType.Wood);
+        s.bedExists = AnyStationExists(StationType.Bed);
+        s.potExists = AnyStationExists(StationType.Pot);
+        s.fireExists = AnyStationExists(StationType.Fire);
+
+        s.woodCarried = wood;
+
+        // IMPORTANT: only the target need starts "unsatisfied"
+        s.sleepSatisfied = targetNeed != NeedType.Sleep;
+        s.hungerSatisfied = targetNeed != NeedType.Hunger;
+        s.warmthSatisfied = targetNeed != NeedType.Warmth;
+
+        return s;
+    }
+
+    private bool AnyStationExists(StationType t)
+    {
+        if (registry == null || registry.AllStations == null) return false;
+
+        foreach (var st in registry.AllStations)
+            if (st != null && st.type == t && st.Exists)
+                return true;
+
+        return false;
+    }
+
+    public Station FindNearestStation(StationType type)
+    {
+        if (registry == null || registry.AllStations == null) return null;
+
+        Station best = null;
+        float bestDist = float.MaxValue;
+        Vector2 me = transform.position;
+
+        foreach (var st in registry.AllStations)
         {
-            transform.position = Vector2.MoveTowards(transform.position, target, moveSpeed * Time.deltaTime);
+            if (st == null) continue;
+            if (!st.Exists) continue;
+            if (st.type != type) continue;
+
+            float d = Vector2.Distance(me, st.InteractPos);
+            if (d < bestDist)
+            {
+                bestDist = d;
+                best = st;
+            }
         }
+
+        return best;
     }
 }

@@ -11,7 +11,19 @@ GameObject:
   - component: {fileID: 4808904441980835421}
   - component: {fileID: 6451507120577010785}
   - component: {fileID: 5491836592650549677}
-  m_Layer: 0
+  - component: {fileID: 6958645300293423217}
+  - component: {fileID: 5372590026017795938}
+  - component: {fileID: 2910078706800401807}
+  - component: {fileID: 6037816097728018212}
+  - component: {fileID: 8142587794488527807}
+  - component: {fileID: 3758791016801367733}
+  - component: {fileID: 4498898716152274570}
+  - component: {fileID: 3143822531744086128}
+  - component: {fileID: 6752783428847481394}
+  - component: {fileID: 1320746079426882445}
+  - component: {fileID: 3333252164145559670}
+  - component: {fileID: 7280466189342232707}
+  m_Layer: 8
   m_Name: Survivor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28,7 +40,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -1.67, y: 0.78, z: -1.94}
-  m_LocalScale: {x: 0.52, y: 0.52, z: 0.52}
+  m_LocalScale: {x: 0.28, y: 0.28, z: 0.28}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
@@ -78,8 +90,8 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -105541197
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Sprite: {fileID: -8602919253393574722, guid: b95329771a79fc347bd7b14caac232ba,
@@ -115,3 +127,242 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!61 &6958645300293423217
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6151490515553686408}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 2.01, y: 3.57}
+    newSize: {x: 2.01, y: 3.57}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 2.01, y: 3.57}
+  m_EdgeRadius: 0
+--- !u!50 &5372590026017795938
+Rigidbody2D:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6151490515553686408}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!114 &2910078706800401807
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6151490515553686408}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fd326ba9c83769459287f72dea2a85f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Needs
+  energy: 100
+  hunger: 100
+  warmth: 100
+  drainPerSecond: 1
+  urgent: 60
+  critical: 20
+--- !u!114 &6037816097728018212
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6151490515553686408}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df2d01d81a092544da208023baf245bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GoapAgent
+  primaryNeed: 1
+  registry: {fileID: 0}
+  buildValidator: {fileID: 0}
+  needs: {fileID: 0}
+  mover: {fileID: 0}
+  wood: 0
+  spawnZ: 0
+  actions: []
+--- !u!114 &8142587794488527807
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6151490515553686408}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e14cc08c376c4d94fba8aa4e6350af73, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  speed: 2.5
+  arriveDistance: 0.15
+--- !u!114 &3758791016801367733
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6151490515553686408}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64a80648fe18ba047a337b5d3439946f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UseStationAction
+  planCost: 1
+  need: 0
+  useTime: 1.5
+  restoreAmount: 40
+--- !u!114 &4498898716152274570
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6151490515553686408}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64a80648fe18ba047a337b5d3439946f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UseStationAction
+  planCost: 1
+  need: 1
+  useTime: 1.5
+  restoreAmount: 40
+--- !u!114 &3143822531744086128
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6151490515553686408}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64a80648fe18ba047a337b5d3439946f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UseStationAction
+  planCost: 1
+  need: 2
+  useTime: 1.5
+  restoreAmount: 40
+--- !u!114 &6752783428847481394
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6151490515553686408}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7a2cb01682dab34c81bf1e829eef663, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BuildStationAction
+  planCost: 1
+  buildType: 1
+  stationPrefab: {fileID: 0}
+  woodCost: 2
+  buildTime: 1.5
+--- !u!114 &1320746079426882445
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6151490515553686408}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7a2cb01682dab34c81bf1e829eef663, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BuildStationAction
+  planCost: 1
+  buildType: 2
+  stationPrefab: {fileID: 0}
+  woodCost: 2
+  buildTime: 1.5
+--- !u!114 &3333252164145559670
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6151490515553686408}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7a2cb01682dab34c81bf1e829eef663, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BuildStationAction
+  planCost: 1
+  buildType: 3
+  stationPrefab: {fileID: 0}
+  woodCost: 2
+  buildTime: 1.5
+--- !u!114 &7280466189342232707
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6151490515553686408}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e83794f4e782c341b8893f8f4be1042, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ChopWoodAction
+  planCost: 1
+  woodPerChop: 1
+  chopTime: 1
