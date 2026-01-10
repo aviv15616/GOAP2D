@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿// GoapAgent.cs (FIXED: run GOAP + Rigidbody movement in FixedUpdate to eliminate startup speed burst)
+using System.Collections.Generic;
 using UnityEngine;
 
 public class GoapAgent : MonoBehaviour
@@ -10,6 +11,7 @@ public class GoapAgent : MonoBehaviour
     public StationRegistry registry;
     public BuildValidator buildValidator;
     public GridNav2D nav;
+    public BuildSpotManager spotManager;
 
     [Header("Components")]
     public Needs needs;
@@ -25,6 +27,11 @@ public class GoapAgent : MonoBehaviour
     [Header("Spawn Z for new stations")]
     public float spawnZ = 0f;
 
+    [Header("Idle Wander")]
+    public bool enableIdleWander = true;
+    public float idleRadius = 6f;
+    public float idlePickEvery = 2f;
+
     [Header("Actions (components on this NPC)")]
     public List<GoapAction> actions = new();
 
@@ -35,6 +42,11 @@ public class GoapAgent : MonoBehaviour
     private GoapAction _runningAction;
     private bool _noPlanLogged;
 
+    // idle runtime
+    private Vector2 _idleTarget;
+    private float _idleTimer;
+    private bool _idleLogged;
+
     private void Awake()
     {
         if (needs == null) needs = GetComponent<Needs>();
@@ -43,19 +55,46 @@ public class GoapAgent : MonoBehaviour
         if (registry == null) registry = FindFirstObjectByType<StationRegistry>();
         if (buildValidator == null) buildValidator = FindFirstObjectByType<BuildValidator>();
         if (nav == null) nav = FindFirstObjectByType<GridNav2D>();
+        if (spotManager == null) spotManager = FindFirstObjectByType<BuildSpotManager>();
 
         if (actions.Count == 0) GetComponents(actions);
 
         _currentNeed = primaryNeed;
+
+        _idleTarget = transform.position;
+        _idleTimer = 0f;
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
-        float dt = Time.deltaTime;
+        float dt = Time.fixedDeltaTime;
 
         needs.Tick(dt);
 
+        // -------------------------
+        // IDLE branch (wander)
+        // -------------------------
         NeedType desiredNeed = ChooseNeed();
+        if (desiredNeed == NeedType.None)
+        {
+            if (_plan != null && _plan.Count > 0) ForceReplan();
+
+            if (!_idleLogged)
+            {
+                _idleLogged = true;
+                Debug.Log($"[IDLE] {name} | {MeterLine()}");
+            }
+
+            if (enableIdleWander)
+                TickIdleWander(dt);
+
+            return;
+        }
+        _idleLogged = false;
+
+        // -------------------------
+        // GOAP planning/execution
+        // -------------------------
         if (desiredNeed != _currentNeed)
         {
             _currentNeed = desiredNeed;
@@ -108,6 +147,22 @@ public class GoapAgent : MonoBehaviour
         }
     }
 
+    private void TickIdleWander(float dt)
+    {
+        _idleTimer -= dt;
+
+        if (_idleTimer <= 0f || Vector2.Distance(transform.position, _idleTarget) <= mover.arriveDistance * 2f)
+        {
+            _idleTimer = Mathf.Max(0.05f, idlePickEvery);
+
+            Vector2 center = transform.position;
+            Vector2 rand = Random.insideUnitCircle * Mathf.Max(0.01f, idleRadius);
+            _idleTarget = center + rand;
+        }
+
+        mover.MoveTowards(_idleTarget, dt);
+    }
+
     private void ForceReplan()
     {
         if (_plan != null)
@@ -120,22 +175,18 @@ public class GoapAgent : MonoBehaviour
 
     private NeedType ChooseNeed()
     {
-        // 1) critical override (must handle ASAP)
         if (needs.hunger <= needs.critical) return NeedType.Hunger;
         if (needs.warmth <= needs.critical) return NeedType.Warmth;
         if (needs.energy <= needs.critical) return NeedType.Sleep;
 
-        // 2) personality if urgent
         if (primaryNeed == NeedType.Sleep && needs.energy <= needs.urgent) return NeedType.Sleep;
         if (primaryNeed == NeedType.Hunger && needs.hunger <= needs.urgent) return NeedType.Hunger;
         if (primaryNeed == NeedType.Warmth && needs.warmth <= needs.urgent) return NeedType.Warmth;
 
-        // 3) any urgent
         if (needs.hunger <= needs.urgent) return NeedType.Hunger;
         if (needs.warmth <= needs.urgent) return NeedType.Warmth;
         if (needs.energy <= needs.urgent) return NeedType.Sleep;
 
-        // 4) nothing urgent -> IDLE (so they don't spam "UseStation" forever)
         return NeedType.None;
     }
 
@@ -152,22 +203,19 @@ public class GoapAgent : MonoBehaviour
 
     private WorldState MakeWorldStateSnapshot(NeedType targetNeed)
     {
-        var s = new WorldState
+        return new WorldState
         {
             woodExists = AnyStationExists(StationType.Wood),
             bedExists = AnyStationExists(StationType.Bed),
             potExists = AnyStationExists(StationType.Pot),
             fireExists = AnyStationExists(StationType.Fire),
 
-            // 🔥 critical: cap planning wood state-space
             woodCarried = Mathf.Clamp(wood, 0, Mathf.Max(0, maxWoodForPlanning)),
 
             sleepSatisfied = targetNeed != NeedType.Sleep,
             hungerSatisfied = targetNeed != NeedType.Hunger,
             warmthSatisfied = targetNeed != NeedType.Warmth
         };
-
-        return s;
     }
 
     private bool AnyStationExists(StationType t)

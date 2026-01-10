@@ -1,3 +1,4 @@
+// GoapAction.cs (unchanged behavior, just kept clean)
 using UnityEngine;
 
 public abstract class GoapAction : MonoBehaviour
@@ -9,7 +10,7 @@ public abstract class GoapAction : MonoBehaviour
     public abstract bool CanPlan(WorldState s);
     public abstract void ApplyPlanEffects(ref WorldState s);
 
-    // NEW: planner will call this. Return "seconds".
+    // planner will call this. Return "seconds".
     public virtual float EstimateCost(GoapAgent agent, WorldState currentState) => planCost;
 
     // runtime

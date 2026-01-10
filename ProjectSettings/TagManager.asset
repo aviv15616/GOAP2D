@@ -55,5 +55,8 @@ TagManager:
   - name: NPC
     uniqueID: 4189426099
     locked: 0
+  - name: World
+    uniqueID: 1854734331
+    locked: 0
   m_RenderingLayers:
   - Default

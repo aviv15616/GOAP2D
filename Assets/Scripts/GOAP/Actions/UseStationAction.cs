@@ -1,3 +1,4 @@
+// UseStationAction.cs (FIXED: supports early stop margin)
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -6,6 +7,10 @@ public class UseStationAction : GoapAction
     public NeedType need;
     public float useTime = 1.5f;
     public float restoreAmount = 40f;
+
+    [Header("Stop Margin")]
+    [Tooltip("How far from station interact pos the NPC may stop (bigger = stops sooner).")]
+    public float stopDistance = 0.75f;
 
     private Vector2 _goal;
     private float _t;
@@ -86,13 +91,15 @@ public class UseStationAction : GoapAction
             if (!StartAction(agent)) return true;
         }
 
+        float arrive = Mathf.Max(agent.mover.arriveDistance, stopDistance);
+
         if (_path != null && _path.Count > 0)
         {
-            if (!agent.mover.FollowPath(_path, ref _pathIndex, dt)) return false;
+            if (!agent.mover.FollowPath(_path, ref _pathIndex, dt, arrive)) return false;
         }
         else
         {
-            if (!agent.mover.MoveTowards(_goal, dt)) return false;
+            if (!agent.mover.MoveTowards(_goal, dt, arrive)) return false;
         }
 
         _t += dt;

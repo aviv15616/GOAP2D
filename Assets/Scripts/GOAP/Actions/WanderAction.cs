@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 
 public class WanderAction : GoapAction
 {
@@ -10,41 +10,17 @@ public class WanderAction : GoapAction
     private Vector3 _target;
     private float _waitT;
 
-    public override bool CanPlan(WorldState s)
-    {
-        // Always allowed (idle fallback)
-        return true;
-    }
-
-    public override void ApplyPlanEffects(ref WorldState s)
-    {
-        // No world-state changes
-    }
+    public override bool CanPlan(WorldState s) => true;
+    public override void ApplyPlanEffects(ref WorldState s) { }
 
     public override bool StartAction(GoapAgent agent)
     {
         _waitT = 0f;
 
-        // pick a random point near the agent
         Vector2 basePos = agent.transform.position;
-        Vector2 candidate = basePos + Random.insideUnitCircle * wanderRadius;
+        Vector2 offset = Random.insideUnitCircle * wanderRadius;
 
-        // if you have BuildValidator with tilemap-bounds check, reuse it to keep wander inside the map
-        if (agent.buildValidator != null)
-        {
-            if (!agent.buildValidator.TryFindValidPosition(candidate, out var found))
-            {
-                // fallback: just stay
-                _target = agent.transform.position;
-                return true;
-            }
-
-            _target = new Vector3(found.x, found.y, agent.transform.position.z);
-            return true;
-        }
-
-        // fallback: no validator -> free wander
-        _target = new Vector3(candidate.x, candidate.y, agent.transform.position.z);
+        _target = basePos + offset;
         return true;
     }
 
@@ -53,15 +29,13 @@ public class WanderAction : GoapAction
         if (!_started)
         {
             _started = true;
-            if (!StartAction(agent)) return true;
+            StartAction(agent);
         }
 
-        // move
-        bool arrived = agent.mover.MoveTowards(_target, dt);
+        bool arrived = agent.mover.MoveTowards(_target, dt, arriveDistance);
 
         if (!arrived) return false;
 
-        // wait a bit then finish (so planner can pick it again)
         _waitT += dt;
         return _waitT >= waitAtPointSeconds;
     }

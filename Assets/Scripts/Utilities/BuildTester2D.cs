@@ -1,4 +1,4 @@
-// BuildTester2D.cs (REPLACE with this)
+﻿// BuildTester2D.cs (FIXED: spawns under "Stations" root automatically)
 using UnityEngine;
 
 public class BuildTester2D : MonoBehaviour
@@ -9,6 +9,10 @@ public class BuildTester2D : MonoBehaviour
     public GameObject bedPrefab;
     public GameObject potPrefab;
     public GameObject firePrefab;
+
+    [Header("Hierarchy")]
+    [Tooltip("Optional. If empty, will auto-find/create a GameObject named 'Stations' and parent spawns under it.")]
+    public Transform stationsRoot;
 
     [Header("Spawn")]
     public float spawnZ = 0f;
@@ -22,6 +26,17 @@ public class BuildTester2D : MonoBehaviour
     public KeyCode fireKey = KeyCode.Alpha3;
 
     private StationType _selected = StationType.Bed;
+
+    private void Awake()
+    {
+        // Auto-find/create Stations root
+        if (stationsRoot == null)
+        {
+            var go = GameObject.Find("Stations");
+            if (go != null) stationsRoot = go.transform;
+            else stationsRoot = new GameObject("Stations").transform;
+        }
+    }
 
     private void Update()
     {
@@ -73,7 +88,9 @@ public class BuildTester2D : MonoBehaviour
         }
 
         Vector3 spawnPos = new Vector3(pos.x, pos.y, spawnZ);
-        var go = Instantiate(prefab, spawnPos, Quaternion.identity);
+
+        // ✅ parent under Stations root
+        var go = Instantiate(prefab, spawnPos, Quaternion.identity, stationsRoot);
 
         if (forceSpawnedRigidbodyStatic)
         {
@@ -81,6 +98,6 @@ public class BuildTester2D : MonoBehaviour
             if (rb != null) rb.bodyType = RigidbodyType2D.Static;
         }
 
-        Debug.Log($"Built {type} at {spawnPos}");
+        Debug.Log($"Built {type} at {spawnPos} (parent={stationsRoot.name})");
     }
 }

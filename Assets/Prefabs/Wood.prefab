@@ -1072,7 +1072,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1574631858003542079}
   - component: {fileID: 8184256317556575335}
-  - component: {fileID: 8831616576357732974}
   - component: {fileID: 2992737222039924743}
   - component: {fileID: 353107188754551005}
   m_Layer: 7
@@ -1160,52 +1159,6 @@ PolygonCollider2D:
       - {x: 1.1694723, y: -0.31947803}
       - {x: 0.9943788, y: 0.82889366}
   m_UseDelaunayMesh: 1
---- !u!61 &8831616576357732974
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8895128333038953579}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_CompositeOperation: 0
-  m_CompositeOrder: 0
-  m_Offset: {x: -1.1719272, y: 2.9288359}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Size: {x: 2.9968019, y: 3.5867653}
-  m_EdgeRadius: 0
 --- !u!210 &2992737222039924743
 SortingGroup:
   m_ObjectHideFlags: 0
@@ -1233,5 +1186,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Station
   type: 0
   built: 1
-  interactionPoint: {fileID: 0}
-  visualsRoot: {fileID: 0}
+  interactionPoint: {fileID: 1574631858003542079}
+  visualsRoot: {fileID: 8895128333038953579}

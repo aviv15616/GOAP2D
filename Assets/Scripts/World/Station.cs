@@ -1,4 +1,4 @@
-// Station.cs
+﻿// Station.cs  (ONLY the parts you need to add/change)
 using UnityEngine;
 
 public enum StationType { Wood, Bed, Pot, Fire }
@@ -16,11 +16,26 @@ public class Station : MonoBehaviour
     [Tooltip("Optional: visuals root to hide/show when built toggles. If null, toggles renderers/colliders under this object.")]
     public GameObject visualsRoot;
 
-    public Vector3 InteractPos => (interactionPoint != null) ? interactionPoint.position : transform.position;
+    // ✅ NEW: bound build spot (so we can free it if station is destroyed/disabled)
+    [HideInInspector] public BuildSpot boundSpot;
 
+    public Vector3 InteractPos => (interactionPoint != null) ? interactionPoint.position : transform.position;
     public bool Exists => gameObject.activeInHierarchy && built;
+
     private void OnEnable() => StationRegistry.Instance?.Register(this);
-    private void OnDisable() => StationRegistry.Instance?.Unregister(this);
+
+    private void OnDisable()
+    {
+        StationRegistry.Instance?.Unregister(this);
+
+        // ✅ NEW: free the spot if this station goes away
+        if (boundSpot != null)
+        {
+            boundSpot.occupied = false;
+            boundSpot = null;
+        }
+    }
+
     public void SetBuilt(bool value)
     {
         built = value;
@@ -31,8 +46,6 @@ public class Station : MonoBehaviour
             return;
         }
 
-        // Fallback: toggle renderers & colliders (keeps scripts alive).
-        foreach (var r in GetComponentsInChildren<Renderer>(true)) r.enabled = value;
-        foreach (var c in GetComponentsInChildren<Collider2D>(true)) c.enabled = value;
+        // your existing fallback toggling renderers/colliders...
     }
 }

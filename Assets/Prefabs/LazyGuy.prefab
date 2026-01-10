@@ -232,10 +232,16 @@ MonoBehaviour:
   primaryNeed: 0
   registry: {fileID: 0}
   buildValidator: {fileID: 0}
+  nav: {fileID: 0}
+  spotManager: {fileID: 0}
   needs: {fileID: 0}
   mover: {fileID: 0}
   wood: 0
+  maxWoodForPlanning: 12
   spawnZ: 0
+  enableIdleWander: 1
+  idleRadius: 6
+  idlePickEvery: 2
   actions: []
 --- !u!114 &1810374220733173184
 MonoBehaviour:
@@ -251,6 +257,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   speed: 2.5
   arriveDistance: 0.15
+  boundsProvider: {fileID: 0}
+  boundsMargin: 0.05
+  animator: {fileID: 0}
+  moveXParam: MoveX
+  moveYParam: MoveY
+  facingDeadZone: 0.001
 --- !u!114 &833853837585308881
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -267,6 +279,7 @@ MonoBehaviour:
   need: 0
   useTime: 1.5
   restoreAmount: 40
+  stopDistance: 0.75
 --- !u!114 &6037953040818726072
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -283,6 +296,7 @@ MonoBehaviour:
   need: 1
   useTime: 1.5
   restoreAmount: 40
+  stopDistance: 0.75
 --- !u!114 &4682117756983172433
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -299,6 +313,7 @@ MonoBehaviour:
   need: 2
   useTime: 1.5
   restoreAmount: 40
+  stopDistance: 0.75
 --- !u!114 &1059923519382382361
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -316,6 +331,7 @@ MonoBehaviour:
   stationPrefab: {fileID: 0}
   woodCost: 2
   buildTime: 1.5
+  stopDistance: 0.9
 --- !u!114 &3206335922432449539
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -333,6 +349,7 @@ MonoBehaviour:
   stationPrefab: {fileID: 0}
   woodCost: 2
   buildTime: 1.5
+  stopDistance: 0.9
 --- !u!114 &3884476964844609596
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -350,6 +367,7 @@ MonoBehaviour:
   stationPrefab: {fileID: 0}
   woodCost: 2
   buildTime: 1.5
+  stopDistance: 0.9
 --- !u!114 &3343568394718831990
 MonoBehaviour:
   m_ObjectHideFlags: 0

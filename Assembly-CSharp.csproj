@@ -64,8 +64,10 @@
     <Compile Include="Assets\Scripts\Utilities\StationRegistry.cs" />
     <Compile Include="Assets\Scripts\GOAP\Core\GoapPlanner.cs" />
     <Compile Include="Assets\Scripts\GOAP\Core\WorldState.cs" />
+    <Compile Include="Assets\Scripts\Utilities\WASDMove2D.cs" />
     <Compile Include="Assets\Scripts\GOAP\Actions\UseStationAction.cs" />
     <Compile Include="Assets\Scripts\GOAP\Actions\ChopWoodAction.cs" />
+    <Compile Include="Assets\Scripts\Utilities\BuildSpotManager.cs" />
     <Compile Include="Assets\Cainos\Pixel Art Top Down - Basic\Script\SpriteColorAnimation.cs" />
     <Compile Include="Assets\Scripts\World\Station.cs" />
     <Compile Include="Assets\SetScale.cs" />
@@ -79,11 +81,15 @@
     <Compile Include="Assets\Scripts\GOAP\Actions\Mover2D.cs" />
     <Compile Include="Assets\Cainos\Pixel Art Top Down - Basic\Script\TopDownCharacterController.cs" />
     <Compile Include="Assets\Scripts\GOAP\Core\Goals.cs" />
+    <Compile Include="Assets\Scripts\Utilities\CameraFitTilemap.cs" />
     <Compile Include="Assets\Scripts\Utilities\GridNav2D.cs" />
     <Compile Include="Assets\Cainos\Pixel Art Top Down - Basic\Script\PropsAltar.cs" />
+    <Compile Include="Assets\Scripts\Utilities\BuildSpot.cs" />
     <Compile Include="Assets\Scripts\Utilities\GoapScenarioTester.cs" />
     <Compile Include="Assets\Scripts\Utilities\BuildValidator.cs" />
     <Compile Include="Assets\Scripts\Utilities\BuildTester2D.cs" />
+    <Compile Include="Assets\Scripts\Utilities\YSort.cs" />
+    <Compile Include="Assets\Scripts\Utilities\BoundsConfinement2D.cs" />
     <Compile Include="Assets\Scripts\GOAP\Core\GoapAction.cs" />
     <Compile Include="Assets\Scripts\Utilities\BuiltByTag.cs" />
     <Compile Include="Assets\Cainos\Pixel Art Top Down - Basic\Script\StairsLayerTrigger.cs" />

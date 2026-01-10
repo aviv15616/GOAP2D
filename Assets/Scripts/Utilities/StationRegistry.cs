@@ -10,14 +10,14 @@ public class StationRegistry : MonoBehaviour
 
     private void Awake()
     {
-        Instance = this;
-        RebuildCache(); // ✅ important
-    }
+        if (Instance != null && Instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
 
-    private void OnEnable()
-    {
-        if (Instance == null) Instance = this;
-        RebuildCache(); // ✅ important
+        Instance = this;
+        RebuildCache(); // optional safety at startup
     }
 
     [ContextMenu("Rebuild Station Cache")]
@@ -25,21 +25,25 @@ public class StationRegistry : MonoBehaviour
     {
         _stations.Clear();
 
-        // include inactive too, so you can toggle things
-        var all = FindObjectsByType<Station>(FindObjectsInactive.Include, FindObjectsSortMode.None);
+        var all = FindObjectsByType<Station>(
+            FindObjectsInactive.Include,
+            FindObjectsSortMode.None
+        );
+
         foreach (var s in all)
             Register(s);
     }
 
     public void Register(Station s)
     {
-        if (s != null && !_stations.Contains(s))
+        if (s == null) return;
+        if (!_stations.Contains(s))
             _stations.Add(s);
     }
 
     public void Unregister(Station s)
     {
-        if (s != null)
-            _stations.Remove(s);
+        if (s == null) return;
+        _stations.Remove(s);
     }
 }
