@@ -1,22 +1,24 @@
-// UseStationAction.cs (FIXED: supports early stop margin)
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 public class UseStationAction : GoapAction
 {
     public NeedType need;
-    public float useTime = 1.5f;
     public float restoreAmount = 40f;
 
     [Header("Stop Margin")]
-    [Tooltip("How far from station interact pos the NPC may stop (bigger = stops sooner).")]
+    [Tooltip("How far from station interact pos the NPC may stop.")]
     public float stopDistance = 0.75f;
 
     private Vector2 _goal;
-    private float _t;
-
     private List<Vector2> _path;
     private int _pathIndex;
+
+    private bool _arrived;
+
+    // -------------------------
+    // PLANNING
+    // -------------------------
 
     public override bool CanPlan(WorldState s)
     {
@@ -36,6 +38,33 @@ public class UseStationAction : GoapAction
         if (need == NeedType.Warmth) s.warmthSatisfied = true;
     }
 
+    public override float EstimateCost(GoapAgent agent, WorldState currentState)
+    {
+        if (agent == null || agent.nav == null || agent.mover == null)
+            return 9999f;
+
+        Station st = need switch
+        {
+            NeedType.Sleep => agent.FindNearestStation(StationType.Bed),
+            NeedType.Hunger => agent.FindNearestStation(StationType.Pot),
+            NeedType.Warmth => agent.FindNearestStation(StationType.Fire),
+            _ => null
+        };
+
+        if (st == null) return 9999f;
+
+        // travel time only
+        return agent.nav.EstimatePathTime(
+            agent.transform.position,
+            st.InteractPos,
+            agent.mover.speed
+        );
+    }
+
+    // -------------------------
+    // RUNTIME
+    // -------------------------
+
     public override bool IsStillValid(GoapAgent agent)
     {
         return need switch
@@ -47,22 +76,6 @@ public class UseStationAction : GoapAction
         };
     }
 
-    public override float EstimateCost(GoapAgent agent, WorldState currentState)
-    {
-        Station st = need switch
-        {
-            NeedType.Sleep => agent.FindNearestStation(StationType.Bed),
-            NeedType.Hunger => agent.FindNearestStation(StationType.Pot),
-            NeedType.Warmth => agent.FindNearestStation(StationType.Fire),
-            _ => null
-        };
-        if (st == null) return 9999f;
-
-        float speed = Mathf.Max(0.01f, agent.mover.speed);
-        float travel = Vector2.Distance(agent.transform.position, st.InteractPos) / speed;
-        return travel + useTime;
-    }
-
     public override bool StartAction(GoapAgent agent)
     {
         Station st = need switch
@@ -72,51 +85,78 @@ public class UseStationAction : GoapAction
             NeedType.Warmth => agent.FindNearestStation(StationType.Fire),
             _ => null
         };
+
         if (st == null) return false;
 
         _goal = st.InteractPos;
-        _t = 0f;
-
         _pathIndex = 0;
-        _path = agent.nav != null ? agent.nav.FindPath(agent.transform.position, _goal) : null;
 
+        _path = agent.nav != null
+            ? agent.nav.FindPath(agent.transform.position, _goal)
+            : null;
+
+        _arrived = false;
         return true;
     }
 
     public override bool Perform(GoapAgent agent, float dt)
     {
-        if (!_started)
-        {
-            _started = true;
-            if (!StartAction(agent)) return true;
-        }
+        if (!EnsureStarted(agent))
+            return true; // fail-fast skip
 
         float arrive = Mathf.Max(agent.mover.arriveDistance, stopDistance);
 
-        if (_path != null && _path.Count > 0)
+        // 1) MOVE first
+        if (!_arrived)
         {
-            if (!agent.mover.FollowPath(_path, ref _pathIndex, dt, arrive)) return false;
-        }
-        else
-        {
-            if (!agent.mover.MoveTowards(_goal, dt, arrive)) return false;
+            if (_path != null && _path.Count > 0)
+                _arrived = agent.mover.FollowPath(_path, ref _pathIndex, dt, arrive);
+            else
+                _arrived = agent.mover.MoveTowards(_goal, dt, arrive);
+
+            if (!_arrived)
+                return false;
+
+            // arrived -> start "use" timer now
+            _elapsed = 0f;
         }
 
-        _t += dt;
-        if (_t >= useTime)
-        {
-            agent.needs.AddMeter(need, restoreAmount);
-            return true;
-        }
+        // 2) WAIT after arrival
+        if (!WaitAfterArrival(dt))
+            return false;
 
-        return false;
+        // 3) APPLY once
+        agent.needs.AddMeter(need, restoreAmount);
+        return true;
     }
 
     public override void ResetRuntime()
     {
         base.ResetRuntime();
-        _t = 0f;
         _path = null;
         _pathIndex = 0;
+        _arrived = false;
     }
+#if UNITY_EDITOR
+    private void OnDrawGizmos()
+    {
+        if (_path == null || _path.Count < 2)
+            return;
+
+        Gizmos.color = Color.cyan;
+
+        for (int i = 0; i < _path.Count - 1; i++)
+        {
+            Gizmos.DrawLine(_path[i], _path[i + 1]);
+        }
+
+        // current target segment
+        if (_pathIndex < _path.Count)
+        {
+            Gizmos.color = Color.yellow;
+            Gizmos.DrawSphere(_path[_pathIndex], 0.12f);
+        }
+    }
+#endif
+
 }

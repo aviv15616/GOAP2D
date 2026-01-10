@@ -9,22 +9,35 @@ public class GoapPlanner
         public Node parent;
         public GoapAction action;
         public float g;
+        public Vector2 agentPos; // simulated agent position for planning
     }
 
-    // Safety caps
     private const int MAX_EXPANDED = 3000;
     private const int MAX_OPEN = 8000;
 
-    public Stack<GoapAction> Plan(WorldState start, List<GoapAction> actions, IGoal goal, GoapAgent agent)
+    public Stack<GoapAction> Plan(
+        WorldState start,
+        List<GoapAction> actions,
+        IGoal goal,
+        GoapAgent agent)
     {
-        if (actions == null || actions.Count == 0) return null;
+        if (actions == null || actions.Count == 0 || agent == null)
+            return null;
 
-        int woodCap = agent != null ? Mathf.Max(0, agent.maxWoodForPlanning) : 12;
+        int woodCap = Mathf.Max(0, agent.maxWoodForPlanning);
 
         var open = new List<Node>(256);
         var bestG = new Dictionary<WorldState, float>(512);
 
-        var startNode = new Node { state = ClampState(start, woodCap), parent = null, action = null, g = 0f };
+        var startNode = new Node
+        {
+            state = ClampState(start, woodCap),
+            parent = null,
+            action = null,
+            g = 0f,
+            agentPos = agent.transform.position
+        };
+
         open.Add(startNode);
         bestG[startNode.state] = 0f;
 
@@ -36,7 +49,7 @@ public class GoapPlanner
             if (expanded > MAX_EXPANDED) return null;
             if (open.Count > MAX_OPEN) return null;
 
-            // Pick lowest g WITHOUT sorting the whole list
+            // Pick node with lowest g
             int bestIdx = 0;
             float bestCost = open[0].g;
             for (int i = 1; i < open.Count; i++)
@@ -54,30 +67,41 @@ public class GoapPlanner
             if (goal.IsSatisfied(current.state))
                 return BuildStack(current);
 
-            foreach (var a in actions)
+            foreach (var action in actions)
             {
-                if (a == null) continue;
-                if (!a.CanPlan(current.state)) continue;
+                if (action == null) continue;
+                if (!action.CanPlan(current.state)) continue;
 
-                var next = current.state;
-                a.ApplyPlanEffects(ref next);
-                next = ClampState(next, woodCap);
+                // simulate worldstate
+                var nextState = current.state;
+                action.ApplyPlanEffects(ref nextState);
+                nextState = ClampState(nextState, woodCap);
 
-                float stepCost = a.EstimateCost(agent, current.state);
-                float newG = current.g + stepCost;
+                // ---------- COST CALCULATION ----------
+                float cost = 0f;
 
-                // Dedupe: only keep better paths to the same state
-                if (bestG.TryGetValue(next, out float oldG) && newG >= oldG)
+                // 1) action duration (1s by design)
+                cost += action.duration;
+
+                // 2) travel time (if action has a target)
+                float travelTime = action.EstimateCost(agent, current.state);
+                cost += travelTime;
+
+                float newG = current.g + cost;
+                // -------------------------------------
+
+                if (bestG.TryGetValue(nextState, out float oldG) && newG >= oldG)
                     continue;
 
-                bestG[next] = newG;
+                bestG[nextState] = newG;
 
                 open.Add(new Node
                 {
-                    state = next,
+                    state = nextState,
                     parent = current,
-                    action = a,
-                    g = newG
+                    action = action,
+                    g = newG,
+                    agentPos = current.agentPos // updated later per action
                 });
             }
         }

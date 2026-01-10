@@ -1,4 +1,4 @@
-﻿// BuildStationAction.cs (FIXED: auto-finds Stations root + instantiates under it)
+﻿// BuildStationAction.cs (FIXED: move first, then wait/build; no initial "stand still" pause)
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -10,19 +10,18 @@ public class BuildStationAction : GoapAction
     public GameObject stationPrefab;
 
     public int woodCost = 2;
-    public float buildTime = 1.5f;
 
     [Header("Stop Margin")]
     [Tooltip("How far from the build spot the NPC may stop (bigger = stops sooner).")]
     public float stopDistance = 0.9f;
 
     private Vector2 _buildWorld;
-    private float _t;
-
     private List<Vector2> _path;
     private int _pathIndex;
 
     private bool _reserved;
+    private bool _arrived;
+
     private BuildSpotManager _mgr;
 
     // Cached stations root (auto-found once)
@@ -32,7 +31,6 @@ public class BuildStationAction : GoapAction
     {
         if (_stationsRoot != null) return _stationsRoot;
 
-        // Preferred: a GameObject named "Stations"
         var stationsGO = GameObject.Find("Stations");
         if (stationsGO != null)
         {
@@ -40,10 +38,13 @@ public class BuildStationAction : GoapAction
             return _stationsRoot;
         }
 
-        // Fallback: create it so we never spawn at scene root
         _stationsRoot = new GameObject("Stations").transform;
         return _stationsRoot;
     }
+
+    // -------------------------
+    // PLANNING
+    // -------------------------
 
     public override bool CanPlan(WorldState s)
     {
@@ -69,20 +70,41 @@ public class BuildStationAction : GoapAction
 
     public override float EstimateCost(GoapAgent agent, WorldState currentState)
     {
-        if (agent.spotManager == null) return 9999f;
+        if (agent == null || agent.spotManager == null || agent.mover == null) return 9999f;
 
         Vector2 target = agent.spotManager.GetSpotPosition(buildType);
-        float travel = (agent.nav != null)
-            ? agent.nav.EstimatePathTime(agent.transform.position, target, agent.mover.speed)
-            : Vector2.Distance(agent.transform.position, target) / Mathf.Max(0.01f, agent.mover.speed);
 
-        return travel + buildTime;
+        // travel time only
+        if (agent.nav != null)
+            return agent.nav.EstimatePathTime(agent.transform.position, target, agent.mover.speed);
+
+        float speed = Mathf.Max(0.01f, agent.mover.speed);
+        return Vector2.Distance(agent.transform.position, target) / speed;
+    }
+
+    // -------------------------
+    // RUNTIME
+    // -------------------------
+
+    public override bool IsStillValid(GoapAgent agent)
+    {
+        if (agent == null) return false;
+
+        bool existsNow = buildType switch
+        {
+            StationType.Bed => agent.FindNearestStation(StationType.Bed) != null,
+            StationType.Pot => agent.FindNearestStation(StationType.Pot) != null,
+            StationType.Fire => agent.FindNearestStation(StationType.Fire) != null,
+            _ => false
+        };
+
+        return !existsNow;
     }
 
     public override bool StartAction(GoapAgent agent)
     {
         if (stationPrefab == null) return false;
-        if (agent.spotManager == null) return false;
+        if (agent == null || agent.spotManager == null) return false;
 
         _mgr = agent.spotManager;
 
@@ -90,7 +112,7 @@ public class BuildStationAction : GoapAction
             return false;
 
         _reserved = true;
-        _t = 0f;
+        _arrived = false;
 
         _pathIndex = 0;
         _path = agent.nav != null ? agent.nav.FindPath(agent.transform.position, _buildWorld) : null;
@@ -100,51 +122,56 @@ public class BuildStationAction : GoapAction
 
     public override bool Perform(GoapAgent agent, float dt)
     {
-        if (!_started)
-        {
-            _started = true;
-            if (!StartAction(agent)) return true;
-        }
+        if (!EnsureStarted(agent))
+            return true; // fail-fast skip
 
         float arrive = Mathf.Max(agent.mover.arriveDistance, stopDistance);
 
-        if (_path != null && _path.Count > 0)
+        // 1) MOVE first
+        if (!_arrived)
         {
-            if (!agent.mover.FollowPath(_path, ref _pathIndex, dt, arrive)) return false;
+            if (_path != null && _path.Count > 0)
+                _arrived = agent.mover.FollowPath(_path, ref _pathIndex, dt, arrive);
+            else
+                _arrived = agent.mover.MoveTowards(_buildWorld, dt, arrive);
+
+            if (!_arrived)
+                return false;
+
+            // arrived -> start build timer now
+            _elapsed = 0f;
         }
-        else
+
+        // 2) WAIT after arrival (build time)
+        if (!WaitAfterArrival(dt))
+            return false;
+
+        // 3) COMMIT build once
+        if (agent.wood < woodCost)
         {
-            if (!agent.mover.MoveTowards(_buildWorld, dt, arrive)) return false;
-        }
-
-        _t += dt;
-        if (_t >= buildTime)
-        {
-            if (agent.wood < woodCost) { Release(agent); return true; }
-
-            agent.wood -= woodCost;
-
-            Vector3 spawn = new Vector3(_buildWorld.x, _buildWorld.y, agent.spawnZ);
-
-            // ✅ always instantiate under Stations root (auto-found/created)
-            Transform parent = GetStationsRoot();
-            var go = Object.Instantiate(stationPrefab, spawn, Quaternion.identity, parent);
-
-            var st = go.GetComponent<Station>();
-            if (st != null)
-            {
-                st.type = buildType;
-                st.built = true;
-            }
-
-            var rb = go.GetComponent<Rigidbody2D>();
-            if (rb != null) rb.bodyType = RigidbodyType2D.Static;
-
             Release(agent);
-            return true;
+            return true; // finish; agent will replan
         }
 
-        return false;
+        agent.wood -= woodCost;
+
+        Vector3 spawn = new Vector3(_buildWorld.x, _buildWorld.y, agent.spawnZ);
+
+        Transform parent = GetStationsRoot();
+        var go = Object.Instantiate(stationPrefab, spawn, Quaternion.identity, parent);
+
+        var st = go.GetComponent<Station>();
+        if (st != null)
+        {
+            st.type = buildType;
+            st.built = true;
+        }
+
+        var rb = go.GetComponent<Rigidbody2D>();
+        if (rb != null) rb.bodyType = RigidbodyType2D.Static;
+
+        Release(agent);
+        return true;
     }
 
     private void Release(GoapAgent agent)
@@ -162,10 +189,32 @@ public class BuildStationAction : GoapAction
             _mgr.ReleaseSpot(buildType, null);
 
         base.ResetRuntime();
-        _t = 0f;
         _path = null;
         _pathIndex = 0;
         _reserved = false;
+        _arrived = false;
         _mgr = null;
     }
+#if UNITY_EDITOR
+    private void OnDrawGizmos()
+    {
+        if (_path == null || _path.Count < 2)
+            return;
+
+        Gizmos.color = Color.cyan;
+
+        for (int i = 0; i < _path.Count - 1; i++)
+        {
+            Gizmos.DrawLine(_path[i], _path[i + 1]);
+        }
+
+        // current target segment
+        if (_pathIndex < _path.Count)
+        {
+            Gizmos.color = Color.yellow;
+            Gizmos.DrawSphere(_path[_pathIndex], 0.12f);
+        }
+    }
+#endif
+
 }

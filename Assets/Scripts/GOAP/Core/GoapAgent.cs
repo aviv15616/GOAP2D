@@ -1,4 +1,6 @@
-﻿// GoapAgent.cs (FIXED: run GOAP + Rigidbody movement in FixedUpdate to eliminate startup speed burst)
+﻿// GoapAgent.cs (UPDATED: periodic snapshot + score-based replanning using urgency + preference + plan cost)
+// Logs: only PLAN/REPLAN + ACT (no STAT/IDLE spam)
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -35,6 +37,42 @@ public class GoapAgent : MonoBehaviour
     [Header("Actions (components on this NPC)")]
     public List<GoapAction> actions = new();
 
+    [Header("Replan / Snapshot")]
+    [Tooltip("How often (seconds) the NPC re-evaluates worldstate + best plan.")]
+    public float snapshotEvery = 1f;
+
+    [Tooltip("If true: whenever a lower Score plan exists, switch immediately.")]
+    public bool alwaysSwitchToLowerScore = true;
+
+    [Header("Replan Hysteresis")]
+    [Tooltip("Switch only if newScore is at least (1-margin) better than current. Example: 0.15 = must be 15% better.")]
+    [Range(0f, 0.9f)]
+    public float replanMargin = 0.15f;
+
+
+    [Header("Score Weights (relative, tune later)")]
+    [Tooltip("Score = (costWeight*PlanCost) * PreferenceMultiplier / (urgencyFloor + urgencyWeight*Urgency). Lower is better.")]
+    public float costWeight = 1f;
+
+    [Tooltip("How much urgency reduces score (bigger => urgency matters more).")]
+    public float urgencyWeight = 1f;
+
+    [Tooltip("Prevents division by near-zero urgency.")]
+    public float urgencyFloor = 0.10f;
+
+    [Tooltip("Multiplier applied to score if the plan satisfies the primaryNeed (smaller => preferred).")]
+    public float primaryPreferenceMultiplier = 0.8f;
+
+    [Tooltip("Multiplier applied to score if the plan satisfies a non-primary need.")]
+    public float otherPreferenceMultiplier = 1.0f;
+
+    [Header("Debug Logs")]
+    public bool enableGoapLogs = true;
+    public bool logActionChanges = true;
+
+    [Tooltip("Minimum time between identical log signatures (per NPC).")]
+    public float logMinInterval = 0.25f;
+
     private readonly GoapPlanner _planner = new();
     private Stack<GoapAction> _plan;
 
@@ -47,16 +85,22 @@ public class GoapAgent : MonoBehaviour
     private float _idleTimer;
     private bool _idleLogged;
 
-    public event System.Action<string, string> OnPlanChanged;   // (goal, action)
-    public event System.Action<string, string> OnActionChanged; // (goal, action)
+    // UI hooks
+    public event Action<string, string> OnPlanChanged;   // (goal, action)
+    public event Action<string, string> OnActionChanged; // (goal, action)
 
     public string DebugGoal { get; private set; } = "-";
     public string DebugAction { get; private set; } = "-";
 
-    // בשביל לדעת למה היה replan
-    private bool _replanPending;
-    private string _replanReason = "";
+    // logging
+    private GoapDebugLogger _dbg;
 
+    // last selected plan score/cost (for comparisons + logs)
+    private float _currentPlanCost = -1f;
+    private float _currentScore = float.PositiveInfinity;
+
+    // snapshot timer
+    private float _nextSnapshotAt = 0f;
 
     private void Awake()
     {
@@ -74,26 +118,31 @@ public class GoapAgent : MonoBehaviour
 
         _idleTarget = transform.position;
         _idleTimer = 0f;
+
+        _dbg = new GoapDebugLogger(name, logMinInterval);
+
+        _nextSnapshotAt = Time.time; // run immediately
     }
 
     private void FixedUpdate()
     {
         float dt = Time.fixedDeltaTime;
-
         needs.Tick(dt);
 
         // -------------------------
-        // IDLE branch (wander)
+        // Periodic snapshot / best-plan selection
         // -------------------------
-        NeedType desiredNeed = ChooseNeed();
-        if (desiredNeed == NeedType.None)
+        if (Time.time >= _nextSnapshotAt)
         {
-            if (_plan != null && _plan.Count > 0) ForceReplan("Idle");
+            _nextSnapshotAt = Time.time + Mathf.Max(0.05f, snapshotEvery);
+            EvaluateAndMaybeSwitchPlan();
+        }
 
+        // If we still have no need + no plan, just idle wander
+        if (_currentNeed == NeedType.None || _plan == null || _plan.Count == 0)
+        {
             if (!_idleLogged)
-            {
                 _idleLogged = true;
-            }
 
             if (enableIdleWander)
                 TickIdleWander(dt);
@@ -103,39 +152,8 @@ public class GoapAgent : MonoBehaviour
         _idleLogged = false;
 
         // -------------------------
-        // GOAP planning/execution
+        // Execute current plan
         // -------------------------
-        if (desiredNeed != _currentNeed)
-        {
-            _currentNeed = desiredNeed;
-            ForceReplan($"Need changed → {_currentNeed}");
-        }
-
-
-        if (_plan == null || _plan.Count == 0)
-        {
-            BuildPlanFor(_currentNeed);
-
-            if (_plan == null || _plan.Count == 0)
-            {
-                if (!_noPlanLogged)
-                {
-                    _noPlanLogged = true;
-                }
-                return;
-            }
-
-            _noPlanLogged = false;
-            bool isReplan = _replanPending;
-            string reason = isReplan ? _replanReason : "new plan";
-
-            _replanPending = false;
-            _replanReason = "";
-
-            LogPlan(isReplan ? $"Replan ({reason})" : "New plan created");
-            NotifyPlanChanged(isReplan ? $"Replan ({reason})" : "New plan");
-        }
-
         var a = _plan.Peek();
 
         if (_runningAction != a)
@@ -146,14 +164,22 @@ public class GoapAgent : MonoBehaviour
             DebugAction = ActionPrettyName(a);
 
             OnActionChanged?.Invoke(DebugGoal, DebugAction);
-        }
 
+            if (enableGoapLogs && logActionChanges)
+                LogInfo("ACT", $"Goal={DebugGoal} | Now={DebugAction} | {MeterLine()}");
+        }
 
         if (!a.IsStillValid(this))
         {
-            ForceReplan("action invalid");
+            ClearPlan("action invalid");
+
+            // replan immediately instead of waiting 1–2 seconds
+            _nextSnapshotAt = Time.time;
+            EvaluateAndMaybeSwitchPlan();
+
             return;
         }
+
 
         bool done = a.Perform(this, dt);
         if (done)
@@ -162,20 +188,182 @@ public class GoapAgent : MonoBehaviour
             a.ResetRuntime();
 
             if (_plan == null || _plan.Count == 0)
+            {
                 _runningAction = null;
+                // next snapshot tick will pick next best plan (or idle)
+            }
         }
     }
+
+
+    // -------------------------
+    // Snapshot + scoring
+    // -------------------------
+
+    private void EvaluateAndMaybeSwitchPlan()
+    {
+        // Compute urgencies (0..1)
+        float uSleep = needs != null ? needs.GetUrgency(NeedType.Sleep) : 0f;
+        float uHunger = needs != null ? needs.GetUrgency(NeedType.Hunger) : 0f;
+        float uWarmth = needs != null ? needs.GetUrgency(NeedType.Warmth) : 0f;
+
+        // If nothing urgent at all => go idle (clear plan)
+        if (uSleep <= 0f && uHunger <= 0f && uWarmth <= 0f)
+        {
+            ClearPlan("no urgent need");
+            _currentNeed = NeedType.None;
+            return;
+        }
+
+        // Evaluate all candidate needs with urgency > 0
+        var candidates = new List<(NeedType need, float urgency)>
+        {
+            (NeedType.Sleep,  uSleep),
+            (NeedType.Hunger, uHunger),
+            (NeedType.Warmth, uWarmth),
+        };
+
+        float bestScore = float.PositiveInfinity;
+        float bestCost = -1f;
+        NeedType bestNeed = NeedType.None;
+        Stack<GoapAction> bestPlan = null;
+
+        foreach (var (need, urg) in candidates)
+        {
+            if (urg <= 0f) continue;
+
+            var snapshot = MakeWorldStateSnapshot(need);
+            var goal = new Goals.GoalSatisfied(need);
+
+            var plan = _planner.Plan(snapshot, actions, goal, this);
+            if (plan == null || plan.Count == 0) continue;
+
+            float cost = ComputePlanCost(plan, snapshot);
+            float score = ComputeScore(need, urg, cost);
+
+            if (score < bestScore)
+            {
+                bestScore = score;
+                bestCost = cost;
+                bestNeed = need;
+                bestPlan = plan;
+            }
+        }
+
+        if (bestPlan == null)
+        {
+            // no plan possible for any urgent need
+            if (!_noPlanLogged)
+            {
+                _noPlanLogged = true;
+                LogInfo("NOPLAN", $"Could not find plan | {MeterLine()}");
+            }
+            ClearPlan("no plan");
+            _currentNeed = NeedType.None;
+            return;
+        }
+
+        _noPlanLogged = false;
+
+        // Should we switch?
+        bool haveNoCurrent = (_plan == null || _plan.Count == 0 || _currentNeed == NeedType.None);
+        float m = Mathf.Clamp01(replanMargin);
+        bool better = bestScore < _currentScore * (1f - m);
+
+        if (haveNoCurrent || (alwaysSwitchToLowerScore && better))
+        {
+            bool isSwitch = !haveNoCurrent;
+
+            // reset runtime on all actions so we don't keep old timers/path indices
+            foreach (var act in actions)
+                if (act != null) act.ResetRuntime();
+
+            _plan = bestPlan;
+            _currentNeed = bestNeed;
+            _runningAction = null;
+
+            _currentPlanCost = bestCost;
+            _currentScore = bestScore;
+
+            string reason = haveNoCurrent ? "New plan created" : "Replan (better score)";
+            LogPlan(reason, bestNeed, bestCost, bestScore, bestPlan);
+
+            NotifyPlanChanged(reason);
+        }
+        else
+        {
+            // Keep current plan, but keep values coherent if we never set them yet
+            if (_currentScore == float.PositiveInfinity && _plan != null && _plan.Count > 0)
+            {
+                // best effort compute
+                var snap = MakeWorldStateSnapshot(_currentNeed);
+                _currentPlanCost = ComputePlanCost(_plan, snap);
+                _currentScore = ComputeScore(_currentNeed, needs.GetUrgency(_currentNeed), _currentPlanCost);
+            }
+        }
+    }
+
+    private float ComputeScore(NeedType need, float urgency01, float planCostSeconds)
+    {
+        float pref = (need == primaryNeed) ? primaryPreferenceMultiplier : otherPreferenceMultiplier;
+
+        // Lower is better.
+        // - Plan cost increases score.
+        // - Higher urgency reduces score.
+        // - Preference reduces score for the primary need.
+        float denom = Mathf.Max(0.0001f, urgencyFloor + urgencyWeight * Mathf.Clamp01(urgency01));
+        float score = (costWeight * Mathf.Max(0f, planCostSeconds)) * pref / denom;
+        return score;
+    }
+
+    private float ComputePlanCost(Stack<GoapAction> plan, WorldState startSnapshot)
+    {
+        if (plan == null || plan.Count == 0) return 9999f;
+
+        float sum = 0f;
+        var s = startSnapshot;
+
+        // Stack enumerates from top->bottom (first executed -> last)
+        foreach (var a in plan)
+        {
+            if (a == null) continue;
+
+            float step = a.EstimateCost(this, s);
+            if (float.IsNaN(step) || step < 0f) step = 0f;
+            sum += step;
+
+            a.ApplyPlanEffects(ref s);
+            s.woodCarried = Mathf.Clamp(s.woodCarried, 0, Mathf.Max(0, maxWoodForPlanning));
+        }
+
+        return sum;
+    }
+
+    private void ClearPlan(string reason)
+    {
+        if (_plan != null)
+        {
+            foreach (var a in actions)
+                if (a != null) a.ResetRuntime();
+        }
+
+        _plan = null;
+        _runningAction = null;
+        _currentPlanCost = -1f;
+        _currentScore = float.PositiveInfinity;
+    }
+
     private void NotifyPlanChanged(string reason)
     {
         DebugGoal = _currentNeed.ToString();
-
-        // הפעולה הראשונה בתכנית (מה שהולך להתבצע עכשיו)
         var top = (_plan != null && _plan.Count > 0) ? _plan.Peek() : null;
         DebugAction = top != null ? ActionPrettyName(top) : "None";
-
         OnPlanChanged?.Invoke(DebugGoal, DebugAction);
     }
 
+    // -------------------------
+    // Idle wander
+    // -------------------------
 
     private void TickIdleWander(float dt)
     {
@@ -186,54 +374,16 @@ public class GoapAgent : MonoBehaviour
             _idleTimer = Mathf.Max(0.05f, idlePickEvery);
 
             Vector2 center = transform.position;
-            Vector2 rand = Random.insideUnitCircle * Mathf.Max(0.01f, idleRadius);
+            Vector2 rand = UnityEngine.Random.insideUnitCircle * Mathf.Max(0.01f, idleRadius);
             _idleTarget = center + rand;
         }
 
         mover.MoveTowards(_idleTarget, dt);
     }
 
-    private void ForceReplan(string reason = "replan")
-    {
-        if (_plan != null)
-            foreach (var a in actions) a.ResetRuntime();
-
-        _plan = null;
-        _runningAction = null;
-        _noPlanLogged = false;
-
-        _replanPending = true;
-        _replanReason = reason;
-    }
-
-
-    private NeedType ChooseNeed()
-    {
-        if (needs.hunger <= needs.critical) return NeedType.Hunger;
-        if (needs.warmth <= needs.critical) return NeedType.Warmth;
-        if (needs.energy <= needs.critical) return NeedType.Sleep;
-
-        if (primaryNeed == NeedType.Sleep && needs.energy <= needs.urgent) return NeedType.Sleep;
-        if (primaryNeed == NeedType.Hunger && needs.hunger <= needs.urgent) return NeedType.Hunger;
-        if (primaryNeed == NeedType.Warmth && needs.warmth <= needs.urgent) return NeedType.Warmth;
-
-        if (needs.hunger <= needs.urgent) return NeedType.Hunger;
-        if (needs.warmth <= needs.urgent) return NeedType.Warmth;
-        if (needs.energy <= needs.urgent) return NeedType.Sleep;
-
-        return NeedType.None;
-    }
-
-    private void BuildPlanFor(NeedType need)
-    {
-        var s = MakeWorldStateSnapshot(need);
-        var goal = new Goals.GoalSatisfied(need);
-
-        _plan = _planner.Plan(s, actions, goal, this);
-
-        if (_plan == null || _plan.Count == 0)
-            _plan = null;
-    }
+    // -------------------------
+    // World state snapshot helpers
+    // -------------------------
 
     private WorldState MakeWorldStateSnapshot(NeedType targetNeed)
     {
@@ -283,6 +433,10 @@ public class GoapAgent : MonoBehaviour
         return best;
     }
 
+    // -------------------------
+    // Logging
+    // -------------------------
+
     private string MeterLine() => $"E={needs.energy:F0} H={needs.hunger:F0} W={needs.warmth:F0} | Wood={wood}";
 
     private static StationType NeedToStation(NeedType n) => n switch
@@ -312,11 +466,28 @@ public class GoapAgent : MonoBehaviour
         return string.Join(" -> ", parts);
     }
 
-    private void LogPlan(string reason)
+    private void LogPlan(string reason, NeedType goalNeed, float planCost, float score, Stack<GoapAction> plan)
     {
+        if (!enableGoapLogs || _dbg == null) return;
+
+        string goal = goalNeed.ToString();
+        string planStr = PlanToString(plan);
+        string meters = MeterLine();
+        int count = (plan == null) ? 0 : plan.Count;
+
+        string msg =
+            $"{reason}\n" +
+            $"Goal={goal} | planCost={planCost:F2}s | score={score:F3}\n" +
+            $"{meters}\n" +
+            $"Plan({count}): {planStr}";
+
+        string sig = $"PLAN|{goal}|{reason}|{planStr}|{planCost:F2}|{score:F3}|{meters}";
+        _dbg.Log("PLAN", msg, sig);
     }
 
     private void LogInfo(string tag, string msg)
     {
+        if (!enableGoapLogs || _dbg == null) return;
+        _dbg.Log(tag, msg);
     }
 }
