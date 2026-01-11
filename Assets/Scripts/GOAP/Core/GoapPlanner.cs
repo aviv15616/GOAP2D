@@ -1,3 +1,4 @@
+﻿// GoapPlanner.cs (PATCHED: uses agent-aware ApplyPlanEffects so pos is simulated correctly)
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -9,7 +10,6 @@ public class GoapPlanner
         public Node parent;
         public GoapAction action;
         public float g;
-        public Vector2 agentPos; // simulated agent position for planning
     }
 
     private const int MAX_EXPANDED = 3000;
@@ -34,8 +34,7 @@ public class GoapPlanner
             state = ClampState(start, woodCap),
             parent = null,
             action = null,
-            g = 0f,
-            agentPos = agent.transform.position
+            g = 0f
         };
 
         open.Add(startNode);
@@ -72,23 +71,19 @@ public class GoapPlanner
                 if (action == null) continue;
                 if (!action.CanPlan(current.state)) continue;
 
-                // simulate worldstate
                 var nextState = current.state;
-                action.ApplyPlanEffects(ref nextState);
+
+                // ✅ Apply effects using agent, so action can:
+                // - choose best target by travel time from nextState.pos
+                // - update nextState.pos to that target
+                // - update flags/wood
+                action.ApplyPlanEffects(agent, ref nextState);
+
                 nextState = ClampState(nextState, woodCap);
 
-                // ---------- COST CALCULATION ----------
-                float cost = 0f;
-
-                // 1) action duration (1s by design)
-                cost += action.duration;
-
-                // 2) travel time (if action has a target)
-                float travelTime = action.EstimateCost(agent, current.state);
-                cost += travelTime;
-
-                float newG = current.g + cost;
-                // -------------------------------------
+                // ✅ Cost comes from action itself (travel + duration + planCost)
+                float stepCost = action.EstimateCost(agent, current.state);
+                float newG = current.g + stepCost;
 
                 if (bestG.TryGetValue(nextState, out float oldG) && newG >= oldG)
                     continue;
@@ -100,8 +95,7 @@ public class GoapPlanner
                     state = nextState,
                     parent = current,
                     action = action,
-                    g = newG,
-                    agentPos = current.agentPos // updated later per action
+                    g = newG
                 });
             }
         }

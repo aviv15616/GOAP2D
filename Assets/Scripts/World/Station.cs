@@ -20,7 +20,7 @@ public class Station : MonoBehaviour
     [HideInInspector] public BuildSpot boundSpot;
 
     public Vector3 InteractPos => (interactionPoint != null) ? interactionPoint.position : transform.position;
-    public bool Exists => gameObject.activeInHierarchy && built;
+public bool Exists => gameObject.activeInHierarchy && (type == StationType.Wood || built);
 
     private void OnEnable() => StationRegistry.Instance?.Register(this);
 

@@ -2,48 +2,55 @@
 
 public class WanderAction : GoapAction
 {
-    [Header("Wander")]
-    public float wanderRadius = 6f;
-    public float arriveDistance = 0.2f;
-    public float waitAtPointSeconds = 0.6f;
+	[Header("Wander")]
+	public float wanderRadius = 6f;
+	public float arriveDistance = 0.2f;
+	public float waitAtPointSeconds = 0.6f;
 
-    private Vector3 _target;
-    private float _waitT;
+	private Vector3 _target;
+	private float _waitT;
 
-    public override bool CanPlan(WorldState s) => true;
-    public override void ApplyPlanEffects(ref WorldState s) { }
+	public override bool CanPlan(WorldState s) => true;
 
-    public override bool StartAction(GoapAgent agent)
-    {
-        _waitT = 0f;
+	public override void ApplyPlanEffects(GoapAgent agent, ref WorldState s)
+	{
+		// Planning: move somewhere random (rough)
+		Vector2 offset = Random.insideUnitCircle * wanderRadius;
+		s.pos = s.pos + offset;
+	}
 
-        Vector2 basePos = agent.transform.position;
-        Vector2 offset = Random.insideUnitCircle * wanderRadius;
+	public override bool StartAction(GoapAgent agent)
+	{
+		_waitT = 0f;
+		Vector2 basePos = agent != null ? (Vector2)agent.transform.position : Vector2.zero;
+		Vector2 offset = Random.insideUnitCircle * wanderRadius;
+		_target = basePos + offset;
+		return true;
+	}
 
-        _target = basePos + offset;
-        return true;
-    }
+	public override bool Perform(GoapAgent agent, float dt)
+	{
+		if (!EnsureStarted(agent))
+			return true;
 
-    public override bool Perform(GoapAgent agent, float dt)
-    {
-        if (!_started)
-        {
-            _started = true;
-            StartAction(agent);
-        }
+		bool arrived = agent.mover.MoveTowards(_target, dt, arriveDistance);
+		if (!arrived) return false;
 
-        bool arrived = agent.mover.MoveTowards(_target, dt, arriveDistance);
+		_waitT += dt;
+		return _waitT >= waitAtPointSeconds;
+	}
 
-        if (!arrived) return false;
+	public override void ResetRuntime()
+	{
+		base.ResetRuntime();
+		_waitT = 0f;
+		_target = Vector3.zero;
+	}
+	public override void ApplyPlanEffects(ref WorldState s)
+	{
+		// Wander usually has no state effects (maybe pos, if you simulate it)
+	}
 
-        _waitT += dt;
-        return _waitT >= waitAtPointSeconds;
-    }
+	
 
-    public override void ResetRuntime()
-    {
-        base.ResetRuntime();
-        _waitT = 0f;
-        _target = Vector3.zero;
-    }
 }

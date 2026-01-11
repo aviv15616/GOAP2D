@@ -1,6 +1,4 @@
-﻿// GoapAgent.cs (UPDATED: periodic snapshot + score-based replanning using urgency + preference + plan cost)
-// Logs: only PLAN/REPLAN + ACT (no STAT/IDLE spam)
-using System;
+﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -23,7 +21,6 @@ public class GoapAgent : MonoBehaviour
     public int wood = 0;
 
     [Header("Planning Safety")]
-    [Tooltip("Caps the planner's woodCarried state-space (prevents infinite planning).")]
     public int maxWoodForPlanning = 12;
 
     [Header("Spawn Z for new stations")]
@@ -38,39 +35,28 @@ public class GoapAgent : MonoBehaviour
     public List<GoapAction> actions = new();
 
     [Header("Replan / Snapshot")]
-    [Tooltip("How often (seconds) the NPC re-evaluates worldstate + best plan.")]
     public float snapshotEvery = 1f;
-
-    [Tooltip("If true: whenever a lower Score plan exists, switch immediately.")]
     public bool alwaysSwitchToLowerScore = true;
 
     [Header("Replan Hysteresis")]
-    [Tooltip("Switch only if newScore is at least (1-margin) better than current. Example: 0.15 = must be 15% better.")]
     [Range(0f, 0.9f)]
     public float replanMargin = 0.15f;
 
+    [Header("Station vs Build Preference")]
+    [Tooltip("If existing station is not better than BUILD-ROUTE (wood->chop->build), treat station as NOT existing so planner may build instead.")]
+    [Range(0f, 1f)]
+    public float stationVsBuildMargin = 0.10f;
 
-    [Header("Score Weights (relative, tune later)")]
-    [Tooltip("Score = (costWeight*PlanCost) * PreferenceMultiplier / (urgencyFloor + urgencyWeight*Urgency). Lower is better.")]
+    [Header("Score Weights")]
     public float costWeight = 1f;
-
-    [Tooltip("How much urgency reduces score (bigger => urgency matters more).")]
     public float urgencyWeight = 1f;
-
-    [Tooltip("Prevents division by near-zero urgency.")]
     public float urgencyFloor = 0.10f;
-
-    [Tooltip("Multiplier applied to score if the plan satisfies the primaryNeed (smaller => preferred).")]
     public float primaryPreferenceMultiplier = 0.8f;
-
-    [Tooltip("Multiplier applied to score if the plan satisfies a non-primary need.")]
     public float otherPreferenceMultiplier = 1.0f;
 
     [Header("Debug Logs")]
     public bool enableGoapLogs = true;
     public bool logActionChanges = true;
-
-    [Tooltip("Minimum time between identical log signatures (per NPC).")]
     public float logMinInterval = 0.25f;
 
     private readonly GoapPlanner _planner = new();
@@ -80,26 +66,21 @@ public class GoapAgent : MonoBehaviour
     private GoapAction _runningAction;
     private bool _noPlanLogged;
 
-    // idle runtime
     private Vector2 _idleTarget;
     private float _idleTimer;
     private bool _idleLogged;
 
-    // UI hooks
-    public event Action<string, string> OnPlanChanged;   // (goal, action)
-    public event Action<string, string> OnActionChanged; // (goal, action)
+    public event Action<string, string> OnPlanChanged;
+    public event Action<string, string> OnActionChanged;
 
     public string DebugGoal { get; private set; } = "-";
     public string DebugAction { get; private set; } = "-";
 
-    // logging
     private GoapDebugLogger _dbg;
 
-    // last selected plan score/cost (for comparisons + logs)
     private float _currentPlanCost = -1f;
     private float _currentScore = float.PositiveInfinity;
 
-    // snapshot timer
     private float _nextSnapshotAt = 0f;
 
     private void Awake()
@@ -113,6 +94,7 @@ public class GoapAgent : MonoBehaviour
         if (spotManager == null) spotManager = FindFirstObjectByType<BuildSpotManager>();
 
         if (actions.Count == 0) GetComponents(actions);
+    
 
         _currentNeed = primaryNeed;
 
@@ -120,8 +102,7 @@ public class GoapAgent : MonoBehaviour
         _idleTimer = 0f;
 
         _dbg = new GoapDebugLogger(name, logMinInterval);
-
-        _nextSnapshotAt = Time.time; // run immediately
+        _nextSnapshotAt = Time.time;
     }
 
     private void FixedUpdate()
@@ -129,31 +110,20 @@ public class GoapAgent : MonoBehaviour
         float dt = Time.fixedDeltaTime;
         needs.Tick(dt);
 
-        // -------------------------
-        // Periodic snapshot / best-plan selection
-        // -------------------------
         if (Time.time >= _nextSnapshotAt)
         {
             _nextSnapshotAt = Time.time + Mathf.Max(0.05f, snapshotEvery);
             EvaluateAndMaybeSwitchPlan();
         }
 
-        // If we still have no need + no plan, just idle wander
         if (_currentNeed == NeedType.None || _plan == null || _plan.Count == 0)
         {
-            if (!_idleLogged)
-                _idleLogged = true;
-
-            if (enableIdleWander)
-                TickIdleWander(dt);
-
+            if (!_idleLogged) _idleLogged = true;
+            if (enableIdleWander) TickIdleWander(dt);
             return;
         }
         _idleLogged = false;
 
-        // -------------------------
-        // Execute current plan
-        // -------------------------
         var a = _plan.Peek();
 
         if (_runningAction != a)
@@ -172,29 +142,19 @@ public class GoapAgent : MonoBehaviour
         if (!a.IsStillValid(this))
         {
             ClearPlan("action invalid");
-
-            // replan immediately instead of waiting 1–2 seconds
             _nextSnapshotAt = Time.time;
             EvaluateAndMaybeSwitchPlan();
-
             return;
         }
-
 
         bool done = a.Perform(this, dt);
         if (done)
         {
             _plan.Pop();
             a.ResetRuntime();
-
-            if (_plan == null || _plan.Count == 0)
-            {
-                _runningAction = null;
-                // next snapshot tick will pick next best plan (or idle)
-            }
+            if (_plan == null || _plan.Count == 0) _runningAction = null;
         }
     }
-
 
     // -------------------------
     // Snapshot + scoring
@@ -202,12 +162,10 @@ public class GoapAgent : MonoBehaviour
 
     private void EvaluateAndMaybeSwitchPlan()
     {
-        // Compute urgencies (0..1)
         float uSleep = needs != null ? needs.GetUrgency(NeedType.Sleep) : 0f;
         float uHunger = needs != null ? needs.GetUrgency(NeedType.Hunger) : 0f;
         float uWarmth = needs != null ? needs.GetUrgency(NeedType.Warmth) : 0f;
 
-        // If nothing urgent at all => go idle (clear plan)
         if (uSleep <= 0f && uHunger <= 0f && uWarmth <= 0f)
         {
             ClearPlan("no urgent need");
@@ -215,7 +173,6 @@ public class GoapAgent : MonoBehaviour
             return;
         }
 
-        // Evaluate all candidate needs with urgency > 0
         var candidates = new List<(NeedType need, float urgency)>
         {
             (NeedType.Sleep,  uSleep),
@@ -252,7 +209,6 @@ public class GoapAgent : MonoBehaviour
 
         if (bestPlan == null)
         {
-            // no plan possible for any urgent need
             if (!_noPlanLogged)
             {
                 _noPlanLogged = true;
@@ -265,16 +221,12 @@ public class GoapAgent : MonoBehaviour
 
         _noPlanLogged = false;
 
-        // Should we switch?
         bool haveNoCurrent = (_plan == null || _plan.Count == 0 || _currentNeed == NeedType.None);
         float m = Mathf.Clamp01(replanMargin);
         bool better = bestScore < _currentScore * (1f - m);
 
         if (haveNoCurrent || (alwaysSwitchToLowerScore && better))
         {
-            bool isSwitch = !haveNoCurrent;
-
-            // reset runtime on all actions so we don't keep old timers/path indices
             foreach (var act in actions)
                 if (act != null) act.ResetRuntime();
 
@@ -287,33 +239,15 @@ public class GoapAgent : MonoBehaviour
 
             string reason = haveNoCurrent ? "New plan created" : "Replan (better score)";
             LogPlan(reason, bestNeed, bestCost, bestScore, bestPlan);
-
             NotifyPlanChanged(reason);
-        }
-        else
-        {
-            // Keep current plan, but keep values coherent if we never set them yet
-            if (_currentScore == float.PositiveInfinity && _plan != null && _plan.Count > 0)
-            {
-                // best effort compute
-                var snap = MakeWorldStateSnapshot(_currentNeed);
-                _currentPlanCost = ComputePlanCost(_plan, snap);
-                _currentScore = ComputeScore(_currentNeed, needs.GetUrgency(_currentNeed), _currentPlanCost);
-            }
         }
     }
 
     private float ComputeScore(NeedType need, float urgency01, float planCostSeconds)
     {
         float pref = (need == primaryNeed) ? primaryPreferenceMultiplier : otherPreferenceMultiplier;
-
-        // Lower is better.
-        // - Plan cost increases score.
-        // - Higher urgency reduces score.
-        // - Preference reduces score for the primary need.
         float denom = Mathf.Max(0.0001f, urgencyFloor + urgencyWeight * Mathf.Clamp01(urgency01));
-        float score = (costWeight * Mathf.Max(0f, planCostSeconds)) * pref / denom;
-        return score;
+        return (costWeight * Mathf.Max(0f, planCostSeconds)) * pref / denom;
     }
 
     private float ComputePlanCost(Stack<GoapAction> plan, WorldState startSnapshot)
@@ -323,7 +257,6 @@ public class GoapAgent : MonoBehaviour
         float sum = 0f;
         var s = startSnapshot;
 
-        // Stack enumerates from top->bottom (first executed -> last)
         foreach (var a in plan)
         {
             if (a == null) continue;
@@ -332,7 +265,8 @@ public class GoapAgent : MonoBehaviour
             if (float.IsNaN(step) || step < 0f) step = 0f;
             sum += step;
 
-            a.ApplyPlanEffects(ref s);
+            a.ApplyPlanEffects(this, ref s);
+
             s.woodCarried = Mathf.Clamp(s.woodCarried, 0, Mathf.Max(0, maxWoodForPlanning));
         }
 
@@ -342,10 +276,8 @@ public class GoapAgent : MonoBehaviour
     private void ClearPlan(string reason)
     {
         if (_plan != null)
-        {
             foreach (var a in actions)
                 if (a != null) a.ResetRuntime();
-        }
 
         _plan = null;
         _runningAction = null;
@@ -372,44 +304,311 @@ public class GoapAgent : MonoBehaviour
         if (_idleTimer <= 0f || Vector2.Distance(transform.position, _idleTarget) <= mover.arriveDistance * 2f)
         {
             _idleTimer = Mathf.Max(0.05f, idlePickEvery);
-
-            Vector2 center = transform.position;
-            Vector2 rand = UnityEngine.Random.insideUnitCircle * Mathf.Max(0.01f, idleRadius);
-            _idleTarget = center + rand;
+            _idleTarget = (Vector2)transform.position + UnityEngine.Random.insideUnitCircle * Mathf.Max(0.01f, idleRadius);
         }
 
         mover.MoveTowards(_idleTarget, dt);
     }
 
     // -------------------------
-    // World state snapshot helpers
+    // Snapshot helpers (KEY)
     // -------------------------
 
     private WorldState MakeWorldStateSnapshot(NeedType targetNeed)
     {
-        return new WorldState
+        int carried = Mathf.Clamp(wood, 0, Mathf.Max(0, maxWoodForPlanning));
+
+        // Build a base snapshot first
+        var snap = new WorldState
         {
+            pos = transform.position,
+            woodCarried = carried,
+
             woodExists = AnyStationExists(StationType.Wood),
+
+            // start with raw "exists", then override using EffectiveStationExists()
             bedExists = AnyStationExists(StationType.Bed),
             potExists = AnyStationExists(StationType.Pot),
             fireExists = AnyStationExists(StationType.Fire),
-
-            woodCarried = Mathf.Clamp(wood, 0, Mathf.Max(0, maxWoodForPlanning)),
 
             sleepSatisfied = targetNeed != NeedType.Sleep,
             hungerSatisfied = targetNeed != NeedType.Hunger,
             warmthSatisfied = targetNeed != NeedType.Warmth
         };
+
+        // ✅ IMPORTANT: effective existence compares:
+        // existing-station travel time  VS  build-route time (even before we have enough wood)
+        snap.bedExists = EffectiveStationExists(StationType.Bed, snap);
+        snap.potExists = EffectiveStationExists(StationType.Pot, snap);
+        snap.fireExists = EffectiveStationExists(StationType.Fire, snap);
+
+        return snap;
+    }
+
+    // Treat station as "exists" only if it beats the best build-route.
+    private bool EffectiveStationExists(StationType type, WorldState snap)
+    {
+        bool rawExists = AnyStationExists(type);
+
+        if (!rawExists)
+        {
+            Debug.Log(
+                $"[GOAP][{name}] {type}: rawExists=FALSE → station does NOT exist"
+            );
+            return false;
+        }
+
+        if (spotManager == null || mover == null)
+        {
+            Debug.Log(
+                $"[GOAP][{name}] {type}: spotManager/mover missing → station FORCED exist"
+            );
+            return true;
+        }
+
+        Vector2 from = snap.pos;
+
+        // ---- station travel time ----
+        bool hasStation = TryGetNearestStationTravelTime(type, from, out float tStation);
+
+        if (!hasStation)
+        {
+            Debug.Log(
+                $"[GOAP][{name}] {type}: rawExists=TRUE but no reachable station → FALSE"
+            );
+            return false;
+        }
+
+        // ---- build route time ----
+        float tBuildRoute = EstimateBuildRouteTime(type, snap);
+
+        Debug.Log(
+            $"[GOAP][{name}] {type} CHECK | " +
+            $"from={from} | " +
+            $"tStation={(tStation >= 9999f ? "INF" : tStation.ToString("F2"))} | " +
+            $"tBuild={(tBuildRoute >= 9999f ? "INF" : tBuildRoute.ToString("F2"))} | " +
+            $"woodExists={snap.woodExists} woodCarried={snap.woodCarried}"
+        );
+
+        // ---- decision ----
+        if (tBuildRoute >= 9999f)
+        {
+            Debug.Log(
+                $"[GOAP][{name}] {type}: build-route IMPOSSIBLE → KEEP station"
+            );
+            return true;
+        }
+
+        float margin = Mathf.Clamp01(stationVsBuildMargin);
+        bool stationWins = tStation <= tBuildRoute * (1f + margin);
+
+        Debug.Log(
+            $"[GOAP][{name}] {type} DECISION → " +
+            $"{(stationWins ? "USE STATION" : "ALLOW BUILD")}"
+        );
+
+        return stationWins;
+    }
+
+
+    private float EstimateBuildRouteTime(StationType type, WorldState snap)
+    {
+        // Need a Build action for this type
+        BuildStationAction build = FindBuildAction(type);
+        if (build == null)
+        {
+            Debug.Log($"[GOAP][{name}] {type} BUILD: no BuildStationAction -> INF");
+            return 9999f;
+        }
+
+        // Need ChopWood to acquire missing wood
+        ChopWoodAction chop = FindChopAction();
+        if (chop == null)
+        {
+            Debug.Log($"[GOAP][{name}] {type} BUILD: no ChopWoodAction -> INF");
+            return 9999f;
+        }
+
+        int needWood = Mathf.Max(0, build.woodCost);
+        int haveWood = Mathf.Clamp(snap.woodCarried, 0, Mathf.Max(0, maxWoodForPlanning));
+
+        Vector2 from = snap.pos;
+
+        // ⚠️ This is likely your bug: global/fixed spot
+        Vector2 buildPos = spotManager.GetSpotPosition(type);
+
+        float speed = (mover != null) ? Mathf.Max(0.01f, mover.speed) : 1f;
+
+        Debug.Log($"[GOAP][{name}] {type} BUILD EST | from={from} buildPos={buildPos} needWood={needWood} haveWood={haveWood} speed={speed:F2}");
+
+        // Already have enough wood: go build + build duration
+        if (haveWood >= needWood)
+        {
+            float tToBuild = (nav != null) ? nav.EstimatePathTime(from, buildPos, speed)
+                                           : Vector2.Distance(from, buildPos) / speed;
+
+            Debug.Log($"[GOAP][{name}] {type} BUILD EST | have enough wood -> tToBuild={tToBuild:F2} buildDur={build.duration:F2}");
+
+            if (tToBuild >= 9999f) return 9999f;
+            return tToBuild + Mathf.Max(0f, build.duration);
+        }
+
+        // Need wood: go to nearest wood (by travel time)
+        if (!TryGetNearestStationInteractPos(StationType.Wood, from, out Vector2 woodPos))
+        {
+            Debug.Log($"[GOAP][{name}] {type} BUILD EST | no wood station -> INF");
+            return 9999f;
+        }
+
+        float tToWood = (nav != null) ? nav.EstimatePathTime(from, woodPos, speed)
+                                      : Vector2.Distance(from, woodPos) / speed;
+
+        if (tToWood >= 9999f)
+        {
+            Debug.Log($"[GOAP][{name}] {type} BUILD EST | wood unreachable (tToWood=INF) -> INF");
+            return 9999f;
+        }
+
+        int missing = Mathf.Max(0, needWood - haveWood);
+        int per = Mathf.Max(1, chop.woodPerChop);
+        int chops = Mathf.CeilToInt(missing / (float)per);
+
+        float tChop = chops * Mathf.Max(0f, chop.duration);
+
+        float tWoodToBuild = (nav != null) ? nav.EstimatePathTime(woodPos, buildPos, speed)
+                                           : Vector2.Distance(woodPos, buildPos) / speed;
+
+        Debug.Log(
+            $"[GOAP][{name}] {type} BUILD EST | " +
+            $"woodPos={woodPos} tToWood={tToWood:F2} | " +
+            $"missing={missing} perChop={per} chops={chops} tChop={tChop:F2} | " +
+            $"tWoodToBuild={tWoodToBuild:F2} buildDur={build.duration:F2} | " +
+            $"TOTAL={(tToWood + tChop + tWoodToBuild + Mathf.Max(0f, build.duration)):F2}"
+        );
+
+        if (tWoodToBuild >= 9999f) return 9999f;
+
+        return tToWood + tChop + tWoodToBuild + Mathf.Max(0f, build.duration);
+    }
+
+    private BuildStationAction FindBuildAction(StationType t)
+    {
+        if (actions == null) return null;
+        foreach (var a in actions)
+            if (a is BuildStationAction b && b.buildType == t)
+                return b;
+        return null;
+    }
+
+    private ChopWoodAction FindChopAction()
+    {
+        if (actions == null) return null;
+        foreach (var a in actions)
+            if (a is ChopWoodAction c)
+                return c;
+        return null;
+    }
+
+    // -------------------------
+    // Travel-time based selection (KEY)
+    // -------------------------
+
+    public float EstimateTravelTime(Vector2 from, Vector2 to)
+    {
+        float speed = (mover != null) ? Mathf.Max(0.01f, mover.speed) : 1f;
+        if (nav != null) return nav.EstimatePathTime(from, to, speed);
+        return Vector2.Distance(from, to) / speed;
+    }
+
+    // Best station travel time from "from"
+    private bool TryGetNearestStationTravelTime(StationType type, Vector2 from, out float bestTime)
+    {
+        bestTime = 9999f;
+
+        if (registry == null || registry.AllStations == null)
+            return false;
+
+        bool found = false;
+        foreach (var st in registry.AllStations)
+        {
+            if (st == null) continue;
+            if (!st.Exists) continue;
+            if (st.type != type) continue;
+
+            float t = EstimateTravelTime(from, st.InteractPos);
+            if (t < bestTime)
+            {
+                bestTime = t;
+                found = true;
+            }
+        }
+
+        return found;
+    }
+
+    // Best station position by travel time from "from"
+    public bool TryGetBestStationPos(StationType type, Vector2 from, out Vector2 bestPos)
+    {
+        bestPos = default;
+
+        if (registry == null || registry.AllStations == null)
+            return false;
+
+        bool found = false;
+        float bestTime = 9999f;
+
+        foreach (var st in registry.AllStations)
+        {
+            if (st == null) continue;
+            if (!st.Exists) continue;
+            if (st.type != type) continue;
+
+            float t = EstimateTravelTime(from, st.InteractPos);
+            if (t < bestTime)
+            {
+                bestTime = t;
+                bestPos = st.InteractPos;
+                found = true;
+            }
+        }
+
+        return found;
+    }
+
+    private bool TryGetNearestStationInteractPos(StationType type, Vector2 from, out Vector2 bestPos)
+    {
+        bestPos = default;
+
+        if (registry == null || registry.AllStations == null)
+            return false;
+
+        bool found = false;
+        float bestTime = 9999f;
+
+        foreach (var st in registry.AllStations)
+        {
+            if (st == null) continue;
+            if (!st.Exists) continue;
+            if (st.type != type) continue;
+
+            float t = EstimateTravelTime(from, st.InteractPos);
+            if (t < bestTime)
+            {
+                bestTime = t;
+                bestPos = st.InteractPos;
+                found = true;
+            }
+        }
+
+        return found;
     }
 
     private bool AnyStationExists(StationType t)
     {
         if (registry == null || registry.AllStations == null) return false;
-
         foreach (var st in registry.AllStations)
             if (st != null && st.type == t && st.Exists)
                 return true;
-
         return false;
     }
 

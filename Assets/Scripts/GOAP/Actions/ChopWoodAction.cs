@@ -12,8 +12,11 @@ public class ChopWoodAction : GoapAction
     private Vector2 _goal;
     private List<Vector2> _path;
     private int _pathIndex;
+    private bool _arrived;
 
-    private bool _arrived; // move phase completed?
+    // planning cache (so ApplyPlanEffects can advance simulated pos)
+    private Vector2 _cachedPlanTarget;
+    private bool _cachedPlanTargetValid;
 
     // -------------------------
     // PLANNING
@@ -24,22 +27,29 @@ public class ChopWoodAction : GoapAction
     public override void ApplyPlanEffects(ref WorldState s)
     {
         s.woodCarried += woodPerChop;
+
+        // Advance simulated position to the wood station we chopped at
+        if (_cachedPlanTargetValid)
+            s.pos = _cachedPlanTarget;
     }
 
     public override float EstimateCost(GoapAgent agent, WorldState currentState)
     {
-        if (agent == null || agent.nav == null || agent.mover == null)
+        _cachedPlanTargetValid = false;
+
+        if (agent == null) return 9999f;
+
+        // Choose BEST wood by travel time from simulated position
+        if (!agent.TryGetBestStationPos(StationType.Wood, currentState.pos, out var bestPos))
             return 9999f;
 
-        var st = agent.FindNearestStation(StationType.Wood);
-        if (st == null) return 9999f;
+        _cachedPlanTarget = bestPos;
+        _cachedPlanTargetValid = true;
 
-        // travel time only
-        return agent.nav.EstimatePathTime(
-            agent.transform.position,
-            st.InteractPos,
-            agent.mover.speed
-        );
+        float travel = agent.EstimateTravelTime(currentState.pos, bestPos);
+
+        // UseStation-style aggregation: travel + duration
+        return travel + Mathf.Max(0f, duration);
     }
 
     // -------------------------
@@ -53,10 +63,13 @@ public class ChopWoodAction : GoapAction
 
     public override bool StartAction(GoapAgent agent)
     {
-        var st = agent.FindNearestStation(StationType.Wood);
-        if (st == null) return false;
+        if (agent == null) return false;
 
-        _goal = st.InteractPos;
+        // Runtime: also pick best-by-travel-time (matches planning)
+        if (!agent.TryGetBestStationPos(StationType.Wood, agent.transform.position, out var bestPos))
+            return false;
+
+        _goal = bestPos;
 
         _pathIndex = 0;
         _path = agent.nav != null
@@ -69,36 +82,31 @@ public class ChopWoodAction : GoapAction
 
     public override bool Perform(GoapAgent agent, float dt)
     {
-        // start once
         if (!EnsureStarted(agent))
             return true; // fail-fast skip
 
         float arrive = Mathf.Max(agent.mover.arriveDistance, stopDistance);
 
-        // 1) MOVE first (no waiting before movement)
+        // 1) MOVE first
         if (!_arrived)
         {
             if (_path != null && _path.Count > 0)
-            {
                 _arrived = agent.mover.FollowPath(_path, ref _pathIndex, dt, arrive);
-            }
             else
-            {
                 _arrived = agent.mover.MoveTowards(_goal, dt, arrive);
-            }
 
             if (!_arrived)
                 return false;
 
-            // Just arrived: reset timer so duration measures "chop time"
-            _elapsed = 0f;
+            _elapsed = 0f; // start chop timer after arrival
         }
 
-        // 2) WAIT after arrival (the actual chopping)
-        if (!WaitAfterArrival(dt))
+        // 2) WAIT after arrival (duration)
+        _elapsed += dt;
+        if (_elapsed < duration)
             return false;
 
-        // 3) APPLY once (agent will pop action immediately after true)
+        // 3) APPLY once
         agent.wood += woodPerChop;
         return true;
     }
@@ -109,7 +117,9 @@ public class ChopWoodAction : GoapAction
         _path = null;
         _pathIndex = 0;
         _arrived = false;
+        _cachedPlanTargetValid = false;
     }
+
 #if UNITY_EDITOR
     private void OnDrawGizmos()
     {
@@ -117,13 +127,9 @@ public class ChopWoodAction : GoapAction
             return;
 
         Gizmos.color = Color.cyan;
-
         for (int i = 0; i < _path.Count - 1; i++)
-        {
             Gizmos.DrawLine(_path[i], _path[i + 1]);
-        }
 
-        // current target segment
         if (_pathIndex < _path.Count)
         {
             Gizmos.color = Color.yellow;
@@ -131,5 +137,4 @@ public class ChopWoodAction : GoapAction
         }
     }
 #endif
-
 }

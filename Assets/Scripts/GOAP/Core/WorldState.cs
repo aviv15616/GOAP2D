@@ -9,7 +9,7 @@ public struct WorldState
     public bool sleepSatisfied;
     public bool hungerSatisfied;
     public bool warmthSatisfied;
-
+      public Vector2 pos;
     public override int GetHashCode()
     {
         int h = 17;
