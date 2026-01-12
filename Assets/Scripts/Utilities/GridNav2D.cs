@@ -1,4 +1,4 @@
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 /// A* grid navigation using TilemapBoundsProvider for the world rectangle.
@@ -335,6 +335,101 @@ public class GridNav2D : MonoBehaviour
 
         return rev;
     }
+    public float EstimatePathTimeLikeMover(Vector2 fromWorld, Vector2 toWorld, float speed, float arrive)
+    {
+        if (speed <= 0.001f) return 9999f;
+        if (boundsProvider == null) return 9999f;
+
+        var path = FindPath(fromWorld, toWorld);
+        if (path == null) return 9999f;
+
+        arrive = Mathf.Max(0.001f, arrive);
+
+        // ✅ match runtime tick (and typical clamp-to-0.05-max behavior)
+        float dt = Mathf.Min(Time.fixedDeltaTime, 0.05f);
+        dt = Mathf.Max(0.001f, dt);
+
+        float step = speed * dt;
+
+        Vector2 pos = fromWorld;
+        int index = 0;
+        float time = 0f;
+
+        // safety cap
+        int maxIters = Mathf.CeilToInt(100f / dt); // ~100 seconds
+        int iters = 0;
+
+        while (index < path.Count && iters++ < maxIters)
+        {
+            float arriveSqr = arrive * arrive;
+
+            while (index < path.Count && ((path[index] - pos).sqrMagnitude <= arriveSqr))
+                index++;
+
+            if (index >= path.Count) break;
+
+            pos = Vector2.MoveTowards(pos, path[index], step);
+            time += dt;
+        }
+
+        return (iters >= maxIters) ? 9999f : time;
+    }
+
+    public float EstimatePathTime(Vector2 fromWorld, Vector2 toWorld, float speed, float arrive)
+    {
+        if (speed <= 0.001f) return 9999f;
+        if (boundsProvider == null) return 9999f;
+
+        // משתמשים באותו FindPath כמו runtime כדי לקבל את ה-waypoints
+        var path = FindPath(fromWorld, toWorld);
+        if (path == null) return 9999f;
+
+        arrive = Mathf.Max(0f, arrive);
+
+        float time = 0f;
+        Vector2 p = fromWorld;
+
+        // מדמה בדיוק את "להתקרב עד arrive ואז לעבור ל-waypoint הבא"
+        for (int i = 0; i < path.Count; i++)
+        {
+            Vector2 wp = path[i];
+            float d = Vector2.Distance(p, wp);
+            if (d <= arrive) continue;
+
+            float moveDist = d - arrive;         // כמה באמת צריך לזוז כדי "להגיע" (כלומר להיות בתוך arrive)
+            time += moveDist / speed;
+            p = Vector2.MoveTowards(p, wp, moveDist);
+        }
+
+        return time;
+    }
+
+    public float EstimatePathTimePolyline(Vector2 fromWorld, Vector2 toWorld, float speed, float arrive)
+    {
+        if (speed <= 0.001f) return 9999f;
+        if (boundsProvider == null) return 9999f;
+
+        var path = FindPath(fromWorld, toWorld);
+        if (path == null) return 9999f;
+
+        float dist = 0f;
+
+        Vector2 cur = fromWorld;
+        for (int i = 0; i < path.Count; i++)
+        {
+            dist += Vector2.Distance(cur, path[i]);
+            cur = path[i];
+        }
+
+        dist += Vector2.Distance(cur, toWorld);
+
+        // stop within arrive of final target (like MoveTowards)
+        float a = Mathf.Max(0.001f, arrive);
+        dist = Mathf.Max(0f, dist - a);
+
+        return dist / speed;
+    }
+    
 
     private bool TryFindNearestWalkable(int cx, int cy, int radius, out int wx, out int wy)
     {

@@ -1,0 +1,1053 @@
+fileFormatVersion: 2
+guid: 3aa0ba66d51a90d4186f50c58261544a
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -5954242356437856772
+    second: A-detailed-16-bit-pixel-art-sprite-of-a-fat-bald-g-256px-36 (1)_0
+  - first:
+      213: -2023387077267703712
+    second: A-detailed-16-bit-pixel-art-sprite-of-a-fat-bald-g-256px-36 (1)_1
+  - first:
+      213: -5923104166917357300
+    second: A-detailed-16-bit-pixel-art-sprite-of-a-fat-bald-g-256px-36 (1)_2
+  - first:
+      213: 4532357780881271099
+    second: A-detailed-16-bit-pixel-art-sprite-of-a-fat-bald-g-256px-36 (1)_3
+  - first:
+      213: -7128866363627273179
+    second: A-detailed-16-bit-pixel-art-sprite-of-a-fat-bald-g-256px-36 (1)_4
+  - first:
+      213: -8547998651502490209
+    second: A-detailed-16-bit-pixel-art-sprite-of-a-fat-bald-g-256px-36 (1)_5
+  - first:
+      213: 3192584951216955402
+    second: A-detailed-16-bit-pixel-art-sprite-of-a-fat-bald-g-256px-36 (1)_6
+  - first:
+      213: 6299212519179915339
+    second: A-detailed-16-bit-pixel-art-sprite-of-a-fat-bald-g-256px-36 (1)_7
+  - first:
+      213: -7211188762793076778
+    second: A-detailed-16-bit-pixel-art-sprite-of-a-fat-bald-g-256px-36 (1)_8
+  - first:
+      213: 7608954885439311130
+    second: A-detailed-16-bit-pixel-art-sprite-of-a-fat-bald-g-256px-36 (1)_9
+  - first:
+      213: 5792333582348483986
+    second: A-detailed-16-bit-pixel-art-sprite-of-a-fat-bald-g-256px-36 (1)_10
+  - first:
+      213: -4628515029336414691
+    second: A-detailed-16-bit-pixel-art-sprite-of-a-fat-bald-g-256px-36 (1)_11
+  - first:
+      213: -1403167596494919848
+    second: A-detailed-16-bit-pixel-art-sprite-of-a-fat-bald-g-256px-36 (1)_12
+  - first:
+      213: 4604498929841712075
+    second: A-detailed-16-bit-pixel-art-sprite-of-a-fat-bald-g-256px-36 (1)_13
+  - first:
+      213: -6028033029566793936
+    second: A-detailed-16-bit-pixel-art-sprite-of-a-fat-bald-g-256px-36 (1)_14
+  - first:
+      213: 7628036803125956719
+    second: A-detailed-16-bit-pixel-art-sprite-of-a-fat-bald-g-256px-36 (1)_15
+  - first:
+      213: 3918463826253778876
+    second: A-detailed-16-bit-pixel-art-sprite-of-a-fat-bald-g-256px-36 (1)_16
+  - first:
+      213: -9198797012901642975
+    second: A-detailed-16-bit-pixel-art-sprite-of-a-fat-bald-g-256px-36 (1)_17
+  - first:
+      213: 925520703249099157
+    second: A-detailed-16-bit-pixel-art-sprite-of-a-fat-bald-g-256px-36 (1)_18
+  - first:
+      213: -7313075848019038282
+    second: A-detailed-16-bit-pixel-art-sprite-of-a-fat-bald-g-256px-36 (1)_19
+  - first:
+      213: -5994194603308378588
+    second: A-detailed-16-bit-pixel-art-sprite-of-a-fat-bald-g-256px-36 (1)_20
+  - first:
+      213: -6682636309832408112
+    second: A-detailed-16-bit-pixel-art-sprite-of-a-fat-bald-g-256px-36 (1)_21
+  - first:
+      213: -5021445627820103418
+    second: A-detailed-16-bit-pixel-art-sprite-of-a-fat-bald-g-256px-36 (1)_22
+  - first:
+      213: -3746903930351369707
+    second: A-detailed-16-bit-pixel-art-sprite-of-a-fat-bald-g-256px-36 (1)_23
+  - first:
+      213: -4751880675292374416
+    second: A-detailed-16-bit-pixel-art-sprite-of-a-fat-bald-g-256px-36 (1)_24
+  - first:
+      213: 6961280344946520792
+    second: A-detailed-16-bit-pixel-art-sprite-of-a-fat-bald-g-256px-36 (1)_25
+  - first:
+      213: 6330118545724822848
+    second: A-detailed-16-bit-pixel-art-sprite-of-a-fat-bald-g-256px-36 (1)_26
+  - first:
+      213: -1778990954848470617
+    second: A-detailed-16-bit-pixel-art-sprite-of-a-fat-bald-g-256px-36 (1)_27
+  - first:
+      213: -748958381525170852
+    second: A-detailed-16-bit-pixel-art-sprite-of-a-fat-bald-g-256px-36 (1)_28
+  - first:
+      213: 4136796800956799752
+    second: A-detailed-16-bit-pixel-art-sprite-of-a-fat-bald-g-256px-36 (1)_29
+  - first:
+      213: 8649769529213125778
+    second: A-detailed-16-bit-pixel-art-sprite-of-a-fat-bald-g-256px-36 (1)_30
+  - first:
+      213: 5699197613398817303
+    second: A-detailed-16-bit-pixel-art-sprite-of-a-fat-bald-g-256px-36 (1)_31
+  - first:
+      213: 7978711468954222113
+    second: A-detailed-16-bit-pixel-art-sprite-of-a-fat-bald-g-256px-36 (1)_32
+  - first:
+      213: -6925052157511393898
+    second: A-detailed-16-bit-pixel-art-sprite-of-a-fat-bald-g-256px-36 (1)_33
+  - first:
+      213: -2794773494971323416
+    second: A-detailed-16-bit-pixel-art-sprite-of-a-fat-bald-g-256px-36 (1)_34
+  - first:
+      213: 638918182593499595
+    second: A-detailed-16-bit-pixel-art-sprite-of-a-fat-bald-g-256px-36 (1)_35
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: A-detailed-16-bit-pixel-art-sprite-of-a-fat-bald-g-256px-36 (1)_0
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 1323
+        width: 181
+        height: 258
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cfdcfedaf184e5da0800000000000000
+      internalID: -5954242356437856772
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-detailed-16-bit-pixel-art-sprite-of-a-fat-bald-g-256px-36 (1)_1
+      rect:
+        serializedVersion: 2
+        x: 222
+        y: 1323
+        width: 181
+        height: 258
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 068b7507c2c7be3e0800000000000000
+      internalID: -2023387077267703712
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-detailed-16-bit-pixel-art-sprite-of-a-fat-bald-g-256px-36 (1)_2
+      rect:
+        serializedVersion: 2
+        x: 427
+        y: 1323
+        width: 178
+        height: 258
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c0141436428eccda0800000000000000
+      internalID: -5923104166917357300
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-detailed-16-bit-pixel-art-sprite-of-a-fat-bald-g-256px-36 (1)_3
+      rect:
+        serializedVersion: 2
+        x: 634
+        y: 1323
+        width: 170
+        height: 258
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b39e764636b26ee30800000000000000
+      internalID: 4532357780881271099
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-detailed-16-bit-pixel-art-sprite-of-a-fat-bald-g-256px-36 (1)_4
+      rect:
+        serializedVersion: 2
+        x: 843
+        y: 1323
+        width: 138
+        height: 258
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 52404c800dd211d90800000000000000
+      internalID: -7128866363627273179
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-detailed-16-bit-pixel-art-sprite-of-a-fat-bald-g-256px-36 (1)_5
+      rect:
+        serializedVersion: 2
+        x: 1045
+        y: 1323
+        width: 132
+        height: 258
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f9d0da404886f5980800000000000000
+      internalID: -8547998651502490209
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-detailed-16-bit-pixel-art-sprite-of-a-fat-bald-g-256px-36 (1)_6
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 1059
+        width: 147
+        height: 251
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a006b8c19175e4c20800000000000000
+      internalID: 3192584951216955402
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-detailed-16-bit-pixel-art-sprite-of-a-fat-bald-g-256px-36 (1)_7
+      rect:
+        serializedVersion: 2
+        x: 218
+        y: 1059
+        width: 165
+        height: 259
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b40996a596c4b6750800000000000000
+      internalID: 6299212519179915339
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-detailed-16-bit-pixel-art-sprite-of-a-fat-bald-g-256px-36 (1)_8
+      rect:
+        serializedVersion: 2
+        x: 410
+        y: 1059
+        width: 172
+        height: 261
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6d71e69d606bceb90800000000000000
+      internalID: -7211188762793076778
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-detailed-16-bit-pixel-art-sprite-of-a-fat-bald-g-256px-36 (1)_9
+      rect:
+        serializedVersion: 2
+        x: 622
+        y: 1059
+        width: 172
+        height: 255
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a1d45928720789960800000000000000
+      internalID: 7608954885439311130
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-detailed-16-bit-pixel-art-sprite-of-a-fat-bald-g-256px-36 (1)_10
+      rect:
+        serializedVersion: 2
+        x: 830
+        y: 1059
+        width: 179
+        height: 255
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 29d727c34b0826050800000000000000
+      internalID: 5792333582348483986
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-detailed-16-bit-pixel-art-sprite-of-a-fat-bald-g-256px-36 (1)_11
+      rect:
+        serializedVersion: 2
+        x: 1030
+        y: 1059
+        width: 182
+        height: 258
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d16a8de8a1634cfb0800000000000000
+      internalID: -4628515029336414691
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-detailed-16-bit-pixel-art-sprite-of-a-fat-bald-g-256px-36 (1)_12
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 795
+        width: 158
+        height: 260
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 857e49a5182f68ce0800000000000000
+      internalID: -1403167596494919848
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-detailed-16-bit-pixel-art-sprite-of-a-fat-bald-g-256px-36 (1)_13
+      rect:
+        serializedVersion: 2
+        x: 234
+        y: 795
+        width: 136
+        height: 254
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bcba1e9816776ef30800000000000000
+      internalID: 4604498929841712075
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-detailed-16-bit-pixel-art-sprite-of-a-fat-bald-g-256px-36 (1)_14
+      rect:
+        serializedVersion: 2
+        x: 429
+        y: 794
+        width: 160
+        height: 253
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0377952c5ef185ca0800000000000000
+      internalID: -6028033029566793936
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-detailed-16-bit-pixel-art-sprite-of-a-fat-bald-g-256px-36 (1)_15
+      rect:
+        serializedVersion: 2
+        x: 618
+        y: 797
+        width: 177
+        height: 257
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f60ddefae0b3cd960800000000000000
+      internalID: 7628036803125956719
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-detailed-16-bit-pixel-art-sprite-of-a-fat-bald-g-256px-36 (1)_16
+      rect:
+        serializedVersion: 2
+        x: 822
+        y: 797
+        width: 168
+        height: 258
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cbf031dc61e216630800000000000000
+      internalID: 3918463826253778876
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-detailed-16-bit-pixel-art-sprite-of-a-fat-bald-g-256px-36 (1)_17
+      rect:
+        serializedVersion: 2
+        x: 1044
+        y: 796
+        width: 132
+        height: 252
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 12db215aade475080800000000000000
+      internalID: -9198797012901642975
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-detailed-16-bit-pixel-art-sprite-of-a-fat-bald-g-256px-36 (1)_18
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 528
+        width: 177
+        height: 255
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 599ae6d0d2c18dc00800000000000000
+      internalID: 925520703249099157
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-detailed-16-bit-pixel-art-sprite-of-a-fat-bald-g-256px-36 (1)_19
+      rect:
+        serializedVersion: 2
+        x: 213
+        y: 533
+        width: 170
+        height: 258
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6bf2657334cb28a90800000000000000
+      internalID: -7313075848019038282
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-detailed-16-bit-pixel-art-sprite-of-a-fat-bald-g-256px-36 (1)_20
+      rect:
+        serializedVersion: 2
+        x: 438
+        y: 532
+        width: 136
+        height: 257
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4269d3354c750dca0800000000000000
+      internalID: -5994194603308378588
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-detailed-16-bit-pixel-art-sprite-of-a-fat-bald-g-256px-36 (1)_21
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 531
+        width: 131
+        height: 253
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0d3ef4daea18243a0800000000000000
+      internalID: -6682636309832408112
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-detailed-16-bit-pixel-art-sprite-of-a-fat-bald-g-256px-36 (1)_22
+      rect:
+        serializedVersion: 2
+        x: 841
+        y: 531
+        width: 137
+        height: 252
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 60928d66ecd305ab0800000000000000
+      internalID: -5021445627820103418
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-detailed-16-bit-pixel-art-sprite-of-a-fat-bald-g-256px-36 (1)_23
+      rect:
+        serializedVersion: 2
+        x: 1013
+        y: 531
+        width: 163
+        height: 261
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 51244ef2ab2500cc0800000000000000
+      internalID: -3746903930351369707
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-detailed-16-bit-pixel-art-sprite-of-a-fat-bald-g-256px-36 (1)_24
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 267
+        width: 155
+        height: 259
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 07a972ec3bded0eb0800000000000000
+      internalID: -4751880675292374416
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-detailed-16-bit-pixel-art-sprite-of-a-fat-bald-g-256px-36 (1)_25
+      rect:
+        serializedVersion: 2
+        x: 205
+        y: 267
+        width: 164
+        height: 259
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8d2327e579f6b9060800000000000000
+      internalID: 6961280344946520792
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-detailed-16-bit-pixel-art-sprite-of-a-fat-bald-g-256px-36 (1)_26
+      rect:
+        serializedVersion: 2
+        x: 408
+        y: 267
+        width: 163
+        height: 257
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0455a08674919d750800000000000000
+      internalID: 6330118545724822848
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-detailed-16-bit-pixel-art-sprite-of-a-fat-bald-g-256px-36 (1)_27
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 266
+        width: 135
+        height: 254
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7a9bf9de621cf47e0800000000000000
+      internalID: -1778990954848470617
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-detailed-16-bit-pixel-art-sprite-of-a-fat-bald-g-256px-36 (1)_28
+      rect:
+        serializedVersion: 2
+        x: 841
+        y: 267
+        width: 142
+        height: 260
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c5504a5f15a2b95f0800000000000000
+      internalID: -748958381525170852
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-detailed-16-bit-pixel-art-sprite-of-a-fat-bald-g-256px-36 (1)_29
+      rect:
+        serializedVersion: 2
+        x: 1042
+        y: 267
+        width: 145
+        height: 259
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 80b9005d5cad86930800000000000000
+      internalID: 4136796800956799752
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-detailed-16-bit-pixel-art-sprite-of-a-fat-bald-g-256px-36 (1)_30
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 3
+        width: 133
+        height: 260
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2940fb1fe872a0870800000000000000
+      internalID: 8649769529213125778
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-detailed-16-bit-pixel-art-sprite-of-a-fat-bald-g-256px-36 (1)_31
+      rect:
+        serializedVersion: 2
+        x: 222
+        y: 2
+        width: 164
+        height: 254
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 71af363a80e971f40800000000000000
+      internalID: 5699197613398817303
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-detailed-16-bit-pixel-art-sprite-of-a-fat-bald-g-256px-36 (1)_32
+      rect:
+        serializedVersion: 2
+        x: 415
+        y: 5
+        width: 179
+        height: 254
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 12ef958dec31abe60800000000000000
+      internalID: 7978711468954222113
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-detailed-16-bit-pixel-art-sprite-of-a-fat-bald-g-256px-36 (1)_33
+      rect:
+        serializedVersion: 2
+        x: 641
+        y: 4
+        width: 135
+        height: 257
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 69d1b74d0c545ef90800000000000000
+      internalID: -6925052157511393898
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-detailed-16-bit-pixel-art-sprite-of-a-fat-bald-g-256px-36 (1)_34
+      rect:
+        serializedVersion: 2
+        x: 843
+        y: 4
+        width: 133
+        height: 255
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8ebae8c4058f639d0800000000000000
+      internalID: -2794773494971323416
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-detailed-16-bit-pixel-art-sprite-of-a-fat-bald-g-256px-36 (1)_35
+      rect:
+        serializedVersion: 2
+        x: 1044
+        y: 3
+        width: 144
+        height: 252
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bc11602b3b4edd800800000000000000
+      internalID: 638918182593499595
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      A-detailed-16-bit-pixel-art-sprite-of-a-fat-bald-g-256px-36 (1)_0: -5954242356437856772
+      A-detailed-16-bit-pixel-art-sprite-of-a-fat-bald-g-256px-36 (1)_1: -2023387077267703712
+      A-detailed-16-bit-pixel-art-sprite-of-a-fat-bald-g-256px-36 (1)_10: 5792333582348483986
+      A-detailed-16-bit-pixel-art-sprite-of-a-fat-bald-g-256px-36 (1)_11: -4628515029336414691
+      A-detailed-16-bit-pixel-art-sprite-of-a-fat-bald-g-256px-36 (1)_12: -1403167596494919848
+      A-detailed-16-bit-pixel-art-sprite-of-a-fat-bald-g-256px-36 (1)_13: 4604498929841712075
+      A-detailed-16-bit-pixel-art-sprite-of-a-fat-bald-g-256px-36 (1)_14: -6028033029566793936
+      A-detailed-16-bit-pixel-art-sprite-of-a-fat-bald-g-256px-36 (1)_15: 7628036803125956719
+      A-detailed-16-bit-pixel-art-sprite-of-a-fat-bald-g-256px-36 (1)_16: 3918463826253778876
+      A-detailed-16-bit-pixel-art-sprite-of-a-fat-bald-g-256px-36 (1)_17: -9198797012901642975
+      A-detailed-16-bit-pixel-art-sprite-of-a-fat-bald-g-256px-36 (1)_18: 925520703249099157
+      A-detailed-16-bit-pixel-art-sprite-of-a-fat-bald-g-256px-36 (1)_19: -7313075848019038282
+      A-detailed-16-bit-pixel-art-sprite-of-a-fat-bald-g-256px-36 (1)_2: -5923104166917357300
+      A-detailed-16-bit-pixel-art-sprite-of-a-fat-bald-g-256px-36 (1)_20: -5994194603308378588
+      A-detailed-16-bit-pixel-art-sprite-of-a-fat-bald-g-256px-36 (1)_21: -6682636309832408112
+      A-detailed-16-bit-pixel-art-sprite-of-a-fat-bald-g-256px-36 (1)_22: -5021445627820103418
+      A-detailed-16-bit-pixel-art-sprite-of-a-fat-bald-g-256px-36 (1)_23: -3746903930351369707
+      A-detailed-16-bit-pixel-art-sprite-of-a-fat-bald-g-256px-36 (1)_24: -4751880675292374416
+      A-detailed-16-bit-pixel-art-sprite-of-a-fat-bald-g-256px-36 (1)_25: 6961280344946520792
+      A-detailed-16-bit-pixel-art-sprite-of-a-fat-bald-g-256px-36 (1)_26: 6330118545724822848
+      A-detailed-16-bit-pixel-art-sprite-of-a-fat-bald-g-256px-36 (1)_27: -1778990954848470617
+      A-detailed-16-bit-pixel-art-sprite-of-a-fat-bald-g-256px-36 (1)_28: -748958381525170852
+      A-detailed-16-bit-pixel-art-sprite-of-a-fat-bald-g-256px-36 (1)_29: 4136796800956799752
+      A-detailed-16-bit-pixel-art-sprite-of-a-fat-bald-g-256px-36 (1)_3: 4532357780881271099
+      A-detailed-16-bit-pixel-art-sprite-of-a-fat-bald-g-256px-36 (1)_30: 8649769529213125778
+      A-detailed-16-bit-pixel-art-sprite-of-a-fat-bald-g-256px-36 (1)_31: 5699197613398817303
+      A-detailed-16-bit-pixel-art-sprite-of-a-fat-bald-g-256px-36 (1)_32: 7978711468954222113
+      A-detailed-16-bit-pixel-art-sprite-of-a-fat-bald-g-256px-36 (1)_33: -6925052157511393898
+      A-detailed-16-bit-pixel-art-sprite-of-a-fat-bald-g-256px-36 (1)_34: -2794773494971323416
+      A-detailed-16-bit-pixel-art-sprite-of-a-fat-bald-g-256px-36 (1)_35: 638918182593499595
+      A-detailed-16-bit-pixel-art-sprite-of-a-fat-bald-g-256px-36 (1)_4: -7128866363627273179
+      A-detailed-16-bit-pixel-art-sprite-of-a-fat-bald-g-256px-36 (1)_5: -8547998651502490209
+      A-detailed-16-bit-pixel-art-sprite-of-a-fat-bald-g-256px-36 (1)_6: 3192584951216955402
+      A-detailed-16-bit-pixel-art-sprite-of-a-fat-bald-g-256px-36 (1)_7: 6299212519179915339
+      A-detailed-16-bit-pixel-art-sprite-of-a-fat-bald-g-256px-36 (1)_8: -7211188762793076778
+      A-detailed-16-bit-pixel-art-sprite-of-a-fat-bald-g-256px-36 (1)_9: 7608954885439311130
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

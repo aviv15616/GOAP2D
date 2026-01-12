@@ -1,4 +1,8 @@
-﻿using System;
+﻿// GoapAgent.cs (UPDATED: uses travel-time based dynamic build-spot selection)
+// NOTE: This file assumes BuildSpotManager exposes TryGetBestBuildSpotPos(...)
+// and TryReserveBestSpot(...)/ReleaseSpot(...). See BuildSpotManager.cs below.
+
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -69,9 +73,16 @@ public class GoapAgent : MonoBehaviour
     private Vector2 _idleTarget;
     private float _idleTimer;
     private bool _idleLogged;
+    // Runtime episode timing (per-goal)
+    private NeedType _episodeNeed = NeedType.None;
+    private float _episodeStart = -1f;
+    private string _episodeFirstPlanSig = "";
+
+
 
     public event Action<string, string> OnPlanChanged;
     public event Action<string, string> OnActionChanged;
+
 
     public string DebugGoal { get; private set; } = "-";
     public string DebugAction { get; private set; } = "-";
@@ -94,7 +105,6 @@ public class GoapAgent : MonoBehaviour
         if (spotManager == null) spotManager = FindFirstObjectByType<BuildSpotManager>();
 
         if (actions.Count == 0) GetComponents(actions);
-    
 
         _currentNeed = primaryNeed;
 
@@ -135,8 +145,6 @@ public class GoapAgent : MonoBehaviour
 
             OnActionChanged?.Invoke(DebugGoal, DebugAction);
 
-            if (enableGoapLogs && logActionChanges)
-                LogInfo("ACT", $"Goal={DebugGoal} | Now={DebugAction} | {MeterLine()}");
         }
 
         if (!a.IsStillValid(this))
@@ -152,8 +160,25 @@ public class GoapAgent : MonoBehaviour
         {
             _plan.Pop();
             a.ResetRuntime();
-            if (_plan == null || _plan.Count == 0) _runningAction = null;
+
+            if (_plan == null || _plan.Count == 0)
+            {
+                _runningAction = null;
+
+                // ✅ Episode finished -> log REAL time
+                if (_episodeStart >= 0f)
+                {
+                    float real = Time.time - _episodeStart;
+                    LogInfo("PLAN_REAL",
+                        $"Goal={_episodeNeed} | realTime={real:F2}s | firstPlan={_episodeFirstPlanSig}");
+
+                    _episodeStart = -1f;
+                    _episodeNeed = NeedType.None;
+                    _episodeFirstPlanSig = "";
+                }
+            }
         }
+
     }
 
     // -------------------------
@@ -236,8 +261,18 @@ public class GoapAgent : MonoBehaviour
 
             _currentPlanCost = bestCost;
             _currentScore = bestScore;
+            bool newEpisode = (_episodeStart < 0f) || (_episodeNeed != bestNeed);
+            if (newEpisode)
+            {
+                _episodeNeed = bestNeed;
+                _episodeStart = Time.time;
+                _episodeFirstPlanSig = PlanToString(bestPlan);
+            }
+
 
             string reason = haveNoCurrent ? "New plan created" : "Replan (better score)";
+            spotManager?.EnsureInit();
+
             LogPlan(reason, bestNeed, bestCost, bestScore, bestPlan);
             NotifyPlanChanged(reason);
         }
@@ -318,7 +353,6 @@ public class GoapAgent : MonoBehaviour
     {
         int carried = Mathf.Clamp(wood, 0, Mathf.Max(0, maxWoodForPlanning));
 
-        // Build a base snapshot first
         var snap = new WorldState
         {
             pos = transform.position,
@@ -326,7 +360,6 @@ public class GoapAgent : MonoBehaviour
 
             woodExists = AnyStationExists(StationType.Wood),
 
-            // start with raw "exists", then override using EffectiveStationExists()
             bedExists = AnyStationExists(StationType.Bed),
             potExists = AnyStationExists(StationType.Pot),
             fireExists = AnyStationExists(StationType.Fire),
@@ -336,8 +369,6 @@ public class GoapAgent : MonoBehaviour
             warmthSatisfied = targetNeed != NeedType.Warmth
         };
 
-        // ✅ IMPORTANT: effective existence compares:
-        // existing-station travel time  VS  build-route time (even before we have enough wood)
         snap.bedExists = EffectiveStationExists(StationType.Bed, snap);
         snap.potExists = EffectiveStationExists(StationType.Pot, snap);
         snap.fireExists = EffectiveStationExists(StationType.Fire, snap);
@@ -345,87 +376,54 @@ public class GoapAgent : MonoBehaviour
         return snap;
     }
 
-    // Treat station as "exists" only if it beats the best build-route.
     private bool EffectiveStationExists(StationType type, WorldState snap)
     {
         bool rawExists = AnyStationExists(type);
 
         if (!rawExists)
         {
-            Debug.Log(
-                $"[GOAP][{name}] {type}: rawExists=FALSE → station does NOT exist"
-            );
             return false;
         }
 
         if (spotManager == null || mover == null)
         {
-            Debug.Log(
-                $"[GOAP][{name}] {type}: spotManager/mover missing → station FORCED exist"
-            );
             return true;
         }
 
         Vector2 from = snap.pos;
 
-        // ---- station travel time ----
         bool hasStation = TryGetNearestStationTravelTime(type, from, out float tStation);
-
         if (!hasStation)
         {
-            Debug.Log(
-                $"[GOAP][{name}] {type}: rawExists=TRUE but no reachable station → FALSE"
-            );
             return false;
         }
 
-        // ---- build route time ----
         float tBuildRoute = EstimateBuildRouteTime(type, snap);
 
-        Debug.Log(
-            $"[GOAP][{name}] {type} CHECK | " +
-            $"from={from} | " +
-            $"tStation={(tStation >= 9999f ? "INF" : tStation.ToString("F2"))} | " +
-            $"tBuild={(tBuildRoute >= 9999f ? "INF" : tBuildRoute.ToString("F2"))} | " +
-            $"woodExists={snap.woodExists} woodCarried={snap.woodCarried}"
-        );
 
-        // ---- decision ----
         if (tBuildRoute >= 9999f)
         {
-            Debug.Log(
-                $"[GOAP][{name}] {type}: build-route IMPOSSIBLE → KEEP station"
-            );
             return true;
         }
 
         float margin = Mathf.Clamp01(stationVsBuildMargin);
         bool stationWins = tStation <= tBuildRoute * (1f + margin);
 
-        Debug.Log(
-            $"[GOAP][{name}] {type} DECISION → " +
-            $"{(stationWins ? "USE STATION" : "ALLOW BUILD")}"
-        );
 
         return stationWins;
     }
 
-
     private float EstimateBuildRouteTime(StationType type, WorldState snap)
     {
-        // Need a Build action for this type
         BuildStationAction build = FindBuildAction(type);
         if (build == null)
         {
-            Debug.Log($"[GOAP][{name}] {type} BUILD: no BuildStationAction -> INF");
             return 9999f;
         }
 
-        // Need ChopWood to acquire missing wood
         ChopWoodAction chop = FindChopAction();
         if (chop == null)
         {
-            Debug.Log($"[GOAP][{name}] {type} BUILD: no ChopWoodAction -> INF");
             return 9999f;
         }
 
@@ -434,29 +432,27 @@ public class GoapAgent : MonoBehaviour
 
         Vector2 from = snap.pos;
 
-        // ⚠️ This is likely your bug: global/fixed spot
-        Vector2 buildPos = spotManager.GetSpotPosition(type);
+        // ✅ FIX: choose best build spot by travel time (not a fixed/global one)
+        if (spotManager == null || !spotManager.TryGetBestBuildSpotPos(type, this, from, out Vector2 buildPos))
+        {
+            return 9999f;
+        }
 
         float speed = (mover != null) ? Mathf.Max(0.01f, mover.speed) : 1f;
 
-        Debug.Log($"[GOAP][{name}] {type} BUILD EST | from={from} buildPos={buildPos} needWood={needWood} haveWood={haveWood} speed={speed:F2}");
 
-        // Already have enough wood: go build + build duration
         if (haveWood >= needWood)
         {
             float tToBuild = (nav != null) ? nav.EstimatePathTime(from, buildPos, speed)
                                            : Vector2.Distance(from, buildPos) / speed;
 
-            Debug.Log($"[GOAP][{name}] {type} BUILD EST | have enough wood -> tToBuild={tToBuild:F2} buildDur={build.duration:F2}");
 
             if (tToBuild >= 9999f) return 9999f;
             return tToBuild + Mathf.Max(0f, build.duration);
         }
 
-        // Need wood: go to nearest wood (by travel time)
         if (!TryGetNearestStationInteractPos(StationType.Wood, from, out Vector2 woodPos))
         {
-            Debug.Log($"[GOAP][{name}] {type} BUILD EST | no wood station -> INF");
             return 9999f;
         }
 
@@ -465,7 +461,6 @@ public class GoapAgent : MonoBehaviour
 
         if (tToWood >= 9999f)
         {
-            Debug.Log($"[GOAP][{name}] {type} BUILD EST | wood unreachable (tToWood=INF) -> INF");
             return 9999f;
         }
 
@@ -478,13 +473,7 @@ public class GoapAgent : MonoBehaviour
         float tWoodToBuild = (nav != null) ? nav.EstimatePathTime(woodPos, buildPos, speed)
                                            : Vector2.Distance(woodPos, buildPos) / speed;
 
-        Debug.Log(
-            $"[GOAP][{name}] {type} BUILD EST | " +
-            $"woodPos={woodPos} tToWood={tToWood:F2} | " +
-            $"missing={missing} perChop={per} chops={chops} tChop={tChop:F2} | " +
-            $"tWoodToBuild={tWoodToBuild:F2} buildDur={build.duration:F2} | " +
-            $"TOTAL={(tToWood + tChop + tWoodToBuild + Mathf.Max(0f, build.duration)):F2}"
-        );
+      
 
         if (tWoodToBuild >= 9999f) return 9999f;
 
@@ -516,11 +505,34 @@ public class GoapAgent : MonoBehaviour
     public float EstimateTravelTime(Vector2 from, Vector2 to)
     {
         float speed = (mover != null) ? Mathf.Max(0.01f, mover.speed) : 1f;
-        if (nav != null) return nav.EstimatePathTime(from, to, speed);
-        return Vector2.Distance(from, to) / speed;
+
+        float t = (nav != null)
+            ? nav.EstimatePathTime(from, to, speed)
+            : Vector2.Distance(from, to) / speed;
+
+        // ✅ runtime stops early when inside arriveDistance
+        float arrive = (mover != null) ? mover.arriveDistance : 0.15f;
+        t -= arrive / speed;
+
+        return Mathf.Max(0f, t);
     }
 
-    // Best station travel time from "from"
+    public float EstimateTravelTime(Vector2 from, Vector2 to, float arrive)
+    {
+        float speed = (mover != null) ? Mathf.Max(0.01f, mover.speed) : 1f;
+        arrive = Mathf.Max(0.001f, arrive);
+
+        if (nav != null)
+            return nav.EstimatePathTimeLikeMover(from, to, speed, arrive);
+
+        float d = Vector2.Distance(from, to);
+        return Mathf.Max(0f, d - arrive) / speed;
+    }
+
+
+
+
+
     private bool TryGetNearestStationTravelTime(StationType type, Vector2 from, out float bestTime)
     {
         bestTime = 9999f;
@@ -546,7 +558,6 @@ public class GoapAgent : MonoBehaviour
         return found;
     }
 
-    // Best station position by travel time from "from"
     public bool TryGetBestStationPos(StationType type, Vector2 from, out Vector2 bestPos)
     {
         bestPos = default;

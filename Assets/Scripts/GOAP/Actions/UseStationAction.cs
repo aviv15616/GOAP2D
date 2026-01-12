@@ -38,12 +38,30 @@ public class UseStationAction : GoapAction
 
         StationType stType = NeedStationType();
 
-        if (!agent.TryGetBestStationPos(stType, currentState.pos, out var bestPos))
-            return 9999f;
+        // Try resolve a REAL station (from registry)
+        if (agent.TryGetBestStationPos(stType, currentState.pos, out var bestPos))
+        {
+            float arrive = (agent.mover != null)
+                ? Mathf.Max(agent.mover.arriveDistance, stopDistance)
+                : Mathf.Max(0.15f, stopDistance);
 
-        float travel = agent.EstimateTravelTime(currentState.pos, bestPos);
-        return Mathf.Max(0f, planCost) + travel + Mathf.Max(0f, duration);
+            float travel = agent.EstimateTravelTime(currentState.pos, bestPos, arrive);
+
+            // ✅ match runtime: travel + interaction duration (NO planCost)
+            return travel + Mathf.Max(0f, duration);
+        }
+
+        // Simulated station case (planner says it "exists" in snapshot)
+        if (CanPlan(currentState))
+        {
+            // ✅ match runtime: just interaction duration (NO planCost)
+            return Mathf.Max(0f, duration);
+        }
+
+        return 9999f;
     }
+
+
 
     public override void ApplyPlanEffects(GoapAgent agent, ref WorldState s)
     {

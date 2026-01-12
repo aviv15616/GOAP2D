@@ -1,9 +1,6 @@
-﻿// BuildStationAction.cs (FIXED)
-// - Planning cost uses WorldState.pos (NOT transform.position)
-// - Planning advances WorldState.pos to the build spot (so next action costs aggregate correctly)
-// - EstimateCost = travelTime + duration (UseStation-style aggregation)
-// - IsStillValid = compares travel-to-existing-station vs travel-to-build-spot (no GoapAgent.EffectiveStationExistsNow dependency)
-// - Runtime = move first, then wait duration, then commit build
+﻿// BuildStationAction.cs (UPDATED - planning cost matches runtime stopDistance)
+// Only changes: EstimateCost() arrive calculation uses Max(arriveDistance, stopDistance)
+
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -69,26 +66,27 @@ public class BuildStationAction : GoapAction
         return !exists && s.woodCarried >= woodCost;
     }
 
-    public override void ApplyPlanEffects(ref WorldState s)
+    public override void ApplyPlanEffects(GoapAgent agent, ref WorldState s)
     {
-        // IMPORTANT: advance simulated position to the build spot
-        // so the next action (UseStation) will compute from there.
-        // If we can't access spotManager at plan-time, we leave pos unchanged.
-        // (But in your setup, spotManager exists.)
-        // NOTE: BuildSpotManager API uses StationType, not "buildType only bed/pot/fire" problem.
-        // We keep it consistent with your buildType.
-        // We can't call agent here, so we just use s.pos if already set by other actions
-        // and GoapAgent will provide spot in EstimateCost and plan aggregation.
-        // If your WorldState has pos, we can still set it if planner calls EstimateCost first.
-        // (Your planner does: EstimateCost then ApplyPlanEffects -> perfect.)
+        if (agent != null && agent.spotManager != null &&
+            agent.spotManager.TryGetBestBuildSpotPos(buildType, agent, s.pos, out var buildPos))
+        {
+            // simulate walk to build spot
+            s.pos = buildPos;
+        }
 
         if (buildType == StationType.Bed) s.bedExists = true;
         if (buildType == StationType.Pot) s.potExists = true;
         if (buildType == StationType.Fire) s.fireExists = true;
+    }
 
-        s.woodCarried -= woodCost;
-        // s.pos will be set during cost evaluation via cached target (see below)
+    public override void ApplyPlanEffects(ref WorldState s)
+    {
         if (_cachedPlanTargetValid) s.pos = _cachedPlanTarget;
+
+        if (buildType == StationType.Bed) s.bedExists = true;
+        if (buildType == StationType.Pot) s.potExists = true;
+        if (buildType == StationType.Fire) s.fireExists = true;
     }
 
     private Vector2 _cachedPlanTarget;
@@ -101,14 +99,21 @@ public class BuildStationAction : GoapAction
         if (agent == null || agent.spotManager == null || agent.mover == null)
             return 9999f;
 
-        Vector2 target = agent.spotManager.GetSpotPosition(buildType);
+        // Pick BEST build spot by travel time from simulated position (not a fixed/global one)
+        if (!agent.spotManager.TryGetBestBuildSpotPos(buildType, agent, currentState.pos, out Vector2 target))
+            return 9999f;
+
         _cachedPlanTarget = target;
         _cachedPlanTargetValid = true;
 
-        // Use SIMULATED position from the worldstate
-        float travel = agent.EstimateTravelTime(currentState.pos, target);
+        // ✅ Match runtime arrival exactly: Perform() uses Max(mover.arriveDistance, stopDistance)
+        float arrive = (agent.mover != null)
+            ? Mathf.Max(agent.mover.arriveDistance, stopDistance)
+            : stopDistance;
 
-        // UseStation-style aggregation: travel + action seconds (duration)
+        // ✅ Use arrive-aware travel estimator
+        float travel = agent.EstimateTravelTime(currentState.pos, target, arrive);
+
         return travel + Mathf.Max(0f, duration);
     }
 
@@ -121,7 +126,6 @@ public class BuildStationAction : GoapAction
         if (agent == null || agent.spotManager == null || agent.mover == null)
             return false;
 
-        // If we can't build, action should become invalid (planner should pick ChopWood etc).
         if (agent.wood < woodCost)
             return false;
 
@@ -132,7 +136,6 @@ public class BuildStationAction : GoapAction
         if (tBuild >= 9999f)
             return false;
 
-        // If no station exists at all, building is valid.
         if (!agent.TryGetBestStationPos(buildType, from, out var bestStationPos))
             return true;
 
@@ -141,7 +144,6 @@ public class BuildStationAction : GoapAction
         float m = Mathf.Clamp01(stationVsBuildMargin);
         float threshold = tBuild * (1f + m);
 
-        // If a station is cheap enough, building is NOT needed.
         bool stationGoodEnough = tStation <= threshold;
         return !stationGoodEnough;
     }
@@ -167,7 +169,6 @@ public class BuildStationAction : GoapAction
 
     public override bool Perform(GoapAgent agent, float dt)
     {
-        // Manual start so we don't "wait before moving"
         if (!_started)
         {
             _started = true;
@@ -196,7 +197,6 @@ public class BuildStationAction : GoapAction
             if (!_arrived)
                 return false;
 
-            // arrived -> start build timer now
             _elapsed = 0f;
         }
 
