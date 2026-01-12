@@ -50,3 +50,7 @@ All NPCs can gather resources, build stations, and use any station.
 
 ## License
 Educational / personal use
+
+## ITCH.IO
+
+[Play on Itch.io](https://gamedevteamx.itch.io/goap2davivnv)
