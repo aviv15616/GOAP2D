@@ -9,6 +9,7 @@ public class Mover2D : MonoBehaviour
 
     [Header("Bounds Confinement")]
     public TilemapBoundsProvider boundsProvider;
+
     [Tooltip("How far inside the bounds the agent must stay")]
     public float boundsMargin = 0.05f;
 
@@ -26,7 +27,8 @@ public class Mover2D : MonoBehaviour
     private void Awake()
     {
         _rb = GetComponent<Rigidbody2D>();
-        if (_rb == null) _rb = gameObject.AddComponent<Rigidbody2D>();
+        if (_rb == null)
+            _rb = gameObject.AddComponent<Rigidbody2D>();
         _rb.bodyType = RigidbodyType2D.Kinematic;
         _rb.freezeRotation = true;
 
@@ -36,8 +38,7 @@ public class Mover2D : MonoBehaviour
 
     // ---------------- Public API ----------------
 
-    public bool MoveTowards(Vector2 target, float dt) =>
-        MoveTowards(target, dt, arriveDistance);
+    public bool MoveTowards(Vector2 target, float dt) => MoveTowards(target, dt, arriveDistance);
 
     public bool FollowPath(List<Vector2> path, ref int index, float dt) =>
         FollowPath(path, ref index, dt, arriveDistance);
@@ -95,7 +96,8 @@ public class Mover2D : MonoBehaviour
         while (index < path.Count)
         {
             Vector2 d = path[index] - _rb.position;
-            if (d.sqrMagnitude > arriveSqr) break;
+            if (d.sqrMagnitude > arriveSqr)
+                break;
             index++;
         }
 
@@ -121,7 +123,8 @@ public class Mover2D : MonoBehaviour
 
     private Vector2 ClampIntoBounds(Vector2 p)
     {
-        if (boundsProvider == null) return p;
+        if (boundsProvider == null)
+            return p;
 
         Bounds b = boundsProvider.WorldBounds;
 
@@ -130,10 +133,7 @@ public class Mover2D : MonoBehaviour
         float minY = b.min.y + boundsMargin;
         float maxY = b.max.y - boundsMargin;
 
-        return new Vector2(
-            Mathf.Clamp(p.x, minX, maxX),
-            Mathf.Clamp(p.y, minY, maxY)
-        );
+        return new Vector2(Mathf.Clamp(p.x, minX, maxX), Mathf.Clamp(p.y, minY, maxY));
     }
 
     private static Vector2 SnapToCardinal(Vector2 v)

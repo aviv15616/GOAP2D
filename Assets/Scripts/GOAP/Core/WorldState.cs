@@ -3,13 +3,16 @@ using UnityEngine;
 public struct WorldState
 {
     public bool woodExists;
-    public bool bedExists, potExists, fireExists;
+    public bool bedExists,
+        potExists,
+        fireExists;
     public int woodCarried;
 
     public bool sleepSatisfied;
     public bool hungerSatisfied;
     public bool warmthSatisfied;
-      public Vector2 pos;
+    public Vector2 pos;
+
     public override int GetHashCode()
     {
         int h = 17;
@@ -26,16 +29,17 @@ public struct WorldState
 
     public override bool Equals(object obj)
     {
-        if (!(obj is WorldState)) return false;
+        if (!(obj is WorldState))
+            return false;
         WorldState o = (WorldState)obj;
 
-        return woodExists == o.woodExists &&
-               bedExists == o.bedExists &&
-               potExists == o.potExists &&
-               fireExists == o.fireExists &&
-               woodCarried == o.woodCarried &&
-               sleepSatisfied == o.sleepSatisfied &&
-               hungerSatisfied == o.hungerSatisfied &&
-               warmthSatisfied == o.warmthSatisfied;
+        return woodExists == o.woodExists
+            && bedExists == o.bedExists
+            && potExists == o.potExists
+            && fireExists == o.fireExists
+            && woodCarried == o.woodCarried
+            && sleepSatisfied == o.sleepSatisfied
+            && hungerSatisfied == o.hungerSatisfied
+            && warmthSatisfied == o.warmthSatisfied;
     }
 }

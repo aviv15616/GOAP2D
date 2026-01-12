@@ -14,7 +14,9 @@ public class NPCUI : MonoBehaviour
 
     // refs בתוך prefab
     Transform _uiRoot;
-    Transform _hungerBar, _heatBar, _energyBar;
+    Transform _hungerBar,
+        _heatBar,
+        _energyBar;
     GameObject _bubbleContainer;
     TMP_Text _bubbleText;
 
@@ -22,8 +24,10 @@ public class NPCUI : MonoBehaviour
 
     void Awake()
     {
-        if (!agent) agent = GetComponent<GoapAgent>();
-        if (!needs) needs = GetComponent<Needs>();
+        if (!agent)
+            agent = GetComponent<GoapAgent>();
+        if (!needs)
+            needs = GetComponent<Needs>();
 
         _uiRoot = Instantiate(npcDebugBubblePrefab).transform;
         _uiRoot.name = $"{name}_OverheadUI";
@@ -39,7 +43,8 @@ public class NPCUI : MonoBehaviour
         _bubbleContainer = _uiRoot.Find("BubbleContainer")?.gameObject;
         _bubbleText = _uiRoot.Find("BubbleContainer/Text (TMP)")?.GetComponent<TMP_Text>();
 
-        if (_bubbleContainer) _bubbleContainer.SetActive(false);
+        if (_bubbleContainer)
+            _bubbleContainer.SetActive(false);
 
         // subscribe לאירועים
         agent.OnPlanChanged += ShowBubble;
@@ -68,7 +73,8 @@ public class NPCUI : MonoBehaviour
 
     static void SetBar(Transform bar, float t01)
     {
-        if (!bar) return;
+        if (!bar)
+            return;
         var s = bar.localScale;
         s.x = Mathf.Max(0f, t01);
         bar.localScale = s;
@@ -76,19 +82,25 @@ public class NPCUI : MonoBehaviour
 
     void ShowBubble(string goal, string action)
     {
-        if (!_bubbleContainer || !_bubbleText) return;
+        if (!_bubbleContainer || !_bubbleText)
+            return;
 
-        _bubbleText.text = $"Goal: {goal}\nAction: {action}";
+        int wood = agent != null ? agent.wood : 0;
+
+        _bubbleText.text = $"Goal: {goal}\n" + $"Action: {action}\n" + $"Wood: {wood}";
+
         _bubbleContainer.SetActive(true);
 
-        if (_hideCo != null) StopCoroutine(_hideCo);
+        if (_hideCo != null)
+            StopCoroutine(_hideCo);
         _hideCo = StartCoroutine(HideAfter(4f));
     }
 
     System.Collections.IEnumerator HideAfter(float seconds)
     {
         yield return new WaitForSeconds(seconds);
-        if (_bubbleContainer) _bubbleContainer.SetActive(false);
+        if (_bubbleContainer)
+            _bubbleContainer.SetActive(false);
         _hideCo = null;
     }
 }

@@ -18,7 +18,8 @@ public class BoundsConfinement2D : MonoBehaviour
 
     private void LateUpdate()
     {
-        if (boundsProvider == null) return;
+        if (boundsProvider == null)
+            return;
 
         Bounds b = boundsProvider.WorldBounds;
 

@@ -19,7 +19,8 @@ public class GoapPlanner
         WorldState start,
         List<GoapAction> actions,
         IGoal goal,
-        GoapAgent agent)
+        GoapAgent agent
+    )
     {
         if (actions == null || actions.Count == 0 || agent == null)
             return null;
@@ -34,7 +35,7 @@ public class GoapPlanner
             state = ClampState(start, woodCap),
             parent = null,
             action = null,
-            g = 0f
+            g = 0f,
         };
 
         open.Add(startNode);
@@ -45,8 +46,10 @@ public class GoapPlanner
         while (open.Count > 0)
         {
             expanded++;
-            if (expanded > MAX_EXPANDED) return null;
-            if (open.Count > MAX_OPEN) return null;
+            if (expanded > MAX_EXPANDED)
+                return null;
+            if (open.Count > MAX_OPEN)
+                return null;
 
             // Pick node with lowest g
             int bestIdx = 0;
@@ -68,8 +71,10 @@ public class GoapPlanner
 
             foreach (var action in actions)
             {
-                if (action == null) continue;
-                if (!action.CanPlan(current.state)) continue;
+                if (action == null)
+                    continue;
+                if (!action.CanPlan(current.state))
+                    continue;
 
                 var nextState = current.state;
 
@@ -90,13 +95,15 @@ public class GoapPlanner
 
                 bestG[nextState] = newG;
 
-                open.Add(new Node
-                {
-                    state = nextState,
-                    parent = current,
-                    action = action,
-                    g = newG
-                });
+                open.Add(
+                    new Node
+                    {
+                        state = nextState,
+                        parent = current,
+                        action = action,
+                        g = newG,
+                    }
+                );
             }
         }
 

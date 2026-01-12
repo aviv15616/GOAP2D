@@ -54,8 +54,14 @@ public class BuildValidator : MonoBehaviour
 
             Vector2[] offsets =
             {
-                new Vector2( d, 0), new Vector2(-d, 0), new Vector2(0,  d), new Vector2(0, -d),
-                new Vector2( d,  d), new Vector2( d, -d), new Vector2(-d,  d), new Vector2(-d, -d),
+                new Vector2(d, 0),
+                new Vector2(-d, 0),
+                new Vector2(0, d),
+                new Vector2(0, -d),
+                new Vector2(d, d),
+                new Vector2(d, -d),
+                new Vector2(-d, d),
+                new Vector2(-d, -d),
             };
 
             foreach (var off in offsets)
@@ -77,7 +83,10 @@ public class BuildValidator : MonoBehaviour
     private void OnDrawGizmosSelected()
     {
         // Visualize the clearance radius around the object for debugging
-        Gizmos.DrawWireSphere(transform.position, minDistanceFromColliders + stationFootprintRadius);
+        Gizmos.DrawWireSphere(
+            transform.position,
+            minDistanceFromColliders + stationFootprintRadius
+        );
     }
 #endif
 }

@@ -47,7 +47,9 @@ public class GoapAgent : MonoBehaviour
     public float replanMargin = 0.15f;
 
     [Header("Station vs Build Preference")]
-    [Tooltip("If existing station is not better than BUILD-ROUTE (wood->chop->build), treat station as NOT existing so planner may build instead.")]
+    [Tooltip(
+        "If existing station is not better than BUILD-ROUTE (wood->chop->build), treat station as NOT existing so planner may build instead."
+    )]
     [Range(0f, 1f)]
     public float stationVsBuildMargin = 0.10f;
 
@@ -73,16 +75,14 @@ public class GoapAgent : MonoBehaviour
     private Vector2 _idleTarget;
     private float _idleTimer;
     private bool _idleLogged;
+
     // Runtime episode timing (per-goal)
     private NeedType _episodeNeed = NeedType.None;
     private float _episodeStart = -1f;
     private string _episodeFirstPlanSig = "";
 
-
-
     public event Action<string, string> OnPlanChanged;
     public event Action<string, string> OnActionChanged;
-
 
     public string DebugGoal { get; private set; } = "-";
     public string DebugAction { get; private set; } = "-";
@@ -96,15 +96,22 @@ public class GoapAgent : MonoBehaviour
 
     private void Awake()
     {
-        if (needs == null) needs = GetComponent<Needs>();
-        if (mover == null) mover = GetComponent<Mover2D>();
+        if (needs == null)
+            needs = GetComponent<Needs>();
+        if (mover == null)
+            mover = GetComponent<Mover2D>();
 
-        if (registry == null) registry = FindFirstObjectByType<StationRegistry>();
-        if (buildValidator == null) buildValidator = FindFirstObjectByType<BuildValidator>();
-        if (nav == null) nav = FindFirstObjectByType<GridNav2D>();
-        if (spotManager == null) spotManager = FindFirstObjectByType<BuildSpotManager>();
+        if (registry == null)
+            registry = FindFirstObjectByType<StationRegistry>();
+        if (buildValidator == null)
+            buildValidator = FindFirstObjectByType<BuildValidator>();
+        if (nav == null)
+            nav = FindFirstObjectByType<GridNav2D>();
+        if (spotManager == null)
+            spotManager = FindFirstObjectByType<BuildSpotManager>();
 
-        if (actions.Count == 0) GetComponents(actions);
+        if (actions.Count == 0)
+            GetComponents(actions);
 
         _currentNeed = primaryNeed;
 
@@ -128,8 +135,10 @@ public class GoapAgent : MonoBehaviour
 
         if (_currentNeed == NeedType.None || _plan == null || _plan.Count == 0)
         {
-            if (!_idleLogged) _idleLogged = true;
-            if (enableIdleWander) TickIdleWander(dt);
+            if (!_idleLogged)
+                _idleLogged = true;
+            if (enableIdleWander)
+                TickIdleWander(dt);
             return;
         }
         _idleLogged = false;
@@ -144,7 +153,6 @@ public class GoapAgent : MonoBehaviour
             DebugAction = ActionPrettyName(a);
 
             OnActionChanged?.Invoke(DebugGoal, DebugAction);
-
         }
 
         if (!a.IsStillValid(this))
@@ -169,8 +177,10 @@ public class GoapAgent : MonoBehaviour
                 if (_episodeStart >= 0f)
                 {
                     float real = Time.time - _episodeStart;
-                    LogInfo("PLAN_REAL",
-                        $"Goal={_episodeNeed} | realTime={real:F2}s | firstPlan={_episodeFirstPlanSig}");
+                    LogInfo(
+                        "PLAN_REAL",
+                        $"Goal={_episodeNeed} | realTime={real:F2}s | firstPlan={_episodeFirstPlanSig}"
+                    );
 
                     _episodeStart = -1f;
                     _episodeNeed = NeedType.None;
@@ -178,7 +188,6 @@ public class GoapAgent : MonoBehaviour
                 }
             }
         }
-
     }
 
     // -------------------------
@@ -200,7 +209,7 @@ public class GoapAgent : MonoBehaviour
 
         var candidates = new List<(NeedType need, float urgency)>
         {
-            (NeedType.Sleep,  uSleep),
+            (NeedType.Sleep, uSleep),
             (NeedType.Hunger, uHunger),
             (NeedType.Warmth, uWarmth),
         };
@@ -212,13 +221,15 @@ public class GoapAgent : MonoBehaviour
 
         foreach (var (need, urg) in candidates)
         {
-            if (urg <= 0f) continue;
+            if (urg <= 0f)
+                continue;
 
             var snapshot = MakeWorldStateSnapshot(need);
             var goal = new Goals.GoalSatisfied(need);
 
             var plan = _planner.Plan(snapshot, actions, goal, this);
-            if (plan == null || plan.Count == 0) continue;
+            if (plan == null || plan.Count == 0)
+                continue;
 
             float cost = ComputePlanCost(plan, snapshot);
             float score = ComputeScore(need, urg, cost);
@@ -253,7 +264,8 @@ public class GoapAgent : MonoBehaviour
         if (haveNoCurrent || (alwaysSwitchToLowerScore && better))
         {
             foreach (var act in actions)
-                if (act != null) act.ResetRuntime();
+                if (act != null)
+                    act.ResetRuntime();
 
             _plan = bestPlan;
             _currentNeed = bestNeed;
@@ -269,7 +281,6 @@ public class GoapAgent : MonoBehaviour
                 _episodeFirstPlanSig = PlanToString(bestPlan);
             }
 
-
             string reason = haveNoCurrent ? "New plan created" : "Replan (better score)";
             spotManager?.EnsureInit();
 
@@ -280,24 +291,28 @@ public class GoapAgent : MonoBehaviour
 
     private float ComputeScore(NeedType need, float urgency01, float planCostSeconds)
     {
-        float pref = (need == primaryNeed) ? primaryPreferenceMultiplier : otherPreferenceMultiplier;
+        float pref =
+            (need == primaryNeed) ? primaryPreferenceMultiplier : otherPreferenceMultiplier;
         float denom = Mathf.Max(0.0001f, urgencyFloor + urgencyWeight * Mathf.Clamp01(urgency01));
         return (costWeight * Mathf.Max(0f, planCostSeconds)) * pref / denom;
     }
 
     private float ComputePlanCost(Stack<GoapAction> plan, WorldState startSnapshot)
     {
-        if (plan == null || plan.Count == 0) return 9999f;
+        if (plan == null || plan.Count == 0)
+            return 9999f;
 
         float sum = 0f;
         var s = startSnapshot;
 
         foreach (var a in plan)
         {
-            if (a == null) continue;
+            if (a == null)
+                continue;
 
             float step = a.EstimateCost(this, s);
-            if (float.IsNaN(step) || step < 0f) step = 0f;
+            if (float.IsNaN(step) || step < 0f)
+                step = 0f;
             sum += step;
 
             a.ApplyPlanEffects(this, ref s);
@@ -312,7 +327,8 @@ public class GoapAgent : MonoBehaviour
     {
         if (_plan != null)
             foreach (var a in actions)
-                if (a != null) a.ResetRuntime();
+                if (a != null)
+                    a.ResetRuntime();
 
         _plan = null;
         _runningAction = null;
@@ -336,10 +352,15 @@ public class GoapAgent : MonoBehaviour
     {
         _idleTimer -= dt;
 
-        if (_idleTimer <= 0f || Vector2.Distance(transform.position, _idleTarget) <= mover.arriveDistance * 2f)
+        if (
+            _idleTimer <= 0f
+            || Vector2.Distance(transform.position, _idleTarget) <= mover.arriveDistance * 2f
+        )
         {
             _idleTimer = Mathf.Max(0.05f, idlePickEvery);
-            _idleTarget = (Vector2)transform.position + UnityEngine.Random.insideUnitCircle * Mathf.Max(0.01f, idleRadius);
+            _idleTarget =
+                (Vector2)transform.position
+                + UnityEngine.Random.insideUnitCircle * Mathf.Max(0.01f, idleRadius);
         }
 
         mover.MoveTowards(_idleTarget, dt);
@@ -366,7 +387,7 @@ public class GoapAgent : MonoBehaviour
 
             sleepSatisfied = targetNeed != NeedType.Sleep,
             hungerSatisfied = targetNeed != NeedType.Hunger,
-            warmthSatisfied = targetNeed != NeedType.Warmth
+            warmthSatisfied = targetNeed != NeedType.Warmth,
         };
 
         snap.bedExists = EffectiveStationExists(StationType.Bed, snap);
@@ -400,7 +421,6 @@ public class GoapAgent : MonoBehaviour
 
         float tBuildRoute = EstimateBuildRouteTime(type, snap);
 
-
         if (tBuildRoute >= 9999f)
         {
             return true;
@@ -408,7 +428,6 @@ public class GoapAgent : MonoBehaviour
 
         float margin = Mathf.Clamp01(stationVsBuildMargin);
         bool stationWins = tStation <= tBuildRoute * (1f + margin);
-
 
         return stationWins;
     }
@@ -433,21 +452,25 @@ public class GoapAgent : MonoBehaviour
         Vector2 from = snap.pos;
 
         // ✅ FIX: choose best build spot by travel time (not a fixed/global one)
-        if (spotManager == null || !spotManager.TryGetBestBuildSpotPos(type, this, from, out Vector2 buildPos))
+        if (
+            spotManager == null
+            || !spotManager.TryGetBestBuildSpotPos(type, this, from, out Vector2 buildPos)
+        )
         {
             return 9999f;
         }
 
         float speed = (mover != null) ? Mathf.Max(0.01f, mover.speed) : 1f;
 
-
         if (haveWood >= needWood)
         {
-            float tToBuild = (nav != null) ? nav.EstimatePathTime(from, buildPos, speed)
-                                           : Vector2.Distance(from, buildPos) / speed;
+            float tToBuild =
+                (nav != null)
+                    ? nav.EstimatePathTime(from, buildPos, speed)
+                    : Vector2.Distance(from, buildPos) / speed;
 
-
-            if (tToBuild >= 9999f) return 9999f;
+            if (tToBuild >= 9999f)
+                return 9999f;
             return tToBuild + Mathf.Max(0f, build.duration);
         }
 
@@ -456,8 +479,10 @@ public class GoapAgent : MonoBehaviour
             return 9999f;
         }
 
-        float tToWood = (nav != null) ? nav.EstimatePathTime(from, woodPos, speed)
-                                      : Vector2.Distance(from, woodPos) / speed;
+        float tToWood =
+            (nav != null)
+                ? nav.EstimatePathTime(from, woodPos, speed)
+                : Vector2.Distance(from, woodPos) / speed;
 
         if (tToWood >= 9999f)
         {
@@ -470,19 +495,21 @@ public class GoapAgent : MonoBehaviour
 
         float tChop = chops * Mathf.Max(0f, chop.duration);
 
-        float tWoodToBuild = (nav != null) ? nav.EstimatePathTime(woodPos, buildPos, speed)
-                                           : Vector2.Distance(woodPos, buildPos) / speed;
+        float tWoodToBuild =
+            (nav != null)
+                ? nav.EstimatePathTime(woodPos, buildPos, speed)
+                : Vector2.Distance(woodPos, buildPos) / speed;
 
-      
-
-        if (tWoodToBuild >= 9999f) return 9999f;
+        if (tWoodToBuild >= 9999f)
+            return 9999f;
 
         return tToWood + tChop + tWoodToBuild + Mathf.Max(0f, build.duration);
     }
 
     private BuildStationAction FindBuildAction(StationType t)
     {
-        if (actions == null) return null;
+        if (actions == null)
+            return null;
         foreach (var a in actions)
             if (a is BuildStationAction b && b.buildType == t)
                 return b;
@@ -491,7 +518,8 @@ public class GoapAgent : MonoBehaviour
 
     private ChopWoodAction FindChopAction()
     {
-        if (actions == null) return null;
+        if (actions == null)
+            return null;
         foreach (var a in actions)
             if (a is ChopWoodAction c)
                 return c;
@@ -506,9 +534,10 @@ public class GoapAgent : MonoBehaviour
     {
         float speed = (mover != null) ? Mathf.Max(0.01f, mover.speed) : 1f;
 
-        float t = (nav != null)
-            ? nav.EstimatePathTime(from, to, speed)
-            : Vector2.Distance(from, to) / speed;
+        float t =
+            (nav != null)
+                ? nav.EstimatePathTime(from, to, speed)
+                : Vector2.Distance(from, to) / speed;
 
         // ✅ runtime stops early when inside arriveDistance
         float arrive = (mover != null) ? mover.arriveDistance : 0.15f;
@@ -529,10 +558,6 @@ public class GoapAgent : MonoBehaviour
         return Mathf.Max(0f, d - arrive) / speed;
     }
 
-
-
-
-
     private bool TryGetNearestStationTravelTime(StationType type, Vector2 from, out float bestTime)
     {
         bestTime = 9999f;
@@ -543,9 +568,12 @@ public class GoapAgent : MonoBehaviour
         bool found = false;
         foreach (var st in registry.AllStations)
         {
-            if (st == null) continue;
-            if (!st.Exists) continue;
-            if (st.type != type) continue;
+            if (st == null)
+                continue;
+            if (!st.Exists)
+                continue;
+            if (st.type != type)
+                continue;
 
             float t = EstimateTravelTime(from, st.InteractPos);
             if (t < bestTime)
@@ -570,9 +598,12 @@ public class GoapAgent : MonoBehaviour
 
         foreach (var st in registry.AllStations)
         {
-            if (st == null) continue;
-            if (!st.Exists) continue;
-            if (st.type != type) continue;
+            if (st == null)
+                continue;
+            if (!st.Exists)
+                continue;
+            if (st.type != type)
+                continue;
 
             float t = EstimateTravelTime(from, st.InteractPos);
             if (t < bestTime)
@@ -586,7 +617,11 @@ public class GoapAgent : MonoBehaviour
         return found;
     }
 
-    private bool TryGetNearestStationInteractPos(StationType type, Vector2 from, out Vector2 bestPos)
+    private bool TryGetNearestStationInteractPos(
+        StationType type,
+        Vector2 from,
+        out Vector2 bestPos
+    )
     {
         bestPos = default;
 
@@ -598,9 +633,12 @@ public class GoapAgent : MonoBehaviour
 
         foreach (var st in registry.AllStations)
         {
-            if (st == null) continue;
-            if (!st.Exists) continue;
-            if (st.type != type) continue;
+            if (st == null)
+                continue;
+            if (!st.Exists)
+                continue;
+            if (st.type != type)
+                continue;
 
             float t = EstimateTravelTime(from, st.InteractPos);
             if (t < bestTime)
@@ -616,7 +654,8 @@ public class GoapAgent : MonoBehaviour
 
     private bool AnyStationExists(StationType t)
     {
-        if (registry == null || registry.AllStations == null) return false;
+        if (registry == null || registry.AllStations == null)
+            return false;
         foreach (var st in registry.AllStations)
             if (st != null && st.type == t && st.Exists)
                 return true;
@@ -625,7 +664,8 @@ public class GoapAgent : MonoBehaviour
 
     public Station FindNearestStation(StationType type)
     {
-        if (registry == null || registry.AllStations == null) return null;
+        if (registry == null || registry.AllStations == null)
+            return null;
 
         Station best = null;
         float bestDist = float.MaxValue;
@@ -633,12 +673,19 @@ public class GoapAgent : MonoBehaviour
 
         foreach (var st in registry.AllStations)
         {
-            if (st == null) continue;
-            if (!st.Exists) continue;
-            if (st.type != type) continue;
+            if (st == null)
+                continue;
+            if (!st.Exists)
+                continue;
+            if (st.type != type)
+                continue;
 
             float d = Vector2.Distance(me, st.InteractPos);
-            if (d < bestDist) { bestDist = d; best = st; }
+            if (d < bestDist)
+            {
+                bestDist = d;
+                best = st;
+            }
         }
         return best;
     }
@@ -647,38 +694,54 @@ public class GoapAgent : MonoBehaviour
     // Logging
     // -------------------------
 
-    private string MeterLine() => $"E={needs.energy:F0} H={needs.hunger:F0} W={needs.warmth:F0} | Wood={wood}";
+    private string MeterLine() =>
+        $"E={needs.energy:F0} H={needs.hunger:F0} W={needs.warmth:F0} | Wood={wood}";
 
-    private static StationType NeedToStation(NeedType n) => n switch
-    {
-        NeedType.Sleep => StationType.Bed,
-        NeedType.Hunger => StationType.Pot,
-        NeedType.Warmth => StationType.Fire,
-        _ => StationType.Bed
-    };
+    private static StationType NeedToStation(NeedType n) =>
+        n switch
+        {
+            NeedType.Sleep => StationType.Bed,
+            NeedType.Hunger => StationType.Pot,
+            NeedType.Warmth => StationType.Fire,
+            _ => StationType.Bed,
+        };
 
     private string ActionPrettyName(GoapAction a)
     {
-        if (a == null) return "<null>";
-        if (a is ChopWoodAction c) return $"ChopWood(+{c.woodPerChop})";
-        if (a is BuildStationAction b) return $"Build({b.buildType}, cost={b.woodCost})";
-        if (a is UseStationAction u) return $"Use({NeedToStation(u.need)}, +{u.restoreAmount:F0})";
+        if (a == null)
+            return "<null>";
+        if (a is ChopWoodAction c)
+            return $"ChopWood(+{c.woodPerChop})";
+        if (a is BuildStationAction b)
+            return $"Build({b.buildType}, cost={b.woodCost})";
+        if (a is UseStationAction u)
+            return $"Use({NeedToStation(u.need)}, +{u.restoreAmount:F0})";
         return a.GetType().Name;
     }
 
     private string PlanToString(Stack<GoapAction> plan)
     {
-        if (plan == null) return "<null>";
-        if (plan.Count == 0) return "<empty>";
+        if (plan == null)
+            return "<null>";
+        if (plan.Count == 0)
+            return "<empty>";
 
         var parts = new List<string>(plan.Count);
-        foreach (var a in plan) parts.Add(ActionPrettyName(a));
+        foreach (var a in plan)
+            parts.Add(ActionPrettyName(a));
         return string.Join(" -> ", parts);
     }
 
-    private void LogPlan(string reason, NeedType goalNeed, float planCost, float score, Stack<GoapAction> plan)
+    private void LogPlan(
+        string reason,
+        NeedType goalNeed,
+        float planCost,
+        float score,
+        Stack<GoapAction> plan
+    )
     {
-        if (!enableGoapLogs || _dbg == null) return;
+        if (!enableGoapLogs || _dbg == null)
+            return;
 
         string goal = goalNeed.ToString();
         string planStr = PlanToString(plan);
@@ -686,10 +749,10 @@ public class GoapAgent : MonoBehaviour
         int count = (plan == null) ? 0 : plan.Count;
 
         string msg =
-            $"{reason}\n" +
-            $"Goal={goal} | planCost={planCost:F2}s | score={score:F3}\n" +
-            $"{meters}\n" +
-            $"Plan({count}): {planStr}";
+            $"{reason}\n"
+            + $"Goal={goal} | planCost={planCost:F2}s | score={score:F3}\n"
+            + $"{meters}\n"
+            + $"Plan({count}): {planStr}";
 
         string sig = $"PLAN|{goal}|{reason}|{planStr}|{planCost:F2}|{score:F3}|{meters}";
         _dbg.Log("PLAN", msg, sig);
@@ -697,7 +760,8 @@ public class GoapAgent : MonoBehaviour
 
     private void LogInfo(string tag, string msg)
     {
-        if (!enableGoapLogs || _dbg == null) return;
+        if (!enableGoapLogs || _dbg == null)
+            return;
         _dbg.Log(tag, msg);
     }
 }

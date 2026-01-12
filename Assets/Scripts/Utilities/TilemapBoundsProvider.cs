@@ -9,14 +9,16 @@ public class TilemapBoundsProvider : MonoBehaviour
 
     private void Awake()
     {
-        if (tilemap == null) tilemap = GetComponent<Tilemap>();
+        if (tilemap == null)
+            tilemap = GetComponent<Tilemap>();
         RecalculateBounds();
     }
 
     [ContextMenu("Recalculate Bounds")]
     public void RecalculateBounds()
     {
-        if (tilemap == null) tilemap = GetComponent<Tilemap>();
+        if (tilemap == null)
+            tilemap = GetComponent<Tilemap>();
         if (tilemap == null)
         {
             _worldBounds = new Bounds(Vector3.zero, Vector3.zero);
@@ -44,14 +46,19 @@ public class TilemapBoundsProvider : MonoBehaviour
 
         _worldBounds = new Bounds(
             c,
-            new Vector3(Mathf.Max(0.1f, (worldExtX * 2f) - EPS), Mathf.Max(0.1f, (worldExtY * 2f) - EPS), 1f)
+            new Vector3(
+                Mathf.Max(0.1f, (worldExtX * 2f) - EPS),
+                Mathf.Max(0.1f, (worldExtY * 2f) - EPS),
+                1f
+            )
         );
-
     }
 
     public bool Contains(Vector2 p) =>
-        p.x >= _worldBounds.min.x && p.x <= _worldBounds.max.x &&
-        p.y >= _worldBounds.min.y && p.y <= _worldBounds.max.y;
+        p.x >= _worldBounds.min.x
+        && p.x <= _worldBounds.max.x
+        && p.y >= _worldBounds.min.y
+        && p.y <= _worldBounds.max.y;
 
     public Bounds WorldBounds => _worldBounds;
 

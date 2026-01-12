@@ -1,7 +1,13 @@
 ﻿// Station.cs  (ONLY the parts you need to add/change)
 using UnityEngine;
 
-public enum StationType { Wood, Bed, Pot, Fire }
+public enum StationType
+{
+    Wood,
+    Bed,
+    Pot,
+    Fire,
+}
 
 public class Station : MonoBehaviour
 {
@@ -10,17 +16,23 @@ public class Station : MonoBehaviour
     [Tooltip("If true, station can be used. If false, it's considered missing/unbuilt.")]
     public bool built = true;
 
-    [Tooltip("Optional: where the NPC should stand to interact/build. If null, uses this transform.")]
+    [Tooltip(
+        "Optional: where the NPC should stand to interact/build. If null, uses this transform."
+    )]
     public Transform interactionPoint;
 
-    [Tooltip("Optional: visuals root to hide/show when built toggles. If null, toggles renderers/colliders under this object.")]
+    [Tooltip(
+        "Optional: visuals root to hide/show when built toggles. If null, toggles renderers/colliders under this object."
+    )]
     public GameObject visualsRoot;
 
     // ✅ NEW: bound build spot (so we can free it if station is destroyed/disabled)
-    [HideInInspector] public BuildSpot boundSpot;
+    [HideInInspector]
+    public BuildSpot boundSpot;
 
-    public Vector3 InteractPos => (interactionPoint != null) ? interactionPoint.position : transform.position;
-public bool Exists => gameObject.activeInHierarchy && (type == StationType.Wood || built);
+    public Vector3 InteractPos =>
+        (interactionPoint != null) ? interactionPoint.position : transform.position;
+    public bool Exists => gameObject.activeInHierarchy && (type == StationType.Wood || built);
 
     private void OnEnable() => StationRegistry.Instance?.Register(this);
 

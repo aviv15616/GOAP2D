@@ -68,7 +68,8 @@ public abstract class GoapAction : MonoBehaviour
 
     protected bool EnsureStarted(GoapAgent agent)
     {
-        if (_started) return true;
+        if (_started)
+            return true;
 
         _started = true;
         _elapsed = 0f;

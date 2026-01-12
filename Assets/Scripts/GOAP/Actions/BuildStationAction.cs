@@ -18,8 +18,10 @@ public class BuildStationAction : GoapAction
     public float stopDistance = 0.9f;
 
     [Header("Station-vs-Build Validity")]
-    [Tooltip("If an existing station is cheaper/equal than building (within this margin), building becomes invalid at runtime.\n" +
-             "0.10 means: station is considered acceptable if <= buildTime * (1 + 0.10).")]
+    [Tooltip(
+        "If an existing station is cheaper/equal than building (within this margin), building becomes invalid at runtime.\n"
+            + "0.10 means: station is considered acceptable if <= buildTime * (1 + 0.10)."
+    )]
     [Range(0f, 1f)]
     public float stationVsBuildMargin = 0.10f;
 
@@ -36,7 +38,8 @@ public class BuildStationAction : GoapAction
 
     private Transform GetStationsRoot()
     {
-        if (_stationsRoot != null) return _stationsRoot;
+        if (_stationsRoot != null)
+            return _stationsRoot;
 
         var stationsGO = GameObject.Find("Stations");
         if (stationsGO != null)
@@ -60,7 +63,7 @@ public class BuildStationAction : GoapAction
             StationType.Bed => s.bedExists,
             StationType.Pot => s.potExists,
             StationType.Fire => s.fireExists,
-            _ => true
+            _ => true,
         };
 
         return !exists && s.woodCarried >= woodCost;
@@ -68,25 +71,35 @@ public class BuildStationAction : GoapAction
 
     public override void ApplyPlanEffects(GoapAgent agent, ref WorldState s)
     {
-        if (agent != null && agent.spotManager != null &&
-            agent.spotManager.TryGetBestBuildSpotPos(buildType, agent, s.pos, out var buildPos))
+        if (
+            agent != null
+            && agent.spotManager != null
+            && agent.spotManager.TryGetBestBuildSpotPos(buildType, agent, s.pos, out var buildPos)
+        )
         {
             // simulate walk to build spot
             s.pos = buildPos;
         }
 
-        if (buildType == StationType.Bed) s.bedExists = true;
-        if (buildType == StationType.Pot) s.potExists = true;
-        if (buildType == StationType.Fire) s.fireExists = true;
+        if (buildType == StationType.Bed)
+            s.bedExists = true;
+        if (buildType == StationType.Pot)
+            s.potExists = true;
+        if (buildType == StationType.Fire)
+            s.fireExists = true;
     }
 
     public override void ApplyPlanEffects(ref WorldState s)
     {
-        if (_cachedPlanTargetValid) s.pos = _cachedPlanTarget;
+        if (_cachedPlanTargetValid)
+            s.pos = _cachedPlanTarget;
 
-        if (buildType == StationType.Bed) s.bedExists = true;
-        if (buildType == StationType.Pot) s.potExists = true;
-        if (buildType == StationType.Fire) s.fireExists = true;
+        if (buildType == StationType.Bed)
+            s.bedExists = true;
+        if (buildType == StationType.Pot)
+            s.potExists = true;
+        if (buildType == StationType.Fire)
+            s.fireExists = true;
     }
 
     private Vector2 _cachedPlanTarget;
@@ -100,16 +113,24 @@ public class BuildStationAction : GoapAction
             return 9999f;
 
         // Pick BEST build spot by travel time from simulated position (not a fixed/global one)
-        if (!agent.spotManager.TryGetBestBuildSpotPos(buildType, agent, currentState.pos, out Vector2 target))
+        if (
+            !agent.spotManager.TryGetBestBuildSpotPos(
+                buildType,
+                agent,
+                currentState.pos,
+                out Vector2 target
+            )
+        )
             return 9999f;
 
         _cachedPlanTarget = target;
         _cachedPlanTargetValid = true;
 
         // ✅ Match runtime arrival exactly: Perform() uses Max(mover.arriveDistance, stopDistance)
-        float arrive = (agent.mover != null)
-            ? Mathf.Max(agent.mover.arriveDistance, stopDistance)
-            : stopDistance;
+        float arrive =
+            (agent.mover != null)
+                ? Mathf.Max(agent.mover.arriveDistance, stopDistance)
+                : stopDistance;
 
         // ✅ Use arrive-aware travel estimator
         float travel = agent.EstimateTravelTime(currentState.pos, target, arrive);
@@ -150,8 +171,10 @@ public class BuildStationAction : GoapAction
 
     public override bool StartAction(GoapAgent agent)
     {
-        if (stationPrefab == null) return false;
-        if (agent == null || agent.spotManager == null) return false;
+        if (stationPrefab == null)
+            return false;
+        if (agent == null || agent.spotManager == null)
+            return false;
 
         _mgr = agent.spotManager;
 
@@ -162,7 +185,8 @@ public class BuildStationAction : GoapAction
         _arrived = false;
 
         _pathIndex = 0;
-        _path = agent.nav != null ? agent.nav.FindPath(agent.transform.position, _buildWorld) : null;
+        _path =
+            agent.nav != null ? agent.nav.FindPath(agent.transform.position, _buildWorld) : null;
 
         return true;
     }
@@ -227,7 +251,8 @@ public class BuildStationAction : GoapAction
         }
 
         var rb = go.GetComponent<Rigidbody2D>();
-        if (rb != null) rb.bodyType = RigidbodyType2D.Static;
+        if (rb != null)
+            rb.bodyType = RigidbodyType2D.Static;
 
         Release(agent);
         return true;
@@ -235,7 +260,8 @@ public class BuildStationAction : GoapAction
 
     private void Release(GoapAgent agent)
     {
-        if (!_reserved) return;
+        if (!_reserved)
+            return;
         _reserved = false;
 
         if (_mgr != null)
@@ -260,7 +286,8 @@ public class BuildStationAction : GoapAction
 #if UNITY_EDITOR
     private void OnDrawGizmos()
     {
-        if (_path == null || _path.Count < 2) return;
+        if (_path == null || _path.Count < 2)
+            return;
 
         Gizmos.color = Color.cyan;
         for (int i = 0; i < _path.Count - 1; i++)

@@ -25,10 +25,7 @@ public class StationRegistry : MonoBehaviour
     {
         _stations.Clear();
 
-        var all = FindObjectsByType<Station>(
-            FindObjectsInactive.Include,
-            FindObjectsSortMode.None
-        );
+        var all = FindObjectsByType<Station>(FindObjectsInactive.Include, FindObjectsSortMode.None);
 
         foreach (var s in all)
             Register(s);
@@ -36,14 +33,16 @@ public class StationRegistry : MonoBehaviour
 
     public void Register(Station s)
     {
-        if (s == null) return;
+        if (s == null)
+            return;
         if (!_stations.Contains(s))
             _stations.Add(s);
     }
 
     public void Unregister(Station s)
     {
-        if (s == null) return;
+        if (s == null)
+            return;
         _stations.Remove(s);
     }
 }

@@ -23,7 +23,8 @@ public class GoapDebugLogger
         bool timeOk = (now - _lastTime) >= _minInterval;
         bool changed = sig != _lastSig;
 
-        if (!timeOk && !changed) return;
+        if (!timeOk && !changed)
+            return;
 
         _lastTime = now;
         _lastSig = sig;

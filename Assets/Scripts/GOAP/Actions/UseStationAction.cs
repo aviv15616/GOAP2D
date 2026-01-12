@@ -12,13 +12,14 @@ public class UseStationAction : GoapAction
     private int _pathIndex;
     private bool _arrived;
 
-    private StationType NeedStationType() => need switch
-    {
-        NeedType.Sleep => StationType.Bed,
-        NeedType.Hunger => StationType.Pot,
-        NeedType.Warmth => StationType.Fire,
-        _ => StationType.Bed
-    };
+    private StationType NeedStationType() =>
+        need switch
+        {
+            NeedType.Sleep => StationType.Bed,
+            NeedType.Hunger => StationType.Pot,
+            NeedType.Warmth => StationType.Fire,
+            _ => StationType.Bed,
+        };
 
     public override bool CanPlan(WorldState s)
     {
@@ -28,22 +29,24 @@ public class UseStationAction : GoapAction
             NeedType.Sleep => s.bedExists,
             NeedType.Hunger => s.potExists,
             NeedType.Warmth => s.fireExists,
-            _ => false
+            _ => false,
         };
     }
 
     public override float EstimateCost(GoapAgent agent, WorldState currentState)
     {
-        if (agent == null) return 9999f;
+        if (agent == null)
+            return 9999f;
 
         StationType stType = NeedStationType();
 
         // Try resolve a REAL station (from registry)
         if (agent.TryGetBestStationPos(stType, currentState.pos, out var bestPos))
         {
-            float arrive = (agent.mover != null)
-                ? Mathf.Max(agent.mover.arriveDistance, stopDistance)
-                : Mathf.Max(0.15f, stopDistance);
+            float arrive =
+                (agent.mover != null)
+                    ? Mathf.Max(agent.mover.arriveDistance, stopDistance)
+                    : Mathf.Max(0.15f, stopDistance);
 
             float travel = agent.EstimateTravelTime(currentState.pos, bestPos, arrive);
 
@@ -61,8 +64,6 @@ public class UseStationAction : GoapAction
         return 9999f;
     }
 
-
-
     public override void ApplyPlanEffects(GoapAgent agent, ref WorldState s)
     {
         StationType stType = NeedStationType();
@@ -74,20 +75,25 @@ public class UseStationAction : GoapAction
         }
 
         // Satisfy the relevant need in the simulated world
-        if (need == NeedType.Sleep) s.sleepSatisfied = true;
-        if (need == NeedType.Hunger) s.hungerSatisfied = true;
-        if (need == NeedType.Warmth) s.warmthSatisfied = true;
+        if (need == NeedType.Sleep)
+            s.sleepSatisfied = true;
+        if (need == NeedType.Hunger)
+            s.hungerSatisfied = true;
+        if (need == NeedType.Warmth)
+            s.warmthSatisfied = true;
     }
 
     public override bool IsStillValid(GoapAgent agent)
     {
-        if (agent == null) return false;
+        if (agent == null)
+            return false;
         return agent.FindNearestStation(NeedStationType()) != null;
     }
 
     public override bool StartAction(GoapAgent agent)
     {
-        if (agent == null) return false;
+        if (agent == null)
+            return false;
 
         StationType stType = NeedStationType();
 
@@ -102,16 +108,17 @@ public class UseStationAction : GoapAction
 
         return true;
     }
+
     public override void ApplyPlanEffects(ref WorldState s)
     {
         // Minimal effects (planner might call agent-aware version, but this must exist)
-        if (need == NeedType.Sleep) s.sleepSatisfied = true;
-        if (need == NeedType.Hunger) s.hungerSatisfied = true;
-        if (need == NeedType.Warmth) s.warmthSatisfied = true;
+        if (need == NeedType.Sleep)
+            s.sleepSatisfied = true;
+        if (need == NeedType.Hunger)
+            s.hungerSatisfied = true;
+        if (need == NeedType.Warmth)
+            s.warmthSatisfied = true;
     }
-
-
-
 
     public override bool Perform(GoapAgent agent, float dt)
     {

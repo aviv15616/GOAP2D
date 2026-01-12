@@ -14,6 +14,7 @@ public class GridNav2D : MonoBehaviour
 
     [Header("Obstacles")]
     public LayerMask obstacleLayers;
+
     [Tooltip("Radius used to test if a grid cell is blocked (should be smaller than cellSize/2).")]
     public float blockedCheckRadius = 0.35f;
 
@@ -30,9 +31,10 @@ public class GridNav2D : MonoBehaviour
     [Tooltip("Hard cap on total grid cells (width*height). If exceeded, returns failure.")]
     public int maxGridCells = 120000; // e.g. 300x400
 
-    private Bounds WorldBounds => boundsProvider != null
-        ? boundsProvider.WorldBounds
-        : new Bounds(Vector3.zero, new Vector3(50, 50, 0));
+    private Bounds WorldBounds =>
+        boundsProvider != null
+            ? boundsProvider.WorldBounds
+            : new Bounds(Vector3.zero, new Vector3(50, 50, 0));
 
     private Vector2 Origin => new Vector2(WorldBounds.min.x, WorldBounds.min.y);
 
@@ -57,7 +59,8 @@ public class GridNav2D : MonoBehaviour
 
     private bool IsWalkableCell(int gx, int gy)
     {
-        if (!InBoundsCell(gx, gy)) return false;
+        if (!InBoundsCell(gx, gy))
+            return false;
         Vector2 p = CellCenter(gx, gy);
         return Physics2D.OverlapCircle(p, blockedCheckRadius, obstacleLayers) == null;
     }
@@ -68,7 +71,8 @@ public class GridNav2D : MonoBehaviour
         int dx = Mathf.Abs(ax - bx);
         int dy = Mathf.Abs(ay - by);
 
-        if (!allowDiagonal) return 10 * (dx + dy);
+        if (!allowDiagonal)
+            return 10 * (dx + dy);
 
         int min = Mathf.Min(dx, dy);
         int max = Mathf.Max(dx, dy);
@@ -82,7 +86,8 @@ public class GridNav2D : MonoBehaviour
         yield return (x, y + 1, 10);
         yield return (x, y - 1, 10);
 
-        if (!allowDiagonal) yield break;
+        if (!allowDiagonal)
+            yield break;
 
         yield return (x + 1, y + 1, 14);
         yield return (x + 1, y - 1, 14);
@@ -92,9 +97,17 @@ public class GridNav2D : MonoBehaviour
 
     private struct NodeKey
     {
-        public int x, y;
-        public NodeKey(int x, int y) { this.x = x; this.y = y; }
+        public int x,
+            y;
+
+        public NodeKey(int x, int y)
+        {
+            this.x = x;
+            this.y = y;
+        }
+
         public override int GetHashCode() => (x * 73856093) ^ (y * 19349663);
+
         public override bool Equals(object obj) => obj is NodeKey o && o.x == x && o.y == y;
     }
 
@@ -105,22 +118,26 @@ public class GridNav2D : MonoBehaviour
     /// Returns a list of world positions (cell centers) from start to goal (excluding start).
     public List<Vector2> FindPath(Vector2 startWorld, Vector2 goalWorld)
     {
-        if (boundsProvider == null) return null;
+        if (boundsProvider == null)
+            return null;
 
         // Guard: if bounds are huge, grid explodes => return null instead of freezing.
         var b = WorldBounds;
         int gridW = Mathf.CeilToInt(b.size.x / Mathf.Max(0.001f, cellSize));
         int gridH = Mathf.CeilToInt(b.size.y / Mathf.Max(0.001f, cellSize));
-        if (gridW * gridH > maxGridCells) return null;
+        if (gridW * gridH > maxGridCells)
+            return null;
 
         WorldToGrid(startWorld, out int sx, out int sy);
         WorldToGrid(goalWorld, out int gx, out int gy);
 
         if (!IsWalkableCell(sx, sy))
-            if (!TryFindNearestWalkable(sx, sy, 6, out sx, out sy)) return null;
+            if (!TryFindNearestWalkable(sx, sy, 6, out sx, out sy))
+                return null;
 
         if (!IsWalkableCell(gx, gy))
-            if (!TryFindNearestWalkable(gx, gy, 6, out gx, out gy)) return null;
+            if (!TryFindNearestWalkable(gx, gy, 6, out gx, out gy))
+                return null;
 
         if (!AStar(sx, sy, gx, gy, out var cameFrom, out var goalKey))
             return null;
@@ -142,23 +159,28 @@ public class GridNav2D : MonoBehaviour
     /// Accurate A* travel time estimation (no full path built).
     public float EstimateTravelTime(Vector2 fromWorld, Vector2 toWorld, float speed)
     {
-        if (speed <= 0.001f) return 9999f;
-        if (boundsProvider == null) return 9999f;
+        if (speed <= 0.001f)
+            return 9999f;
+        if (boundsProvider == null)
+            return 9999f;
 
         // Guard huge bounds
         var b = WorldBounds;
         int gridW = Mathf.CeilToInt(b.size.x / Mathf.Max(0.001f, cellSize));
         int gridH = Mathf.CeilToInt(b.size.y / Mathf.Max(0.001f, cellSize));
-        if (gridW * gridH > maxGridCells) return 9999f;
+        if (gridW * gridH > maxGridCells)
+            return 9999f;
 
         WorldToGrid(fromWorld, out int sx, out int sy);
         WorldToGrid(toWorld, out int gx, out int gy);
 
         if (!IsWalkableCell(sx, sy))
-            if (!TryFindNearestWalkable(sx, sy, 6, out sx, out sy)) return 9999f;
+            if (!TryFindNearestWalkable(sx, sy, 6, out sx, out sy))
+                return 9999f;
 
         if (!IsWalkableCell(gx, gy))
-            if (!TryFindNearestWalkable(gx, gy, 6, out gx, out gy)) return 9999f;
+            if (!TryFindNearestWalkable(gx, gy, 6, out gx, out gy))
+                return 9999f;
 
         // A* but we only want the final gCost
         if (!AStarCostOnly(sx, sy, gx, gy, out int bestGCost))
@@ -176,9 +198,14 @@ public class GridNav2D : MonoBehaviour
     // ------------------------------------------------------------
 
     // Full A* with cameFrom for building path
-    private bool AStar(int sx, int sy, int gx, int gy,
-                       out Dictionary<NodeKey, NodeKey> cameFrom,
-                       out NodeKey goalKeyOut)
+    private bool AStar(
+        int sx,
+        int sy,
+        int gx,
+        int gy,
+        out Dictionary<NodeKey, NodeKey> cameFrom,
+        out NodeKey goalKeyOut
+    )
     {
         cameFrom = new Dictionary<NodeKey, NodeKey>(1024);
         goalKeyOut = new NodeKey(gx, gy);
@@ -201,15 +228,21 @@ public class GridNav2D : MonoBehaviour
         while (open.Count > 0)
         {
             expanded++;
-            if (expanded > maxExpandedNodes) return false;
-            if (open.Count > maxOpenSize) return false;
+            if (expanded > maxExpandedNodes)
+                return false;
+            if (open.Count > maxOpenSize)
+                return false;
 
             int bestIdx = 0;
             int bestF = int.MaxValue;
             for (int i = 0; i < open.Count; i++)
             {
                 int f = fScore.TryGetValue(open[i], out var vv) ? vv : int.MaxValue;
-                if (f < bestF) { bestF = f; bestIdx = i; }
+                if (f < bestF)
+                {
+                    bestF = f;
+                    bestIdx = i;
+                }
             }
 
             NodeKey current = open[bestIdx];
@@ -226,7 +259,8 @@ public class GridNav2D : MonoBehaviour
 
             foreach (var (nx, ny, stepCost) in Neighbors(current.x, current.y))
             {
-                if (!IsWalkableCell(nx, ny)) continue;
+                if (!IsWalkableCell(nx, ny))
+                    continue;
 
                 var nk = new NodeKey(nx, ny);
                 int tentativeG = currentG + stepCost;
@@ -272,15 +306,21 @@ public class GridNav2D : MonoBehaviour
         while (open.Count > 0)
         {
             expanded++;
-            if (expanded > maxExpandedNodes) return false;
-            if (open.Count > maxOpenSize) return false;
+            if (expanded > maxExpandedNodes)
+                return false;
+            if (open.Count > maxOpenSize)
+                return false;
 
             int bestIdx = 0;
             int bestF = int.MaxValue;
             for (int i = 0; i < open.Count; i++)
             {
                 int f = fScore.TryGetValue(open[i], out var vv) ? vv : int.MaxValue;
-                if (f < bestF) { bestF = f; bestIdx = i; }
+                if (f < bestF)
+                {
+                    bestF = f;
+                    bestIdx = i;
+                }
             }
 
             NodeKey current = open[bestIdx];
@@ -297,7 +337,8 @@ public class GridNav2D : MonoBehaviour
 
             foreach (var (nx, ny, stepCost) in Neighbors(current.x, current.y))
             {
-                if (!IsWalkableCell(nx, ny)) continue;
+                if (!IsWalkableCell(nx, ny))
+                    continue;
 
                 var nk = new NodeKey(nx, ny);
                 int tentativeG = currentG + stepCost;
@@ -319,7 +360,11 @@ public class GridNav2D : MonoBehaviour
         return false;
     }
 
-    private List<Vector2> ReconstructPath(Dictionary<NodeKey, NodeKey> cameFrom, NodeKey current, Vector2 startWorld)
+    private List<Vector2> ReconstructPath(
+        Dictionary<NodeKey, NodeKey> cameFrom,
+        NodeKey current,
+        Vector2 startWorld
+    )
     {
         var rev = new List<Vector2>();
         while (cameFrom.TryGetValue(current, out var prev))
@@ -335,13 +380,22 @@ public class GridNav2D : MonoBehaviour
 
         return rev;
     }
-    public float EstimatePathTimeLikeMover(Vector2 fromWorld, Vector2 toWorld, float speed, float arrive)
+
+    public float EstimatePathTimeLikeMover(
+        Vector2 fromWorld,
+        Vector2 toWorld,
+        float speed,
+        float arrive
+    )
     {
-        if (speed <= 0.001f) return 9999f;
-        if (boundsProvider == null) return 9999f;
+        if (speed <= 0.001f)
+            return 9999f;
+        if (boundsProvider == null)
+            return 9999f;
 
         var path = FindPath(fromWorld, toWorld);
-        if (path == null) return 9999f;
+        if (path == null)
+            return 9999f;
 
         arrive = Mathf.Max(0.001f, arrive);
 
@@ -366,7 +420,8 @@ public class GridNav2D : MonoBehaviour
             while (index < path.Count && ((path[index] - pos).sqrMagnitude <= arriveSqr))
                 index++;
 
-            if (index >= path.Count) break;
+            if (index >= path.Count)
+                break;
 
             pos = Vector2.MoveTowards(pos, path[index], step);
             time += dt;
@@ -377,12 +432,15 @@ public class GridNav2D : MonoBehaviour
 
     public float EstimatePathTime(Vector2 fromWorld, Vector2 toWorld, float speed, float arrive)
     {
-        if (speed <= 0.001f) return 9999f;
-        if (boundsProvider == null) return 9999f;
+        if (speed <= 0.001f)
+            return 9999f;
+        if (boundsProvider == null)
+            return 9999f;
 
         // משתמשים באותו FindPath כמו runtime כדי לקבל את ה-waypoints
         var path = FindPath(fromWorld, toWorld);
-        if (path == null) return 9999f;
+        if (path == null)
+            return 9999f;
 
         arrive = Mathf.Max(0f, arrive);
 
@@ -394,9 +452,10 @@ public class GridNav2D : MonoBehaviour
         {
             Vector2 wp = path[i];
             float d = Vector2.Distance(p, wp);
-            if (d <= arrive) continue;
+            if (d <= arrive)
+                continue;
 
-            float moveDist = d - arrive;         // כמה באמת צריך לזוז כדי "להגיע" (כלומר להיות בתוך arrive)
+            float moveDist = d - arrive; // כמה באמת צריך לזוז כדי "להגיע" (כלומר להיות בתוך arrive)
             time += moveDist / speed;
             p = Vector2.MoveTowards(p, wp, moveDist);
         }
@@ -404,13 +463,21 @@ public class GridNav2D : MonoBehaviour
         return time;
     }
 
-    public float EstimatePathTimePolyline(Vector2 fromWorld, Vector2 toWorld, float speed, float arrive)
+    public float EstimatePathTimePolyline(
+        Vector2 fromWorld,
+        Vector2 toWorld,
+        float speed,
+        float arrive
+    )
     {
-        if (speed <= 0.001f) return 9999f;
-        if (boundsProvider == null) return 9999f;
+        if (speed <= 0.001f)
+            return 9999f;
+        if (boundsProvider == null)
+            return 9999f;
 
         var path = FindPath(fromWorld, toWorld);
-        if (path == null) return 9999f;
+        if (path == null)
+            return 9999f;
 
         float dist = 0f;
 
@@ -429,23 +496,25 @@ public class GridNav2D : MonoBehaviour
 
         return dist / speed;
     }
-    
 
     private bool TryFindNearestWalkable(int cx, int cy, int radius, out int wx, out int wy)
     {
-        wx = cx; wy = cy;
+        wx = cx;
+        wy = cy;
         for (int r = 0; r <= radius; r++)
         {
             for (int y = -r; y <= r; y++)
             {
                 for (int x = -r; x <= r; x++)
                 {
-                    if (Mathf.Abs(x) != r && Mathf.Abs(y) != r) continue;
+                    if (Mathf.Abs(x) != r && Mathf.Abs(y) != r)
+                        continue;
                     int tx = cx + x;
                     int ty = cy + y;
                     if (IsWalkableCell(tx, ty))
                     {
-                        wx = tx; wy = ty;
+                        wx = tx;
+                        wy = ty;
                         return true;
                     }
                 }

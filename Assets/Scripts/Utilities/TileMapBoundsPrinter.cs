@@ -8,7 +8,8 @@ public class TilemapBoundsPrinter : MonoBehaviour
     [ContextMenu("Print Tilemap World Bounds")]
     public void PrintBounds()
     {
-        if (tilemap == null) tilemap = GetComponent<Tilemap>();
+        if (tilemap == null)
+            tilemap = GetComponent<Tilemap>();
         if (tilemap == null)
         {
             return;
@@ -21,6 +22,5 @@ public class TilemapBoundsPrinter : MonoBehaviour
 
         float width = Mathf.Abs(max.x - min.x);
         float height = Mathf.Abs(max.y - min.y);
-
     }
 }

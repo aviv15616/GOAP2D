@@ -1,4 +1,7 @@
-﻿// BuildTester2D.cs (FIXED: spawns under "Stations" root automatically)
+﻿// BuildTester2D.cs
+// Left click  → build selected station
+// Right click → remove station (except trees)
+
 using UnityEngine;
 
 public class BuildTester2D : MonoBehaviour
@@ -11,7 +14,9 @@ public class BuildTester2D : MonoBehaviour
     public GameObject firePrefab;
 
     [Header("Hierarchy")]
-    [Tooltip("Optional. If empty, will auto-find/create a GameObject named 'Stations' and parent spawns under it.")]
+    [Tooltip(
+        "Optional. If empty, will auto-find/create a GameObject named 'Stations' and parent spawns under it."
+    )]
     public Transform stationsRoot;
 
     [Header("Spawn")]
@@ -33,23 +38,37 @@ public class BuildTester2D : MonoBehaviour
         if (stationsRoot == null)
         {
             var go = GameObject.Find("Stations");
-            if (go != null) stationsRoot = go.transform;
-            else stationsRoot = new GameObject("Stations").transform;
+            if (go != null)
+                stationsRoot = go.transform;
+            else
+                stationsRoot = new GameObject("Stations").transform;
         }
     }
 
     private void Update()
     {
-        if (validator == null) return;
+        if (validator == null)
+            return;
 
-        if (Input.GetKeyDown(bedKey)) _selected = StationType.Bed;
-        if (Input.GetKeyDown(potKey)) _selected = StationType.Pot;
-        if (Input.GetKeyDown(fireKey)) _selected = StationType.Fire;
+        if (Input.GetKeyDown(bedKey))
+            _selected = StationType.Bed;
+        if (Input.GetKeyDown(potKey))
+            _selected = StationType.Pot;
+        if (Input.GetKeyDown(fireKey))
+            _selected = StationType.Fire;
 
+        // LEFT CLICK → build
         if (Input.GetMouseButtonDown(0))
         {
-            Vector2 desired = GetMouseWorld2D();
-            TryBuild(_selected, desired);
+            Vector2 pos = GetMouseWorld2D();
+            TryBuild(_selected, pos);
+        }
+
+        // RIGHT CLICK → remove (except trees)
+        if (Input.GetMouseButtonDown(1))
+        {
+            Vector2 pos = GetMouseWorld2D();
+            TryRemoveStation(pos);
         }
     }
 
@@ -58,7 +77,6 @@ public class BuildTester2D : MonoBehaviour
         var cam = Camera.main;
         Vector3 m = Input.mousePosition;
 
-        // stable 2D plane pick
         float zDist = -cam.transform.position.z;
         Vector3 w = cam.ScreenToWorldPoint(new Vector3(m.x, m.y, zDist));
 
@@ -68,33 +86,46 @@ public class BuildTester2D : MonoBehaviour
     private void TryBuild(StationType type, Vector2 desired)
     {
         if (!validator.TryFindValidPosition(desired, out Vector2 pos))
-        {
             return;
-        }
 
         GameObject prefab = type switch
         {
             StationType.Bed => bedPrefab,
             StationType.Pot => potPrefab,
             StationType.Fire => firePrefab,
-            _ => null
+            _ => null,
         };
 
         if (prefab == null)
-        {
             return;
-        }
 
         Vector3 spawnPos = new Vector3(pos.x, pos.y, spawnZ);
 
-        // ✅ parent under Stations root
         var go = Instantiate(prefab, spawnPos, Quaternion.identity, stationsRoot);
 
         if (forceSpawnedRigidbodyStatic)
         {
             var rb = go.GetComponent<Rigidbody2D>();
-            if (rb != null) rb.bodyType = RigidbodyType2D.Static;
+            if (rb != null)
+                rb.bodyType = RigidbodyType2D.Static;
         }
+    }
 
+    private bool TryRemoveStation(Vector2 worldPos)
+    {
+        RaycastHit2D hit = Physics2D.Raycast(worldPos, Vector2.zero);
+        if (!hit)
+            return false;
+
+        Station station = hit.collider.GetComponentInParent<Station>();
+        if (station == null)
+            return false;
+
+        // Trees (wood) cannot be removed
+        if (station.type == StationType.Wood)
+            return true;
+
+        Destroy(station.gameObject);
+        return true;
     }
 }

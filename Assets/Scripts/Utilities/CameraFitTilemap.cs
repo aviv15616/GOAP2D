@@ -20,7 +20,8 @@ public class CameraFitTilemap : MonoBehaviour
 
     public void Fit()
     {
-        if (targetRenderer == null) return;
+        if (targetRenderer == null)
+            return;
 
         Bounds b = targetRenderer.bounds;
 
@@ -39,10 +40,6 @@ public class CameraFitTilemap : MonoBehaviour
             cam.orthographicSize = b.size.y / 2f * difference;
         }
 
-        cam.transform.position = new Vector3(
-            b.center.x,
-            b.center.y,
-            cam.transform.position.z
-        );
+        cam.transform.position = new Vector3(b.center.x, b.center.y, cam.transform.position.z);
     }
 }

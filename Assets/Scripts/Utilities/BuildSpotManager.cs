@@ -45,27 +45,39 @@ public class BuildSpotManager : MonoBehaviour
     /// Planning helper: choose the best (reachable) spot by TRAVEL TIME from 'from'.
     /// Ignores occupancy by default so planning can still estimate routes.
     /// </summary>
-    public bool TryGetBestBuildSpotPos(StationType type, GoapAgent agent, Vector2 from, out Vector2 worldPos, bool ignoreOccupied = true)
+    public bool TryGetBestBuildSpotPos(
+        StationType type,
+        GoapAgent agent,
+        Vector2 from,
+        out Vector2 worldPos,
+        bool ignoreOccupied = true
+    )
     {
         worldPos = default;
 
-        if (agent == null) return false;
+        if (agent == null)
+            return false;
 
         bool found = false;
         float bestT = 9999f;
 
-        if (spots == null || spots.Length == 0) return false;
+        if (spots == null || spots.Length == 0)
+            return false;
 
         for (int i = 0; i < spots.Length; i++)
         {
             var s = spots[i];
-            if (s == null) continue;
-            if (s.forType != type) continue;
+            if (s == null)
+                continue;
+            if (s.forType != type)
+                continue;
 
-            if (!ignoreOccupied && s.occupied) continue;
+            if (!ignoreOccupied && s.occupied)
+                continue;
 
             float t = agent.EstimateTravelTime(from, s.Pos);
-            if (t >= 9999f) continue; // unreachable
+            if (t >= 9999f)
+                continue; // unreachable
 
             if (t < bestT)
             {
@@ -82,12 +94,19 @@ public class BuildSpotManager : MonoBehaviour
     /// Runtime: reserves the best FREE spot by TRAVEL TIME from the agent.
     /// This prevents multiple NPCs from building on the same spot.
     /// </summary>
-    public bool TryReserveBestSpot(StationType type, GoapAgent agent, Vector2 from, out Vector2 worldPos)
+    public bool TryReserveBestSpot(
+        StationType type,
+        GoapAgent agent,
+        Vector2 from,
+        out Vector2 worldPos
+    )
     {
         worldPos = default;
 
-        if (agent == null) return false;
-        if (spots == null || spots.Length == 0) return false;
+        if (agent == null)
+            return false;
+        if (spots == null || spots.Length == 0)
+            return false;
 
         BuildSpot best = null;
         float bestT = 9999f;
@@ -95,8 +114,10 @@ public class BuildSpotManager : MonoBehaviour
         for (int i = 0; i < spots.Length; i++)
         {
             var s = spots[i];
-            if (s == null) continue;
-            if (s.forType != type) continue;
+            if (s == null)
+                continue;
+            if (s.forType != type)
+                continue;
 
             // already occupied by someone else
             if (s.occupied)
@@ -111,7 +132,8 @@ public class BuildSpotManager : MonoBehaviour
             }
 
             float t = agent.EstimateTravelTime(from, s.Pos);
-            if (t >= 9999f) continue;
+            if (t >= 9999f)
+                continue;
 
             if (t < bestT)
             {
@@ -120,7 +142,8 @@ public class BuildSpotManager : MonoBehaviour
             }
         }
 
-        if (best == null) return false;
+        if (best == null)
+            return false;
 
         best.occupied = true;
         _ownerBySpot[best] = agent;
@@ -137,7 +160,8 @@ public class BuildSpotManager : MonoBehaviour
         worldPos = default;
 
         var spot = GetSpot(type);
-        if (spot == null) return false;
+        if (spot == null)
+            return false;
 
         if (spot.occupied)
         {
@@ -162,31 +186,38 @@ public class BuildSpotManager : MonoBehaviour
     public void ReleaseSpot(StationType type, GoapAgent agent)
     {
         var spot = GetSpot(type);
-        if (spot == null) return;
+        if (spot == null)
+            return;
 
         // If we track an owner, only that owner may release.
         if (_ownerBySpot.TryGetValue(spot, out var owner))
         {
-            if (agent != null && owner != agent) return; // don't release someone else's spot
+            if (agent != null && owner != agent)
+                return; // don't release someone else's spot
             _ownerBySpot.Remove(spot);
         }
 
         spot.occupied = false;
     }
+
     public void EnsureInit()
     {
         if (spots == null || spots.Length == 0)
             spots = GetComponentsInChildren<BuildSpot>(true);
     }
+
     private BuildSpot GetSpot(StationType type)
     {
-        if (spots == null) return null;
+        if (spots == null)
+            return null;
 
         for (int i = 0; i < spots.Length; i++)
         {
             var s = spots[i];
-            if (s == null) continue;
-            if (s.forType != type) continue;
+            if (s == null)
+                continue;
+            if (s.forType != type)
+                continue;
             return s;
         }
 
