@@ -1,0 +1,1040 @@
+fileFormatVersion: 2
+guid: 229089ad45fa383419c85eba5b554cd3
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -1089847378208614075
+    second: Position-the-pixel-art-traveler-with-their-back-fa-256px-36_0
+  - first:
+      213: 566901594057651498
+    second: Position-the-pixel-art-traveler-with-their-back-fa-256px-36_1
+  - first:
+      213: -8358154990039751091
+    second: Position-the-pixel-art-traveler-with-their-back-fa-256px-36_2
+  - first:
+      213: -3148182383387655504
+    second: Position-the-pixel-art-traveler-with-their-back-fa-256px-36_3
+  - first:
+      213: 5225618691217186074
+    second: Position-the-pixel-art-traveler-with-their-back-fa-256px-36_4
+  - first:
+      213: 4102161439560038630
+    second: Position-the-pixel-art-traveler-with-their-back-fa-256px-36_5
+  - first:
+      213: -7767693657330928322
+    second: Position-the-pixel-art-traveler-with-their-back-fa-256px-36_6
+  - first:
+      213: 1963465663510399381
+    second: Position-the-pixel-art-traveler-with-their-back-fa-256px-36_7
+  - first:
+      213: 330162968505180657
+    second: Position-the-pixel-art-traveler-with-their-back-fa-256px-36_8
+  - first:
+      213: -2055166678763798933
+    second: Position-the-pixel-art-traveler-with-their-back-fa-256px-36_9
+  - first:
+      213: 2727122868722748810
+    second: Position-the-pixel-art-traveler-with-their-back-fa-256px-36_10
+  - first:
+      213: 2338763429155078894
+    second: Position-the-pixel-art-traveler-with-their-back-fa-256px-36_11
+  - first:
+      213: 5778698373589260705
+    second: Position-the-pixel-art-traveler-with-their-back-fa-256px-36_12
+  - first:
+      213: -5585177234200159403
+    second: Position-the-pixel-art-traveler-with-their-back-fa-256px-36_13
+  - first:
+      213: -5784876415918868251
+    second: Position-the-pixel-art-traveler-with-their-back-fa-256px-36_14
+  - first:
+      213: 8150957244756781147
+    second: Position-the-pixel-art-traveler-with-their-back-fa-256px-36_15
+  - first:
+      213: -8317863521805696705
+    second: Position-the-pixel-art-traveler-with-their-back-fa-256px-36_16
+  - first:
+      213: 4030669887848916584
+    second: Position-the-pixel-art-traveler-with-their-back-fa-256px-36_17
+  - first:
+      213: 3750645174204497546
+    second: Position-the-pixel-art-traveler-with-their-back-fa-256px-36_18
+  - first:
+      213: -4074817015409255177
+    second: Position-the-pixel-art-traveler-with-their-back-fa-256px-36_19
+  - first:
+      213: -812762354650902865
+    second: Position-the-pixel-art-traveler-with-their-back-fa-256px-36_20
+  - first:
+      213: 6355746866687744751
+    second: Position-the-pixel-art-traveler-with-their-back-fa-256px-36_21
+  - first:
+      213: 1131469841070344017
+    second: Position-the-pixel-art-traveler-with-their-back-fa-256px-36_22
+  - first:
+      213: 1263207929255917374
+    second: Position-the-pixel-art-traveler-with-their-back-fa-256px-36_23
+  - first:
+      213: -7360815638094701541
+    second: Position-the-pixel-art-traveler-with-their-back-fa-256px-36_24
+  - first:
+      213: -7700508682805776349
+    second: Position-the-pixel-art-traveler-with-their-back-fa-256px-36_25
+  - first:
+      213: 3258572244536556842
+    second: Position-the-pixel-art-traveler-with-their-back-fa-256px-36_26
+  - first:
+      213: -5834706925461738104
+    second: Position-the-pixel-art-traveler-with-their-back-fa-256px-36_27
+  - first:
+      213: -8355276237285461399
+    second: Position-the-pixel-art-traveler-with-their-back-fa-256px-36_28
+  - first:
+      213: 7382783910662251981
+    second: Position-the-pixel-art-traveler-with-their-back-fa-256px-36_29
+  - first:
+      213: -2024242229292743687
+    second: Position-the-pixel-art-traveler-with-their-back-fa-256px-36_30
+  - first:
+      213: -7737049023827953015
+    second: Position-the-pixel-art-traveler-with-their-back-fa-256px-36_31
+  - first:
+      213: -9112263856136607404
+    second: Position-the-pixel-art-traveler-with-their-back-fa-256px-36_32
+  - first:
+      213: 804111033906538775
+    second: Position-the-pixel-art-traveler-with-their-back-fa-256px-36_33
+  - first:
+      213: 4425876437604065515
+    second: Position-the-pixel-art-traveler-with-their-back-fa-256px-36_34
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Position-the-pixel-art-traveler-with-their-back-fa-256px-36_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1310
+        width: 150
+        height: 262
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5491c72759510e0f0800000000000000
+      internalID: -1089847378208614075
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Position-the-pixel-art-traveler-with-their-back-fa-256px-36_1
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 1309
+        width: 149
+        height: 263
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a25b8680ff90ed700800000000000000
+      internalID: 566901594057651498
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Position-the-pixel-art-traveler-with-their-back-fa-256px-36_2
+      rect:
+        serializedVersion: 2
+        x: 151
+        y: 1047
+        width: 149
+        height: 264
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d46a509e15ed10c80800000000000000
+      internalID: -8358154990039751091
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Position-the-pixel-art-traveler-with-their-back-fa-256px-36_3
+      rect:
+        serializedVersion: 2
+        x: 299
+        y: 1310
+        width: 149
+        height: 262
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0b249065dc86f44d0800000000000000
+      internalID: -3148182383387655504
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Position-the-pixel-art-traveler-with-their-back-fa-256px-36_4
+      rect:
+        serializedVersion: 2
+        x: 302
+        y: 1047
+        width: 148
+        height: 264
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a1d54ad5380258840800000000000000
+      internalID: 5225618691217186074
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Position-the-pixel-art-traveler-with-their-back-fa-256px-36_5
+      rect:
+        serializedVersion: 2
+        x: 449
+        y: 1310
+        width: 148
+        height: 262
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6e8f748581ecde830800000000000000
+      internalID: 4102161439560038630
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Position-the-pixel-art-traveler-with-their-back-fa-256px-36_6
+      rect:
+        serializedVersion: 2
+        x: 452
+        y: 1047
+        width: 148
+        height: 264
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e353cbe06cb933490800000000000000
+      internalID: -7767693657330928322
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Position-the-pixel-art-traveler-with-their-back-fa-256px-36_7
+      rect:
+        serializedVersion: 2
+        x: 599
+        y: 1311
+        width: 148
+        height: 260
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 599c63a3e91af3b10800000000000000
+      internalID: 1963465663510399381
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Position-the-pixel-art-traveler-with-their-back-fa-256px-36_8
+      rect:
+        serializedVersion: 2
+        x: 602
+        y: 1048
+        width: 148
+        height: 264
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1f16db77879f49400800000000000000
+      internalID: 330162968505180657
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Position-the-pixel-art-traveler-with-their-back-fa-256px-36_9
+      rect:
+        serializedVersion: 2
+        x: 749
+        y: 1308
+        width: 148
+        height: 263
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b6e701e5bc49a73e0800000000000000
+      internalID: -2055166678763798933
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Position-the-pixel-art-traveler-with-their-back-fa-256px-36_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1048
+        width: 148
+        height: 262
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a8d4019dccfa8d520800000000000000
+      internalID: 2727122868722748810
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Position-the-pixel-art-traveler-with-their-back-fa-256px-36_11
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 785
+        width: 146
+        height: 264
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ee2867092f4f47020800000000000000
+      internalID: 2338763429155078894
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Position-the-pixel-art-traveler-with-their-back-fa-256px-36_12
+      rect:
+        serializedVersion: 2
+        x: 149
+        y: 524
+        width: 153
+        height: 524
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1a95aedcd8f023050800000000000000
+      internalID: 5778698373589260705
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Position-the-pixel-art-traveler-with-their-back-fa-256px-36_13
+      rect:
+        serializedVersion: 2
+        x: 602
+        y: 785
+        width: 149
+        height: 264
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 55b96e3a5e67d72b0800000000000000
+      internalID: -5585177234200159403
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Position-the-pixel-art-traveler-with-their-back-fa-256px-36_14
+      rect:
+        serializedVersion: 2
+        x: 751
+        y: 785
+        width: 149
+        height: 264
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5e8fe9f9c8df7bfa0800000000000000
+      internalID: -5784876415918868251
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Position-the-pixel-art-traveler-with-their-back-fa-256px-36_15
+      rect:
+        serializedVersion: 2
+        x: 753
+        y: 1047
+        width: 146
+        height: 262
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b58ef11bd640e1170800000000000000
+      internalID: 8150957244756781147
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Position-the-pixel-art-traveler-with-their-back-fa-256px-36_16
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 523
+        width: 150
+        height: 264
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f3187946233019c80800000000000000
+      internalID: -8317863521805696705
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Position-the-pixel-art-traveler-with-their-back-fa-256px-36_17
+      rect:
+        serializedVersion: 2
+        x: 301
+        y: 524
+        width: 147
+        height: 263
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 866291858e0dfe730800000000000000
+      internalID: 4030669887848916584
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Position-the-pixel-art-traveler-with-their-back-fa-256px-36_18
+      rect:
+        serializedVersion: 2
+        x: 303
+        y: 785
+        width: 148
+        height: 262
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a8efdf60ae7fc0430800000000000000
+      internalID: 3750645174204497546
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Position-the-pixel-art-traveler-with-their-back-fa-256px-36_19
+      rect:
+        serializedVersion: 2
+        x: 449
+        y: 524
+        width: 149
+        height: 264
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7fc50d783875377c0800000000000000
+      internalID: -4074817015409255177
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Position-the-pixel-art-traveler-with-their-back-fa-256px-36_20
+      rect:
+        serializedVersion: 2
+        x: 453
+        y: 786
+        width: 148
+        height: 261
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fae0934d1fc78b4f0800000000000000
+      internalID: -812762354650902865
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Position-the-pixel-art-traveler-with-their-back-fa-256px-36_21
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 262
+        width: 148
+        height: 262
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fea993fd916243850800000000000000
+      internalID: 6355746866687744751
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Position-the-pixel-art-traveler-with-their-back-fa-256px-36_22
+      rect:
+        serializedVersion: 2
+        x: 151
+        y: 261
+        width: 149
+        height: 263
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 157c01f53d9c3bf00800000000000000
+      internalID: 1131469841070344017
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Position-the-pixel-art-traveler-with-their-back-fa-256px-36_23
+      rect:
+        serializedVersion: 2
+        x: 302
+        y: 261
+        width: 148
+        height: 264
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e3771cc3be0d78110800000000000000
+      internalID: 1263207929255917374
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Position-the-pixel-art-traveler-with-their-back-fa-256px-36_24
+      rect:
+        serializedVersion: 2
+        x: 452
+        y: 261
+        width: 148
+        height: 263
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b1c993a2d2129d990800000000000000
+      internalID: -7360815638094701541
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Position-the-pixel-art-traveler-with-their-back-fa-256px-36_25
+      rect:
+        serializedVersion: 2
+        x: 599
+        y: 523
+        width: 148
+        height: 262
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 320fc8be62c422590800000000000000
+      internalID: -7700508682805776349
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Position-the-pixel-art-traveler-with-their-back-fa-256px-36_26
+      rect:
+        serializedVersion: 2
+        x: 603
+        y: 262
+        width: 146
+        height: 262
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a2d7c861136c83d20800000000000000
+      internalID: 3258572244536556842
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Position-the-pixel-art-traveler-with-their-back-fa-256px-36_27
+      rect:
+        serializedVersion: 2
+        x: 750
+        y: 524
+        width: 148
+        height: 261
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 88d675307f4f60fa0800000000000000
+      internalID: -5834706925461738104
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Position-the-pixel-art-traveler-with-their-back-fa-256px-36_28
+      rect:
+        serializedVersion: 2
+        x: 753
+        y: 260
+        width: 146
+        height: 265
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9627654c7881c0c80800000000000000
+      internalID: -8355276237285461399
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Position-the-pixel-art-traveler-with-their-back-fa-256px-36_29
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 0
+        width: 146
+        height: 263
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dc52e70e9dae47660800000000000000
+      internalID: 7382783910662251981
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Position-the-pixel-art-traveler-with-their-back-fa-256px-36_30
+      rect:
+        serializedVersion: 2
+        x: 153
+        y: 0
+        width: 148
+        height: 261
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9f349a7da6278e3e0800000000000000
+      internalID: -2024242229292743687
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Position-the-pixel-art-traveler-with-their-back-fa-256px-36_31
+      rect:
+        serializedVersion: 2
+        x: 303
+        y: 0
+        width: 148
+        height: 261
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 98ab3fcc7ea70a490800000000000000
+      internalID: -7737049023827953015
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Position-the-pixel-art-traveler-with-their-back-fa-256px-36_32
+      rect:
+        serializedVersion: 2
+        x: 452
+        y: 0
+        width: 149
+        height: 262
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 459a85b3d4cba8180800000000000000
+      internalID: -9112263856136607404
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Position-the-pixel-art-traveler-with-their-back-fa-256px-36_33
+      rect:
+        serializedVersion: 2
+        x: 602
+        y: 0
+        width: 149
+        height: 262
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 719a8f799b6c82b00800000000000000
+      internalID: 804111033906538775
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Position-the-pixel-art-traveler-with-their-back-fa-256px-36_34
+      rect:
+        serializedVersion: 2
+        x: 750
+        y: 0
+        width: 150
+        height: 261
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: be06923bb2fdb6d30800000000000000
+      internalID: 4425876437604065515
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Position-the-pixel-art-traveler-with-their-back-fa-256px-36_0: -1089847378208614075
+      Position-the-pixel-art-traveler-with-their-back-fa-256px-36_1: 566901594057651498
+      Position-the-pixel-art-traveler-with-their-back-fa-256px-36_10: 2727122868722748810
+      Position-the-pixel-art-traveler-with-their-back-fa-256px-36_11: 2338763429155078894
+      Position-the-pixel-art-traveler-with-their-back-fa-256px-36_12: 5778698373589260705
+      Position-the-pixel-art-traveler-with-their-back-fa-256px-36_13: -5585177234200159403
+      Position-the-pixel-art-traveler-with-their-back-fa-256px-36_14: -5784876415918868251
+      Position-the-pixel-art-traveler-with-their-back-fa-256px-36_15: 8150957244756781147
+      Position-the-pixel-art-traveler-with-their-back-fa-256px-36_16: -8317863521805696705
+      Position-the-pixel-art-traveler-with-their-back-fa-256px-36_17: 4030669887848916584
+      Position-the-pixel-art-traveler-with-their-back-fa-256px-36_18: 3750645174204497546
+      Position-the-pixel-art-traveler-with-their-back-fa-256px-36_19: -4074817015409255177
+      Position-the-pixel-art-traveler-with-their-back-fa-256px-36_2: -8358154990039751091
+      Position-the-pixel-art-traveler-with-their-back-fa-256px-36_20: -812762354650902865
+      Position-the-pixel-art-traveler-with-their-back-fa-256px-36_21: 6355746866687744751
+      Position-the-pixel-art-traveler-with-their-back-fa-256px-36_22: 1131469841070344017
+      Position-the-pixel-art-traveler-with-their-back-fa-256px-36_23: 1263207929255917374
+      Position-the-pixel-art-traveler-with-their-back-fa-256px-36_24: -7360815638094701541
+      Position-the-pixel-art-traveler-with-their-back-fa-256px-36_25: -7700508682805776349
+      Position-the-pixel-art-traveler-with-their-back-fa-256px-36_26: 3258572244536556842
+      Position-the-pixel-art-traveler-with-their-back-fa-256px-36_27: -5834706925461738104
+      Position-the-pixel-art-traveler-with-their-back-fa-256px-36_28: -8355276237285461399
+      Position-the-pixel-art-traveler-with-their-back-fa-256px-36_29: 7382783910662251981
+      Position-the-pixel-art-traveler-with-their-back-fa-256px-36_3: -3148182383387655504
+      Position-the-pixel-art-traveler-with-their-back-fa-256px-36_30: -2024242229292743687
+      Position-the-pixel-art-traveler-with-their-back-fa-256px-36_31: -7737049023827953015
+      Position-the-pixel-art-traveler-with-their-back-fa-256px-36_32: -9112263856136607404
+      Position-the-pixel-art-traveler-with-their-back-fa-256px-36_33: 804111033906538775
+      Position-the-pixel-art-traveler-with-their-back-fa-256px-36_34: 4425876437604065515
+      Position-the-pixel-art-traveler-with-their-back-fa-256px-36_4: 5225618691217186074
+      Position-the-pixel-art-traveler-with-their-back-fa-256px-36_5: 4102161439560038630
+      Position-the-pixel-art-traveler-with-their-back-fa-256px-36_6: -7767693657330928322
+      Position-the-pixel-art-traveler-with-their-back-fa-256px-36_7: 1963465663510399381
+      Position-the-pixel-art-traveler-with-their-back-fa-256px-36_8: 330162968505180657
+      Position-the-pixel-art-traveler-with-their-back-fa-256px-36_9: -2055166678763798933
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
