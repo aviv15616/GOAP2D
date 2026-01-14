@@ -289,7 +289,7 @@ public class GoapAgent : MonoBehaviour
         }
     }
 
-    private float ComputeScore(NeedType need, float urgency01, float planCostSeconds)
+    private float  ComputeScore(NeedType need, float urgency01, float planCostSeconds)
     {
         float pref =
             (need == primaryNeed) ? primaryPreferenceMultiplier : otherPreferenceMultiplier;
