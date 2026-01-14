@@ -52,6 +52,13 @@ public class TilemapBoundsProvider : MonoBehaviour
                 1f
             )
         );
+
+        Debug.Log(
+    $"[{name}] Tilemap world bounds: " +
+    $"min={_worldBounds.min} max={_worldBounds.max} size={_worldBounds.size} center={_worldBounds.center}",
+    this
+);
+
     }
 
     public bool Contains(Vector2 p) =>

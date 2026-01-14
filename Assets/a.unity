@@ -1245,7 +1245,6 @@ GameObject:
   - component: {fileID: 1018070195}
   - component: {fileID: 1018070197}
   - component: {fileID: 1018070196}
-  - component: {fileID: 1018070199}
   - component: {fileID: 1018070200}
   m_Layer: 0
   m_Name: Tilemap
@@ -3331,19 +3330,6 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
---- !u!114 &1018070199
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1018070194}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a4b11f5439c543a4f86d64e781e2e8eb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: '::'
-  tilemap: {fileID: 1018070197}
 --- !u!114 &1018070200
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3365,6 +3351,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1342964859}
     m_Modifications:
+    - target: {fileID: 136921645729387110, guid: cc4cd222cbc45c94080cac31672baebf,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 3.7593985
+      objectReference: {fileID: 0}
+    - target: {fileID: 136921645729387110, guid: cc4cd222cbc45c94080cac31672baebf,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 3.7593985
+      objectReference: {fileID: 0}
     - target: {fileID: 305558868269391938, guid: cc4cd222cbc45c94080cac31672baebf,
         type: 3}
       propertyPath: m_Controller
@@ -3390,10 +3386,35 @@ PrefabInstance:
       propertyPath: snapshotEvery
       value: 0.3
       objectReference: {fileID: 0}
+    - target: {fileID: 3860322496910655404, guid: cc4cd222cbc45c94080cac31672baebf,
+        type: 3}
+      propertyPath: maxBounds.x
+      value: 8.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3860322496910655404, guid: cc4cd222cbc45c94080cac31672baebf,
+        type: 3}
+      propertyPath: maxBounds.y
+      value: 4.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3860322496910655404, guid: cc4cd222cbc45c94080cac31672baebf,
+        type: 3}
+      propertyPath: minBounds.x
+      value: -8.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 3860322496910655404, guid: cc4cd222cbc45c94080cac31672baebf,
+        type: 3}
+      propertyPath: minBounds.y
+      value: -4.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3860322496910655404, guid: cc4cd222cbc45c94080cac31672baebf,
+        type: 3}
+      propertyPath: boundsPadding
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 5992851004897438660, guid: cc4cd222cbc45c94080cac31672baebf,
         type: 3}
       propertyPath: speed
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5992851004897438660, guid: cc4cd222cbc45c94080cac31672baebf,
         type: 3}
@@ -3404,6 +3425,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: WarmthGuy (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7017775993287179600, guid: cc4cd222cbc45c94080cac31672baebf,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8407629415177046608, guid: cc4cd222cbc45c94080cac31672baebf,
         type: 3}
@@ -3501,14 +3527,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 776d92e4ad63a744291b24f3d0ebd570, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SaboteurBrain
-  baseLeadSeconds: 0.35
+  enableSabotage: 1
+  me: {fileID: 0}
+  registry: {fileID: 0}
+  scanEvery: 0.35
+  mustLeadBySeconds: 0.2
   destroyDistance: 0.35
-  leadDistanceFactor: 1
-  hasTarget: 0
-  targetType: 1
-  targetStation: {fileID: 0}
-  targetPos: {x: 0, y: 0}
-  lastSlack: 0
+  sabotageCooldown: 1
 --- !u!1 &1069243247
 GameObject:
   m_ObjectHideFlags: 0
@@ -4360,7 +4385,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1259890150
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6988,7 +7013,7 @@ PrefabInstance:
     - target: {fileID: 1810374220733173184, guid: a7208f5657fdd694390e2cb8ebefb396,
         type: 3}
       propertyPath: speed
-      value: 1
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 1810374220733173184, guid: a7208f5657fdd694390e2cb8ebefb396,
         type: 3}
@@ -7045,6 +7070,31 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2912372510818773700, guid: a7208f5657fdd694390e2cb8ebefb396,
+        type: 3}
+      propertyPath: maxBounds.x
+      value: 8.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2912372510818773700, guid: a7208f5657fdd694390e2cb8ebefb396,
+        type: 3}
+      propertyPath: maxBounds.y
+      value: 4.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2912372510818773700, guid: a7208f5657fdd694390e2cb8ebefb396,
+        type: 3}
+      propertyPath: minBounds.x
+      value: -8.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 2912372510818773700, guid: a7208f5657fdd694390e2cb8ebefb396,
+        type: 3}
+      propertyPath: minBounds.y
+      value: -4.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2912372510818773700, guid: a7208f5657fdd694390e2cb8ebefb396,
+        type: 3}
+      propertyPath: boundsPadding
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 3420120708994698458, guid: a7208f5657fdd694390e2cb8ebefb396,
         type: 3}
       propertyPath: registry
@@ -7059,6 +7109,11 @@ PrefabInstance:
         type: 3}
       propertyPath: snapshotEvery
       value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6717423030051016599, guid: a7208f5657fdd694390e2cb8ebefb396,
+        type: 3}
+      propertyPath: drainPerSecond
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7507835982253256031, guid: a7208f5657fdd694390e2cb8ebefb396,
         type: 3}
@@ -7188,6 +7243,36 @@ PrefabInstance:
       propertyPath: boundsProvider
       value: 
       objectReference: {fileID: 1018070200}
+    - target: {fileID: 2910078706800401807, guid: 1b927adc15b2925478e816ab2e92d78f,
+        type: 3}
+      propertyPath: drainPerSecond
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4137197118521658240, guid: 1b927adc15b2925478e816ab2e92d78f,
+        type: 3}
+      propertyPath: maxBounds.x
+      value: 8.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4137197118521658240, guid: 1b927adc15b2925478e816ab2e92d78f,
+        type: 3}
+      propertyPath: maxBounds.y
+      value: 4.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4137197118521658240, guid: 1b927adc15b2925478e816ab2e92d78f,
+        type: 3}
+      propertyPath: minBounds.x
+      value: -8.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 4137197118521658240, guid: 1b927adc15b2925478e816ab2e92d78f,
+        type: 3}
+      propertyPath: minBounds.y
+      value: -4.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4137197118521658240, guid: 1b927adc15b2925478e816ab2e92d78f,
+        type: 3}
+      propertyPath: boundsPadding
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4808904441980835421, guid: 1b927adc15b2925478e816ab2e92d78f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -7279,10 +7364,30 @@ PrefabInstance:
       propertyPath: m_WasSpriteAssigned
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6958645300293423217, guid: 1b927adc15b2925478e816ab2e92d78f,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.x
+      value: 1.76
+      objectReference: {fileID: 0}
+    - target: {fileID: 6958645300293423217, guid: 1b927adc15b2925478e816ab2e92d78f,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.y
+      value: 2.64
+      objectReference: {fileID: 0}
+    - target: {fileID: 6958645300293423217, guid: 1b927adc15b2925478e816ab2e92d78f,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 1.85
+      objectReference: {fileID: 0}
+    - target: {fileID: 6958645300293423217, guid: 1b927adc15b2925478e816ab2e92d78f,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 2.57
+      objectReference: {fileID: 0}
     - target: {fileID: 8142587794488527807, guid: 1b927adc15b2925478e816ab2e92d78f,
         type: 3}
       propertyPath: speed
-      value: 1
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 8142587794488527807, guid: 1b927adc15b2925478e816ab2e92d78f,
         type: 3}
@@ -7587,6 +7692,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1342964859}
     m_Modifications:
+    - target: {fileID: 1752094812367995324, guid: cc4cd222cbc45c94080cac31672baebf,
+        type: 3}
+      propertyPath: drainPerSecond
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 2083562267116992383, guid: cc4cd222cbc45c94080cac31672baebf,
         type: 3}
       propertyPath: boundsProvider
@@ -7607,10 +7717,35 @@ PrefabInstance:
       propertyPath: snapshotEvery
       value: 0.3
       objectReference: {fileID: 0}
+    - target: {fileID: 3860322496910655404, guid: cc4cd222cbc45c94080cac31672baebf,
+        type: 3}
+      propertyPath: maxBounds.x
+      value: 8.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3860322496910655404, guid: cc4cd222cbc45c94080cac31672baebf,
+        type: 3}
+      propertyPath: maxBounds.y
+      value: 4.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3860322496910655404, guid: cc4cd222cbc45c94080cac31672baebf,
+        type: 3}
+      propertyPath: minBounds.x
+      value: -8.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 3860322496910655404, guid: cc4cd222cbc45c94080cac31672baebf,
+        type: 3}
+      propertyPath: minBounds.y
+      value: -4.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3860322496910655404, guid: cc4cd222cbc45c94080cac31672baebf,
+        type: 3}
+      propertyPath: boundsPadding
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 5992851004897438660, guid: cc4cd222cbc45c94080cac31672baebf,
         type: 3}
       propertyPath: speed
-      value: 1
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 5992851004897438660, guid: cc4cd222cbc45c94080cac31672baebf,
         type: 3}
