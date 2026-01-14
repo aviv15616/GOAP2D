@@ -12,6 +12,7 @@ NPCs dynamically plan and execute actions based on their needs, world state, and
 - Station building with validation
 - Grid-based pathfinding used for movement and cost estimation
 - Automated strict GOAP scenario tester
+- Saboteur NPC that interferes with other agents indirectly
 
 ## Project Structure
 Assets/
@@ -36,6 +37,15 @@ Utilities/
 
 All NPCs can gather resources, build stations, and use any station.
 
+## Saboteur
+In addition to standard GOAP-driven NPCs, the simulation includes a **Saboteur** agent.
+
+The saboteur is implemented as a dedicated behavior controller rather than a full GOAP goal or action. It continuously observes other NPCs and detects when an agent is actively moving toward a station for usage. Using the same movement, travel-time estimation, and station-selection APIs exposed by the GOAP system, the saboteur evaluates whether it can reach the target station before the intended user.
+
+If it determines that it can arrive first by a sufficient margin, the saboteur moves to the station and destroys it, forcing the affected NPC to replan (e.g., gather resources and rebuild the station).
+
+Although the saboteur is not driven by its own GOAP plan, it heavily reuses the GOAP agent infrastructure for navigation, timing estimation, and world interaction. Conceptually, it functions as a **hybrid agent** — not fully GOAP-driven, but tightly integrated with the GOAP framework.
+
 ## Requirements
 - Unity 2021 LTS or newer
 - 2D project
@@ -48,10 +58,9 @@ All NPCs can gather resources, build stations, and use any station.
 5. Remove Stations with right click.
 6. Observe planning and execution.
 
-## Authors:
+## Authors
 - Aviv Neeman
 - Gal Maymon
 
 ## ITCH.IO
-
 [Play on Itch.io](https://gamedevteamx.itch.io/goap2davivnv)
