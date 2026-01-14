@@ -11,6 +11,9 @@ public class UseStationAction : GoapAction
     private List<Vector2> _path;
     private int _pathIndex;
     private bool _arrived;
+    public Vector2 RuntimeGoal => _goal;
+    public StationType RuntimeStationType => NeedStationType();
+    public bool RuntimeHasGoal => _goal != Vector2.zero; // מספיק טוב אצלך כי _goal מתמלא ב-StartAction
 
     private StationType NeedStationType() =>
         need switch

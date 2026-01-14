@@ -75,6 +75,8 @@ public class GoapAgent : MonoBehaviour
     private Vector2 _idleTarget;
     private float _idleTimer;
     private bool _idleLogged;
+    public GoapAction CurrentAction => (_plan != null && _plan.Count > 0) ? _plan.Peek() : null;
+    
 
     // Runtime episode timing (per-goal)
     private NeedType _episodeNeed = NeedType.None;
