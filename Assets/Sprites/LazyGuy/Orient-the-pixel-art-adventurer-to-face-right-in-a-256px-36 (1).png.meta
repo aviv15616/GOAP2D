@@ -1,0 +1,1066 @@
+fileFormatVersion: 2
+guid: af9dea9817462374b82b2fe7dccbba7f
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -2993426818570840733
+    second: Orient-the-pixel-art-adventurer-to-face-right-in-a-256px-36 (1)_0
+  - first:
+      213: -8245166567463233036
+    second: Orient-the-pixel-art-adventurer-to-face-right-in-a-256px-36 (1)_1
+  - first:
+      213: -1737154158355999763
+    second: Orient-the-pixel-art-adventurer-to-face-right-in-a-256px-36 (1)_2
+  - first:
+      213: 1464007819817217274
+    second: Orient-the-pixel-art-adventurer-to-face-right-in-a-256px-36 (1)_3
+  - first:
+      213: -4530615734528024022
+    second: Orient-the-pixel-art-adventurer-to-face-right-in-a-256px-36 (1)_4
+  - first:
+      213: -6664883986777695120
+    second: Orient-the-pixel-art-adventurer-to-face-right-in-a-256px-36 (1)_5
+  - first:
+      213: 3747291372091220349
+    second: Orient-the-pixel-art-adventurer-to-face-right-in-a-256px-36 (1)_6
+  - first:
+      213: 1953708717976885217
+    second: Orient-the-pixel-art-adventurer-to-face-right-in-a-256px-36 (1)_7
+  - first:
+      213: -4630741017929368474
+    second: Orient-the-pixel-art-adventurer-to-face-right-in-a-256px-36 (1)_8
+  - first:
+      213: 4972386974480454978
+    second: Orient-the-pixel-art-adventurer-to-face-right-in-a-256px-36 (1)_9
+  - first:
+      213: 237271080459294685
+    second: Orient-the-pixel-art-adventurer-to-face-right-in-a-256px-36 (1)_10
+  - first:
+      213: 1874053649053448014
+    second: Orient-the-pixel-art-adventurer-to-face-right-in-a-256px-36 (1)_11
+  - first:
+      213: -7794886553296083120
+    second: Orient-the-pixel-art-adventurer-to-face-right-in-a-256px-36 (1)_12
+  - first:
+      213: 4325399883189302690
+    second: Orient-the-pixel-art-adventurer-to-face-right-in-a-256px-36 (1)_13
+  - first:
+      213: 240021457166755677
+    second: Orient-the-pixel-art-adventurer-to-face-right-in-a-256px-36 (1)_14
+  - first:
+      213: -5385450067052713381
+    second: Orient-the-pixel-art-adventurer-to-face-right-in-a-256px-36 (1)_15
+  - first:
+      213: -1221552544240207537
+    second: Orient-the-pixel-art-adventurer-to-face-right-in-a-256px-36 (1)_16
+  - first:
+      213: 1667995294480908776
+    second: Orient-the-pixel-art-adventurer-to-face-right-in-a-256px-36 (1)_17
+  - first:
+      213: -4332415199548552674
+    second: Orient-the-pixel-art-adventurer-to-face-right-in-a-256px-36 (1)_18
+  - first:
+      213: 2179775141267204062
+    second: Orient-the-pixel-art-adventurer-to-face-right-in-a-256px-36 (1)_19
+  - first:
+      213: -7674593104675925588
+    second: Orient-the-pixel-art-adventurer-to-face-right-in-a-256px-36 (1)_20
+  - first:
+      213: -7271833445653089484
+    second: Orient-the-pixel-art-adventurer-to-face-right-in-a-256px-36 (1)_21
+  - first:
+      213: -200659174011784213
+    second: Orient-the-pixel-art-adventurer-to-face-right-in-a-256px-36 (1)_22
+  - first:
+      213: -2759373492493867091
+    second: Orient-the-pixel-art-adventurer-to-face-right-in-a-256px-36 (1)_23
+  - first:
+      213: -2685895843398863339
+    second: Orient-the-pixel-art-adventurer-to-face-right-in-a-256px-36 (1)_24
+  - first:
+      213: -1894730344397214034
+    second: Orient-the-pixel-art-adventurer-to-face-right-in-a-256px-36 (1)_25
+  - first:
+      213: 561365683189908096
+    second: Orient-the-pixel-art-adventurer-to-face-right-in-a-256px-36 (1)_26
+  - first:
+      213: -7060586289100019917
+    second: Orient-the-pixel-art-adventurer-to-face-right-in-a-256px-36 (1)_27
+  - first:
+      213: 5613257408550387698
+    second: Orient-the-pixel-art-adventurer-to-face-right-in-a-256px-36 (1)_28
+  - first:
+      213: -8912546779604235711
+    second: Orient-the-pixel-art-adventurer-to-face-right-in-a-256px-36 (1)_29
+  - first:
+      213: -2138463490896221578
+    second: Orient-the-pixel-art-adventurer-to-face-right-in-a-256px-36 (1)_30
+  - first:
+      213: 1846606587967055069
+    second: Orient-the-pixel-art-adventurer-to-face-right-in-a-256px-36 (1)_31
+  - first:
+      213: -3382896503946459931
+    second: Orient-the-pixel-art-adventurer-to-face-right-in-a-256px-36 (1)_32
+  - first:
+      213: 1791660940280961687
+    second: Orient-the-pixel-art-adventurer-to-face-right-in-a-256px-36 (1)_33
+  - first:
+      213: 1113093131902530234
+    second: Orient-the-pixel-art-adventurer-to-face-right-in-a-256px-36 (1)_34
+  - first:
+      213: -8600221702670939318
+    second: Orient-the-pixel-art-adventurer-to-face-right-in-a-256px-36 (1)_35
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Orient-the-pixel-art-adventurer-to-face-right-in-a-256px-36 (1)_0
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 1328
+        width: 168
+        height: 259
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 36515f91b263576d0800000000000000
+      internalID: -2993426818570840733
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orient-the-pixel-art-adventurer-to-face-right-in-a-256px-36 (1)_1
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 1328
+        width: 165
+        height: 260
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4f95d6011b8439d80800000000000000
+      internalID: -8245166567463233036
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orient-the-pixel-art-adventurer-to-face-right-in-a-256px-36 (1)_2
+      rect:
+        serializedVersion: 2
+        x: 403
+        y: 1328
+        width: 163
+        height: 260
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: de3191f2f7364e7e0800000000000000
+      internalID: -1737154158355999763
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orient-the-pixel-art-adventurer-to-face-right-in-a-256px-36 (1)_3
+      rect:
+        serializedVersion: 2
+        x: 598
+        y: 1328
+        width: 162
+        height: 260
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: afc69900b53315410800000000000000
+      internalID: 1464007819817217274
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orient-the-pixel-art-adventurer-to-face-right-in-a-256px-36 (1)_4
+      rect:
+        serializedVersion: 2
+        x: 793
+        y: 1328
+        width: 161
+        height: 258
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a2269a16ef40021c0800000000000000
+      internalID: -4530615734528024022
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orient-the-pixel-art-adventurer-to-face-right-in-a-256px-36 (1)_5
+      rect:
+        serializedVersion: 2
+        x: 986
+        y: 1328
+        width: 162
+        height: 258
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 07c1dea73539183a0800000000000000
+      internalID: -6664883986777695120
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orient-the-pixel-art-adventurer-to-face-right-in-a-256px-36 (1)_6
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1060
+        width: 177
+        height: 263
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d71226f16ad010430800000000000000
+      internalID: 3747291372091220349
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orient-the-pixel-art-adventurer-to-face-right-in-a-256px-36 (1)_7
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 1060
+        width: 172
+        height: 261
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1e798915ab7fc1b10800000000000000
+      internalID: 1953708717976885217
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orient-the-pixel-art-adventurer-to-face-right-in-a-256px-36 (1)_8
+      rect:
+        serializedVersion: 2
+        x: 396
+        y: 1060
+        width: 170
+        height: 260
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 66c3d73349d4cbfb0800000000000000
+      internalID: -4630741017929368474
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orient-the-pixel-art-adventurer-to-face-right-in-a-256px-36 (1)_9
+      rect:
+        serializedVersion: 2
+        x: 591
+        y: 1061
+        width: 169
+        height: 258
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 245dfa3cb97710540800000000000000
+      internalID: 4972386974480454978
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orient-the-pixel-art-adventurer-to-face-right-in-a-256px-36 (1)_10
+      rect:
+        serializedVersion: 2
+        x: 785
+        y: 1061
+        width: 169
+        height: 259
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dd7df326ac4fa4300800000000000000
+      internalID: 237271080459294685
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orient-the-pixel-art-adventurer-to-face-right-in-a-256px-36 (1)_11
+      rect:
+        serializedVersion: 2
+        x: 979
+        y: 1061
+        width: 169
+        height: 259
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e47fad95dd9f10a10800000000000000
+      internalID: 1874053649053448014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orient-the-pixel-art-adventurer-to-face-right-in-a-256px-36 (1)_12
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 799
+        width: 174
+        height: 258
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 05761569afff2d390800000000000000
+      internalID: -7794886553296083120
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orient-the-pixel-art-adventurer-to-face-right-in-a-256px-36 (1)_13
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 798
+        width: 174
+        height: 258
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2a5b30dd648e60c30800000000000000
+      internalID: 4325399883189302690
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orient-the-pixel-art-adventurer-to-face-right-in-a-256px-36 (1)_14
+      rect:
+        serializedVersion: 2
+        x: 391
+        y: 797
+        width: 175
+        height: 257
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d5765ec5e3ab45300800000000000000
+      internalID: 240021457166755677
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orient-the-pixel-art-adventurer-to-face-right-in-a-256px-36 (1)_15
+      rect:
+        serializedVersion: 2
+        x: 585
+        y: 796
+        width: 175
+        height: 258
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b5a28b582b90345b0800000000000000
+      internalID: -5385450067052713381
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orient-the-pixel-art-adventurer-to-face-right-in-a-256px-36 (1)_16
+      rect:
+        serializedVersion: 2
+        x: 778
+        y: 796
+        width: 176
+        height: 260
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f49761ede6c2c0fe0800000000000000
+      internalID: -1221552544240207537
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orient-the-pixel-art-adventurer-to-face-right-in-a-256px-36 (1)_17
+      rect:
+        serializedVersion: 2
+        x: 970
+        y: 795
+        width: 178
+        height: 262
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8e1ce8602e8e52710800000000000000
+      internalID: 1667995294480908776
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orient-the-pixel-art-adventurer-to-face-right-in-a-256px-36 (1)_18
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 531
+        width: 175
+        height: 258
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e1ac763845b20e3c0800000000000000
+      internalID: -4332415199548552674
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orient-the-pixel-art-adventurer-to-face-right-in-a-256px-36 (1)_19
+      rect:
+        serializedVersion: 2
+        x: 197
+        y: 531
+        width: 175
+        height: 258
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ed7657921fd104e10800000000000000
+      internalID: 2179775141267204062
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orient-the-pixel-art-adventurer-to-face-right-in-a-256px-36 (1)_20
+      rect:
+        serializedVersion: 2
+        x: 391
+        y: 533
+        width: 175
+        height: 258
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ca11128ab3e5e7590800000000000000
+      internalID: -7674593104675925588
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orient-the-pixel-art-adventurer-to-face-right-in-a-256px-36 (1)_21
+      rect:
+        serializedVersion: 2
+        x: 586
+        y: 533
+        width: 174
+        height: 259
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 433fa0e4202451b90800000000000000
+      internalID: -7271833445653089484
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orient-the-pixel-art-adventurer-to-face-right-in-a-256px-36 (1)_22
+      rect:
+        serializedVersion: 2
+        x: 780
+        y: 533
+        width: 174
+        height: 260
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: be3ba1c5b8d173df0800000000000000
+      internalID: -200659174011784213
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orient-the-pixel-art-adventurer-to-face-right-in-a-256px-36 (1)_23
+      rect:
+        serializedVersion: 2
+        x: 975
+        y: 533
+        width: 173
+        height: 259
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: da72649ad6cb4b9d0800000000000000
+      internalID: -2759373492493867091
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orient-the-pixel-art-adventurer-to-face-right-in-a-256px-36 (1)_24
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 265
+        width: 167
+        height: 262
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 516338ef5f7c9bad0800000000000000
+      internalID: -2685895843398863339
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orient-the-pixel-art-adventurer-to-face-right-in-a-256px-36 (1)_25
+      rect:
+        serializedVersion: 2
+        x: 205
+        y: 265
+        width: 167
+        height: 262
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eaeec0d5ac094b5e0800000000000000
+      internalID: -1894730344397214034
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orient-the-pixel-art-adventurer-to-face-right-in-a-256px-36 (1)_26
+      rect:
+        serializedVersion: 2
+        x: 399
+        y: 265
+        width: 167
+        height: 262
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 08201a75d1f5ac700800000000000000
+      internalID: 561365683189908096
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orient-the-pixel-art-adventurer-to-face-right-in-a-256px-36 (1)_27
+      rect:
+        serializedVersion: 2
+        x: 587
+        y: 266
+        width: 173
+        height: 260
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 337233cbd22c30e90800000000000000
+      internalID: -7060586289100019917
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orient-the-pixel-art-adventurer-to-face-right-in-a-256px-36 (1)_28
+      rect:
+        serializedVersion: 2
+        x: 778
+        y: 266
+        width: 176
+        height: 260
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2ffb97d6fdb46ed40800000000000000
+      internalID: 5613257408550387698
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orient-the-pixel-art-adventurer-to-face-right-in-a-256px-36 (1)_29
+      rect:
+        serializedVersion: 2
+        x: 972
+        y: 266
+        width: 176
+        height: 259
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 14a43a5bce5405480800000000000000
+      internalID: -8912546779604235711
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orient-the-pixel-art-adventurer-to-face-right-in-a-256px-36 (1)_30
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 3
+        width: 161
+        height: 258
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 67a2dfbf8c6a252e0800000000000000
+      internalID: -2138463490896221578
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orient-the-pixel-art-adventurer-to-face-right-in-a-256px-36 (1)_31
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 2
+        width: 163
+        height: 258
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dd42ca378e670a910800000000000000
+      internalID: 1846606587967055069
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orient-the-pixel-art-adventurer-to-face-right-in-a-256px-36 (1)_32
+      rect:
+        serializedVersion: 2
+        x: 402
+        y: 2
+        width: 164
+        height: 257
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5e44c529d898d01d0800000000000000
+      internalID: -3382896503946459931
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orient-the-pixel-art-adventurer-to-face-right-in-a-256px-36 (1)_33
+      rect:
+        serializedVersion: 2
+        x: 590
+        y: 1
+        width: 170
+        height: 258
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 79a936fe1224dd810800000000000000
+      internalID: 1791660940280961687
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orient-the-pixel-art-adventurer-to-face-right-in-a-256px-36 (1)_34
+      rect:
+        serializedVersion: 2
+        x: 783
+        y: 1
+        width: 171
+        height: 259
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ab23af85e40827f00800000000000000
+      internalID: 1113093131902530234
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orient-the-pixel-art-adventurer-to-face-right-in-a-256px-36 (1)_35
+      rect:
+        serializedVersion: 2
+        x: 974
+        y: 1
+        width: 174
+        height: 260
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a4b81b66defd5a880800000000000000
+      internalID: -8600221702670939318
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Orient-the-pixel-art-adventurer-to-face-right-in-a-256px-36 (1)_0: -2993426818570840733
+      Orient-the-pixel-art-adventurer-to-face-right-in-a-256px-36 (1)_1: -8245166567463233036
+      Orient-the-pixel-art-adventurer-to-face-right-in-a-256px-36 (1)_10: 237271080459294685
+      Orient-the-pixel-art-adventurer-to-face-right-in-a-256px-36 (1)_11: 1874053649053448014
+      Orient-the-pixel-art-adventurer-to-face-right-in-a-256px-36 (1)_12: -7794886553296083120
+      Orient-the-pixel-art-adventurer-to-face-right-in-a-256px-36 (1)_13: 4325399883189302690
+      Orient-the-pixel-art-adventurer-to-face-right-in-a-256px-36 (1)_14: 240021457166755677
+      Orient-the-pixel-art-adventurer-to-face-right-in-a-256px-36 (1)_15: -5385450067052713381
+      Orient-the-pixel-art-adventurer-to-face-right-in-a-256px-36 (1)_16: -1221552544240207537
+      Orient-the-pixel-art-adventurer-to-face-right-in-a-256px-36 (1)_17: 1667995294480908776
+      Orient-the-pixel-art-adventurer-to-face-right-in-a-256px-36 (1)_18: -4332415199548552674
+      Orient-the-pixel-art-adventurer-to-face-right-in-a-256px-36 (1)_19: 2179775141267204062
+      Orient-the-pixel-art-adventurer-to-face-right-in-a-256px-36 (1)_2: -1737154158355999763
+      Orient-the-pixel-art-adventurer-to-face-right-in-a-256px-36 (1)_20: -7674593104675925588
+      Orient-the-pixel-art-adventurer-to-face-right-in-a-256px-36 (1)_21: -7271833445653089484
+      Orient-the-pixel-art-adventurer-to-face-right-in-a-256px-36 (1)_22: -200659174011784213
+      Orient-the-pixel-art-adventurer-to-face-right-in-a-256px-36 (1)_23: -2759373492493867091
+      Orient-the-pixel-art-adventurer-to-face-right-in-a-256px-36 (1)_24: -2685895843398863339
+      Orient-the-pixel-art-adventurer-to-face-right-in-a-256px-36 (1)_25: -1894730344397214034
+      Orient-the-pixel-art-adventurer-to-face-right-in-a-256px-36 (1)_26: 561365683189908096
+      Orient-the-pixel-art-adventurer-to-face-right-in-a-256px-36 (1)_27: -7060586289100019917
+      Orient-the-pixel-art-adventurer-to-face-right-in-a-256px-36 (1)_28: 5613257408550387698
+      Orient-the-pixel-art-adventurer-to-face-right-in-a-256px-36 (1)_29: -8912546779604235711
+      Orient-the-pixel-art-adventurer-to-face-right-in-a-256px-36 (1)_3: 1464007819817217274
+      Orient-the-pixel-art-adventurer-to-face-right-in-a-256px-36 (1)_30: -2138463490896221578
+      Orient-the-pixel-art-adventurer-to-face-right-in-a-256px-36 (1)_31: 1846606587967055069
+      Orient-the-pixel-art-adventurer-to-face-right-in-a-256px-36 (1)_32: -3382896503946459931
+      Orient-the-pixel-art-adventurer-to-face-right-in-a-256px-36 (1)_33: 1791660940280961687
+      Orient-the-pixel-art-adventurer-to-face-right-in-a-256px-36 (1)_34: 1113093131902530234
+      Orient-the-pixel-art-adventurer-to-face-right-in-a-256px-36 (1)_35: -8600221702670939318
+      Orient-the-pixel-art-adventurer-to-face-right-in-a-256px-36 (1)_4: -4530615734528024022
+      Orient-the-pixel-art-adventurer-to-face-right-in-a-256px-36 (1)_5: -6664883986777695120
+      Orient-the-pixel-art-adventurer-to-face-right-in-a-256px-36 (1)_6: 3747291372091220349
+      Orient-the-pixel-art-adventurer-to-face-right-in-a-256px-36 (1)_7: 1953708717976885217
+      Orient-the-pixel-art-adventurer-to-face-right-in-a-256px-36 (1)_8: -4630741017929368474
+      Orient-the-pixel-art-adventurer-to-face-right-in-a-256px-36 (1)_9: 4972386974480454978
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
