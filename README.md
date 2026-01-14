@@ -48,8 +48,9 @@ All NPCs can gather resources, build stations, and use any station.
 5. Remove Stations with right click.
 6. Observe planning and execution.
 
-## License
-Educational / personal use
+## Authors:
+- Aviv Neeman
+- Gal Maymon
 
 ## ITCH.IO
 
