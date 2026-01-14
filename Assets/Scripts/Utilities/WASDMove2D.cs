@@ -6,8 +6,7 @@ public class WASDMove2D : MonoBehaviour
     public float speed = 3f;
 
     Animator anim;
-
-    Vector2 lastMoveDir = Vector2.down; // default facing
+    Vector2 lastDir = Vector2.down;
 
     void Awake()
     {
@@ -25,28 +24,28 @@ public class WASDMove2D : MonoBehaviour
         if (Input.GetKey(KeyCode.W)) y = 1f;
 
         Vector2 dir = new Vector2(x, y);
-
         if (dir.sqrMagnitude > 1f)
             dir.Normalize();
 
-        // MOVE
+        // Movement
         transform.position += (Vector3)(dir * speed * Time.deltaTime);
 
-        // ANIMATION
-        bool isMoving = dir != Vector2.zero;
-        anim.SetBool("IsMoving", isMoving);
+        bool moving = dir != Vector2.zero;
+        anim.SetBool("IsMoving", moving);
 
-        if (isMoving)
+        if (moving)
         {
-            lastMoveDir = dir;
+            lastDir = dir;
+            anim.speed = 1f;
             anim.SetFloat("MoveX", dir.x);
             anim.SetFloat("MoveY", dir.y);
         }
         else
         {
-            // Keep last facing direction when idle
-            anim.SetFloat("MoveX", lastMoveDir.x);
-            anim.SetFloat("MoveY", lastMoveDir.y);
+            // Freeze animation on current frame
+            anim.speed = 0f;
+            anim.SetFloat("MoveX", lastDir.x);
+            anim.SetFloat("MoveY", lastDir.y);
         }
     }
 }
